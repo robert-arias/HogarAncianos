@@ -25,9 +25,13 @@ namespace HogarAncianos.Controller {
 
         private void VerificarCedula(object sender, EventArgs e) {
             //Aquí debe verificar en la base de datos si existe la cédula.
-            if (!String.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
+            if (!string.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
                 frm_AgregarEmpleados.GetCedula().Length >= 9) {
-                frm_AgregarEmpleados.ActivarCampos();
+                if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
+                    frm_AgregarEmpleados.ActivarCampos();
+                else
+                    frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los" +
+                        "registros.");
             }
             else
                 frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
@@ -37,7 +41,11 @@ namespace HogarAncianos.Controller {
             if (e.KeyCode == Keys.Enter) {
                 if (!String.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
                 frm_AgregarEmpleados.GetCedula().Length >= 9) {
-                    frm_AgregarEmpleados.ActivarCampos();
+                    if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
+                        frm_AgregarEmpleados.ActivarCampos();
+                    else
+                        frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los" +
+                            "registros.");
                 }
                 else
                     frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
