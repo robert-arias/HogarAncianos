@@ -10,6 +10,8 @@ namespace HogarAncianos.View {
         public FRM_AgregarEmpleado() {
             InitializeComponent();
             agregarEmpleadosController = new AgregarEmpleadosController(this);
+            //int index = cbPuesto.FindString("Seleccionar");
+            cbPuesto.Text = "Seleccionar";
         }
 
         public string GetCedula() {
@@ -31,7 +33,7 @@ namespace HogarAncianos.View {
             txtCorreo.Enabled = true;
             btnAgregarCorreo.Enabled = true;
             dgvCorreos.Enabled = true;
-            txtPuesto.Enabled = true;
+            cbPuesto.Enabled = true;
             txtHorario.Enabled = true;
             txtSalario.Enabled = true;
             txtFechaContratacion.Enabled = true;
@@ -50,7 +52,7 @@ namespace HogarAncianos.View {
             txtCorreo.Enabled = false;
             btnAgregarCorreo.Enabled = false;
             dgvCorreos.Enabled = false;
-            txtPuesto.Enabled = false;
+            cbPuesto.Enabled = false;
             txtHorario.Enabled = false;
             txtSalario.Enabled = false;
             txtFechaContratacion.Enabled = false;
@@ -66,7 +68,6 @@ namespace HogarAncianos.View {
             txtCorreo.Text = "";
             btnAgregarCorreo.Text = "";
             dgvCorreos.Text = "";
-            txtPuesto.Text = "";
             txtHorario.Text = "";
             txtSalario.Text = "";
             txtFechaContratacion.Text = "";
