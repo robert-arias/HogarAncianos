@@ -39,7 +39,7 @@
             this.mi_Empleados});
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
-            this.ms_Menu.Size = new System.Drawing.Size(800, 28);
+            this.ms_Menu.Size = new System.Drawing.Size(992, 28);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -56,34 +56,36 @@
             // mi_EmpleadosAgregar
             // 
             this.mi_EmpleadosAgregar.Name = "mi_EmpleadosAgregar";
-            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(216, 26);
+            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosAgregar.Text = "Agregar";
             // 
             // mi_EmpleadosModificar
             // 
             this.mi_EmpleadosModificar.Name = "mi_EmpleadosModificar";
-            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(216, 26);
+            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosModificar.Text = "Modificar";
             // 
             // mi_EmpleadosBuscar
             // 
             this.mi_EmpleadosBuscar.Name = "mi_EmpleadosBuscar";
-            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(216, 26);
+            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosBuscar.Text = "Buscar";
             // 
             // mi_EmpleadosReporte
             // 
             this.mi_EmpleadosReporte.Name = "mi_EmpleadosReporte";
-            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(216, 26);
+            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosReporte.Text = "Reporte";
             // 
             // FRM_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(992, 624);
             this.Controls.Add(this.ms_Menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.ms_Menu;
+            this.MaximizeBox = false;
             this.Name = "FRM_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

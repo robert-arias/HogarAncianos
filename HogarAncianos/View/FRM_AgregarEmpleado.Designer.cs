@@ -23,7 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbCedula = new System.Windows.Forms.Label();
+            this.lbDireccion = new System.Windows.Forms.Label();
+            this.lbTelefono = new System.Windows.Forms.Label();
+            this.lbFechaNacimiento = new System.Windows.Forms.Label();
+            this.lbApellidos = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.dgvCorreos = new System.Windows.Forms.DataGridView();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +51,10 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbFechaContratacion = new System.Windows.Forms.Label();
+            this.lbSalario = new System.Windows.Forms.Label();
+            this.lbHorario = new System.Windows.Forms.Label();
+            this.lbPuesto = new System.Windows.Forms.Label();
             this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
@@ -58,15 +69,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.lbApellidos = new System.Windows.Forms.Label();
-            this.lbTelefono = new System.Windows.Forms.Label();
-            this.lbDireccion = new System.Windows.Forms.Label();
-            this.lbPuesto = new System.Windows.Forms.Label();
-            this.lbHorario = new System.Windows.Forms.Label();
-            this.lbSalario = new System.Windows.Forms.Label();
-            this.lbFechaContratacion = new System.Windows.Forms.Label();
-            this.lbFechaNacimiento = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorreos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,6 +81,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnEliminarCorreo);
+            this.groupBox1.Controls.Add(this.lbCedula);
             this.groupBox1.Controls.Add(this.lbDireccion);
             this.groupBox1.Controls.Add(this.lbTelefono);
             this.groupBox1.Controls.Add(this.lbFechaNacimiento);
@@ -107,6 +113,68 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información personal";
+            // 
+            // lbCedula
+            // 
+            this.lbCedula.AutoSize = true;
+            this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCedula.Location = new System.Drawing.Point(434, 37);
+            this.lbCedula.Name = "lbCedula";
+            this.lbCedula.Size = new System.Drawing.Size(15, 20);
+            this.lbCedula.TabIndex = 30;
+            this.lbCedula.Text = "*";
+            this.toolTip1.SetToolTip(this.lbCedula, "Sin guiones.\nDebe ser de al menos 9 carácteres.");
+            // 
+            // lbDireccion
+            // 
+            this.lbDireccion.AutoSize = true;
+            this.lbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDireccion.Location = new System.Drawing.Point(945, 88);
+            this.lbDireccion.Name = "lbDireccion";
+            this.lbDireccion.Size = new System.Drawing.Size(15, 20);
+            this.lbDireccion.TabIndex = 29;
+            this.lbDireccion.Text = "*";
+            // 
+            // lbTelefono
+            // 
+            this.lbTelefono.AutoSize = true;
+            this.lbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTelefono.Location = new System.Drawing.Point(434, 249);
+            this.lbTelefono.Name = "lbTelefono";
+            this.lbTelefono.Size = new System.Drawing.Size(15, 20);
+            this.lbTelefono.TabIndex = 28;
+            this.lbTelefono.Text = "*";
+            // 
+            // lbFechaNacimiento
+            // 
+            this.lbFechaNacimiento.AutoSize = true;
+            this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechaNacimiento.Location = new System.Drawing.Point(434, 198);
+            this.lbFechaNacimiento.Name = "lbFechaNacimiento";
+            this.lbFechaNacimiento.Size = new System.Drawing.Size(15, 20);
+            this.lbFechaNacimiento.TabIndex = 27;
+            this.lbFechaNacimiento.Text = "*";
+            this.toolTip1.SetToolTip(this.lbFechaNacimiento, "Debe ser mayor de edad.");
+            // 
+            // lbApellidos
+            // 
+            this.lbApellidos.AutoSize = true;
+            this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApellidos.Location = new System.Drawing.Point(434, 145);
+            this.lbApellidos.Name = "lbApellidos";
+            this.lbApellidos.Size = new System.Drawing.Size(15, 20);
+            this.lbApellidos.TabIndex = 26;
+            this.lbApellidos.Text = "*";
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Location = new System.Drawing.Point(434, 92);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(15, 20);
+            this.lbNombre.TabIndex = 25;
+            this.lbNombre.Text = "*";
             // 
             // btnLimpiar
             // 
@@ -322,6 +390,46 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información laboral";
             // 
+            // lbFechaContratacion
+            // 
+            this.lbFechaContratacion.AutoSize = true;
+            this.lbFechaContratacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechaContratacion.Location = new System.Drawing.Point(945, 33);
+            this.lbFechaContratacion.Name = "lbFechaContratacion";
+            this.lbFechaContratacion.Size = new System.Drawing.Size(15, 20);
+            this.lbFechaContratacion.TabIndex = 35;
+            this.lbFechaContratacion.Text = "*";
+            // 
+            // lbSalario
+            // 
+            this.lbSalario.AutoSize = true;
+            this.lbSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalario.Location = new System.Drawing.Point(434, 140);
+            this.lbSalario.Name = "lbSalario";
+            this.lbSalario.Size = new System.Drawing.Size(15, 20);
+            this.lbSalario.TabIndex = 34;
+            this.lbSalario.Text = "*";
+            // 
+            // lbHorario
+            // 
+            this.lbHorario.AutoSize = true;
+            this.lbHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHorario.Location = new System.Drawing.Point(434, 87);
+            this.lbHorario.Name = "lbHorario";
+            this.lbHorario.Size = new System.Drawing.Size(15, 20);
+            this.lbHorario.TabIndex = 33;
+            this.lbHorario.Text = "*";
+            // 
+            // lbPuesto
+            // 
+            this.lbPuesto.AutoSize = true;
+            this.lbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPuesto.Location = new System.Drawing.Point(434, 31);
+            this.lbPuesto.Name = "lbPuesto";
+            this.lbPuesto.Size = new System.Drawing.Size(15, 20);
+            this.lbPuesto.TabIndex = 32;
+            this.lbPuesto.Text = "*";
+            // 
             // cbPuesto
             // 
             this.cbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -483,95 +591,17 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // lbNombre
+            // btnEliminarCorreo
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(434, 92);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(15, 20);
-            this.lbNombre.TabIndex = 25;
-            this.lbNombre.Text = "*";
-            // 
-            // lbApellidos
-            // 
-            this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApellidos.Location = new System.Drawing.Point(434, 145);
-            this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(15, 20);
-            this.lbApellidos.TabIndex = 26;
-            this.lbApellidos.Text = "*";
-            // 
-            // lbTelefono
-            // 
-            this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefono.Location = new System.Drawing.Point(434, 249);
-            this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(15, 20);
-            this.lbTelefono.TabIndex = 28;
-            this.lbTelefono.Text = "*";
-            // 
-            // lbDireccion
-            // 
-            this.lbDireccion.AutoSize = true;
-            this.lbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDireccion.Location = new System.Drawing.Point(945, 88);
-            this.lbDireccion.Name = "lbDireccion";
-            this.lbDireccion.Size = new System.Drawing.Size(15, 20);
-            this.lbDireccion.TabIndex = 29;
-            this.lbDireccion.Text = "*";
-            // 
-            // lbPuesto
-            // 
-            this.lbPuesto.AutoSize = true;
-            this.lbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPuesto.Location = new System.Drawing.Point(434, 31);
-            this.lbPuesto.Name = "lbPuesto";
-            this.lbPuesto.Size = new System.Drawing.Size(15, 20);
-            this.lbPuesto.TabIndex = 32;
-            this.lbPuesto.Text = "*";
-            // 
-            // lbHorario
-            // 
-            this.lbHorario.AutoSize = true;
-            this.lbHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHorario.Location = new System.Drawing.Point(434, 87);
-            this.lbHorario.Name = "lbHorario";
-            this.lbHorario.Size = new System.Drawing.Size(15, 20);
-            this.lbHorario.TabIndex = 33;
-            this.lbHorario.Text = "*";
-            // 
-            // lbSalario
-            // 
-            this.lbSalario.AutoSize = true;
-            this.lbSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalario.Location = new System.Drawing.Point(434, 140);
-            this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(15, 20);
-            this.lbSalario.TabIndex = 34;
-            this.lbSalario.Text = "*";
-            // 
-            // lbFechaContratacion
-            // 
-            this.lbFechaContratacion.AutoSize = true;
-            this.lbFechaContratacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaContratacion.Location = new System.Drawing.Point(945, 33);
-            this.lbFechaContratacion.Name = "lbFechaContratacion";
-            this.lbFechaContratacion.Size = new System.Drawing.Size(15, 20);
-            this.lbFechaContratacion.TabIndex = 35;
-            this.lbFechaContratacion.Text = "*";
-            // 
-            // lbFechaNacimiento
-            // 
-            this.lbFechaNacimiento.AutoSize = true;
-            this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.Location = new System.Drawing.Point(434, 198);
-            this.lbFechaNacimiento.Name = "lbFechaNacimiento";
-            this.lbFechaNacimiento.Size = new System.Drawing.Size(15, 20);
-            this.lbFechaNacimiento.TabIndex = 27;
-            this.lbFechaNacimiento.Text = "*";
+            this.btnEliminarCorreo.Enabled = false;
+            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCorreo.Location = new System.Drawing.Point(466, 242);
+            this.btnEliminarCorreo.Name = "btnEliminarCorreo";
+            this.btnEliminarCorreo.Size = new System.Drawing.Size(82, 31);
+            this.btnEliminarCorreo.TabIndex = 31;
+            this.btnEliminarCorreo.Text = "Eliminar";
+            this.toolTip1.SetToolTip(this.btnEliminarCorreo, "Debe seleccionar el correo que desea eliminar.");
+            this.btnEliminarCorreo.UseVisualStyleBackColor = true;
             // 
             // FRM_AgregarEmpleado
             // 
@@ -582,6 +612,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FRM_AgregarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_AgregarEmpleado";
@@ -640,5 +672,8 @@
         private System.Windows.Forms.Label lbHorario;
         private System.Windows.Forms.Label lbPuesto;
         private System.Windows.Forms.Label lbFechaNacimiento;
+        private System.Windows.Forms.Label lbCedula;
+        private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.Button btnEliminarCorreo;
     }
 }

@@ -19,6 +19,7 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleados.btnVerificar.Click += new EventHandler(VerificarCedula);
             frm_AgregarEmpleados.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaEnter);
             frm_AgregarEmpleados.btnAgregarCorreo.Click += new EventHandler(AgregarCorreo);
+            frm_AgregarEmpleados.btnEliminarCorreo.Click += new EventHandler(EliminarCorreo);
             frm_AgregarEmpleados.txtCorreo.KeyDown += new KeyEventHandler(AgregarCorreoEnter);
             frm_AgregarEmpleados.btnLimpiar.Click += new EventHandler(Limpiar);
             frm_AgregarEmpleados.btnAgregar.Click += new EventHandler(AgregarEmpleado);
@@ -64,13 +65,26 @@ namespace HogarAncianos.Controller {
             }
         }
 
+        private void EliminarCorreo(object sender, EventArgs e) {
+            frm_AgregarEmpleados.EliminarCorreo();
+        }
+
         private void Limpiar(object sender, EventArgs e) {
             frm_AgregarEmpleados.EstadoInicial();
         }
 
         private void AgregarEmpleado(object sender, EventArgs e) {
             if (!frm_AgregarEmpleados.VerificarCampos()) {
-                db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado());
+                if (db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado())) {
+                    frm_AgregarEmpleados.ShowMessage("Se ha agregado al nuevo empleado con éxito.");
+                    frm_AgregarEmpleados.EstadoInicial();
+                }
+                else
+                    frm_AgregarEmpleados.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+            }
+            else {
+                frm_AgregarEmpleados.ShowMessage("Algunos campos se encuentran vacíos." +
+                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
             }
         }
 

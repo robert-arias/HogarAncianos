@@ -3,6 +3,7 @@ CREATE TABLE 'Empleados'
 'nombre' TEXT,
 'apellidos' TEXT,
 'fecha_nacimiento' TEXT,
+'telefono' TEXT,
 'direccion' TEXT,
 'puesto_trabajo' TEXT,
 'horario_trabajo' TEXT,

@@ -52,8 +52,30 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public void AgregarEmpleado(Empleado empleado) {
-            throw new NotImplementedException();
+        public bool AgregarEmpleado(Empleado empleado) {
+            try {
+                string insert = $"insert into Empleados values('{empleado.Cedula}', '{empleado.Nombre}', " +
+                    $"'{empleado.Apellidos}', '{empleado.FechaNacimiento}', '{empleado.Telefono}', " +
+                    $"'{empleado.Direccion}', '{empleado.PuestoTrabajo}', '{empleado.HorarioTrabajo}', " +
+                    $"{empleado.Salario}, '{empleado.FechaContratacion}', 'A')";
+                Console.WriteLine(insert);
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                foreach(string correo in empleado.Correos) {
+                    string s = $"insert into Correos_Empleados values('{empleado.Cedula}', '{correo}')";
+                    SQLiteCommand c = new SQLiteCommand(s, connection);
+                    c.ExecuteNonQuery();
+                }
+
+                connection.Close();
+                return true;
+            } catch(SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
         }
     }
 }

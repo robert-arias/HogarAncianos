@@ -40,6 +40,7 @@ namespace HogarAncianos.View {
             txtFechaContratacion.Enabled = true;
             btnAgregar.Enabled = true;
             btnCancelar.Enabled = true;
+            btnEliminarCorreo.Enabled = true;
         }
 
         public void EstadoInicial() {
@@ -59,6 +60,7 @@ namespace HogarAncianos.View {
             txtFechaContratacion.Enabled = false;
             btnAgregar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnEliminarCorreo.Enabled = false;
 
             txtCedula.Text = "";
             txtNombre.Text = "";
@@ -72,6 +74,8 @@ namespace HogarAncianos.View {
             txtHorario.Text = "";
             txtSalario.Text = "";
             txtFechaContratacion.Text = "";
+            cbPuesto.SelectedIndex = 0;
+            cbPuesto.Text = "Seleccionar";
 
             lbNombre.ForeColor = Color.Black;
             lbApellidos.ForeColor = Color.Black;
@@ -105,6 +109,19 @@ namespace HogarAncianos.View {
             }
             catch {
                 return false;
+            }
+        }
+
+        public void EliminarCorreo() {
+            try {
+                int selectedIndex = dgvCorreos.CurrentCell.RowIndex;
+                if (selectedIndex > -1) {
+                    dgvCorreos.Rows.RemoveAt(selectedIndex);
+                    dgvCorreos.Refresh(); // if needed
+                }
+            }
+            catch (NullReferenceException ex) {
+                ShowMessage("Debe seleccionar el correo a eliminar.");
             }
         }
 
@@ -151,17 +168,21 @@ namespace HogarAncianos.View {
                 lbSalario.ForeColor = Color.Red;
             }
 
-            if (empty) {
-                ShowMessage("Algunos campos se encuentran vacíos. \nLos campos con el asterisco (*)" +
-                    " rojo son aquellos que deben ser modificados.");
-                return true;
-            }
-            else
-                return false;
+            return empty;
         }
 
         public Empleado GetEmpleado() {
-            throw new NotImplementedException();
+            string[] correos = new string[dgvCorreos.Rows.Count];
+
+            foreach (DataGridViewRow row in dgvCorreos.Rows) {
+                correos[row.Index] = row.Cells["Correo"].Value.ToString();
+            }
+
+            Console.WriteLine(cbPuesto.GetItemText(cbPuesto.SelectedItem));
+
+            return new Empleado(txtCedula.Text, txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
+                txtTelefono.Text, txtDireccion.Text, correos, cbPuesto.GetItemText(cbPuesto.SelectedItem),
+                txtHorario.Text, Convert.ToDouble(txtSalario.Text), txtFechaContratacion.Text, "A");
         }
 
     }
