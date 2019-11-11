@@ -21,10 +21,10 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleados.btnAgregarCorreo.Click += new EventHandler(AgregarCorreo);
             frm_AgregarEmpleados.txtCorreo.KeyDown += new KeyEventHandler(AgregarCorreoEnter);
             frm_AgregarEmpleados.btnLimpiar.Click += new EventHandler(Limpiar);
+            frm_AgregarEmpleados.btnAgregar.Click += new EventHandler(AgregarEmpleado);
         }
 
         private void VerificarCedula(object sender, EventArgs e) {
-            //Aquí debe verificar en la base de datos si existe la cédula.
             if (!string.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
                 frm_AgregarEmpleados.GetCedula().Length >= 9) {
                 if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
@@ -66,6 +66,12 @@ namespace HogarAncianos.Controller {
 
         private void Limpiar(object sender, EventArgs e) {
             frm_AgregarEmpleados.EstadoInicial();
+        }
+
+        private void AgregarEmpleado(object sender, EventArgs e) {
+            if (!frm_AgregarEmpleados.VerificarCampos()) {
+                db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado());
+            }
         }
 
     }

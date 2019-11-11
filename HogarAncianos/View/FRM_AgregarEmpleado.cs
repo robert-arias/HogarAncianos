@@ -1,5 +1,7 @@
 ﻿using HogarAncianos.Controller;
+using HogarAncianos.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HogarAncianos.View {
@@ -10,7 +12,6 @@ namespace HogarAncianos.View {
         public FRM_AgregarEmpleado() {
             InitializeComponent();
             agregarEmpleadosController = new AgregarEmpleadosController(this);
-            //int index = cbPuesto.FindString("Seleccionar");
             cbPuesto.Text = "Seleccionar";
         }
 
@@ -19,7 +20,7 @@ namespace HogarAncianos.View {
         }
 
         public void ShowMessage(string message) {
-            MessageBox.Show(message);
+            MessageBox.Show(message, "Advertencia");
         }
 
         public void ActivarCampos() {
@@ -72,6 +73,15 @@ namespace HogarAncianos.View {
             txtSalario.Text = "";
             txtFechaContratacion.Text = "";
 
+            lbNombre.ForeColor = Color.Black;
+            lbApellidos.ForeColor = Color.Black;
+            lbFechaNacimiento.ForeColor = Color.Black;
+            lbTelefono.ForeColor = Color.Black;
+            lbDireccion.ForeColor = Color.Black;
+            lbPuesto.ForeColor = Color.Black;
+            lbHorario.ForeColor = Color.Black;
+            lbSalario.ForeColor = Color.Black;
+
             do {
                 foreach (DataGridViewRow row in dgvCorreos.Rows) {
                     dgvCorreos.Rows.Remove(row);
@@ -97,5 +107,62 @@ namespace HogarAncianos.View {
                 return false;
             }
         }
+
+        public bool VerificarCampos() {
+            bool empty = false;
+
+            if(string.IsNullOrEmpty(txtNombre.Text)) {
+                empty = true;
+                lbNombre.ForeColor = Color.Red;
+            }
+
+            if (string.IsNullOrEmpty(txtApellidos.Text)) {
+                empty = true;
+                lbApellidos.ForeColor = Color.Red;
+            }
+
+            if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18) {
+                empty = true;
+                lbFechaNacimiento.ForeColor = Color.Red;
+            }
+
+            if (string.IsNullOrEmpty(txtTelefono.Text)) {
+                empty = true;
+                lbTelefono.ForeColor = Color.Red;
+            }
+
+            if (string.IsNullOrEmpty(txtDireccion.Text)) {
+                empty = true;
+                lbDireccion.ForeColor = Color.Red;
+            }
+            
+            if (cbPuesto.SelectedIndex == 0) {
+                empty = true;
+                lbPuesto.ForeColor = Color.Red;
+            }
+
+            if (string.IsNullOrEmpty(txtHorario.Text)) {
+                empty = true;
+                lbHorario.ForeColor = Color.Red;
+            }
+
+            if (string.IsNullOrEmpty(txtSalario.Text)) {
+                empty = true;
+                lbSalario.ForeColor = Color.Red;
+            }
+
+            if (empty) {
+                ShowMessage("Algunos campos se encuentran vacíos. \nLos campos con el asterisco (*)" +
+                    " rojo son aquellos que deben ser modificados.");
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public Empleado GetEmpleado() {
+            throw new NotImplementedException();
+        }
+
     }
 }

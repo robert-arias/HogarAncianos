@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
@@ -51,5 +52,8 @@ namespace HogarAncianos.Model {
             }
         }
 
+        public void AgregarEmpleado(Empleado empleado) {
+            throw new NotImplementedException();
+        }
     }
 }
