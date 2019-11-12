@@ -17,3 +17,5 @@ CREATE TABLE 'Correos_Empleados'
 'correo' TEXT,
 PRIMARY KEY(cedula, correo),
 FOREIGN KEY (cedula) REFERENCES Empleados(cedula));
+
+CREATE TABLE 'Medicamentos'();
