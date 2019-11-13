@@ -23,8 +23,8 @@ CREATE TABLE 'Medicamentos'(
 'nombre_medicamento' TEXT,
 'unidad_medida'TEXT,
 'categoria' TEXT,
-'cantidad_disponible' TEXT,
-'cantidad_prescrita' TEXT,
+'cantidad_disponible' INTEGER,
+'cantidad_prescrita' INTEGER,
  PRIMARY KEY (codigo_medicamento));
 
 CREATE TABLE 'Pacientes'
