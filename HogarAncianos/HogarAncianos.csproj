@@ -84,6 +84,7 @@
     <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FRM_AgregarEmpleado.cs">
