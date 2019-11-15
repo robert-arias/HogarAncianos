@@ -28,7 +28,7 @@ namespace HogarAncianos.Controller {
            // frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregar);
 
             //Pacientes 
-            frm_MenuPrincipal.mi_pacientes.Click += new EventHandler(OpenAgregarPaciente);
+            frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregar);
         }
