@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.lbCedula = new System.Windows.Forms.Label();
             this.lbDireccion = new System.Windows.Forms.Label();
             this.lbTelefono = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorreos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,6 +113,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información personal";
+            // 
+            // btnEliminarCorreo
+            // 
+            this.btnEliminarCorreo.Enabled = false;
+            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCorreo.Location = new System.Drawing.Point(466, 242);
+            this.btnEliminarCorreo.Name = "btnEliminarCorreo";
+            this.btnEliminarCorreo.Size = new System.Drawing.Size(82, 31);
+            this.btnEliminarCorreo.TabIndex = 31;
+            this.btnEliminarCorreo.Text = "Eliminar";
+            this.toolTip1.SetToolTip(this.btnEliminarCorreo, "Debe seleccionar el correo que desea eliminar.");
+            this.btnEliminarCorreo.UseVisualStyleBackColor = true;
             // 
             // lbCedula
             // 
@@ -591,18 +603,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnEliminarCorreo
-            // 
-            this.btnEliminarCorreo.Enabled = false;
-            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCorreo.Location = new System.Drawing.Point(466, 242);
-            this.btnEliminarCorreo.Name = "btnEliminarCorreo";
-            this.btnEliminarCorreo.Size = new System.Drawing.Size(82, 31);
-            this.btnEliminarCorreo.TabIndex = 31;
-            this.btnEliminarCorreo.Text = "Eliminar";
-            this.toolTip1.SetToolTip(this.btnEliminarCorreo, "Debe seleccionar el correo que desea eliminar.");
-            this.btnEliminarCorreo.UseVisualStyleBackColor = true;
-            // 
             // FRM_AgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,7 +616,7 @@
             this.MaximizeBox = false;
             this.Name = "FRM_AgregarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FRM_AgregarEmpleado";
+            this.Text = "Agregar empleados";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorreos)).EndInit();

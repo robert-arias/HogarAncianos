@@ -19,3 +19,4 @@ D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\Hog
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.xml
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources

@@ -94,6 +94,12 @@
     <Compile Include="View\FRM_AgregarEmpleado.Designer.cs">
       <DependentUpon>FRM_AgregarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_BuscarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
+      <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="View\FRM_AgregarEmpleado.resx">
       <DependentUpon>FRM_AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
+      <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_MenuPrincipal.resx">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
