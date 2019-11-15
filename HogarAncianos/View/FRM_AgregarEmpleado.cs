@@ -1,7 +1,9 @@
 ﻿using HogarAncianos.Controller;
 using HogarAncianos.Model;
 using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HogarAncianos.View {
@@ -16,6 +18,9 @@ namespace HogarAncianos.View {
         }
 
         public string GetCedula() {
+            //Quita símbolos y letras.
+            txtCedula.Text = new string(txtCedula.Text.Where(x => char.IsWhiteSpace(x)
+                                                                    || char.IsDigit(x)).ToArray());
             return txtCedula.Text;
         }
 
@@ -126,49 +131,55 @@ namespace HogarAncianos.View {
         }
 
         public bool VerificarCampos() {
-            bool empty = false;
+            try {
+                bool empty = false;
 
-            if(string.IsNullOrEmpty(txtNombre.Text)) {
-                empty = true;
-                lbNombre.ForeColor = Color.Red;
-            }
+                if (string.IsNullOrEmpty(txtNombre.Text)) {
+                    empty = true;
+                    lbNombre.ForeColor = Color.Red;
+                }
 
-            if (string.IsNullOrEmpty(txtApellidos.Text)) {
-                empty = true;
-                lbApellidos.ForeColor = Color.Red;
-            }
+                if (string.IsNullOrEmpty(txtApellidos.Text)) {
+                    empty = true;
+                    lbApellidos.ForeColor = Color.Red;
+                }
 
-            if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18) {
-                empty = true;
-                lbFechaNacimiento.ForeColor = Color.Red;
-            }
+                if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18) {
+                    empty = true;
+                    lbFechaNacimiento.ForeColor = Color.Red;
+                }
 
-            if (string.IsNullOrEmpty(txtTelefono.Text)) {
-                empty = true;
-                lbTelefono.ForeColor = Color.Red;
-            }
+                if (string.IsNullOrEmpty(txtTelefono.Text)) {
+                    empty = true;
+                    lbTelefono.ForeColor = Color.Red;
+                }
 
-            if (string.IsNullOrEmpty(txtDireccion.Text)) {
-                empty = true;
-                lbDireccion.ForeColor = Color.Red;
-            }
-            
-            if (cbPuesto.SelectedIndex == 0) {
-                empty = true;
-                lbPuesto.ForeColor = Color.Red;
-            }
+                if (string.IsNullOrEmpty(txtDireccion.Text)) {
+                    empty = true;
+                    lbDireccion.ForeColor = Color.Red;
+                }
 
-            if (string.IsNullOrEmpty(txtHorario.Text)) {
-                empty = true;
-                lbHorario.ForeColor = Color.Red;
-            }
+                if (cbPuesto.SelectedIndex == 0) {
+                    empty = true;
+                    lbPuesto.ForeColor = Color.Red;
+                }
 
-            if (string.IsNullOrEmpty(txtSalario.Text)) {
-                empty = true;
+                if (string.IsNullOrEmpty(txtHorario.Text)) {
+                    empty = true;
+                    lbHorario.ForeColor = Color.Red;
+                }
+
+                if (string.IsNullOrEmpty(txtSalario.Text)) {
+                    empty = true;
+                    lbSalario.ForeColor = Color.Red;
+                } Convert.ToDouble(txtSalario.Text);
+
+                return empty;
+            } catch (FormatException e) {
                 lbSalario.ForeColor = Color.Red;
+                Debug.WriteLine(e.ToString());
+                return true;
             }
-
-            return empty;
         }
 
         public Empleado GetEmpleado() {

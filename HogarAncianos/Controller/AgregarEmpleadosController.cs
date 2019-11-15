@@ -49,7 +49,8 @@ namespace HogarAncianos.Controller {
                             "registros.");
                 }
                 else
-                    frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+                    frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                        " menos de 9 dígitos.");
                 e.SuppressKeyPress = true; //remove ding windows sound.
             }
         }
