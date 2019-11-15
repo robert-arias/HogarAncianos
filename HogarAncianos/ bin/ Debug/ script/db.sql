@@ -35,3 +35,9 @@ CREATE TABLE 'Pacientes'
  'edad' INTEGER,
  'sexo' TEXT,
 PRIMARY KEY(cedula));
+
+CREATE TABLE "Usuarios" (
+	'usuario'	TEXT,
+	'contrasenia'	TEXT,
+	'rol'	TEXT,
+	PRIMARY KEY("usuario"));
