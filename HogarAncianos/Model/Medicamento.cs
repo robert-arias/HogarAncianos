@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HogarAncianos.Model
 {
-    class Medicamento
+   public  class Medicamento
     {
         public string codigoMedicamento { get; set; }
         public string nombreMedicamento { get; set; }
@@ -15,6 +15,16 @@ namespace HogarAncianos.Model
         public int catidadDisponible { get; set; }
         public int cantidadPrescrita { get; set; }
 
+
+        public Medicamento(string codigoMedicamento, string nombreMedicamento, string unidadMedida, string categoria,int cantidadDisponible,int cantidadPrescrita)
+        {
+            this.codigoMedicamento = codigoMedicamento;
+            this.nombreMedicamento = nombreMedicamento;
+            this.unidadMedida = unidadMedida;
+            this.categoria = categoria;
+            this.catidadDisponible = cantidadDisponible;
+            this.cantidadPrescrita = cantidadPrescrita;
+        }
 
     }
 }
