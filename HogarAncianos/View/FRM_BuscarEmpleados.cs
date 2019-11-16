@@ -52,18 +52,62 @@ namespace HogarAncianos.View {
             }
         }
 
-        public void NuevosCamposResultados() {
-            if (cbTelefono.Checked) {
-                DataGridViewColumn telefono = new DataGridViewColumn();
-                dgvResultados.Columns.Add(telefono);
-                telefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                telefono.HeaderText = "Número de teléfono";
-                telefono.MinimumWidth = 147;
-                telefono.Name = "Telefono";
-                telefono.ReadOnly = true;
+        public void NuevosCamposResultados(object sender) {
+            if (sender == cbTelefono) {
+                if (cbTelefono.Checked) {
+                    DataGridViewColumn telefono = new DataGridViewColumn();
+                    dgvResultados.Columns.Add(telefono);
+                    telefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    telefono.HeaderText = "Número de teléfono";
+                    telefono.MinimumWidth = 147;
+                    telefono.Name = "Telefono";
+                    telefono.ReadOnly = true;
+                }
+                else
+                    dgvResultados.Columns.Remove("Telefono");
             }
-            else
-                dgvResultados.Columns.Remove("Telefono");
+
+            if (sender == cbDireccion) {
+                if (cbDireccion.Checked) {
+                    DataGridViewColumn direccion = new DataGridViewColumn();
+                    dgvResultados.Columns.Add(direccion);
+                    direccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    direccion.HeaderText = "Dirección";
+                    direccion.MinimumWidth = 147;
+                    direccion.Name = "Direccion";
+                    direccion.ReadOnly = true;
+                }
+                else
+                    dgvResultados.Columns.Remove("Direccion");
+            }
+
+            if (sender == cbSalario) {
+                if (cbSalario.Checked) {
+                    DataGridViewColumn salario = new DataGridViewColumn();
+                    dgvResultados.Columns.Add(salario);
+                    salario.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    salario.HeaderText = "Salario";
+                    salario.MinimumWidth = 147;
+                    salario.Name = "Salario";
+                    salario.ReadOnly = true;
+                }
+                else
+                    dgvResultados.Columns.Remove("Salario");
+            }
+
+            if (sender == cbFechaContratacion) {
+                if (cbFechaContratacion.Checked) {
+                    DataGridViewColumn fechaContratacion = new DataGridViewColumn();
+                    dgvResultados.Columns.Add(fechaContratacion);
+                    fechaContratacion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    fechaContratacion.HeaderText = "Fecha de contratación";
+                    fechaContratacion.MinimumWidth = 147;
+                    fechaContratacion.Name = "FechaContratacion";
+                    fechaContratacion.ReadOnly = true;
+                }
+                else
+                    dgvResultados.Columns.Remove("FechaContratacion");
+            }
         }
 
         public void ActivarBuscarPor() {

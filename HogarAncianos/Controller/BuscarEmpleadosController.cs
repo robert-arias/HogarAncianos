@@ -20,6 +20,9 @@ namespace HogarAncianos.Controller {
             frm_BuscarEmpleados.cbPuestoTrabajo.CheckedChanged += new EventHandler(CambiarEstadoDDLs);
             frm_BuscarEmpleados.cbEstadoLaboral.CheckedChanged += new EventHandler(CambiarEstadoDDLs);
             frm_BuscarEmpleados.cbTelefono.CheckedChanged += new EventHandler(NuevoCamposResultados);
+            frm_BuscarEmpleados.cbDireccion.CheckedChanged += new EventHandler(NuevoCamposResultados);
+            frm_BuscarEmpleados.cbSalario.CheckedChanged += new EventHandler(NuevoCamposResultados);
+            frm_BuscarEmpleados.cbFechaContratacion.CheckedChanged += new EventHandler(NuevoCamposResultados);
         }
 
         private void BuscarPorCedula(object sender, EventArgs e) {
@@ -35,7 +38,7 @@ namespace HogarAncianos.Controller {
         }
 
         private void NuevoCamposResultados(object sender, EventArgs e) {
-            frm_BuscarEmpleados.NuevosCamposResultados();
+            frm_BuscarEmpleados.NuevosCamposResultados(sender);
         }
 
     }
