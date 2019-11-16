@@ -41,3 +41,6 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.pdb
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPaciente.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources

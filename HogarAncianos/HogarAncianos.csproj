@@ -108,6 +108,12 @@
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_BuscarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
+      <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarPaciente.resx">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
+      <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_MenuPrincipal.resx">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
