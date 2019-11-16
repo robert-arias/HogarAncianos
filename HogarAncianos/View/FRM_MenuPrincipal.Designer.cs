@@ -89,25 +89,25 @@
             // mi_EmpleadosAgregar
             // 
             this.mi_EmpleadosAgregar.Name = "mi_EmpleadosAgregar";
-            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosAgregar.Text = "Agregar";
             // 
             // mi_EmpleadosModificar
             // 
             this.mi_EmpleadosModificar.Name = "mi_EmpleadosModificar";
-            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosModificar.Text = "Modificar";
             // 
             // mi_EmpleadosBuscar
             // 
             this.mi_EmpleadosBuscar.Name = "mi_EmpleadosBuscar";
-            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosBuscar.Text = "Buscar";
             // 
             // mi_EmpleadosReporte
             // 
             this.mi_EmpleadosReporte.Name = "mi_EmpleadosReporte";
-            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosReporte.Text = "Reporte";
             // 
             // mi_pacientes
@@ -317,7 +317,7 @@
             this.MaximizeBox = false;
             this.Name = "FRM_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Principal";
+            this.Text = "Menu";
             this.ms_Menu.ResumeLayout(false);
             this.ms_Menu.PerformLayout();
             this.ResumeLayout(false);
