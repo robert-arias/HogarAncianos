@@ -27,24 +27,24 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.cbEstadoLaboral = new System.Windows.Forms.ComboBox();
+            this.cbEstadoLaboral = new System.Windows.Forms.CheckBox();
+            this.ddlEstadoLaboral = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbPuestoTrabajo = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbPuesto = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ddlPuesto = new System.Windows.Forms.ComboBox();
+            this.dtpFechaContratacion = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbApellidos = new System.Windows.Forms.RadioButton();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbCedula = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cbSalario = new System.Windows.Forms.CheckBox();
+            this.cbFechaContratacion = new System.Windows.Forms.CheckBox();
+            this.cbDireccion = new System.Windows.Forms.CheckBox();
+            this.cbCorreo = new System.Windows.Forms.CheckBox();
+            this.cbTelefono = new System.Windows.Forms.CheckBox();
+            this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,17 +52,17 @@
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 58);
+            this.label1.Location = new System.Drawing.Point(81, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
@@ -72,34 +72,34 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(190, 55);
+            this.txtBuscar.Location = new System.Drawing.Point(178, 55);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(493, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(499, 27);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(690, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(684, 55);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(114, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(116, 27);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.cbEstadoLaboral);
+            this.groupBox1.Controls.Add(this.ddlEstadoLaboral);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.cbPuestoTrabajo);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbPuesto);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.ddlPuesto);
+            this.groupBox1.Controls.Add(this.dtpFechaContratacion);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbApellidos);
+            this.groupBox1.Controls.Add(this.rbNombre);
+            this.groupBox1.Controls.Add(this.rbCedula);
             this.groupBox1.Location = new System.Drawing.Point(85, 114);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(409, 219);
@@ -107,27 +107,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(195, 177);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // cbEstadoLaboral
             // 
-            this.cbEstadoLaboral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstadoLaboral.FormattingEnabled = true;
-            this.cbEstadoLaboral.Items.AddRange(new object[] {
-            "Ninguno",
+            this.cbEstadoLaboral.AutoSize = true;
+            this.cbEstadoLaboral.Enabled = false;
+            this.cbEstadoLaboral.Location = new System.Drawing.Point(195, 177);
+            this.cbEstadoLaboral.Name = "cbEstadoLaboral";
+            this.cbEstadoLaboral.Size = new System.Drawing.Size(18, 17);
+            this.cbEstadoLaboral.TabIndex = 10;
+            this.cbEstadoLaboral.UseVisualStyleBackColor = true;
+            // 
+            // ddlEstadoLaboral
+            // 
+            this.ddlEstadoLaboral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlEstadoLaboral.Enabled = false;
+            this.ddlEstadoLaboral.FormattingEnabled = true;
+            this.ddlEstadoLaboral.Items.AddRange(new object[] {
+            "Seleccionar",
             "Activo",
             "Inactivo"});
-            this.cbEstadoLaboral.Location = new System.Drawing.Point(219, 171);
-            this.cbEstadoLaboral.Name = "cbEstadoLaboral";
-            this.cbEstadoLaboral.Size = new System.Drawing.Size(175, 28);
-            this.cbEstadoLaboral.TabIndex = 9;
+            this.ddlEstadoLaboral.Location = new System.Drawing.Point(219, 171);
+            this.ddlEstadoLaboral.Name = "ddlEstadoLaboral";
+            this.ddlEstadoLaboral.Size = new System.Drawing.Size(175, 28);
+            this.ddlEstadoLaboral.TabIndex = 9;
             // 
             // label4
             // 
@@ -141,14 +143,15 @@
             this.label4.Text = "Estado laboral:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // checkBox1
+            // cbPuestoTrabajo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(195, 128);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbPuestoTrabajo.AutoSize = true;
+            this.cbPuestoTrabajo.Enabled = false;
+            this.cbPuestoTrabajo.Location = new System.Drawing.Point(195, 128);
+            this.cbPuestoTrabajo.Name = "cbPuestoTrabajo";
+            this.cbPuestoTrabajo.Size = new System.Drawing.Size(18, 17);
+            this.cbPuestoTrabajo.TabIndex = 7;
+            this.cbPuestoTrabajo.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -162,12 +165,13 @@
             this.label3.Text = "Puesto de trabajo:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // cbPuesto
+            // ddlPuesto
             // 
-            this.cbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPuesto.FormattingEnabled = true;
-            this.cbPuesto.Items.AddRange(new object[] {
-            "Ninguno",
+            this.ddlPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlPuesto.Enabled = false;
+            this.ddlPuesto.FormattingEnabled = true;
+            this.ddlPuesto.Items.AddRange(new object[] {
+            "Seleccionar",
             "Administradora",
             "Administrativo",
             "Asistente",
@@ -181,19 +185,21 @@
             "Psicóloga",
             "Terapeuta",
             "Trabajadora social"});
-            this.cbPuesto.Location = new System.Drawing.Point(219, 122);
-            this.cbPuesto.Name = "cbPuesto";
-            this.cbPuesto.Size = new System.Drawing.Size(175, 28);
-            this.cbPuesto.TabIndex = 5;
+            this.ddlPuesto.Location = new System.Drawing.Point(219, 122);
+            this.ddlPuesto.Name = "ddlPuesto";
+            this.ddlPuesto.Size = new System.Drawing.Size(175, 28);
+            this.ddlPuesto.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtpFechaContratacion
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 77);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpFechaContratacion.Checked = false;
+            this.dtpFechaContratacion.Enabled = false;
+            this.dtpFechaContratacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaContratacion.Location = new System.Drawing.Point(195, 77);
+            this.dtpFechaContratacion.Name = "dtpFechaContratacion";
+            this.dtpFechaContratacion.ShowCheckBox = true;
+            this.dtpFechaContratacion.Size = new System.Drawing.Size(200, 27);
+            this.dtpFechaContratacion.TabIndex = 4;
             // 
             // label2
             // 
@@ -207,46 +213,45 @@
             this.label2.Text = "Fecha de contratación:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // radioButton3
+            // rbApellidos
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(297, 27);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(98, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Apellidos";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbApellidos.AutoSize = true;
+            this.rbApellidos.Location = new System.Drawing.Point(297, 27);
+            this.rbApellidos.Name = "rbApellidos";
+            this.rbApellidos.Size = new System.Drawing.Size(98, 24);
+            this.rbApellidos.TabIndex = 2;
+            this.rbApellidos.Text = "Apellidos";
+            this.rbApellidos.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbNombre
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(179, 27);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nombre";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(179, 27);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(89, 24);
+            this.rbNombre.TabIndex = 1;
+            this.rbNombre.Text = "Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbCedula
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 27);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(166, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Número de cédula";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbCedula.AutoSize = true;
+            this.rbCedula.Checked = true;
+            this.rbCedula.Location = new System.Drawing.Point(7, 27);
+            this.rbCedula.Name = "rbCedula";
+            this.rbCedula.Size = new System.Drawing.Size(166, 24);
+            this.rbCedula.TabIndex = 0;
+            this.rbCedula.TabStop = true;
+            this.rbCedula.Text = "Número de cédula";
+            this.rbCedula.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.cbSalario);
+            this.groupBox2.Controls.Add(this.cbFechaContratacion);
+            this.groupBox2.Controls.Add(this.cbDireccion);
+            this.groupBox2.Controls.Add(this.cbCorreo);
+            this.groupBox2.Controls.Add(this.cbTelefono);
             this.groupBox2.Location = new System.Drawing.Point(513, 114);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(409, 219);
@@ -254,76 +259,76 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos extra";
             // 
-            // checkBox3
+            // cbSalario
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(12, 28);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(167, 24);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Número telefónico";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbSalario.AutoSize = true;
+            this.cbSalario.Location = new System.Drawing.Point(12, 124);
+            this.cbSalario.Name = "cbSalario";
+            this.cbSalario.Size = new System.Drawing.Size(83, 24);
+            this.cbSalario.TabIndex = 5;
+            this.cbSalario.Text = "Salario";
+            this.cbSalario.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cbFechaContratacion
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(206, 27);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(169, 24);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Correo electrónico";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbFechaContratacion.AutoSize = true;
+            this.cbFechaContratacion.Location = new System.Drawing.Point(207, 76);
+            this.cbFechaContratacion.Name = "cbFechaContratacion";
+            this.cbFechaContratacion.Size = new System.Drawing.Size(197, 24);
+            this.cbFechaContratacion.TabIndex = 3;
+            this.cbFechaContratacion.Text = "Fecha de contratación";
+            this.cbFechaContratacion.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cbDireccion
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(12, 76);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(103, 24);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "Dirección";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbDireccion.AutoSize = true;
+            this.cbDireccion.Location = new System.Drawing.Point(12, 76);
+            this.cbDireccion.Name = "cbDireccion";
+            this.cbDireccion.Size = new System.Drawing.Size(103, 24);
+            this.cbDireccion.TabIndex = 2;
+            this.cbDireccion.Text = "Dirección";
+            this.cbDireccion.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // cbCorreo
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(207, 76);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(197, 24);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "Fecha de contratación";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.cbCorreo.AutoSize = true;
+            this.cbCorreo.Location = new System.Drawing.Point(206, 27);
+            this.cbCorreo.Name = "cbCorreo";
+            this.cbCorreo.Size = new System.Drawing.Size(169, 24);
+            this.cbCorreo.TabIndex = 1;
+            this.cbCorreo.Text = "Correo electrónico";
+            this.cbCorreo.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // cbTelefono
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(12, 124);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(83, 24);
-            this.checkBox7.TabIndex = 5;
-            this.checkBox7.Text = "Salario";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.cbTelefono.AutoSize = true;
+            this.cbTelefono.Location = new System.Drawing.Point(12, 28);
+            this.cbTelefono.Name = "cbTelefono";
+            this.cbTelefono.Size = new System.Drawing.Size(167, 24);
+            this.cbTelefono.TabIndex = 0;
+            this.cbTelefono.Text = "Número telefónico";
+            this.cbTelefono.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvResultados
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvResultados.AllowUserToAddRows = false;
+            this.dgvResultados.AllowUserToDeleteRows = false;
+            this.dgvResultados.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cedula,
             this.nombre,
             this.Apellidos,
             this.PuestoTrabajo,
             this.Horario,
             this.EstadoLaboral});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 348);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(910, 227);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvResultados.Location = new System.Drawing.Point(43, 348);
+            this.dgvResultados.Name = "dgvResultados";
+            this.dgvResultados.ReadOnly = true;
+            this.dgvResultados.RowTemplate.Height = 24;
+            this.dgvResultados.ShowEditingIcon = false;
+            this.dgvResultados.Size = new System.Drawing.Size(910, 227);
+            this.dgvResultados.TabIndex = 5;
             // 
             // Cedula
             // 
@@ -383,23 +388,23 @@
             this.button1.Text = "Realizar reporte de resultados";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(805, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 27);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(806, 55);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FRM_BuscarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 624);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBuscar);
@@ -414,7 +419,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,23 +432,12 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbPuesto;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ComboBox cbEstadoLaboral;
+        private System.Windows.Forms.ComboBox ddlPuesto;
+        private System.Windows.Forms.ComboBox ddlEstadoLaboral;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResultados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
@@ -451,6 +445,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoLaboral;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.RadioButton rbApellidos;
+        public System.Windows.Forms.RadioButton rbNombre;
+        public System.Windows.Forms.RadioButton rbCedula;
+        public System.Windows.Forms.DateTimePicker dtpFechaContratacion;
+        public System.Windows.Forms.CheckBox cbEstadoLaboral;
+        public System.Windows.Forms.CheckBox cbPuestoTrabajo;
+        public System.Windows.Forms.CheckBox cbSalario;
+        public System.Windows.Forms.CheckBox cbFechaContratacion;
+        public System.Windows.Forms.CheckBox cbDireccion;
+        public System.Windows.Forms.CheckBox cbCorreo;
+        public System.Windows.Forms.CheckBox cbTelefono;
     }
 }

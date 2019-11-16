@@ -83,6 +83,7 @@
     <Compile Include="Controller\AgregarEmpleadosController.cs" />
     <Compile Include="Controller\AgregarMedicamentoController.cs" />
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
+    <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />

@@ -30,6 +30,7 @@
             this.mi_EmpleadosModificar = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_EmpleadosBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_EmpleadosReporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosDeLimpiezaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_pacientes = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_pacientesAgregar = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_pacientesModificar = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +43,12 @@
             this.mi_MedicamentosBuscar = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_MedicamentosReporte = new System.Windows.Forms.ToolStripMenuItem();
             this.prescripcionDeMedicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosDeLimpiezaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +71,8 @@
             this.usuariosToolStripMenuItem});
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
-            this.ms_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.ms_Menu.Size = new System.Drawing.Size(648, 24);
+            this.ms_Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.ms_Menu.Size = new System.Drawing.Size(992, 28);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -83,7 +83,7 @@
             this.mi_EmpleadosBuscar,
             this.mi_EmpleadosReporte});
             this.mi_Empleados.Name = "mi_Empleados";
-            this.mi_Empleados.Size = new System.Drawing.Size(77, 20);
+            this.mi_Empleados.Size = new System.Drawing.Size(95, 24);
             this.mi_Empleados.Text = "Empleados";
             // 
             // mi_EmpleadosAgregar
@@ -110,6 +110,12 @@
             this.mi_EmpleadosReporte.Size = new System.Drawing.Size(148, 26);
             this.mi_EmpleadosReporte.Text = "Reporte";
             // 
+            // productosDeLimpiezaToolStripMenuItem
+            // 
+            this.productosDeLimpiezaToolStripMenuItem.Name = "productosDeLimpiezaToolStripMenuItem";
+            this.productosDeLimpiezaToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.productosDeLimpiezaToolStripMenuItem.Text = "Productos de Limpieza";
+            // 
             // mi_pacientes
             // 
             this.mi_pacientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -118,31 +124,31 @@
             this.mi_pacientesBuscar,
             this.mi_pacientesReporte});
             this.mi_pacientes.Name = "mi_pacientes";
-            this.mi_pacientes.Size = new System.Drawing.Size(69, 20);
+            this.mi_pacientes.Size = new System.Drawing.Size(82, 24);
             this.mi_pacientes.Text = "Pacientes";
             // 
             // mi_pacientesAgregar
             // 
             this.mi_pacientesAgregar.Name = "mi_pacientesAgregar";
-            this.mi_pacientesAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesAgregar.Text = "Agregar";
             // 
             // mi_pacientesModificar
             // 
             this.mi_pacientesModificar.Name = "mi_pacientesModificar";
-            this.mi_pacientesModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesModificar.Text = "Modificar";
             // 
             // mi_pacientesBuscar
             // 
             this.mi_pacientesBuscar.Name = "mi_pacientesBuscar";
-            this.mi_pacientesBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesBuscar.Text = "Buscar";
             // 
             // mi_pacientesReporte
             // 
             this.mi_pacientesReporte.Name = "mi_pacientesReporte";
-            this.mi_pacientesReporte.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesReporte.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesReporte.Text = "Reporte";
             // 
             // mi_Medicamentos
@@ -154,37 +160,37 @@
             this.mi_MedicamentosBuscar,
             this.mi_MedicamentosReporte});
             this.mi_Medicamentos.Name = "mi_Medicamentos";
-            this.mi_Medicamentos.Size = new System.Drawing.Size(98, 20);
+            this.mi_Medicamentos.Size = new System.Drawing.Size(119, 24);
             this.mi_Medicamentos.Text = "Medicamentos";
             // 
             // mi_MedicamentosAgregar
             // 
             this.mi_MedicamentosAgregar.Name = "mi_MedicamentosAgregar";
-            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosAgregar.Text = "Agregar";
             // 
             // mi_MedicamentosModificar
             // 
             this.mi_MedicamentosModificar.Name = "mi_MedicamentosModificar";
-            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosModificar.Text = "Modificar";
             // 
             // mi_MedicamentosEliminar
             // 
             this.mi_MedicamentosEliminar.Name = "mi_MedicamentosEliminar";
-            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosEliminar.Text = "Eliminar";
             // 
             // mi_MedicamentosBuscar
             // 
             this.mi_MedicamentosBuscar.Name = "mi_MedicamentosBuscar";
-            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosBuscar.Text = "Buscar";
             // 
             // mi_MedicamentosReporte
             // 
             this.mi_MedicamentosReporte.Name = "mi_MedicamentosReporte";
-            this.mi_MedicamentosReporte.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosReporte.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosReporte.Text = "Reporte";
             // 
             // prescripcionDeMedicamentosToolStripMenuItem
@@ -196,8 +202,38 @@
             this.buscarToolStripMenuItem,
             this.reporteToolStripMenuItem});
             this.prescripcionDeMedicamentosToolStripMenuItem.Name = "prescripcionDeMedicamentosToolStripMenuItem";
-            this.prescripcionDeMedicamentosToolStripMenuItem.Size = new System.Drawing.Size(182, 20);
-            this.prescripcionDeMedicamentosToolStripMenuItem.Text = "Prescripcion de Medicamentos";
+            this.prescripcionDeMedicamentosToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.prescripcionDeMedicamentosToolStripMenuItem.Text = "Prescripción de Medicamentos";
+            // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.agregarToolStripMenuItem.Text = "Agregar";
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // buscarToolStripMenuItem
+            // 
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.buscarToolStripMenuItem.Text = "Buscar";
+            // 
+            // reporteToolStripMenuItem
+            // 
+            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // usuariosToolStripMenuItem
             // 
@@ -207,105 +243,72 @@
             this.eliminarToolStripMenuItem1,
             this.buscarToolStripMenuItem1});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // productosDeLimpiezaToolStripMenuItem
-            // 
-            this.productosDeLimpiezaToolStripMenuItem.Name = "productosDeLimpiezaToolStripMenuItem";
-            this.productosDeLimpiezaToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
-            this.productosDeLimpiezaToolStripMenuItem.Text = "Productos de Limpieza";
-            // 
-            // agregarToolStripMenuItem
-            // 
-            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarToolStripMenuItem.Text = "Agregar";
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // buscarToolStripMenuItem
-            // 
-            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.buscarToolStripMenuItem.Text = "Buscar";
-            // 
-            // reporteToolStripMenuItem
-            // 
-            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(148, 26);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(148, 26);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(148, 26);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // buscarToolStripMenuItem1
             // 
             this.buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
-            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(148, 26);
             this.buscarToolStripMenuItem1.Text = "Buscar";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 88);
+            this.label1.Font = new System.Drawing.Font("Georgia", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(328, 197);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 42);
+            this.label1.Size = new System.Drawing.Size(343, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "MULTICARE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(229, 144);
+            this.label2.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(374, 266);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 18);
+            this.label2.Size = new System.Drawing.Size(219, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "HOGAR DE ANCIACIOS";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(161, 171);
+            this.label3.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(284, 299);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 18);
+            this.label3.Size = new System.Drawing.Size(395, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "FRAY CASIANO DE MADRID DE MIRAMAR";
             // 
             // FRM_MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(648, 407);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(992, 624);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -313,7 +316,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ms_Menu;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FRM_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
