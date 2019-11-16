@@ -125,7 +125,7 @@ namespace HogarAncianos.View {
                     dgvCorreos.Refresh(); // if needed
                 }
             }
-            catch (NullReferenceException ex) {
+            catch (NullReferenceException ) {
                 ShowMessage("Debe seleccionar el correo a eliminar.");
             }
         }
@@ -196,5 +196,6 @@ namespace HogarAncianos.View {
                 txtHorario.Text, Convert.ToDouble(txtSalario.Text), txtFechaContratacion.Text, "A");
         }
 
+       
     }
 }

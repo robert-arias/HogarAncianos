@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HogarAncianos.Model
 {
-    class Paciente
+   public class Paciente
     {
         public string cedula { get; set; }
         public string nombre { get; set; }
@@ -14,5 +14,17 @@ namespace HogarAncianos.Model
         public string fechaNacimiento { get; set; }
         public int edad { get; set; }
         public string sexo { get; set; }
+
+        public Paciente(string cedula, string nombre, string apellidos, string fechaNacimiento, int edad, string sexo)
+        {
+            this.cedula = cedula;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.fechaNacimiento = fechaNacimiento;
+            this.edad = edad;
+            this.sexo = sexo;
+        }
     }
+
+  
 }
