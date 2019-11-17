@@ -45,14 +45,15 @@
             this.cbCorreo = new System.Windows.Forms.CheckBox();
             this.cbTelefono = new System.Windows.Forms.CheckBox();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PuestoTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
@@ -319,6 +320,7 @@
             this.Cedula,
             this.nombre,
             this.Apellidos,
+            this.FechaNacimiento,
             this.PuestoTrabajo,
             this.Horario,
             this.EstadoLaboral});
@@ -329,6 +331,24 @@
             this.dgvResultados.ShowEditingIcon = false;
             this.dgvResultados.Size = new System.Drawing.Size(910, 227);
             this.dgvResultados.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(697, 581);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(256, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Realizar reporte de resultados";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(806, 55);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // Cedula
             // 
@@ -354,6 +374,14 @@
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
             // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.HeaderText = "Fecha de nacimiento";
+            this.FechaNacimiento.MinimumWidth = 147;
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Width = 147;
+            // 
             // PuestoTrabajo
             // 
             this.PuestoTrabajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -378,24 +406,6 @@
             this.EstadoLaboral.Name = "EstadoLaboral";
             this.EstadoLaboral.ReadOnly = true;
             this.EstadoLaboral.Width = 147;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(697, 581);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Realizar reporte de resultados";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(806, 55);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FRM_BuscarEmpleados
             // 
@@ -429,7 +439,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -438,14 +447,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvResultados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PuestoTrabajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoLaboral;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.RadioButton rbApellidos;
         public System.Windows.Forms.RadioButton rbNombre;
         public System.Windows.Forms.RadioButton rbCedula;
@@ -457,5 +459,14 @@
         public System.Windows.Forms.CheckBox cbDireccion;
         public System.Windows.Forms.CheckBox cbCorreo;
         public System.Windows.Forms.CheckBox cbTelefono;
+        public System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PuestoTrabajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoLaboral;
     }
 }

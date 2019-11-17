@@ -59,7 +59,6 @@ namespace HogarAncianos.Model {
                     $"'{empleado.Apellidos}', '{empleado.FechaNacimiento}', '{empleado.Telefono}', " +
                     $"'{empleado.Direccion}', '{empleado.PuestoTrabajo}', '{empleado.HorarioTrabajo}', " +
                     $"{empleado.Salario}, '{empleado.FechaContratacion}', 'A')";
-                Console.WriteLine(insert);
                 SQLiteCommand command = new SQLiteCommand(insert, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -76,6 +75,24 @@ namespace HogarAncianos.Model {
                 connection.Close();
                 Debug.WriteLine(e.ToString());
                 return false;
+            }
+        }
+
+        public DataSet GetBusquedaEmpleados(string busqueda) {
+            try {
+                string query = $"select *  from empleados where cedula = '{busqueda}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                dataSQLite.Fill(dataSet);
+                connection.Close();
+
+                return dataSet;
+            } catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
             }
         }
 

@@ -55,6 +55,7 @@ namespace HogarAncianos.Controller {
 
         private void CerrarBuscarEmpleados(object sender, EventArgs e) {
             frm_BuscarEmpleados.Close();
+            frm_BuscarEmpleados.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 

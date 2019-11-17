@@ -1,16 +1,22 @@
 ﻿using HogarAncianos.Controller;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HogarAncianos.View {
     public partial class FRM_BuscarEmpleados : Form {
 
         private BuscarEmpleadosController controller;
+        private DataSet cacheBusqueda;
+        private DataSet cacheCorreos;
 
         public FRM_BuscarEmpleados() {
             InitializeComponent();
+            cacheBusqueda = null;
+            cacheCorreos = null;
             ddlPuesto.Text = "Seleccionar";
             ddlEstadoLaboral.Text = "Seleccionar";
+            dgvResultados.AllowUserToResizeColumns = true;
             controller = new BuscarEmpleadosController(this);
         }
 
@@ -108,6 +114,24 @@ namespace HogarAncianos.View {
                 else
                     dgvResultados.Columns.Remove("FechaContratacion");
             }
+
+            if (sender == cbCorreo) {
+                if (cbCorreo.Checked) {
+                    DataGridViewComboBoxColumn correos = new DataGridViewComboBoxColumn();
+                    dgvResultados.Columns.Add(correos);
+                    correos.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    correos.HeaderText = "Correos";
+                    correos.MinimumWidth = 147;
+                    correos.Name = "Correos";
+                    correos.ReadOnly = true;
+                }
+                else
+                    dgvResultados.Columns.Remove("Correos");
+            }
+        }
+
+        public void ShowMessage(string message) {
+            MessageBox.Show(message, "Advertencia");
         }
 
         public void ActivarBuscarPor() {
@@ -115,5 +139,49 @@ namespace HogarAncianos.View {
             cbPuestoTrabajo.Enabled = true;
             cbEstadoLaboral.Enabled = true;
         }
+
+        public void EstadoInicial() {
+            txtBuscar.Text = "";
+            rbCedula.Checked = true;
+            DesactivarBuscarPor();
+            cbTelefono.Checked = false;
+            cbDireccion.Checked = false;
+            cbSalario.Checked = false;
+            cbCorreo.Checked = false;
+            cbFechaContratacion.Checked = false;
+            do {
+                foreach (DataGridViewRow row in dgvResultados.Rows) {
+                    dgvResultados.Rows.Remove(row);
+                }
+            } while (dgvResultados.Rows.Count >= 1);
+            if (dgvResultados.Columns.Contains("Telefono"))
+                dgvResultados.Columns.Remove("Telefono");
+            if (dgvResultados.Columns.Contains("Direccion"))
+                dgvResultados.Columns.Remove("Direccion");
+            if (dgvResultados.Columns.Contains("Salario"))
+                dgvResultados.Columns.Remove("Salario");
+            if (dgvResultados.Columns.Contains("FechaContratacion"))
+                dgvResultados.Columns.Remove("FechaContratacion");
+            if (dgvResultados.Columns.Contains("Correos"))
+                dgvResultados.Columns.Remove("Correos");
+        }
+
+        public void RealizarBusqueda(DataSet resultados) {
+            cacheBusqueda = resultados;
+            int i = dgvResultados.Rows.Add();
+            DataGridViewRow row = dgvResultados.Rows[i];
+            row.Cells["Cedula"].Value = resultados.Tables[0].Rows[0][0].ToString();
+            row.Cells["Nombre"].Value = resultados.Tables[0].Rows[0][1].ToString();
+            row.Cells["Apellidos"].Value = resultados.Tables[0].Rows[0][2].ToString();
+            row.Cells["FechaNacimiento"].Value = resultados.Tables[0].Rows[0][3].ToString();
+            row.Cells["PuestoTrabajo"].Value = resultados.Tables[0].Rows[0][6].ToString();
+            row.Cells["Horario"].Value = resultados.Tables[0].Rows[0][7].ToString();
+            row.Cells["EstadoLaboral"].Value = resultados.Tables[0].Rows[0][10].ToString();
+        }
+
+        public string GetBusqueda() {
+            return txtBuscar.Text;
+        }
+
     }
 }
