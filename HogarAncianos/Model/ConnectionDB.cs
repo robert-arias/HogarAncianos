@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
@@ -30,6 +31,203 @@ namespace HogarAncianos.Model {
             }
         }
 
+        //***********************************************************METODOS PACIENTES ****************************************************************************//
+        public bool ExisteCedulaPaciente(string cedula)
+        {
+            try
+            {
+                string query = "select * from Pacientes where cedula='" + cedula + "'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset);
+                connection.Close();
+
+                if (dataset.Tables[0].Rows.Count == 0)
+                    return false;
+                else
+                    return true;
+
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
+
+        public bool AgregarPaciente(Paciente paciente)
+        {
+            try
+            {
+                string insert = $"insert into Pacientes values('{paciente.cedula}','{paciente.nombre}','{paciente.apellidos}','{paciente.fechaNacimiento}',{paciente.edad},'{paciente.sexo}')";
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
+                Console.WriteLine(insert);
+                connection.Open();
+                Console.WriteLine("abri conexion");
+                command.ExecuteNonQuery();
+                connection.Close();
+                Console.WriteLine("cerre conexion");
+                return true;
+            }
+            catch (SQLiteException e)
+            {
+                Console.WriteLine("LLEGUE AL CATCH");
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "EL ERRORRRRRRRRRRRRRRRRRRRRRR");
+                return false;
+            }
+
+        }
+        public  DataSet GetAllPacientes()
+        {
+           
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Pacientes", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+                
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        public DataSet GetPaciente(string cedula)
+        {
+            Console.WriteLine(cedula + "LA CEDULA QUE ENTRA EN GET PACIENTE");
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Pacientes where cedula='" + cedula + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+
+        public bool UpdatePaciente (Paciente paciente)
+        {
+            string query ="update Pacientes set nombre ='"+paciente.nombre+ "' , apellidos='"+paciente.apellidos +"',fecha_nacimiento='"+paciente.fechaNacimiento+"',edad='"+paciente.edad+"',sexo='" + paciente.sexo;
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+
+        //***********************************************************METODOS USUARIOS ****************************************************************************//
+
+        public bool UpdateUsuario(Usuario usuario)
+        {
+
+            string query = "update Usuarios set usuario='" + usuario.nombreUsuario + "',contrasenia='" + usuario.contrasenia + "',rol='" + usuario.rol;
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+       public bool DeleteUsuario(string usuario)
+       {
+            string query = "delete from Usuarios where usuario='" + usuario;
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query,connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+                
+
+            }
+            catch (SQLiteException e)
+            {
+                return false;
+            }
+
+       }
+
+        public DataSet GetUsuarios()
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select usuario from Usuarios", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        public bool agregarUsuario(Usuario usuario)
+        {
+            string query = $"insert into Usuarios values('{usuario.nombreUsuario}','{usuario.contrasenia}','{usuario.rol}')";
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query,connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            } catch (SQLiteException e)
+            {
+                return false;
+            }
+        }
+
+        //***********************************************************METODOS EMPLEADOS ****************************************************************************//
+
         public bool ExisteCedula(string cedula) {
             try {
                 string query = $"select cedula from Empleados where cedula = '{cedula}'";
@@ -52,7 +250,11 @@ namespace HogarAncianos.Model {
             }
         }
 
-  
+        
+
+
+
+
         public bool AgregarEmpleado(Empleado empleado) {
             try {
                 string insert = $"insert into Empleados values('{empleado.Cedula}', '{empleado.Nombre}', " +
@@ -98,56 +300,7 @@ namespace HogarAncianos.Model {
 
 
 
-        //metodos Pacientes
-        public bool ExisteCedulaPaciente(string cedula)
-        {
-            try
-            {
-                string query = "select * from Pacientes where cedula='" + cedula + "'";
-                connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query, connection);
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
-                DataSet dataset = new DataSet();
-                dataAdapter.Fill(dataset);
-                connection.Close();
-
-                if (dataset.Tables[0].Rows.Count == 0)
-                    return false;
-                else
-                    return true;
-               
-            }
-            catch (SQLiteException e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.ToString());
-                return false;
-            }
-        }
-
-        public bool AgregarPaciente(Paciente paciente)
-        {
-            try
-            {
-                string insert = $"insert into Pacientes values('{paciente.cedula}','{paciente.nombre}','{paciente.apellidos}','{paciente.fechaNacimiento}',{paciente.edad},'{paciente.sexo}')";
-                SQLiteCommand command = new SQLiteCommand(insert, connection);
-                Console.WriteLine(insert);
-                Console.WriteLine("LLEGUE HASTA ACA");
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-                return true;
-            }
-            catch (SQLiteException e)
-            {
-                Console.WriteLine("LLEGUE AL CATCH");
-                connection.Close();
-                Debug.WriteLine(e.ToString());
-                return false;
-            }
-        
-        }
-
+   
        
         //Metodos Medicamentos 
 
@@ -177,8 +330,68 @@ namespace HogarAncianos.Model {
             }
         }
 
+        public bool UpdateMedicamento(Medicamento medicamento)
+        {
+            string query = "update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible='" + medicamento.catidadDisponible;
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
 
-       
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+
+
+
+        public DataSet GetMedicamentos()
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select codigo_medicamentos from Medicamentos", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        public bool DeleteMedicamento(string codigo)
+        {
+            string query = "delete from Medicamentos where codigo_medicamento='" + codigo;
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                return false;
+            }
+
+        }
+
         public bool AgregarMedicamento(Medicamento medicamento)
         {
             try

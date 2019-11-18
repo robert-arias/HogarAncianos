@@ -24,7 +24,7 @@ namespace HogarAncianos.View
 
         public Medicamento GetMedicamento()
         {         
-            return new Medicamento(txtCodigo.Text, txtNombre.Text, txtMedida.Text, cbCategoria.SelectedItem.ToString(),
+            return new Medicamento(txtCodigo.Text, txtNombre.Text, txtMedida.Text +"  "+cbUnidadMedida.SelectedItem  , cbCategoria.SelectedItem.ToString(),
             Convert.ToInt32(txtCantidadDisponible.Text), Convert.ToInt32(txtCantidadPrescrita.Text));
 
         }

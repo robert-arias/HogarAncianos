@@ -27,9 +27,9 @@ namespace HogarAncianos.Controller
         {
             frm_AgregarPaciente.btnAgregar.Click += new EventHandler(AgregarPaciente);
             frm_AgregarPaciente.btnVerificar.Click += new EventHandler(VerificarCedulaPaciente);
-            frm_AgregarPaciente.btnVerificar.KeyDown += new KeyEventHandler(VerificarCedulaPacienteEnter);
+            frm_AgregarPaciente.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaPacienteEnter);
             frm_AgregarPaciente.btnLimpiar.Click += new EventHandler(Limpiar);
-   
+         
 
         }
 
@@ -74,7 +74,7 @@ namespace HogarAncianos.Controller
                 {
                     if (frm_AgregarPaciente.GetCedula().Length >= 9)
                     {
-                        if (connectionDB.ExisteCedulaPaciente(frm_AgregarPaciente.GetCedula()))
+                        if (!connectionDB.ExisteCedulaPaciente(frm_AgregarPaciente.GetCedula()))
                         {
                             frm_AgregarPaciente.ActivarCampos();
                         }

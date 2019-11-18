@@ -19,15 +19,6 @@ namespace HogarAncianos.View {
             menuController = new MenuController(this);
         }
 
-        public void AgregarEventos(Action<object, EventArgs> openAgregarEmpleado)
-        {
-            mi_EmpleadosAgregar.Click += new EventHandler(openAgregarEmpleado);       
-        }
-
-
-        public void AgregarEventosMedicamentos( Action<object, EventArgs> OpenAgregarMedicamento)
-        {
-            mi_MedicamentosAgregar.Click += new EventHandler(OpenAgregarMedicamento);
-        }
+      
     }
 }
