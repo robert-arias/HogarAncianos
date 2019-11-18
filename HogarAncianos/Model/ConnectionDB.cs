@@ -32,7 +32,7 @@ namespace HogarAncianos.Model {
 
         public bool ExisteCedula(string cedula) {
             try {
-                string query = "select cedula from Empleados where cedula = '" + cedula + "'";
+                string query = $"select cedula from Empleados where cedula = '{cedula}'";
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
