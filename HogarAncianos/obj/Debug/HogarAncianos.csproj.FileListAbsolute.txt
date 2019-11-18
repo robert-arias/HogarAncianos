@@ -52,4 +52,3 @@ C:\Users\User\source\repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.
 C:\Users\User\source\repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\User\source\repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\User\source\repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.pdb
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
