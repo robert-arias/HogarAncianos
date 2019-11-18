@@ -4,6 +4,8 @@ using System;
 namespace HogarAncianos.Controller {
     public class MenuController {
 
+        //Yanily Jiménez
+
         private FRM_MenuPrincipal frm_MenuPrincipal;
         private FRM_AgregarEmpleado frm_AgregarEmpleado;
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
