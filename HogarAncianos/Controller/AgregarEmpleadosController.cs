@@ -45,7 +45,7 @@ namespace HogarAncianos.Controller {
                     if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
                         frm_AgregarEmpleados.ActivarCampos();
                     else
-                        frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los" +
+                        frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los " +
                             "registros.");
                 }
                 else
