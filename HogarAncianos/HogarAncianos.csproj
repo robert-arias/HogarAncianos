@@ -57,6 +57,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -69,6 +71,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,10 +88,13 @@
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\MenuController.cs" />
+    <Compile Include="Controller\ModificarMedicamentoController.cs" />
+    <Compile Include="Controller\ModificarPacienteController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Medicamento.cs" />
     <Compile Include="Model\Paciente.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FRM_AgregarEmpleado.cs">
@@ -109,17 +115,47 @@
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_AgregarUsuario.Designer.cs">
+      <DependentUpon>FRM_AgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_BuscarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FRM_MenuPrincipal.Designer.cs">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ModificarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarMedicamento.Designer.cs">
+      <DependentUpon>FRM_ModificarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ModificarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarPaciente.Designer.cs">
+      <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarUsuario.Designer.cs">
+      <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,11 +175,26 @@
     <EmbeddedResource Include="View\FRM_AgregarPaciente.resx">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_AgregarUsuario.resx">
+      <DependentUpon>FRM_AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_MenuPrincipal.resx">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarMedicamento.resx">
+      <DependentUpon>FRM_ModificarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarPaciente.resx">
+      <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
+      <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

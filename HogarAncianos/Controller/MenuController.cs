@@ -9,6 +9,11 @@ namespace HogarAncianos.Controller {
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
         private FRM_AgregarMedicamento frm_AgregarMedicamento;
         private FRM_AgregarPaciente frm_AgregarPaciente;
+        private FRM_ModificarPaciente frm_ModificarPaciente;
+        private FRM_ModificarMedicamento frm_ModificarMedicamento;
+        private FRM_AgregarUsuario frm_AgregarUsuario;
+        private FRM_ModificarUsuario frm_ModificarUsuario;
+        private FRM_Login frm_login; 
 
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
             frm_MenuPrincipal = menuPrincipal;
@@ -16,18 +21,27 @@ namespace HogarAncianos.Controller {
             frm_BuscarEmpleados = new FRM_BuscarEmpleados();
             frm_AgregarPaciente = new FRM_AgregarPaciente();
             frm_AgregarMedicamento = new FRM_AgregarMedicamento();
+            frm_login = new FRM_Login();
+            frm_ModificarPaciente = new FRM_ModificarPaciente();
+            frm_ModificarMedicamento = new FRM_ModificarMedicamento();
+            frm_ModificarUsuario = new FRM_ModificarUsuario();
+            frm_AgregarUsuario = new FRM_AgregarUsuario();
             AgregarEventos();
         }
 
         private void AgregarEventos() {
+            //Empleados
             frm_MenuPrincipal.mi_EmpleadosAgregar.Click += new EventHandler(OpenAgregarEmpleado);
             frm_MenuPrincipal.mi_EmpleadosBuscar.Click += new EventHandler(OpenBuscarEmpleados);
             frm_AgregarEmpleado.FormClosed += CerrarAgregarEmpleado;
             frm_BuscarEmpleados.FormClosed += CerrarBuscarEmpleados;
             frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregar);
 
+            //Productos de Limpieza
+
             //Medicamentos 
             frm_MenuPrincipal.mi_MedicamentosAgregar.Click += new EventHandler(OpenAgregarMedicamento);
+            frm_MenuPrincipal.mi_MedicamentosModificar.Click += new EventHandler(OpenModificarMedicamento);
             frm_AgregarMedicamento.FormClosed += CerrarAgregarMedicamento;
            // frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregar);
 
@@ -35,7 +49,38 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregar);
+            frm_MenuPrincipal.mi_pacientesModificar.Click += new EventHandler(OpenModificarPaciente);
+
+
+            //Login 
+            frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
+           frm_login.FormClosed += CerrarLogin;
+
+            //Usuarios
+            frm_MenuPrincipal.mi_UsuariosAgregar.Click += new EventHandler(OpenAgregarUsuarios);
+            frm_MenuPrincipal.mi_UsuariosModificar.Click += new EventHandler(OpenModificarUsuarios);
+
+            //Prescripcion Medicamentos 
+
+
+
+
         }
+
+        //Metodos Login
+
+        private void OpenIniciarSesion(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_login.ShowDialog();       
+        }
+
+        private void CerrarLogin(object sender, EventArgs e)
+        {
+            frm_login.Close();
+            frm_MenuPrincipal.Show();
+        }
+        //Metodos Empleados 
 
         private void OpenAgregarEmpleado(object sender, EventArgs e) {
             frm_MenuPrincipal.Hide();
@@ -83,6 +128,12 @@ namespace HogarAncianos.Controller {
          //   frm_AgregarMedicamento.EstadoInicial();
         }
 
+        private void OpenModificarMedicamento(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarMedicamento.ShowDialog();
+        }
+
         //Metodos Paciente 
 
         private void OpenAgregarPaciente(object sender, EventArgs e)
@@ -105,8 +156,28 @@ namespace HogarAncianos.Controller {
             frm_AgregarPaciente.EstadoInicial();
         }
 
+        private void OpenModificarPaciente(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarPaciente.ShowDialog();
+        }
 
 
-      
+        //Usuarios
+
+        private void OpenAgregarUsuarios(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_AgregarUsuario.ShowDialog();
+
+        }
+
+        private void OpenModificarUsuarios(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarUsuario.ShowDialog();
+
+        }
+
     }
 }

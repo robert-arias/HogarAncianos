@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
@@ -56,6 +57,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
+            this.groupBox1.Controls.Add(this.cbUnidadMedida);
             this.groupBox1.Controls.Add(this.txtMedida);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnVerificar);
@@ -84,12 +87,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del medicamento";
             // 
+            // cbUnidadMedida
+            // 
+            this.cbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUnidadMedida.FormattingEnabled = true;
+            this.cbUnidadMedida.Items.AddRange(new object[] {
+            "Seleccionar",
+            "ML",
+            "GR",
+            "LITRO",
+            "ONZAS"});
+            this.cbUnidadMedida.Location = new System.Drawing.Point(313, 207);
+            this.cbUnidadMedida.Name = "cbUnidadMedida";
+            this.cbUnidadMedida.Size = new System.Drawing.Size(77, 26);
+            this.cbUnidadMedida.TabIndex = 96;
+            // 
             // txtMedida
             // 
-            this.txtMedida.Location = new System.Drawing.Point(206, 155);
+            this.txtMedida.Location = new System.Drawing.Point(206, 207);
             this.txtMedida.Multiline = true;
             this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(183, 26);
+            this.txtMedida.Size = new System.Drawing.Size(98, 26);
             this.txtMedida.TabIndex = 95;
             // 
             // btnLimpiar
@@ -118,7 +136,7 @@
             // 
             this.lbCantidadPrescrita.AutoSize = true;
             this.lbCantidadPrescrita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantidadPrescrita.Location = new System.Drawing.Point(394, 314);
+            this.lbCantidadPrescrita.Location = new System.Drawing.Point(395, 307);
             this.lbCantidadPrescrita.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCantidadPrescrita.Name = "lbCantidadPrescrita";
             this.lbCantidadPrescrita.Size = new System.Drawing.Size(14, 18);
@@ -187,7 +205,7 @@
             "Seleccionar",
             "Tabletas",
             "Inyecciones"});
-            this.cbCategoria.Location = new System.Drawing.Point(207, 207);
+            this.cbCategoria.Location = new System.Drawing.Point(206, 152);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(183, 26);
             this.cbCategoria.TabIndex = 85;
@@ -196,7 +214,7 @@
             // 
             this.lbCategoria.AutoSize = true;
             this.lbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoria.Location = new System.Drawing.Point(394, 207);
+            this.lbCategoria.Location = new System.Drawing.Point(393, 152);
             this.lbCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCategoria.Name = "lbCategoria";
             this.lbCategoria.Size = new System.Drawing.Size(14, 18);
@@ -207,7 +225,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 210);
+            this.label7.Location = new System.Drawing.Point(19, 160);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 18);
@@ -218,7 +236,7 @@
             // 
             this.lbUnidadMedida.AutoSize = true;
             this.lbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUnidadMedida.Location = new System.Drawing.Point(394, 155);
+            this.lbUnidadMedida.Location = new System.Drawing.Point(395, 213);
             this.lbUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUnidadMedida.Name = "lbUnidadMedida";
             this.lbUnidadMedida.Size = new System.Drawing.Size(14, 18);
@@ -262,7 +280,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 156);
+            this.label4.Location = new System.Drawing.Point(19, 208);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 18);
@@ -273,7 +291,7 @@
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(206, 104);
+            this.txtNombre.Location = new System.Drawing.Point(207, 107);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(183, 24);
@@ -327,11 +345,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(632, 450);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FRM_AgregarMedicamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_AgregarMedicamento";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -364,5 +384,6 @@
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtMedida;
+        private System.Windows.Forms.ComboBox cbUnidadMedida;
     }
 }

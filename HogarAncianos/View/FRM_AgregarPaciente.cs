@@ -75,32 +75,16 @@ namespace HogarAncianos.View
                 lbFechaNacimiento.ForeColor = Color.Black;
             }
 
-            if (nudEdad.Value==0 || nudEdad.Value<18)
-            {
-                Console.WriteLine("" + nudEdad.Value);
-                lbEdad.Visible = true;
-                lbEdad.ForeColor = Color.Red;
-                nudEdad.ForeColor = Color.Red;
-                vacio = true;
-
-            }
-            else
-            {
-                lbEdad.Visible = false;
-                nudEdad.ForeColor = Color.Black ;
-            }
-
             if (cbSexo.SelectedIndex == 0)
             {
                 lbSexo.Visible = true;
-                lbSexo.ForeColor = Color.Red;
-                cbSexo.ForeColor = Color.Red;
+                lbSexo.ForeColor = Color.Red;               
                 vacio = true;
             }
             else
             {
                 lbSexo.Visible = false;
-                cbSexo.ForeColor = Color.Black;
+                lbSexo.ForeColor = Color.Black;
             }
 
 
@@ -117,8 +101,7 @@ namespace HogarAncianos.View
             txtCedula.Enabled = false;
             txtNombre.Enabled = true;
             txtApellidos.Enabled = true;
-            txtFechaNacimiento.Enabled = true;
-            nudEdad.Enabled = true;
+            txtFechaNacimiento.Enabled = true;      
             cbSexo.Enabled = true;
 
             btnAgregar.Enabled = true;
@@ -133,14 +116,14 @@ namespace HogarAncianos.View
             txtNombre.Enabled = false;
             txtApellidos.Enabled = false;
             txtFechaNacimiento.Enabled = false;
-            nudEdad.Enabled = false;
+            txtEdad.Enabled = false;
             cbSexo.Enabled = false;
 
             txtCedula.Text = "";
             txtNombre.Text = "";
             txtApellidos.Text = "";
             txtFechaNacimiento.Text="" ;
-            nudEdad.Value = 0;
+            txtEdad.Text = "0";
             cbSexo.SelectedIndex = 0;
 
 
@@ -154,8 +137,8 @@ namespace HogarAncianos.View
             lbNombre.ForeColor = Color.Black;
             lbApellidos.ForeColor = Color.Black;
             lbFechaNacimiento.ForeColor = Color.Black;
-            nudEdad.ForeColor = Color.Black;
-            cbSexo.ForeColor = Color.Black;
+            lbEdad.ForeColor = Color.Black;
+            lbSexo.ForeColor = Color.Black;
 
             lbCedula.Visible = false;
             lbNombre.Visible = false;
@@ -167,16 +150,16 @@ namespace HogarAncianos.View
 
         public Paciente GetPaciente()
         {
-            Console.WriteLine("" + nudEdad.Value);
+           
             return new Paciente(txtCedula.Text,txtNombre.Text,txtApellidos.Text,txtFechaNacimiento.Text,
-            (int)nudEdad.Value, cbSexo.SelectedItem.ToString());
+            Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString());
             
 
         }
 
         public void ShowMessage(string message)
         {
-            MessageBox.Show(message,"Advertencia");
+            MessageBox.Show(message, "Advertencia", MessageBoxButtons.OK);
         }
 
         public bool ShowMessage2(string menssage)
@@ -189,6 +172,10 @@ namespace HogarAncianos.View
 
             return false;
         }
-    
+
+        private void txtFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            txtEdad.Text = Convert.ToString( DateTime.Today.Year - txtFechaNacimiento.Value.Year);
+        }
     }
 }
