@@ -4,6 +4,8 @@ using System;
 namespace HogarAncianos.Controller {
     public class MenuController {
 
+        //Yanily Jiménez
+
         private FRM_MenuPrincipal frm_MenuPrincipal;
         private FRM_AgregarEmpleado frm_AgregarEmpleado;
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
@@ -100,6 +102,7 @@ namespace HogarAncianos.Controller {
 
         private void CerrarBuscarEmpleados(object sender, EventArgs e) {
             frm_BuscarEmpleados.Close();
+            frm_BuscarEmpleados.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 
