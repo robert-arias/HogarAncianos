@@ -64,7 +64,6 @@ C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\Ent
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.xml
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.Properties.Resources.resources
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarEmpleado.resources
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources

@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(222)))), ((int)(((byte)(151)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(73)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -59,6 +59,14 @@
             this.shapeContainer1.Size = new System.Drawing.Size(569, 282);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 265;
+            this.lineShape2.X2 = 515;
+            this.lineShape2.Y1 = 170;
+            this.lineShape2.Y2 = 170;
             // 
             // lineShape1
             // 
@@ -107,14 +115,6 @@
             this.btnIniciarSesion.TabIndex = 4;
             this.btnIniciarSesion.Text = "Acceder";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 265;
-            this.lineShape2.X2 = 515;
-            this.lineShape2.Y1 = 170;
-            this.lineShape2.Y2 = 170;
             // 
             // txtContrasenia
             // 
