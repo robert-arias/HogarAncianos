@@ -81,7 +81,7 @@
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
             this.ms_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.ms_Menu.Size = new System.Drawing.Size(851, 24);
+            this.ms_Menu.Size = new System.Drawing.Size(856, 24);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -365,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(851, 391);
+            this.ClientSize = new System.Drawing.Size(856, 407);
             this.Controls.Add(this.ms_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
