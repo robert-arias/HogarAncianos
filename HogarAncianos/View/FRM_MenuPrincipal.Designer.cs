@@ -81,7 +81,7 @@
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
             this.ms_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.ms_Menu.Size = new System.Drawing.Size(873, 24);
+            this.ms_Menu.Size = new System.Drawing.Size(851, 24);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -100,25 +100,25 @@
             // mi_EmpleadosAgregar
             // 
             this.mi_EmpleadosAgregar.Name = "mi_EmpleadosAgregar";
-            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(125, 22);
             this.mi_EmpleadosAgregar.Text = "Agregar";
             // 
             // mi_EmpleadosModificar
             // 
             this.mi_EmpleadosModificar.Name = "mi_EmpleadosModificar";
-            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(125, 22);
             this.mi_EmpleadosModificar.Text = "Modificar";
             // 
             // mi_EmpleadosBuscar
             // 
             this.mi_EmpleadosBuscar.Name = "mi_EmpleadosBuscar";
-            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(125, 22);
             this.mi_EmpleadosBuscar.Text = "Buscar";
             // 
             // mi_EmpleadosReporte
             // 
             this.mi_EmpleadosReporte.Name = "mi_EmpleadosReporte";
-            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosReporte.Size = new System.Drawing.Size(125, 22);
             this.mi_EmpleadosReporte.Text = "Reporte";
             // 
             // mi_ProductosLimpieza
@@ -137,25 +137,25 @@
             // mi_ProductosLimpiezaAgregar
             // 
             this.mi_ProductosLimpiezaAgregar.Name = "mi_ProductosLimpiezaAgregar";
-            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(127, 22);
             this.mi_ProductosLimpiezaAgregar.Text = "Agregar";
             // 
             // mi_ProductosLimpiezaModificar
             // 
             this.mi_ProductosLimpiezaModificar.Name = "mi_ProductosLimpiezaModificar";
-            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(127, 22);
             this.mi_ProductosLimpiezaModificar.Text = "Modificar";
             // 
             // mi_ProductosLimpiezaBuscar
             // 
             this.mi_ProductosLimpiezaBuscar.Name = "mi_ProductosLimpiezaBuscar";
-            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(127, 22);
             this.mi_ProductosLimpiezaBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpiezaEliminar
             // 
             this.mi_ProductosLimpiezaEliminar.Name = "mi_ProductosLimpiezaEliminar";
-            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(127, 22);
             this.mi_ProductosLimpiezaEliminar.Text = "Eliminar";
             // 
             // mi_ProductosLimpiezaInventario
@@ -164,7 +164,7 @@
             this.mi_ProductosLimpiezaAgregarInventario,
             this.mi_ProductosLimpiezaSalidaInventario});
             this.mi_ProductosLimpiezaInventario.Name = "mi_ProductosLimpiezaInventario";
-            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(127, 22);
             this.mi_ProductosLimpiezaInventario.Text = "Inventario";
             // 
             // mi_ProductosLimpiezaAgregarInventario
@@ -365,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(873, 363);
+            this.ClientSize = new System.Drawing.Size(851, 391);
             this.Controls.Add(this.ms_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

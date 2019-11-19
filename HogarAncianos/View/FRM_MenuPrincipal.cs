@@ -19,9 +19,6 @@ namespace HogarAncianos.View {
             menuController = new MenuController(this);
         }
 
-        private void ms_Menu_BackColorChanged(object sender, EventArgs e)
-        {
-            mi_Empleados.ForeColor = Color.Red;
-        }
+        
     }
 }
