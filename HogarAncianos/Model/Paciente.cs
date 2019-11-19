@@ -24,6 +24,12 @@ namespace HogarAncianos.Model
             this.edad = edad;
             this.sexo = sexo;
         }
+
+        public Paciente(string cedula)
+        {
+            this.cedula = cedula;
+            
+        }
     }
 
   

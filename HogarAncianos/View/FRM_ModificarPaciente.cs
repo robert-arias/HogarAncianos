@@ -21,13 +21,18 @@ namespace HogarAncianos.View
             modificarPacienteController = new ModificarPacienteController(this);
             cbCedulaIdentidad.Text = "Seleccionar";
             cbSexo.Text = "Seleccionar";
+            EstadoInicial();
+           
         }
 
         public void FillPacientes(DataSet pacientes)
-        {            
+        {
+          
             cbCedulaIdentidad.DataSource = pacientes.Tables[0];
             cbCedulaIdentidad.DisplayMember = "cedula";
             cbCedulaIdentidad.ValueMember = "cedula";
+
+          
         }
 
         public string GetCedula()
@@ -54,25 +59,127 @@ namespace HogarAncianos.View
             Console.WriteLine(data.Tables[0].Rows[0][1].ToString()+"LLenar campos");
        }
 
-       public void EstadoInicial()
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message, "Advertencia", MessageBoxButtons.OK);
+        }
+
+        public bool VerificarCampos()
+        {
+            bool vacio = false;
+
+         
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                lbNombre.Visible = true;
+                lbNombre.ForeColor = Color.Red;
+                vacio = true;
+            }
+            else
+            {
+                lbNombre.Visible = false;
+                lbNombre.ForeColor = Color.Black;
+            }
+
+
+            if (string.IsNullOrEmpty(txtApellidos.Text))
+            {
+                lbApellidos.Visible = true;
+                lbApellidos.ForeColor = Color.Red;
+                vacio = true;
+            }
+            else
+            {
+                lbApellidos.Visible = false;
+                lbApellidos.ForeColor = Color.Black;
+            }
+
+            if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18)
+            {
+                lbFechaNacimiento.Visible = true;
+                lbEdad.Visible = true;
+                lbEdad.ForeColor = Color.Red;
+                lbFechaNacimiento.ForeColor = Color.Red;
+                vacio = true;
+            }
+            else
+            {
+                lbFechaNacimiento.Visible = false;
+                lbFechaNacimiento.ForeColor = Color.Black;
+                lbEdad.Visible = false;
+                lbEdad.ForeColor = Color.Black;
+            }
+
+            if (cbSexo.SelectedIndex == 0)
+            {
+                lbSexo.Visible = true;
+                lbSexo.ForeColor = Color.Red;
+                vacio = true;
+            }
+            else
+            {
+                lbSexo.Visible = false;
+                lbSexo.ForeColor = Color.Black;
+            }
+
+
+            return vacio;
+        }
+
+        private void txtFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            txtEdad.Text = Convert.ToString(DateTime.Today.Year - txtFechaNacimiento.Value.Year);
+        }
+
+        public void EstadoInicial()
        {
             btnModificar.Enabled = false;
             btnCancelar.Enabled = false;
             btnLimpiar.Enabled = true;
 
+            cbCedulaIdentidad.Enabled = true;
             txtNombre.Enabled = false;
             txtApellidos.Enabled = false;
             txtFechaNacimiento.Enabled = false;
-           // txtEdad.Enabled= 
+            txtEdad.Enabled = false;
+            cbSexo.Enabled = false;
 
+            cbCedulaIdentidad.SelectedIndex = 0;
+            txtNombre.Text = "";
+            txtApellidos.Text = "";
+            txtFechaNacimiento.Text = "";
+            txtEdad.Text = "";
+            cbSexo.Text = "";
 
-       }
+        }
 
 
         public void ActivarCampos()
         {
+            btnModificar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
 
+            cbCedulaIdentidad.Enabled = true;
+            txtNombre.Enabled = true;
+            txtApellidos.Enabled = true;
+            txtFechaNacimiento.Enabled = true;
+            txtEdad.Enabled = false;
+            cbSexo.Enabled = true;
+    
         }
-        
+
+        public Paciente GetPaciente()
+        {
+            Console.WriteLine("MIERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
+         
+             Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString() + "ELLLLL PACIENTE QUE SE VA A MODIFICAR  METODO GET PACIENTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
+            return new Paciente(cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
+            Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString());
+
+          
+        }
+
     }
 }

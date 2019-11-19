@@ -125,10 +125,13 @@ namespace HogarAncianos.Model {
 
 
         }
-
+        //string query = "update Empleados set Nombre = '" + empleado.Nombre + "', Sueldo = " + empleado.Sueldo +
+        //      " where EmpleadoID = " + empleado.EmpleadoID;
         public bool UpdatePaciente (Paciente paciente)
         {
-            string query ="update Pacientes set nombre ='"+paciente.nombre+ "' , apellidos='"+paciente.apellidos +"',fecha_nacimiento='"+paciente.fechaNacimiento+"',edad='"+paciente.edad+"',sexo='" + paciente.sexo;
+            string query = "update Pacientes set nombre ='" + paciente.nombre + "' , apellidos='" + paciente.apellidos + "',fecha_nacimiento='" + paciente.fechaNacimiento + "',edad=" + paciente.edad + ",sexo='" + paciente.sexo + "' where cedula= "+ paciente.cedula;
+
+            Console.WriteLine(query);
             try
             {
                 connection.Open();
@@ -151,7 +154,7 @@ namespace HogarAncianos.Model {
         public bool UpdateUsuario(Usuario usuario)
         {
 
-            string query = "update Usuarios set usuario='" + usuario.nombreUsuario + "',contrasenia='" + usuario.contrasenia + "',rol='" + usuario.rol;
+            string query = "update Usuarios set contrasenia='" + usuario.contrasenia + "',rol='" + usuario.rol+"' where usuario="+usuario.nombreUsuario ;
             try
             {
                 connection.Open();
@@ -189,6 +192,29 @@ namespace HogarAncianos.Model {
 
        }
 
+        public DataSet GetUsuario(string usuario)
+        {
+            Console.WriteLine(usuario + "LA CEDULA QUE ENTRA EN GET PACIENTE");
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Usuarios where usuario='" + usuario + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
         public DataSet GetUsuarios()
         {
             try
@@ -226,6 +252,32 @@ namespace HogarAncianos.Model {
             }
         }
 
+
+        public bool ExisteUsuario(string usuario)
+        {
+            try
+            {
+                string query = "select * from Usuarios where usuario='" + usuario + "'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset);
+                connection.Close();
+
+                if (dataset.Tables[0].Rows.Count == 0)
+                    return false;
+                else
+                    return true;
+
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
         //***********************************************************METODOS EMPLEADOS ****************************************************************************//
 
         public bool ExisteCedula(string cedula) {

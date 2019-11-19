@@ -43,28 +43,36 @@ namespace HogarAncianos.Controller {
 
             //Medicamentos 
             frm_MenuPrincipal.mi_MedicamentosAgregar.Click += new EventHandler(OpenAgregarMedicamento);
-            frm_MenuPrincipal.mi_MedicamentosModificar.Click += new EventHandler(OpenModificarMedicamento);
             frm_AgregarMedicamento.FormClosed += CerrarAgregarMedicamento;
-           // frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregar);
+            frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregarMedicamento);
+
+            frm_MenuPrincipal.mi_MedicamentosModificar.Click += new EventHandler(OpenModificarMedicamento);
+            frm_ModificarMedicamento.FormClosed += CerrarModificarMedicamento;
+            frm_ModificarMedicamento.btnCancelar.Click += new EventHandler(CancelarModificarMedicamento);
+
 
             //Pacientes 
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
-            frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregar);
+            frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregarPaciente);
+
             frm_MenuPrincipal.mi_pacientesModificar.Click += new EventHandler(OpenModificarPaciente);
+            frm_ModificarPaciente.FormClosed += CerrarModificarPaciente;
+            frm_ModificarPaciente.btnCancelar.Click += new EventHandler(CancelarModificarPaciente);
 
-
-            //Login 
-            frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
-           frm_login.FormClosed += CerrarLogin;
 
             //Usuarios
             frm_MenuPrincipal.mi_UsuariosAgregar.Click += new EventHandler(OpenAgregarUsuarios);
+            frm_AgregarUsuario.FormClosed += CerrarAgregarUsuario;
+            frm_AgregarUsuario.btnCancelar.Click += new EventHandler(CancelarAgregarUsuario);
+
             frm_MenuPrincipal.mi_UsuariosModificar.Click += new EventHandler(OpenModificarUsuarios);
 
             //Prescripcion Medicamentos 
 
-
+            //Login 
+            frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
+            frm_login.FormClosed += CerrarLogin;
 
 
         }
@@ -122,19 +130,34 @@ namespace HogarAncianos.Controller {
         private void CerrarAgregarMedicamento(object sender, EventArgs e)
         {
             frm_AgregarMedicamento.Close();
+            frm_AgregarMedicamento.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
         private void CancelarAgregarMedicamento(object sender, EventArgs e)
         {
             frm_AgregarMedicamento.Close();
-            frm_AgregarMedicamento.Show();
-         //   frm_AgregarMedicamento.EstadoInicial();
+            frm_AgregarMedicamento.EstadoInicial();
+            frm_MenuPrincipal.Show();
+            
         }
 
         private void OpenModificarMedicamento(object sender, EventArgs e)
         {
             frm_MenuPrincipal.Hide();
             frm_ModificarMedicamento.ShowDialog();
+        }
+        private void CerrarModificarMedicamento(object sender, EventArgs e)
+        {
+            frm_ModificarMedicamento.Close();
+          //  frm_ModificarMedicamento.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+        private void CancelarModificarMedicamento(object sender, EventArgs e)
+        {
+            frm_ModificarMedicamento.Close();
+           // frm_ModificarMedicamento.EstadoInicial();
+            frm_MenuPrincipal.Show();
+
         }
 
         //Metodos Paciente 
@@ -148,15 +171,18 @@ namespace HogarAncianos.Controller {
         private void CerrarAgregarPaciente(object sender, EventArgs e)
         {
             frm_AgregarPaciente.Close();
-            frm_MenuPrincipal.Show();
             frm_AgregarPaciente.EstadoInicial();
+            frm_MenuPrincipal.Show();
+           
 
         }
+
         private void CancelarAgregarPaciente(object sender, EventArgs e)
         {
             frm_AgregarPaciente.Close();
-            frm_MenuPrincipal.Show();
             frm_AgregarPaciente.EstadoInicial();
+            frm_MenuPrincipal.Show();
+            
         }
 
         private void OpenModificarPaciente(object sender, EventArgs e)
@@ -164,6 +190,21 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Hide();
             frm_ModificarPaciente.ShowDialog();
         }
+
+        private void CerrarModificarPaciente(object sender, EventArgs e)
+        {
+            frm_ModificarPaciente.Close();
+            frm_MenuPrincipal.Show();
+            frm_ModificarPaciente.EstadoInicial();
+        }
+
+        private void CancelarModificarPaciente(object sender, EventArgs e)
+        {
+            frm_ModificarPaciente.Close();
+            frm_MenuPrincipal.Show();
+            frm_ModificarPaciente.EstadoInicial();
+        }
+
 
 
         //Usuarios
@@ -175,11 +216,39 @@ namespace HogarAncianos.Controller {
 
         }
 
+        private void CerrarAgregarUsuario(object sender, EventArgs e)
+        {
+            frm_AgregarUsuario.Close();
+            //frm_AgregarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void CancelarAgregarUsuario(object sender, EventArgs e)
+        {
+            frm_AgregarUsuario.Close();
+           frm_AgregarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
         private void OpenModificarUsuarios(object sender, EventArgs e)
         {
             frm_MenuPrincipal.Hide();
             frm_ModificarUsuario.ShowDialog();
 
+        }
+
+        private void CerrarModificarUsuario(object sender, EventArgs e)
+        {
+            frm_ModificarUsuario.Close();
+          //  frm_ModificarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void CancelarModificarUsuario(object sender, EventArgs e)
+        {
+            frm_ModificarUsuario.Close();
+            //  frm_ModificarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
         }
 
     }

@@ -34,14 +34,15 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.cbRol = new System.Windows.Forms.ComboBox();
-            this.lbSexo = new System.Windows.Forms.Label();
+            this.lbRol = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbCedula = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
+            this.lbUsuario = new System.Windows.Forms.Label();
+            this.lbContrasenia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxMostrarDatos = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,15 +82,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxMostrarDatos);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnVerificar);
             this.groupBox1.Controls.Add(this.cbRol);
-            this.groupBox1.Controls.Add(this.lbSexo);
+            this.groupBox1.Controls.Add(this.lbRol);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.lbCedula);
-            this.groupBox1.Controls.Add(this.lbNombre);
+            this.groupBox1.Controls.Add(this.lbUsuario);
+            this.groupBox1.Controls.Add(this.lbContrasenia);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtContrasenia);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,7 +102,6 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion usuario";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnLimpiar
             // 
@@ -141,56 +142,56 @@
             this.cbRol.FormattingEnabled = true;
             this.cbRol.Items.AddRange(new object[] {
             "Seleccionar",
-            "Femenino",
-            "Masculino"});
-            this.cbRol.Location = new System.Drawing.Point(195, 136);
+            "Administrador(a)",
+            "Enfermero(a)"});
+            this.cbRol.Location = new System.Drawing.Point(195, 161);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(183, 26);
             this.cbRol.TabIndex = 67;
             // 
-            // lbSexo
+            // lbRol
             // 
-            this.lbSexo.AutoSize = true;
-            this.lbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSexo.Location = new System.Drawing.Point(383, 150);
-            this.lbSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbSexo.Name = "lbSexo";
-            this.lbSexo.Size = new System.Drawing.Size(14, 18);
-            this.lbSexo.TabIndex = 66;
-            this.lbSexo.Text = "*";
+            this.lbRol.AutoSize = true;
+            this.lbRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRol.Location = new System.Drawing.Point(383, 164);
+            this.lbRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRol.Name = "lbRol";
+            this.lbRol.Size = new System.Drawing.Size(14, 18);
+            this.lbRol.TabIndex = 66;
+            this.lbRol.Text = "*";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 144);
+            this.label7.Location = new System.Drawing.Point(17, 169);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 20);
             this.label7.TabIndex = 65;
             this.label7.Text = "Rol:";
             // 
-            // lbCedula
+            // lbUsuario
             // 
-            this.lbCedula.AutoSize = true;
-            this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedula.Location = new System.Drawing.Point(382, 59);
-            this.lbCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCedula.Name = "lbCedula";
-            this.lbCedula.Size = new System.Drawing.Size(14, 18);
-            this.lbCedula.TabIndex = 62;
-            this.lbCedula.Text = "*";
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsuario.Location = new System.Drawing.Point(382, 59);
+            this.lbUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(14, 18);
+            this.lbUsuario.TabIndex = 62;
+            this.lbUsuario.Text = "*";
             // 
-            // lbNombre
+            // lbContrasenia
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(382, 104);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(14, 18);
-            this.lbNombre.TabIndex = 59;
-            this.lbNombre.Text = "*";
+            this.lbContrasenia.AutoSize = true;
+            this.lbContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContrasenia.Location = new System.Drawing.Point(382, 104);
+            this.lbContrasenia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbContrasenia.Name = "lbContrasenia";
+            this.lbContrasenia.Size = new System.Drawing.Size(14, 18);
+            this.lbContrasenia.TabIndex = 59;
+            this.lbContrasenia.Text = "*";
             // 
             // label2
             // 
@@ -203,15 +204,16 @@
             this.label2.TabIndex = 52;
             this.label2.Text = "Contraseña:";
             // 
-            // txtNombre
+            // txtContrasenia
             // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(195, 98);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(183, 24);
-            this.txtNombre.TabIndex = 57;
+            this.txtContrasenia.Enabled = false;
+            this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Location = new System.Drawing.Point(195, 98);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(183, 24);
+            this.txtContrasenia.TabIndex = 57;
+            this.txtContrasenia.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
@@ -232,6 +234,18 @@
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "Usuario:";
+            // 
+            // checkBoxMostrarDatos
+            // 
+            this.checkBoxMostrarDatos.AutoSize = true;
+            this.checkBoxMostrarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMostrarDatos.Location = new System.Drawing.Point(195, 127);
+            this.checkBoxMostrarDatos.Name = "checkBoxMostrarDatos";
+            this.checkBoxMostrarDatos.Size = new System.Drawing.Size(117, 17);
+            this.checkBoxMostrarDatos.TabIndex = 71;
+            this.checkBoxMostrarDatos.Text = "Mostrar contraseña";
+            this.checkBoxMostrarDatos.UseVisualStyleBackColor = true;
+            this.checkBoxMostrarDatos.CheckedChanged += new System.EventHandler(this.checkBoxMostrarDatos_CheckedChanged);
             // 
             // FRM_AgregarUsuario
             // 
@@ -257,13 +271,14 @@
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.Label lbSexo;
+        private System.Windows.Forms.Label lbRol;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbCedula;
-        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Label lbContrasenia;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtContrasenia;
         public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxMostrarDatos;
     }
 }
