@@ -42,6 +42,7 @@ namespace HogarAncianos.Controller {
             //Productos de Limpieza
 
             //Medicamentos 
+          
             frm_MenuPrincipal.mi_MedicamentosAgregar.Click += new EventHandler(OpenAgregarMedicamento);
             frm_AgregarMedicamento.FormClosed += CerrarAgregarMedicamento;
             frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregarMedicamento);
@@ -67,6 +68,8 @@ namespace HogarAncianos.Controller {
             frm_AgregarUsuario.btnCancelar.Click += new EventHandler(CancelarAgregarUsuario);
 
             frm_MenuPrincipal.mi_UsuariosModificar.Click += new EventHandler(OpenModificarUsuarios);
+            frm_ModificarUsuario.FormClosed += CerrarModificarUsuario;
+            frm_ModificarUsuario.btnCancelar.Click += new EventHandler(CancelarModificarUsuario);
 
             //Prescripcion Medicamentos 
 
@@ -219,7 +222,7 @@ namespace HogarAncianos.Controller {
         private void CerrarAgregarUsuario(object sender, EventArgs e)
         {
             frm_AgregarUsuario.Close();
-            //frm_AgregarUsuario.EstadoInicial();
+            frm_AgregarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 
@@ -240,14 +243,14 @@ namespace HogarAncianos.Controller {
         private void CerrarModificarUsuario(object sender, EventArgs e)
         {
             frm_ModificarUsuario.Close();
-          //  frm_ModificarUsuario.EstadoInicial();
+            frm_ModificarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 
         private void CancelarModificarUsuario(object sender, EventArgs e)
         {
             frm_ModificarUsuario.Close();
-            //  frm_ModificarUsuario.EstadoInicial();
+            frm_ModificarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 

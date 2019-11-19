@@ -18,7 +18,7 @@ namespace HogarAncianos.Controller
             this.frm_ModificarUsuario = frm_ModificarUsuario;
             connection = new ConnectionDB();
             AgregarEventosModificarUsuario();
-
+            FillUsuarios();
         }
 
         private void FillUsuarios()
@@ -49,7 +49,7 @@ namespace HogarAncianos.Controller
         public void modificarUsuario(object sender, EventArgs e)
         {
             connection.UpdateUsuario(frm_ModificarUsuario.GetUsuario());
-           
+            frm_ModificarUsuario.EstadoInicial();
         }
 
 

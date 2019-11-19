@@ -34,15 +34,17 @@ namespace HogarAncianos.View
         {
 
             cbUsuario.DataSource = usuario.Tables[0];
-            cbUsuario.DisplayMember = "cedula";
-            cbUsuario.ValueMember = "cedula";
+            cbUsuario.DisplayMember = "usuario";
+            cbUsuario.ValueMember = "usuario";
 
 
         }
 
         public Usuario GetUsuario()
         {
+            Console.WriteLine(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem) + "INFORMACION DEL USUARIO MODFIICADO");
             return new Usuario(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem));
+           
         }
 
         public void ActivarCampos()
