@@ -1,6 +1,6 @@
 ﻿using HogarAncianos.View;
 using System;
-
+using System.Drawing;
 namespace HogarAncianos.Controller {
     public class MenuController {
 
@@ -53,6 +53,8 @@ namespace HogarAncianos.Controller {
 
 
             //Pacientes 
+            frm_MenuPrincipal.mi_pacientes.MouseHover += new EventHandler(color);
+            frm_MenuPrincipal.mi_pacientes.MouseLeave += new EventHandler(colorCambio);
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregarPaciente);
@@ -164,6 +166,14 @@ namespace HogarAncianos.Controller {
         }
 
         //Metodos Paciente 
+        private void color(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.mi_pacientes.ForeColor = Color.Black;
+        }
+        private void colorCambio(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.mi_pacientes.ForeColor = Color.White;
+        }
 
         private void OpenAgregarPaciente(object sender, EventArgs e)
         {
