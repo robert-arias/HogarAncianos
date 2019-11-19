@@ -195,10 +195,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(416, 24);
+            this.btnLimpiar.Location = new System.Drawing.Point(437, 24);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(62, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(83, 23);
             this.btnLimpiar.TabIndex = 23;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@
             this.btnVerificar.Location = new System.Drawing.Point(350, 24);
             this.btnVerificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(62, 23);
+            this.btnVerificar.Size = new System.Drawing.Size(83, 23);
             this.btnVerificar.TabIndex = 13;
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = true;
