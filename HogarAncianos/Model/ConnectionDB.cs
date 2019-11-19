@@ -155,10 +155,11 @@ namespace HogarAncianos.Model {
         {
 
             string query = "update Usuarios set contrasenia='" + usuario.contrasenia + "',rol='" + usuario.rol+"' where usuario="+usuario.nombreUsuario ;
+            Console.WriteLine("update Usuarios set contrasenia = '" + usuario.contrasenia + "', rol = '" + usuario.rol + "' where usuario = '" + usuario.nombreUsuario + "'" + "ESTE ES EL QUERYYYYYYYYYYYYYYY");
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteCommand command = new SQLiteCommand("update Usuarios set contrasenia = '" + usuario.contrasenia + "', rol = '" + usuario.rol + "' where usuario = '" + usuario.nombreUsuario + "'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
