@@ -52,3 +52,32 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.pdb
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe.config
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.pdb
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.dll
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.xml
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.xml
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.Properties.Resources.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarEmpleado.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPaciente.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_MenuPrincipal.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.GenerateResource.cache
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CoreCompileInputs.cache
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.exe
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.pdb

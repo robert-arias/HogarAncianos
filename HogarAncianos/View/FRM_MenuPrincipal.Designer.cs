@@ -63,15 +63,12 @@
             this.mi_Login = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_Login_IniciarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_Login_CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.ms_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_Menu
             // 
+            this.ms_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(73)))));
             this.ms_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ms_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mi_Empleados,
@@ -84,7 +81,7 @@
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
             this.ms_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.ms_Menu.Size = new System.Drawing.Size(713, 24);
+            this.ms_Menu.Size = new System.Drawing.Size(873, 24);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -94,6 +91,8 @@
             this.mi_EmpleadosModificar,
             this.mi_EmpleadosBuscar,
             this.mi_EmpleadosReporte});
+            this.mi_Empleados.ForeColor = System.Drawing.Color.White;
+            this.mi_Empleados.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.mi_Empleados.Name = "mi_Empleados";
             this.mi_Empleados.Size = new System.Drawing.Size(77, 20);
             this.mi_Empleados.Text = "Empleados";
@@ -130,6 +129,7 @@
             this.mi_ProductosLimpiezaBuscar,
             this.mi_ProductosLimpiezaEliminar,
             this.mi_ProductosLimpiezaInventario});
+            this.mi_ProductosLimpieza.ForeColor = System.Drawing.Color.White;
             this.mi_ProductosLimpieza.Name = "mi_ProductosLimpieza";
             this.mi_ProductosLimpieza.Size = new System.Drawing.Size(139, 20);
             this.mi_ProductosLimpieza.Text = "Productos de Limpieza";
@@ -137,25 +137,25 @@
             // mi_ProductosLimpiezaAgregar
             // 
             this.mi_ProductosLimpiezaAgregar.Name = "mi_ProductosLimpiezaAgregar";
-            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(127, 22);
+            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(180, 22);
             this.mi_ProductosLimpiezaAgregar.Text = "Agregar";
             // 
             // mi_ProductosLimpiezaModificar
             // 
             this.mi_ProductosLimpiezaModificar.Name = "mi_ProductosLimpiezaModificar";
-            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(127, 22);
+            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(180, 22);
             this.mi_ProductosLimpiezaModificar.Text = "Modificar";
             // 
             // mi_ProductosLimpiezaBuscar
             // 
             this.mi_ProductosLimpiezaBuscar.Name = "mi_ProductosLimpiezaBuscar";
-            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(127, 22);
+            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(180, 22);
             this.mi_ProductosLimpiezaBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpiezaEliminar
             // 
             this.mi_ProductosLimpiezaEliminar.Name = "mi_ProductosLimpiezaEliminar";
-            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(127, 22);
+            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(180, 22);
             this.mi_ProductosLimpiezaEliminar.Text = "Eliminar";
             // 
             // mi_ProductosLimpiezaInventario
@@ -164,7 +164,7 @@
             this.mi_ProductosLimpiezaAgregarInventario,
             this.mi_ProductosLimpiezaSalidaInventario});
             this.mi_ProductosLimpiezaInventario.Name = "mi_ProductosLimpiezaInventario";
-            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(127, 22);
+            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(180, 22);
             this.mi_ProductosLimpiezaInventario.Text = "Inventario";
             // 
             // mi_ProductosLimpiezaAgregarInventario
@@ -186,6 +186,7 @@
             this.mi_pacientesModificar,
             this.mi_pacientesBuscar,
             this.mi_pacientesReporte});
+            this.mi_pacientes.ForeColor = System.Drawing.Color.White;
             this.mi_pacientes.Name = "mi_pacientes";
             this.mi_pacientes.Size = new System.Drawing.Size(69, 20);
             this.mi_pacientes.Text = "Pacientes";
@@ -222,6 +223,7 @@
             this.mi_MedicamentosEliminar,
             this.mi_MedicamentosBuscar,
             this.mi_MedicamentosReporte});
+            this.mi_Medicamentos.ForeColor = System.Drawing.Color.White;
             this.mi_Medicamentos.Name = "mi_Medicamentos";
             this.mi_Medicamentos.Size = new System.Drawing.Size(98, 20);
             this.mi_Medicamentos.Text = "Medicamentos";
@@ -264,6 +266,7 @@
             this.mi_PrescripcionEliminar,
             this.mi_PrescripcionBuscar,
             this.mi_PrescripcionReporte});
+            this.mi_Prescripcion.ForeColor = System.Drawing.Color.White;
             this.mi_Prescripcion.Name = "mi_Prescripcion";
             this.mi_Prescripcion.Size = new System.Drawing.Size(182, 20);
             this.mi_Prescripcion.Text = "Prescripción de Medicamentos";
@@ -305,6 +308,7 @@
             this.mi_UsuariosModificar,
             this.mi_UsuariosBuscar,
             this.mi_UsuariosEliminar});
+            this.mi_Usuarios.ForeColor = System.Drawing.Color.White;
             this.mi_Usuarios.Name = "mi_Usuarios";
             this.mi_Usuarios.Size = new System.Drawing.Size(64, 20);
             this.mi_Usuarios.Text = "Usuarios";
@@ -338,6 +342,7 @@
             this.mi_Login.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mi_Login_IniciarSesion,
             this.mi_Login_CerrarSesion});
+            this.mi_Login.ForeColor = System.Drawing.Color.White;
             this.mi_Login.Name = "mi_Login";
             this.mi_Login.Size = new System.Drawing.Size(49, 20);
             this.mi_Login.Text = "Login";
@@ -345,67 +350,22 @@
             // mi_Login_IniciarSesion
             // 
             this.mi_Login_IniciarSesion.Name = "mi_Login_IniciarSesion";
-            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(180, 22);
+            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(142, 22);
             this.mi_Login_IniciarSesion.Text = "Iniciar sesion";
             // 
             // mi_Login_CerrarSesion
             // 
             this.mi_Login_CerrarSesion.Name = "mi_Login_CerrarSesion";
-            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(180, 22);
+            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(142, 22);
             this.mi_Login_CerrarSesion.Text = "Cerrar sesion";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(246, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 43);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "MULTICARE";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(280, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "HOGAR DE ANCIACIOS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(213, 243);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "FRAY CASIANO DE MADRID DE MIRAMAR";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(222)))), ((int)(((byte)(151)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 407);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(713, 100);
-            this.panel1.TabIndex = 4;
             // 
             // FRM_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(713, 507);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(873, 363);
             this.Controls.Add(this.ms_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -454,9 +414,6 @@
         public System.Windows.Forms.ToolStripMenuItem mi_UsuariosModificar;
         public System.Windows.Forms.ToolStripMenuItem mi_UsuariosEliminar;
         public System.Windows.Forms.ToolStripMenuItem mi_UsuariosBuscar;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
         public System.Windows.Forms.ToolStripMenuItem mi_ProductosLimpiezaAgregar;
         public System.Windows.Forms.ToolStripMenuItem mi_ProductosLimpiezaModificar;
         public System.Windows.Forms.ToolStripMenuItem mi_ProductosLimpiezaBuscar;
@@ -467,6 +424,5 @@
         public System.Windows.Forms.ToolStripMenuItem mi_Login;
         public System.Windows.Forms.ToolStripMenuItem mi_Login_IniciarSesion;
         public System.Windows.Forms.ToolStripMenuItem mi_Login_CerrarSesion;
-        private System.Windows.Forms.Panel panel1;
     }
 }
