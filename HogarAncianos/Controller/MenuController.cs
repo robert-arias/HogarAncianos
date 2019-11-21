@@ -60,6 +60,8 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_pacientes.MouseLeave += new EventHandler(colorCambio);
 
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
+
+
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregarPaciente);
 
