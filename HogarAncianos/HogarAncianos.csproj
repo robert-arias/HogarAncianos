@@ -96,8 +96,11 @@
     <Compile Include="Controller\ModificarUsuarioController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\Inventario_Productos.cs" />
     <Compile Include="Model\Medicamento.cs" />
     <Compile Include="Model\Paciente.cs" />
+    <Compile Include="Model\Productos_Higiene.cs" />
+    <Compile Include="Model\Salida_Productos.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
