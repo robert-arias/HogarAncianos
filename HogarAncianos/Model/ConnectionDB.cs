@@ -174,12 +174,12 @@ namespace HogarAncianos.Model {
 
        public bool DeleteUsuario(string usuario)
        {
-            string query = "delete from Usuarios where usuario='" + usuario;
+          //  string query = "delete from Usuarios where usuario='" + usuario;
 
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query,connection);
+                SQLiteCommand command = new SQLiteCommand("delete from Usuarios where usuario='" + usuario+"'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
