@@ -196,6 +196,9 @@ namespace HogarAncianos.View {
                 txtHorario.Text, Convert.ToDouble(txtSalario.Text), txtFechaContratacion.Text, "A");
         }
 
-       
+        private void TxtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
