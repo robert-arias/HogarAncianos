@@ -1,6 +1,7 @@
 ﻿using HogarAncianos.Controller;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HogarAncianos.View {
@@ -166,22 +167,82 @@ namespace HogarAncianos.View {
                 dgvResultados.Columns.Remove("Correos");
         }
 
-        public void RealizarBusqueda(DataSet resultados) {
-            cacheBusqueda = resultados;
-            int i = dgvResultados.Rows.Add();
-            DataGridViewRow row = dgvResultados.Rows[i];
-            row.Cells["Cedula"].Value = resultados.Tables[0].Rows[0][0].ToString();
-            row.Cells["Nombre"].Value = resultados.Tables[0].Rows[0][1].ToString();
-            row.Cells["Apellidos"].Value = resultados.Tables[0].Rows[0][2].ToString();
-            row.Cells["FechaNacimiento"].Value = resultados.Tables[0].Rows[0][3].ToString();
-            row.Cells["PuestoTrabajo"].Value = resultados.Tables[0].Rows[0][6].ToString();
-            row.Cells["Horario"].Value = resultados.Tables[0].Rows[0][7].ToString();
-            row.Cells["EstadoLaboral"].Value = resultados.Tables[0].Rows[0][10].ToString();
+        public bool VerificarCampos() {
+            bool wrong = false;
+
+            if (rbCedula.Checked)
+                txtBuscar.Text = new string(txtBuscar.Text.Where(x => char.IsWhiteSpace(x)
+                                                                        || char.IsDigit(x)).ToArray());
+
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+                wrong = true;
+
+            if (rbNombre.Checked || rbApellidos.Checked) {
+                if (cbPuestoTrabajo.Checked && ddlPuesto.SelectedIndex == 0)
+                    wrong = true;
+                if (cbEstadoLaboral.Checked && ddlEstadoLaboral.SelectedIndex == 0)
+                    wrong = true;
+            }
+            return wrong;
+        }
+
+        public void LimpiarBusquedas() {
+            do {
+                foreach (DataGridViewRow row in dgvResultados.Rows) {
+                    dgvResultados.Rows.Remove(row);
+                }
+            } while (dgvResultados.Rows.Count >= 1);
         }
 
         public string GetBusqueda() {
-            return txtBuscar.Text;
+            if (rbCedula.Checked)
+                return $"select *  from empleados where cedula = '{txtBuscar.Text}'";
+            else if (rbNombre.Checked) {
+                Console.WriteLine("Entró");
+                return GetConditions($"select * from empleados where nombre like '%{txtBuscar.Text}%'");
+            }
+            else
+                return GetConditions($"select * from empleados where apellidos like '%{txtBuscar.Text}%'");
         }
 
+        private string GetConditions(string query) {
+            if (dtpFechaContratacion.Checked)
+                return query += $" and fecha_contratacion = '{dtpFechaContratacion.Text}'";
+
+            if (cbPuestoTrabajo.Checked)
+                return query += $" and puesto_trabajo = '{ddlPuesto.GetItemText(ddlPuesto.SelectedItem)}'";
+
+            if (cbEstadoLaboral.Checked) {
+                if (ddlEstadoLaboral.SelectedIndex == 1)
+                    query += $" and estado_laboral = 'A'";
+                else
+                    query += $" and estado_laboral = 'I'";
+
+                return query;
+            }
+
+            return query;
+        }
+
+        public void RealizarBusqueda(DataSet resultados) {
+            if (resultados != null) {
+                if (resultados.Tables[0].Rows.Count > 0) {
+                    cacheBusqueda = resultados;
+                    int i = dgvResultados.Rows.Add();
+                    DataGridViewRow row = dgvResultados.Rows[i];
+                    row.Cells["Cedula"].Value = resultados.Tables[0].Rows[0][0].ToString();
+                    row.Cells["Nombre"].Value = resultados.Tables[0].Rows[0][1].ToString();
+                    row.Cells["Apellidos"].Value = resultados.Tables[0].Rows[0][2].ToString();
+                    row.Cells["FechaNacimiento"].Value = resultados.Tables[0].Rows[0][3].ToString();
+                    row.Cells["PuestoTrabajo"].Value = resultados.Tables[0].Rows[0][6].ToString();
+                    row.Cells["Horario"].Value = resultados.Tables[0].Rows[0][7].ToString();
+                    row.Cells["EstadoLaboral"].Value = resultados.Tables[0].Rows[0][10].ToString();
+                }
+                else
+                    ShowMessage("No se han encontrado resultados");
+            }
+            else
+                ShowMessage("No se han encontrado resultados.");
+        }
     }
 }
