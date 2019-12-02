@@ -81,9 +81,3 @@ C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\Hog
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.pdb
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources
