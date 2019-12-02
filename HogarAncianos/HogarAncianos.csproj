@@ -164,6 +164,12 @@
     <Compile Include="View\FRM_ModificarPaciente.Designer.cs">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ModificarProductosHigiene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarProductosHigiene.Designer.cs">
+      <DependentUpon>FRM_ModificarProductosHigiene.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarPaciente.resx">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarProductosHigiene.resx">
+      <DependentUpon>FRM_ModificarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
