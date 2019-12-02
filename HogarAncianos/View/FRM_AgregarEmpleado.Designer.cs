@@ -292,7 +292,6 @@
             this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDireccion.Size = new System.Drawing.Size(291, 63);
             this.txtDireccion.TabIndex = 6;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.TxtDireccion_TextChanged);
             // 
             // txtCorreos
             // 

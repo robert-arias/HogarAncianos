@@ -81,33 +81,9 @@ C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\Hog
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.pdb
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe.config
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.pdb
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.dll
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.xml
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.xml
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.Properties.Resources.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarEmpleado.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPaciente.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_MenuPrincipal.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.GenerateResource.cache
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CoreCompileInputs.cache
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.exe
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.pdb
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources

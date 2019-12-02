@@ -50,12 +50,14 @@ namespace HogarAncianos.Controller {
         }
 
         private void RealizarBusqueda(object sender, EventArgs e) {
-            if (!string.IsNullOrEmpty(frm_BuscarEmpleados.GetBusqueda())) {
+            if (!frm_BuscarEmpleados.VerificarCampos()) {
+                frm_BuscarEmpleados.LimpiarBusquedas();
                 frm_BuscarEmpleados.RealizarBusqueda(connection.GetBusquedaEmpleados(
                     frm_BuscarEmpleados.GetBusqueda()));
             }
             else
-                frm_BuscarEmpleados.ShowMessage("Debe ingresar algún dato de búsqueda.");
+                frm_BuscarEmpleados.ShowMessage("Verifique que todos los datos selecccionados e ingresados " +
+                    "sean correctos.");
         }
 
     }
