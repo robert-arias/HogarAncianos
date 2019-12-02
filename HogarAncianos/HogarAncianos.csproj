@@ -96,8 +96,11 @@
     <Compile Include="Controller\ModificarUsuarioController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\Inventario_Productos.cs" />
     <Compile Include="Model\Medicamento.cs" />
     <Compile Include="Model\Paciente.cs" />
+    <Compile Include="Model\Productos_Higiene.cs" />
+    <Compile Include="Model\Salida_Productos.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +121,12 @@
     </Compile>
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_AgregarProductosHigiene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_AgregarProductosHigiene.Designer.cs">
+      <DependentUpon>FRM_AgregarProductosHigiene.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_AgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -178,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarPaciente.resx">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_AgregarProductosHigiene.resx">
+      <DependentUpon>FRM_AgregarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarUsuario.resx">
       <DependentUpon>FRM_AgregarUsuario.cs</DependentUpon>

@@ -195,7 +195,5 @@ namespace HogarAncianos.View {
                 txtTelefono.Text, txtDireccion.Text, correos, cbPuesto.GetItemText(cbPuesto.SelectedItem),
                 txtHorario.Text, Convert.ToDouble(txtSalario.Text), txtFechaContratacion.Text, "A");
         }
-
-       
     }
 }

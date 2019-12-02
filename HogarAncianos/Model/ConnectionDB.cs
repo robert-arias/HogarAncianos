@@ -333,9 +333,8 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public DataSet GetBusquedaEmpleados(string busqueda) {
+        public DataSet GetBusquedaEmpleados(string query) {
             try {
-                string query = $"select *  from empleados where cedula = '{busqueda}'";
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);

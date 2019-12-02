@@ -41,3 +41,30 @@ CREATE TABLE "Usuarios" (
 	'contrasenia'	TEXT,
 	'rol'	TEXT,
 	PRIMARY KEY("usuario"));
+
+CREATE TABLE 'Productos_Higiene'
+(
+'identificador_producto' TEXT,
+'nombre_producto' TEXT,
+'tipo_producto' TEXT,
+'descripcion' TEXT,
+ 'cantidad' INTEGER,
+ PRIMARY KEY(identificador_producto));
+ 
+CREATE TABLE "Inventario_Productos" (
+	"num"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"identificador_producto"	TEXT,
+	"cantidad"	INTEGER,
+	"fecha_ingreso"	TEXT,
+	FOREIGN KEY (identificador_producto) REFERENCES Productos_Higiene(identificador_producto)
+);
+
+CREATE TABLE "Salida_Productos"(
+"num" INTEGER PRIMARY KEY AUTOINCREMENT,
+"identificador_producto" TEXT,
+"cantidad_sustraer" INTEGER,
+"fecha_salida" TEXT, 
+"cedula_empleado" TEXT,
+FOREIGN KEY (identificador_producto) REFERENCES Productos_Higiene(identificador_producto),
+FOREIGN KEY (cedula_empleado) REFERENCES Empleados(cedula));
+
