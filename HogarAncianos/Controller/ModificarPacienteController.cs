@@ -17,7 +17,7 @@ namespace HogarAncianos.Controller
         {
             this.frm_ModificarPaciente = frm_ModificarPaciente;
             connectionDB = new ConnectionDB();
-            FillPacientes();
+           // FillPacientes();
             AgregarEventosModificarPaciente();
             
         }
@@ -25,15 +25,15 @@ namespace HogarAncianos.Controller
         private void AgregarEventosModificarPaciente()
         {
             frm_ModificarPaciente.btnLimpiar.Click += new EventHandler(limpiar);        
-            frm_ModificarPaciente.cbCedulaIdentidad.SelectedIndexChanged += new EventHandler(llenarCampos);
-            frm_ModificarPaciente.btnModificar.Click += new EventHandler(ModificarPaciente);
+          ////  frm_ModificarPaciente.cbCedulaIdentidad.SelectedIndexChanged += new EventHandler(llenarCampos);
+            //frm_ModificarPaciente.btnModificar.Click += new EventHandler(ModificarPaciente);
 
         }
 
-        private void FillPacientes()
-        {
-            frm_ModificarPaciente.FillPacientes(connectionDB.GetAllPacientes());
-        }
+        //private void FillPacientes()
+        //{
+        //    frm_ModificarPaciente.FillPacientes(connectionDB.GetAllPacientes());
+        //}
 
         private void limpiar(object sender, EventArgs e)
         {
@@ -49,23 +49,23 @@ namespace HogarAncianos.Controller
             }
         }
 
-        private void ModificarPaciente(object sender, EventArgs e)
-        {
-            if (!frm_ModificarPaciente.VerificarCampos())
-            {
-                connectionDB.UpdatePaciente(frm_ModificarPaciente.GetPaciente());
-                frm_ModificarPaciente.ShowMessage("Paciente modificado con exito");
-                frm_ModificarPaciente.EstadoInicial();
-                FillPacientes();
+        //private void ModificarPaciente(object sender, EventArgs e)
+        //{
+        //    if (!frm_ModificarPaciente.VerificarCampos())
+        //    {
+        //        connectionDB.UpdatePaciente(frm_ModificarPaciente.GetPaciente());
+        //        frm_ModificarPaciente.ShowMessage("Paciente modificado con exito");
+        //        frm_ModificarPaciente.EstadoInicial();
+        //        FillPacientes();
 
 
-            }
-            else
-            {
-                frm_ModificarPaciente.ShowMessage("Espacios vacios ");
-            }
+        //    }
+        //    else
+        //    {
+        //        frm_ModificarPaciente.ShowMessage("Espacios vacios ");
+        //    }
 
-        }
+        //}
 
         
 

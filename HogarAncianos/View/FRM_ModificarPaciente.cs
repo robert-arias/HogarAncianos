@@ -19,34 +19,15 @@ namespace HogarAncianos.View
         {
             InitializeComponent();
             modificarPacienteController = new ModificarPacienteController(this);
-            cbCedulaIdentidad.Text = "Seleccionar";
             cbSexo.Text = "Seleccionar";
             EstadoInicial();
            
         }
 
-        public void FillPacientes(DataSet pacientes)
-        {
-          
-            cbCedulaIdentidad.DataSource = pacientes.Tables[0];
-            cbCedulaIdentidad.DisplayMember = "cedula";
-            cbCedulaIdentidad.ValueMember = "cedula";
-
-          
-        }
-
-        public string GetCedula()
-        {
-            string cedula="";
-            if (cbCedulaIdentidad.SelectedIndex != 0)
-            {
-                Console.WriteLine(cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem) + "METODO GET CEDULA");
-                cedula = cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem);
-
-            }
-
-            return cedula;
-        }
+       public string GetCedula()
+       {
+            return txtCedula.Text;
+       }
 
        public void llenarCampos(DataSet data)
        {
@@ -136,15 +117,16 @@ namespace HogarAncianos.View
             btnModificar.Enabled = false;
             btnCancelar.Enabled = false;
             btnLimpiar.Enabled = true;
+            btnVerificar.Enabled = true;
 
-            cbCedulaIdentidad.Enabled = true;
+            txtCedula.Enabled=true;
             txtNombre.Enabled = false;
             txtApellidos.Enabled = false;
             txtFechaNacimiento.Enabled = false;
             txtEdad.Enabled = false;
             cbSexo.Enabled = false;
 
-            cbCedulaIdentidad.SelectedIndex = 0;
+            txtCedula.Text = "";
             txtNombre.Text = "";
             txtApellidos.Text = "";
             txtFechaNacimiento.Text = "";
@@ -160,7 +142,7 @@ namespace HogarAncianos.View
             btnCancelar.Enabled = true;
             btnLimpiar.Enabled = true;
 
-            cbCedulaIdentidad.Enabled = true;
+           
             txtNombre.Enabled = true;
             txtApellidos.Enabled = true;
             txtFechaNacimiento.Enabled = true;
@@ -171,15 +153,67 @@ namespace HogarAncianos.View
 
         public Paciente GetPaciente()
         {
-            Console.WriteLine("MIERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
+            //Console.WriteLine("MIERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
          
-             Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString() + "ELLLLL PACIENTE QUE SE VA A MODIFICAR  METODO GET PACIENTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            // Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString() + "ELLLLL PACIENTE QUE SE VA A MODIFICAR  METODO GET PACIENTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 
-            return new Paciente(cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
+            return new Paciente(txtCedula.Text, txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
             Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString());
 
-          
+            //cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem)
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public void FillPacientes(DataSet pacientes)
+        //{
+
+        //    cbCedulaIdentidad.DataSource = pacientes.Tables[0];
+        //    cbCedulaIdentidad.DisplayMember = "cedula";
+        //    cbCedulaIdentidad.ValueMember = "cedula";
+
+        //}
+
+        //public string GetCedula()
+        //{
+        //    string cedula="";
+        //    if (cbCedulaIdentidad.SelectedIndex != 0)
+        //    {
+        //        Console.WriteLine(cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem) + "METODO GET CEDULA");
+        //        cedula = cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem);
+
+        //    }
+
+        //    return cedula;
+        //}
 
     }
 }
