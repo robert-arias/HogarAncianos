@@ -122,6 +122,12 @@
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_AgregarProductoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_AgregarProductoInventario.Designer.cs">
+      <DependentUpon>FRM_AgregarProductoInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_AgregarProductosHigiene.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,12 @@
     </Compile>
     <Compile Include="View\FRM_ModificarPaciente.Designer.cs">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ModificarProductosHigiene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarProductosHigiene.Designer.cs">
+      <DependentUpon>FRM_ModificarProductosHigiene.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_ModificarUsuario.cs">
       <SubType>Form</SubType>
@@ -208,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarPaciente.resx">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarProductosHigiene.resx">
+      <DependentUpon>FRM_ModificarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
