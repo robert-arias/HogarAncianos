@@ -122,6 +122,12 @@
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_AgregarProductoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_AgregarProductoInventario.Designer.cs">
+      <DependentUpon>FRM_AgregarProductoInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_AgregarProductosHigiene.cs">
       <SubType>Form</SubType>
     </Compile>
