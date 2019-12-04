@@ -146,6 +146,18 @@
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_BuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_BuscarProducto.Designer.cs">
+      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_EliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_EliminarProducto.Designer.cs">
+      <DependentUpon>FRM_EliminarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     <Compile Include="View\FRM_ModificarUsuario.Designer.cs">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_SalidaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_SalidaProductos.Designer.cs">
+      <DependentUpon>FRM_SalidaProductos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -200,6 +218,9 @@
     <EmbeddedResource Include="View\FRM_AgregarPaciente.resx">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_AgregarProductoInventario.resx">
+      <DependentUpon>FRM_AgregarProductoInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarProductosHigiene.resx">
       <DependentUpon>FRM_AgregarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +229,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_BuscarProducto.resx">
+      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_EliminarProducto.resx">
+      <DependentUpon>FRM_EliminarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_Login.resx">
       <DependentUpon>FRM_Login.cs</DependentUpon>
@@ -226,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_SalidaProductos.resx">
+      <DependentUpon>FRM_SalidaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
