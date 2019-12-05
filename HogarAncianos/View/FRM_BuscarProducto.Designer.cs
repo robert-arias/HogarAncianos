@@ -44,6 +44,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.identificador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historialIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historialProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -190,7 +196,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.identificador});
+            this.identificador,
+            this.nombre,
+            this.tipo,
+            this.descripcion,
+            this.cantidad,
+            this.historialIngreso,
+            this.historialProducto});
             this.dataGridView1.Location = new System.Drawing.Point(34, 253);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -202,6 +214,42 @@
             this.identificador.HeaderText = "Identificador";
             this.identificador.Name = "identificador";
             this.identificador.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // historialIngreso
+            // 
+            this.historialIngreso.HeaderText = "Historial de ingreso";
+            this.historialIngreso.Name = "historialIngreso";
+            this.historialIngreso.ReadOnly = true;
+            // 
+            // historialProducto
+            // 
+            this.historialProducto.HeaderText = "Historial de productos";
+            this.historialProducto.Name = "historialProducto";
+            this.historialProducto.ReadOnly = true;
             // 
             // FRM_BuscarProducto
             // 
@@ -242,5 +290,11 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn historialIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn historialProducto;
     }
 }
