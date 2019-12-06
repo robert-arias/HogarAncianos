@@ -22,8 +22,6 @@ namespace HogarAncianos.Controller
             connectionDB = new ConnectionDB();
            
         }
-
-
         private void AgregarEventosMedicamentos()
         {
             frm_AgregarMedicamento.btnAgregar.Click += new EventHandler(AgregarPaciente);
@@ -33,9 +31,6 @@ namespace HogarAncianos.Controller
 
 
         }
-
-
-
         private void VerificarCodigoMedicamento(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(frm_AgregarMedicamento.GetCodigo()))

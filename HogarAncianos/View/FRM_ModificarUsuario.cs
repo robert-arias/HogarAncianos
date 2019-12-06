@@ -33,10 +33,20 @@ namespace HogarAncianos.View
         public void FillUsuarios(DataSet usuario)
         {
 
-            cbUsuario.DataSource = usuario.Tables[0];
+            DataTable table = new DataTable();
+            table = usuario.Tables[0];        
+            DataRow newRow = table.NewRow();
+            newRow["usuario"] = "Seleccionar";
+            table.Rows.InsertAt(newRow,0);
+            Console.WriteLine(newRow + "Holi");
+
+
+
+            cbUsuario.DataSource = table;
             cbUsuario.DisplayMember = "usuario";
             cbUsuario.ValueMember = "usuario";
 
+             
 
         }
 
@@ -71,9 +81,11 @@ namespace HogarAncianos.View
             btnCancelar.Enabled = false;
           
             btnLimpiar.Enabled = true;
-
-
+            
             cbUsuario.SelectedIndex = 0;
+
+           
+
             txtContrasenia.Text = "";
             cbRol.SelectedIndex = 0;
 
@@ -129,5 +141,7 @@ namespace HogarAncianos.View
         {
             return cbUsuario.GetItemText(cbUsuario.SelectedItem);
         }
+
+       
     }
 }

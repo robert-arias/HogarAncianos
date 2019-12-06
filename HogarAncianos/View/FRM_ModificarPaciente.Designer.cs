@@ -31,6 +31,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnVerificar = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.TextBox();
             this.lbSexo = new System.Windows.Forms.Label();
             this.lbEdad = new System.Windows.Forms.Label();
             this.lbFechaNacimiento = new System.Windows.Forms.Label();
@@ -47,9 +50,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnVerificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +115,49 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion personal";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Location = new System.Drawing.Point(490, 49);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(69, 29);
+            this.btnLimpiar.TabIndex = 81;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnVerificar
+            // 
+            this.btnVerificar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnVerificar.FlatAppearance.BorderSize = 0;
+            this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerificar.ForeColor = System.Drawing.Color.Black;
+            this.btnVerificar.Location = new System.Drawing.Point(405, 49);
+            this.btnVerificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(69, 29);
+            this.btnVerificar.TabIndex = 80;
+            this.btnVerificar.Text = "Verificar";
+            this.btnVerificar.UseVisualStyleBackColor = false;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedula.Location = new System.Drawing.Point(196, 51);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(183, 24);
+            this.txtCedula.TabIndex = 79;
             // 
             // lbSexo
             // 
@@ -194,6 +237,7 @@
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(183, 26);
             this.cbSexo.TabIndex = 67;
+            this.cbSexo.Text = "Seleccionar";
             // 
             // label7
             // 
@@ -290,49 +334,6 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Cédula de identidad:";
             // 
-            // txtCedula
-            // 
-            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(196, 51);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(183, 24);
-            this.txtCedula.TabIndex = 79;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.Location = new System.Drawing.Point(490, 49);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(69, 29);
-            this.btnLimpiar.TabIndex = 81;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // btnVerificar
-            // 
-            this.btnVerificar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnVerificar.FlatAppearance.BorderSize = 0;
-            this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificar.ForeColor = System.Drawing.Color.Black;
-            this.btnVerificar.Location = new System.Drawing.Point(405, 49);
-            this.btnVerificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(69, 29);
-            this.btnVerificar.TabIndex = 80;
-            this.btnVerificar.Text = "Verificar";
-            this.btnVerificar.UseVisualStyleBackColor = false;
-            // 
             // FRM_ModificarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,16 +364,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.DateTimePicker txtFechaNacimiento;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbSexo;
-        private System.Windows.Forms.Label lbEdad;
-        private System.Windows.Forms.Label lbFechaNacimiento;
-        private System.Windows.Forms.Label lbApellidos;
-        private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.TextBox txtCedula;
+        public System.Windows.Forms.TextBox txtApellidos;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.DateTimePicker txtFechaNacimiento;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lbSexo;
+        public System.Windows.Forms.Label lbEdad;
+        public System.Windows.Forms.Label lbFechaNacimiento;
+        public System.Windows.Forms.Label lbApellidos;
+        public System.Windows.Forms.Label lbNombre;
+        public System.Windows.Forms.TextBox txtCedula;
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.Button btnVerificar;
     }

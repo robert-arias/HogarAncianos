@@ -384,7 +384,7 @@ namespace HogarAncianos.Model {
 
         public bool UpdateMedicamento(Medicamento medicamento)
         {
-            string query = "update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible='" + medicamento.catidadDisponible;
+            string query = "update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible=" + medicamento.catidadDisponible /*+ ""*/;
             try
             {
                 connection.Open();
@@ -402,18 +402,20 @@ namespace HogarAncianos.Model {
         }
 
 
-
-
-        public DataSet GetMedicamentos()
+        public DataSet GetMedicamento(string codigo)
         {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select codigo_medicamentos from Medicamentos", connection);
+                SQLiteCommand command = new SQLiteCommand("select * from Medicamentos where codigo_medicamento = '"+codigo + "'", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
                 connection.Close();
+
+                Console.WriteLine(data.Tables[0].Rows[0][0]+"que traeeee medicamentooooooooos");
+                Console.WriteLine(data.Tables[0].Rows[0][1] + "que traeeee medicamentooooooooos");
+                Console.WriteLine(data.Tables[0].Rows[0][2] + "que traeeee medicamentooooooooos");
                 return data;
             }
             catch (SQLiteException e)
@@ -422,6 +424,8 @@ namespace HogarAncianos.Model {
                 throw;
             }
         }
+
+     
 
         public bool DeleteMedicamento(string codigo)
         {

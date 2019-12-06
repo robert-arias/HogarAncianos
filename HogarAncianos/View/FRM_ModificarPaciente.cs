@@ -35,9 +35,9 @@ namespace HogarAncianos.View
             txtApellidos.Text= data.Tables[0].Rows[0][2].ToString();
             txtFechaNacimiento.Text= data.Tables[0].Rows[0][3].ToString();
             txtEdad.Text= data.Tables[0].Rows[0][4].ToString();
-            cbSexo.SelectedItem= data.Tables[0].Rows[0][5].ToString();
+            cbSexo.SelectedItem = data.Tables[0].Rows[0][5].ToString();
 
-            Console.WriteLine(data.Tables[0].Rows[0][1].ToString()+"LLenar campos");
+            Console.WriteLine(data.Tables[0].Rows[0][5].ToString() + "LLenar campos SEXO ");
        }
 
         public void ShowMessage(string message)
@@ -131,7 +131,7 @@ namespace HogarAncianos.View
             txtApellidos.Text = "";
             txtFechaNacimiento.Text = "";
             txtEdad.Text = "";
-            cbSexo.Text = "";
+            cbSexo.SelectedItem = "Seleccionar";
 
         }
 
@@ -142,7 +142,7 @@ namespace HogarAncianos.View
             btnCancelar.Enabled = true;
             btnLimpiar.Enabled = true;
 
-           
+            txtCedula.Enabled = false;
             txtNombre.Enabled = true;
             txtApellidos.Enabled = true;
             txtFechaNacimiento.Enabled = true;
@@ -153,9 +153,7 @@ namespace HogarAncianos.View
 
         public Paciente GetPaciente()
         {
-            //Console.WriteLine("MIERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem), txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
-         
-            // Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString() + "ELLLLL PACIENTE QUE SE VA A MODIFICAR  METODO GET PACIENTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+            
 
             return new Paciente(txtCedula.Text, txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
             Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString());

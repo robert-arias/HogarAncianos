@@ -18,7 +18,8 @@ namespace HogarAncianos.View
         {
             InitializeComponent();
             agregarPacienteCotroller = new AgregarPacienteCotroller(this);
-            EstadoInicial();            
+            EstadoInicial();
+            cbSexo.Text = "Seleccionar";
         }
 
       

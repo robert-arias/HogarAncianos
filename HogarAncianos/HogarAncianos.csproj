@@ -146,6 +146,36 @@
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ConsultaMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ConsultaMedicamentos.Designer.cs">
+      <DependentUpon>FRM_ConsultaMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ConsultaPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ConsultaPacientes.Designer.cs">
+      <DependentUpon>FRM_ConsultaPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ConsultarUsuario.Designer.cs">
+      <DependentUpon>FRM_ConsultarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_EliminarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_EliminarMedicamento.Designer.cs">
+      <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_EliminarUsuario.Designer.cs">
+      <DependentUpon>FRM_EliminarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ConsultarUsuario.resx">
+      <DependentUpon>FRM_ConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_EliminarMedicamento.resx">
+      <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_EliminarUsuario.resx">
+      <DependentUpon>FRM_EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_Login.resx">
       <DependentUpon>FRM_Login.cs</DependentUpon>

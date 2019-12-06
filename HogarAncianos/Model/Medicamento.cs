@@ -26,5 +26,15 @@ namespace HogarAncianos.Model
             this.cantidadPrescrita = cantidadPrescrita;
         }
 
+        public Medicamento(string codigoMedicamento, string nombreMedicamento, string unidadMedida, string categoria, int cantidadDisponible)
+        {
+            this.codigoMedicamento = codigoMedicamento;
+            this.nombreMedicamento = nombreMedicamento;
+            this.unidadMedida = unidadMedida;
+            this.categoria = categoria;
+            this.catidadDisponible = cantidadDisponible;
+          
+        }
+
     }
 }
