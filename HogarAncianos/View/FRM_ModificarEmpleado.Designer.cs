@@ -1,5 +1,5 @@
 ﻿namespace HogarAncianos.View {
-    partial class FRM_AgregarEmpleado {
+    partial class FRM_ModificarEmpleado {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -53,7 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbFechaContratacion = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.lbSalario = new System.Windows.Forms.Label();
             this.lbHorario = new System.Windows.Forms.Label();
             this.lbPuesto = new System.Windows.Forms.Label();
@@ -404,7 +404,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnCancelar);
             this.groupBox2.Controls.Add(this.lbFechaContratacion);
-            this.groupBox2.Controls.Add(this.btnAgregar);
+            this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Controls.Add(this.lbSalario);
             this.groupBox2.Controls.Add(this.lbHorario);
             this.groupBox2.Controls.Add(this.lbPuesto);
@@ -456,20 +456,20 @@
             this.lbFechaContratacion.TabIndex = 35;
             this.lbFechaContratacion.Text = "*";
             // 
-            // btnAgregar
+            // btnModificar
             // 
-            this.btnAgregar.Enabled = false;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(373, 183);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(156, 39);
-            this.btnAgregar.TabIndex = 14;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.Black;
+            this.btnModificar.Location = new System.Drawing.Point(373, 183);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(156, 39);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // lbSalario
             // 
@@ -646,7 +646,7 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Puesto de trabajo:";
             // 
-            // FRM_AgregarEmpleado
+            // FRM_ModificarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -657,10 +657,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.Name = "FRM_AgregarEmpleado";
+            this.Name = "FRM_ModificarEmpleado";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar empleado";
+            this.Text = "Modificar empleado";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorreos)).EndInit();
@@ -701,7 +701,7 @@
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.Button btnAgregarCorreo;
         public System.Windows.Forms.Button btnVerificar;
-        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.TextBox txtCedula;
@@ -718,5 +718,6 @@
         private System.Windows.Forms.Label lbFechaNacimiento;
         private System.Windows.Forms.Label lbCedula;
         public System.Windows.Forms.Button btnEliminarCorreo;
+
     }
 }
