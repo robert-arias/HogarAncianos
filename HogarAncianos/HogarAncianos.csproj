@@ -196,6 +196,12 @@
     <Compile Include="View\FRM_MenuPrincipal.Designer.cs">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarEmpleado.Designer.cs">
+      <DependentUpon>FRM_ModificarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ModificarMedicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_MenuPrincipal.resx">
       <DependentUpon>FRM_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarEmpleado.resx">
+      <DependentUpon>FRM_ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarMedicamento.resx">
       <DependentUpon>FRM_ModificarMedicamento.cs</DependentUpon>

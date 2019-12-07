@@ -6,10 +6,9 @@ using System.Windows.Forms;
 namespace HogarAncianos.Controller {
     public class MenuController {
 
-        //Yanily Jiménez
-
         private FRM_MenuPrincipal frm_MenuPrincipal;
         private FRM_AgregarEmpleado frm_AgregarEmpleado;
+        private FRM_ModificarEmpleado frm_ModificarEmpleado;
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
         private FRM_AgregarMedicamento frm_AgregarMedicamento;
         private FRM_AgregarPaciente frm_AgregarPaciente;
@@ -28,6 +27,7 @@ namespace HogarAncianos.Controller {
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
             frm_MenuPrincipal = menuPrincipal;
             frm_AgregarEmpleado = new FRM_AgregarEmpleado();
+            frm_ModificarEmpleado = new FRM_ModificarEmpleado();
             frm_BuscarEmpleados = new FRM_BuscarEmpleados();
             frm_AgregarPaciente = new FRM_AgregarPaciente();
             frm_AgregarMedicamento = new FRM_AgregarMedicamento();
@@ -47,8 +47,11 @@ namespace HogarAncianos.Controller {
         private void AgregarEventos() {
             //Empleados
             frm_MenuPrincipal.mi_EmpleadosAgregar.Click += new EventHandler(OpenAgregarEmpleado);
+            frm_MenuPrincipal.mi_EmpleadosModificar.Click += new EventHandler(OpenModificarEmpleado);
             frm_MenuPrincipal.mi_EmpleadosBuscar.Click += new EventHandler(OpenBuscarEmpleados);
+            frm_MenuPrincipal.mi_EmpleadosReporte.Click += new EventHandler(OpenReporteEmpleados);
             frm_AgregarEmpleado.FormClosed += CerrarAgregarEmpleado;
+            frm_ModificarEmpleado.FormClosed += CerrarModificarEmpleado;
             frm_BuscarEmpleados.FormClosed += CerrarBuscarEmpleados;
             frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregar);
 
@@ -125,8 +128,20 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado.ShowDialog();
         }
 
+        private void OpenModificarEmpleado(object sender, EventArgs e) {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarEmpleado.ShowDialog();
+        }
+
         private void OpenBuscarEmpleados(object sender, EventArgs e) {
             frm_MenuPrincipal.Hide();
+            frm_BuscarEmpleados.Text = "Buscar empleados";
+            frm_BuscarEmpleados.ShowDialog();
+        }
+
+        private void OpenReporteEmpleados(object sender, EventArgs e) {
+            frm_MenuPrincipal.Hide();
+            frm_BuscarEmpleados.Text = "Realizar reporte";
             frm_BuscarEmpleados.ShowDialog();
         }
 
@@ -134,6 +149,12 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado.Close();
             frm_MenuPrincipal.Show();
             frm_AgregarEmpleado.EstadoInicial();
+        }
+
+        private void CerrarModificarEmpleado(object sender, EventArgs e) {
+            frm_ModificarEmpleado.Close();
+            frm_MenuPrincipal.Show();
+            //frm_ModificarEmpleado.EstadoInicial();
         }
 
         private void CerrarBuscarEmpleados(object sender, EventArgs e) {
