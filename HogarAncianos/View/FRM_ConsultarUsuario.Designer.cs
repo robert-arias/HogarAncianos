@@ -32,8 +32,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -76,13 +76,13 @@
             this.label1.Text = "Búsqueda:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dataGridView1
+            // dtUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 127);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(485, 124);
-            this.dataGridView1.TabIndex = 12;
+            this.dtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtUsuarios.Location = new System.Drawing.Point(55, 127);
+            this.dtUsuarios.Name = "dtUsuarios";
+            this.dtUsuarios.Size = new System.Drawing.Size(602, 186);
+            this.dtUsuarios.TabIndex = 12;
             // 
             // FRM_ConsultarUsuario
             // 
@@ -90,14 +90,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(694, 339);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtUsuarios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Name = "FRM_ConsultarUsuario";
             this.Text = "FRM_ConsultarUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FRM_ConsultarUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,6 +110,6 @@
         public System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtUsuarios;
     }
 }

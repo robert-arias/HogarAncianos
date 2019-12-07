@@ -17,6 +17,12 @@ namespace HogarAncianos.Controller {
         private FRM_ModificarMedicamento frm_ModificarMedicamento;
         private FRM_AgregarUsuario frm_AgregarUsuario;
         private FRM_ModificarUsuario frm_ModificarUsuario;
+
+        private FRM_ConsultarUsuario frm_ConsultarUsuario;
+        private FRM_ConsultaMedicamentos frm_ConsultaMedicamentos;
+        private FRM_ConsultaPacientes frm_ConsultaPacientes;
+        private FRM_EliminarMedicamento frm_EliminarMedicamento;
+        private FRM_EliminarUsuario frm_EliminarUsuario;
         private FRM_Login frm_login; 
 
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
@@ -30,6 +36,11 @@ namespace HogarAncianos.Controller {
             frm_ModificarMedicamento = new FRM_ModificarMedicamento();
             frm_ModificarUsuario = new FRM_ModificarUsuario();
             frm_AgregarUsuario = new FRM_AgregarUsuario();
+            frm_ConsultarUsuario = new FRM_ConsultarUsuario();
+            frm_ConsultaMedicamentos = new FRM_ConsultaMedicamentos();
+            frm_ConsultaPacientes = new FRM_ConsultaPacientes();
+            frm_EliminarMedicamento = new FRM_EliminarMedicamento();
+            frm_EliminarUsuario = new FRM_EliminarUsuario();
             AgregarEventos();
         }
 
@@ -53,6 +64,8 @@ namespace HogarAncianos.Controller {
             frm_ModificarMedicamento.FormClosed += CerrarModificarMedicamento;
             frm_ModificarMedicamento.btnCancelar.Click += new EventHandler(CancelarModificarMedicamento);
 
+         
+          
 
             //Pacientes 
             frm_MenuPrincipal.mi_pacientes.DropDownItemClicked += new ToolStripItemClickedEventHandler(color);
@@ -78,6 +91,10 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_UsuariosModificar.Click += new EventHandler(OpenModificarUsuarios);
             frm_ModificarUsuario.FormClosed += CerrarModificarUsuario;
             frm_ModificarUsuario.btnCancelar.Click += new EventHandler(CancelarModificarUsuario);
+
+            frm_MenuPrincipal.mi_UsuariosBuscar.Click += new EventHandler(OpenConsultarUsuario);
+            frm_ConsultarUsuario.FormClosed += CerrarConsultarUsuario;
+            frm_ConsultarUsuario.btnCancelar.Click += new EventHandler(CancelarConsultarUsuario);
 
             //Prescripcion Medicamentos 
 
@@ -267,6 +284,29 @@ namespace HogarAncianos.Controller {
         {
             frm_ModificarUsuario.Close();
             frm_ModificarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
+
+
+        private void OpenConsultarUsuario(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ConsultarUsuario.ShowDialog();
+
+        }
+
+        private void CerrarConsultarUsuario(object sender, EventArgs e)
+        {
+            frm_ConsultarUsuario.Close();
+            //frm_ConsultarUsuario.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void CancelarConsultarUsuario(object sender, EventArgs e)
+        {
+            frm_ConsultarUsuario.Close();
+           // frm_ConsultarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 

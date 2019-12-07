@@ -331,6 +331,7 @@
             this.dgvResultados.ShowEditingIcon = false;
             this.dgvResultados.Size = new System.Drawing.Size(910, 227);
             this.dgvResultados.TabIndex = 5;
+            this.dgvResultados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultados_CellContentClick);
             // 
             // Cedula
             // 

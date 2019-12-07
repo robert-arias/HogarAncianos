@@ -244,5 +244,10 @@ namespace HogarAncianos.View {
             else
                 ShowMessage("No se han encontrado resultados.");
         }
+
+        private void dgvResultados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
