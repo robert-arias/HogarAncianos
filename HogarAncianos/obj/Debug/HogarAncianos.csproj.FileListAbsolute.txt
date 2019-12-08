@@ -111,3 +111,5 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisio
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\stdole.dll
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarEmpleado.resources
