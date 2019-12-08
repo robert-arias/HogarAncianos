@@ -154,6 +154,12 @@
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_BuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_BuscarProducto.Designer.cs">
+      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ConsultaMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     </Compile>
     <Compile Include="View\FRM_EliminarMedicamento.Designer.cs">
       <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_EliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_EliminarProducto.Designer.cs">
+      <DependentUpon>FRM_EliminarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_EliminarUsuario.cs">
       <SubType>Form</SubType>
@@ -259,6 +271,9 @@
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_BuscarProducto.resx">
+      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ConsultaPacientes.resx">
       <DependentUpon>FRM_ConsultaPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_EliminarMedicamento.resx">
       <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_EliminarProducto.resx">
+      <DependentUpon>FRM_EliminarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_EliminarUsuario.resx">
       <DependentUpon>FRM_EliminarUsuario.cs</DependentUpon>
