@@ -111,7 +111,6 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisio
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\stdole.dll
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarEmpleado.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -142,3 +141,12 @@ D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\Hog
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarEmpleado.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarProductosHigiene.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_SalidaProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProducto.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaMedicamentos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarProducto.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_SalidaProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPrescripcion.resources
