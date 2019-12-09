@@ -289,6 +289,9 @@
     <EmbeddedResource Include="View\FRM_AgregarPrescripcion.resx">
       <DependentUpon>FRM_AgregarPrescripcion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_AgregarProductoInventario.resx">
+      <DependentUpon>FRM_AgregarProductoInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarProductosHigiene.resx">
       <DependentUpon>FRM_AgregarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
