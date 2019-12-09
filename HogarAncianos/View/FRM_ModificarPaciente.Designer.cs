@@ -346,6 +346,7 @@
             this.Name = "FRM_ModificarPaciente";
             this.Opacity = 0.9D;
             this.Text = "FRM_ModificarPaciente";
+            this.Load += new System.EventHandler(this.FRM_ModificarPaciente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

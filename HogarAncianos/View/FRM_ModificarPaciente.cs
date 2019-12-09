@@ -161,6 +161,11 @@ namespace HogarAncianos.View
             //cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem)
         }
 
+        private void FRM_ModificarPaciente_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
