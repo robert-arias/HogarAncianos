@@ -80,7 +80,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
+            this.txtUsuario.BackColor = System.Drawing.Color.CadetBlue;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.Black;
@@ -120,7 +120,7 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
+            this.txtContrasenia.BackColor = System.Drawing.Color.CadetBlue;
             this.txtContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.ForeColor = System.Drawing.Color.Black;
