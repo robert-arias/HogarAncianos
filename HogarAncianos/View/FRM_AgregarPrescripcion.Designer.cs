@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarCorreo = new System.Windows.Forms.Button();
-            this.lbFechaNacimiento = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnEliminarCorreo = new System.Windows.Forms.Button();
@@ -70,7 +69,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAgregarCorreo);
-            this.groupBox1.Controls.Add(this.lbFechaNacimiento);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.btnEliminarCorreo);
@@ -97,6 +95,7 @@
             // 
             // btnAgregarCorreo
             // 
+            this.btnAgregarCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregarCorreo.Enabled = false;
             this.btnAgregarCorreo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnAgregarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
@@ -108,18 +107,7 @@
             this.btnAgregarCorreo.Size = new System.Drawing.Size(78, 29);
             this.btnAgregarCorreo.TabIndex = 118;
             this.btnAgregarCorreo.Text = "Agregar";
-            this.btnAgregarCorreo.UseVisualStyleBackColor = true;
-            // 
-            // lbFechaNacimiento
-            // 
-            this.lbFechaNacimiento.AutoSize = true;
-            this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.Location = new System.Drawing.Point(387, 165);
-            this.lbFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbFechaNacimiento.Name = "lbFechaNacimiento";
-            this.lbFechaNacimiento.Size = new System.Drawing.Size(13, 17);
-            this.lbFechaNacimiento.TabIndex = 117;
-            this.lbFechaNacimiento.Text = "*";
+            this.btnAgregarCorreo.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -145,10 +133,11 @@
             // 
             // btnEliminarCorreo
             // 
+            this.btnEliminarCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEliminarCorreo.Enabled = false;
             this.btnEliminarCorreo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnEliminarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCorreo.ForeColor = System.Drawing.Color.Black;
             this.btnEliminarCorreo.Location = new System.Drawing.Point(27, 202);
             this.btnEliminarCorreo.Margin = new System.Windows.Forms.Padding(2);
@@ -156,7 +145,7 @@
             this.btnEliminarCorreo.Size = new System.Drawing.Size(75, 35);
             this.btnEliminarCorreo.TabIndex = 114;
             this.btnEliminarCorreo.Text = "Eliminar";
-            this.btnEliminarCorreo.UseVisualStyleBackColor = true;
+            this.btnEliminarCorreo.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -294,6 +283,7 @@
             // 
             // btnVerificar
             // 
+            this.btnVerificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,7 +294,7 @@
             this.btnVerificar.Size = new System.Drawing.Size(69, 29);
             this.btnVerificar.TabIndex = 97;
             this.btnVerificar.Text = "Verificar";
-            this.btnVerificar.UseVisualStyleBackColor = true;
+            this.btnVerificar.UseVisualStyleBackColor = false;
             // 
             // txtCodigo
             // 
@@ -344,6 +334,7 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,10 +345,11 @@
             this.button3.Size = new System.Drawing.Size(69, 29);
             this.button3.TabIndex = 121;
             this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,7 +360,7 @@
             this.button4.Size = new System.Drawing.Size(69, 29);
             this.button4.TabIndex = 120;
             this.button4.Text = "Verificar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -413,29 +405,31 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(383, 560);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(380, 566);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 41);
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAgregar.Enabled = false;
             this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(231, 560);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(228, 566);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(117, 41);
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
@@ -506,7 +500,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         public System.Windows.Forms.Button btnEliminarCorreo;
-        private System.Windows.Forms.Label lbFechaNacimiento;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker txtFechaNacimiento;
         public System.Windows.Forms.Button btnAgregarCorreo;
