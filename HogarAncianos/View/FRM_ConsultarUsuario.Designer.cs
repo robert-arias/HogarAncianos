@@ -33,6 +33,9 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtUsuarios = new System.Windows.Forms.DataGridView();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,10 +86,32 @@
             // dtUsuarios
             // 
             this.dtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Usuario,
+            this.Contrasenia,
+            this.Rol});
             this.dtUsuarios.Location = new System.Drawing.Point(55, 127);
             this.dtUsuarios.Name = "dtUsuarios";
             this.dtUsuarios.Size = new System.Drawing.Size(602, 186);
             this.dtUsuarios.TabIndex = 12;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Width = 200;
+            // 
+            // Contrasenia
+            // 
+            this.Contrasenia.HeaderText = "Contraseña";
+            this.Contrasenia.Name = "Contrasenia";
+            this.Contrasenia.Width = 200;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.Width = 200;
             // 
             // FRM_ConsultarUsuario
             // 
@@ -115,5 +140,8 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
     }
 }
