@@ -1,5 +1,5 @@
 ﻿using HogarAncianos.Controller;
-using System;
+using HogarAncianos.Model;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,18 +7,19 @@ using System.Windows.Forms;
 namespace HogarAncianos.View {
     public partial class FRM_BuscarEmpleados : Form {
 
+
         private BuscarEmpleadosController controller;
-        private DataSet cacheBusqueda;
-        private DataSet cacheCorreos;
+        private ConnectionDB db;
+        private DataTable cacheBusqueda;
 
         public FRM_BuscarEmpleados() {
             InitializeComponent();
             cacheBusqueda = null;
-            cacheCorreos = null;
             ddlPuesto.Text = "Seleccionar";
             ddlEstadoLaboral.Text = "Seleccionar";
             dgvResultados.AllowUserToResizeColumns = true;
-            controller = new BuscarEmpleadosController(this);
+            db = new ConnectionDB();
+            controller = new BuscarEmpleadosController(this, db);
         }
 
         public void DesactivarBuscarPor() {
@@ -62,13 +63,18 @@ namespace HogarAncianos.View {
         public void NuevosCamposResultados(object sender) {
             if (sender == cbTelefono) {
                 if (cbTelefono.Checked) {
-                    DataGridViewColumn telefono = new DataGridViewColumn();
+                    DataGridViewColumn telefono = new DataGridViewTextBoxColumn();
                     dgvResultados.Columns.Add(telefono);
                     telefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     telefono.HeaderText = "Número de teléfono";
                     telefono.MinimumWidth = 147;
                     telefono.Name = "Telefono";
                     telefono.ReadOnly = true;
+
+                    if (cacheBusqueda != null) {
+                        LimpiarBusquedas();
+                        RealizarBusqueda(cacheBusqueda);
+                    }
                 }
                 else
                     dgvResultados.Columns.Remove("Telefono");
@@ -76,13 +82,18 @@ namespace HogarAncianos.View {
 
             if (sender == cbDireccion) {
                 if (cbDireccion.Checked) {
-                    DataGridViewColumn direccion = new DataGridViewColumn();
+                    DataGridViewColumn direccion = new DataGridViewTextBoxColumn();
                     dgvResultados.Columns.Add(direccion);
                     direccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     direccion.HeaderText = "Dirección";
                     direccion.MinimumWidth = 147;
                     direccion.Name = "Direccion";
                     direccion.ReadOnly = true;
+
+                    if (cacheBusqueda != null) {
+                        LimpiarBusquedas();
+                        RealizarBusqueda(cacheBusqueda);
+                    }
                 }
                 else
                     dgvResultados.Columns.Remove("Direccion");
@@ -90,13 +101,18 @@ namespace HogarAncianos.View {
 
             if (sender == cbSalario) {
                 if (cbSalario.Checked) {
-                    DataGridViewColumn salario = new DataGridViewColumn();
+                    DataGridViewColumn salario = new DataGridViewTextBoxColumn();
                     dgvResultados.Columns.Add(salario);
                     salario.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     salario.HeaderText = "Salario";
                     salario.MinimumWidth = 147;
                     salario.Name = "Salario";
                     salario.ReadOnly = true;
+
+                    if (cacheBusqueda != null) {
+                        LimpiarBusquedas();
+                        RealizarBusqueda(cacheBusqueda);
+                    }
                 }
                 else
                     dgvResultados.Columns.Remove("Salario");
@@ -104,13 +120,18 @@ namespace HogarAncianos.View {
 
             if (sender == cbFechaContratacion) {
                 if (cbFechaContratacion.Checked) {
-                    DataGridViewColumn fechaContratacion = new DataGridViewColumn();
+                    DataGridViewColumn fechaContratacion = new DataGridViewTextBoxColumn();
                     dgvResultados.Columns.Add(fechaContratacion);
                     fechaContratacion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     fechaContratacion.HeaderText = "Fecha de contratación";
                     fechaContratacion.MinimumWidth = 147;
                     fechaContratacion.Name = "FechaContratacion";
                     fechaContratacion.ReadOnly = true;
+
+                    if (cacheBusqueda != null) {
+                        LimpiarBusquedas();
+                        RealizarBusqueda(cacheBusqueda);
+                    }
                 }
                 else
                     dgvResultados.Columns.Remove("FechaContratacion");
@@ -125,6 +146,11 @@ namespace HogarAncianos.View {
                     correos.MinimumWidth = 147;
                     correos.Name = "Correos";
                     correos.ReadOnly = true;
+
+                    if (cacheBusqueda != null) {
+                        LimpiarBusquedas();
+                        RealizarBusqueda(cacheBusqueda);
+                    }
                 }
                 else
                     dgvResultados.Columns.Remove("Correos");
@@ -150,11 +176,9 @@ namespace HogarAncianos.View {
             cbSalario.Checked = false;
             cbCorreo.Checked = false;
             cbFechaContratacion.Checked = false;
-            do {
-                foreach (DataGridViewRow row in dgvResultados.Rows) {
-                    dgvResultados.Rows.Remove(row);
-                }
-            } while (dgvResultados.Rows.Count >= 1);
+
+            LimpiarBusquedas();
+
             if (dgvResultados.Columns.Contains("Telefono"))
                 dgvResultados.Columns.Remove("Telefono");
             if (dgvResultados.Columns.Contains("Direccion"))
@@ -197,10 +221,8 @@ namespace HogarAncianos.View {
         public string GetBusqueda() {
             if (rbCedula.Checked)
                 return $"select *  from empleados where cedula = '{txtBuscar.Text}'";
-            else if (rbNombre.Checked) {
-                Console.WriteLine("Entró");
+            else if (rbNombre.Checked)
                 return GetConditions($"select * from empleados where nombre like '%{txtBuscar.Text}%'");
-            }
             else
                 return GetConditions($"select * from empleados where apellidos like '%{txtBuscar.Text}%'");
         }
@@ -224,30 +246,41 @@ namespace HogarAncianos.View {
             return query;
         }
 
-        public void RealizarBusqueda(DataSet resultados) {
+        public void RealizarBusqueda(DataTable resultados) {
             if (resultados != null) {
-                if (resultados.Tables[0].Rows.Count > 0) {
-                    cacheBusqueda = resultados;
-                    int i = dgvResultados.Rows.Add();
-                    DataGridViewRow row = dgvResultados.Rows[i];
-                    row.Cells["Cedula"].Value = resultados.Tables[0].Rows[0][0].ToString();
-                    row.Cells["Nombre"].Value = resultados.Tables[0].Rows[0][1].ToString();
-                    row.Cells["Apellidos"].Value = resultados.Tables[0].Rows[0][2].ToString();
-                    row.Cells["FechaNacimiento"].Value = resultados.Tables[0].Rows[0][3].ToString();
-                    row.Cells["PuestoTrabajo"].Value = resultados.Tables[0].Rows[0][6].ToString();
-                    row.Cells["Horario"].Value = resultados.Tables[0].Rows[0][7].ToString();
-                    row.Cells["EstadoLaboral"].Value = resultados.Tables[0].Rows[0][10].ToString();
+                if (resultados.Rows.Count > 0) {
+
+                    foreach (DataRow x in resultados.Rows) {
+                        cacheBusqueda = resultados;
+                        int i = dgvResultados.Rows.Add();
+                        DataGridViewRow row = dgvResultados.Rows[i];
+                        row.Cells["Cedula"].Value = resultados.Rows[0][0].ToString();
+                        row.Cells["Nombre"].Value = resultados.Rows[0][1].ToString();
+                        row.Cells["Apellidos"].Value = resultados.Rows[0][2].ToString();
+                        row.Cells["FechaNacimiento"].Value = resultados.Rows[0][3].ToString();
+                        row.Cells["PuestoTrabajo"].Value = resultados.Rows[0][6].ToString();
+                        row.Cells["Horario"].Value = resultados.Rows[0][7].ToString();
+                        row.Cells["EstadoLaboral"].Value = resultados.Rows[0][10].ToString();
+
+                        if (dgvResultados.Columns.Contains("Telefono"))
+                            row.Cells["Telefono"].Value = resultados.Rows[0][4].ToString();
+                        if (dgvResultados.Columns.Contains("Direccion"))
+                            row.Cells["Direccion"].Value = resultados.Rows[0][5].ToString();
+                        if (dgvResultados.Columns.Contains("Salario"))
+                            row.Cells["Salario"].Value = resultados.Rows[0][8].ToString();
+                        if (dgvResultados.Columns.Contains("FechaContratacion"))
+                            row.Cells["FechaContratacion"].Value = resultados.Rows[0][9].ToString();
+                        if (dgvResultados.Columns.Contains("FechaContratacion")) {
+                            DataTable correos = db.GetCorreosEmpleado(resultados.Rows[0][0].ToString());
+                            row.Cells["Correo"].Value = correos.Rows[0][0].ToString();
+                        }
+                    }
                 }
                 else
-                    ShowMessage("No se han encontrado resultados");
+                    ShowMessage("No se han encontrado resultados para la búsqueda especificada.");
             }
             else
-                ShowMessage("No se han encontrado resultados.");
-        }
-
-        private void dgvResultados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+                ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
     }
 }

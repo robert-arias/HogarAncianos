@@ -8,9 +8,9 @@ namespace HogarAncianos.Controller {
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
         private ConnectionDB connection;
 
-        public BuscarEmpleadosController(FRM_BuscarEmpleados frm_BuscarEmpleados) {
+        public BuscarEmpleadosController(FRM_BuscarEmpleados frm_BuscarEmpleados, ConnectionDB connection) {
             this.frm_BuscarEmpleados = frm_BuscarEmpleados;
-            connection = new ConnectionDB();
+            this.connection = connection;
             AgregarEventos();
         }
 
