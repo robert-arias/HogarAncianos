@@ -325,11 +325,6 @@ namespace HogarAncianos.Model {
             }
         }
 
-        
-
-
-
-
         public bool AgregarEmpleado(Empleado empleado) {
             try {
                 string insert = $"insert into Empleados values('{empleado.Cedula}', '{empleado.Nombre}', " +
@@ -355,16 +350,16 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public DataSet GetBusquedaEmpleados(string query) {
+        public DataTable GetBusquedaEmpleados(string query) {
             try {
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                dataSQLite.Fill(dataSet);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
                 connection.Close();
 
-                return dataSet;
+                return dataTable;
             } catch (SQLiteException e) {
                 connection.Close();
                 Debug.WriteLine(e.ToString());
@@ -372,10 +367,25 @@ namespace HogarAncianos.Model {
             }
         }
 
+        public DataTable GetCorreosEmpleado(string cedula) {
+            try {
+                string query = $"select correo from Correos_Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
 
+                return dataTable;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
 
-   
-       
         //Metodos Medicamentos 
 
         public bool ExisteCodigoMedicamento(string codigo)

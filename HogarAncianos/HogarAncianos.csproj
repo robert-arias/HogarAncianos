@@ -130,6 +130,12 @@
     <Compile Include="View\FRM_AgregarPaciente.Designer.cs">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_AgregarPrescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_AgregarPrescripcion.Designer.cs">
+      <DependentUpon>FRM_AgregarPrescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_AgregarProductoInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     <Compile Include="View\FRM_ConsultaPacientes.Designer.cs">
       <DependentUpon>FRM_ConsultaPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ConsultaPrescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ConsultaPrescripcion.Designer.cs">
+      <DependentUpon>FRM_ConsultaPrescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,12 @@
     </Compile>
     <Compile Include="View\FRM_EliminarMedicamento.Designer.cs">
       <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_EliminarPrescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_EliminarPrescripcion.Designer.cs">
+      <DependentUpon>FRM_EliminarPrescripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_EliminarProducto.cs">
       <SubType>Form</SubType>
@@ -226,6 +244,12 @@
     <Compile Include="View\FRM_ModificarPaciente.Designer.cs">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ModificarPrescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ModificarPrescripcion.Designer.cs">
+      <DependentUpon>FRM_ModificarPrescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ModificarProductosHigiene.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +286,9 @@
     <EmbeddedResource Include="View\FRM_AgregarPaciente.resx">
       <DependentUpon>FRM_AgregarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_AgregarPrescripcion.resx">
+      <DependentUpon>FRM_AgregarPrescripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarProductosHigiene.resx">
       <DependentUpon>FRM_AgregarProductosHigiene.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +301,9 @@
     <EmbeddedResource Include="View\FRM_BuscarProducto.resx">
       <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ConsultaMedicamentos.resx">
+      <DependentUpon>FRM_ConsultaMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ConsultaPacientes.resx">
       <DependentUpon>FRM_ConsultaPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_EliminarMedicamento.resx">
       <DependentUpon>FRM_EliminarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_EliminarPrescripcion.resx">
+      <DependentUpon>FRM_EliminarPrescripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_EliminarProducto.resx">
       <DependentUpon>FRM_EliminarProducto.cs</DependentUpon>
@@ -303,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarPaciente.resx">
       <DependentUpon>FRM_ModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ModificarPrescripcion.resx">
+      <DependentUpon>FRM_ModificarPrescripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarProductosHigiene.resx">
       <DependentUpon>FRM_ModificarProductosHigiene.cs</DependentUpon>

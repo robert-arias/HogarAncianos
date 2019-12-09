@@ -7,40 +7,90 @@ namespace HogarAncianos.Controller {
     public class MenuController {
 
         private FRM_MenuPrincipal frm_MenuPrincipal;
+
+        //Empleados
         private FRM_AgregarEmpleado frm_AgregarEmpleado;
         private FRM_ModificarEmpleado frm_ModificarEmpleado;
         private FRM_BuscarEmpleados frm_BuscarEmpleados;
-        private FRM_AgregarMedicamento frm_AgregarMedicamento;
+          
+        //Paciente
         private FRM_AgregarPaciente frm_AgregarPaciente;
+        private FRM_ConsultaPacientes frm_ConsultaPacientes;
         private FRM_ModificarPaciente frm_ModificarPaciente;
+
+        //Medicamentos
+        private FRM_AgregarMedicamento frm_AgregarMedicamento;
+        private FRM_ConsultaMedicamentos frm_ConsultaMedicamentos;
+        private FRM_EliminarMedicamento frm_EliminarMedicamento;
         private FRM_ModificarMedicamento frm_ModificarMedicamento;
+
+        //Usuarios
         private FRM_AgregarUsuario frm_AgregarUsuario;
         private FRM_ModificarUsuario frm_ModificarUsuario;
-
-        private FRM_ConsultarUsuario frm_ConsultarUsuario;
-        private FRM_ConsultaMedicamentos frm_ConsultaMedicamentos;
-        private FRM_ConsultaPacientes frm_ConsultaPacientes;
-        private FRM_EliminarMedicamento frm_EliminarMedicamento;
         private FRM_EliminarUsuario frm_EliminarUsuario;
+        private FRM_ConsultarUsuario frm_ConsultarUsuario;
+
+        //Productos de Hiegiene
+        private FRM_AgregarProductoInventario frm_AgregarProductoInventario;
+        private FRM_BuscarProducto frm_BuscarProducto;
+        private FRM_ModificarProductosHigiene frm_ModificarProductos;
+        private FRM_EliminarProducto frm_EliminarProducto;
+        private FRM_AgregarProductosHigiene GetFRM_AgregarProductosHigiene;
+        private FRM_SalidaProductos frm_SalidaProductos;
+
+        //Prescripciones 
+        private FRM_AgregarPrescripcion frm_AgregarPrescripcion;
+        private FRM_ModificarPrescripcion frm_ModificarPrescripcion;
+        private FRM_ConsultaPrescripcion frm_ConsultaPrescripcion;
+        private FRM_EliminarPrescripcion frm_EliminarPrescripcion;
+
+       
+
+        //Login
         private FRM_Login frm_login; 
+
+
+
+
+
+
+
 
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
             frm_MenuPrincipal = menuPrincipal;
+         
+            //Empleados
             frm_AgregarEmpleado = new FRM_AgregarEmpleado();
             frm_ModificarEmpleado = new FRM_ModificarEmpleado();
             frm_BuscarEmpleados = new FRM_BuscarEmpleados();
+
+            //Pacientes 
             frm_AgregarPaciente = new FRM_AgregarPaciente();
-            frm_AgregarMedicamento = new FRM_AgregarMedicamento();
-            frm_login = new FRM_Login();
             frm_ModificarPaciente = new FRM_ModificarPaciente();
+            frm_ConsultaPacientes = new FRM_ConsultaPacientes();
+
+            //Medicamentos
+            frm_AgregarMedicamento = new FRM_AgregarMedicamento();
             frm_ModificarMedicamento = new FRM_ModificarMedicamento();
+            frm_ConsultaMedicamentos = new FRM_ConsultaMedicamentos();
+            frm_EliminarMedicamento = new FRM_EliminarMedicamento();
+
+            //Login
+            frm_login = new FRM_Login();
+
+         
+           //Usuario
             frm_ModificarUsuario = new FRM_ModificarUsuario();
             frm_AgregarUsuario = new FRM_AgregarUsuario();
             frm_ConsultarUsuario = new FRM_ConsultarUsuario();
-            frm_ConsultaMedicamentos = new FRM_ConsultaMedicamentos();
-            frm_ConsultaPacientes = new FRM_ConsultaPacientes();
-            frm_EliminarMedicamento = new FRM_EliminarMedicamento();
             frm_EliminarUsuario = new FRM_EliminarUsuario();
+
+            //Prescripcion
+            frm_EliminarPrescripcion= new  FRM_EliminarPrescripcion();
+            frm_AgregarPrescripcion= new  FRM_AgregarPrescripcion();
+            frm_ModificarPrescripcion= new FRM_ModificarPrescripcion();
+            frm_ConsultaPrescripcion= new  FRM_ConsultaPrescripcion();
+
             AgregarEventos();
         }
 
@@ -67,8 +117,12 @@ namespace HogarAncianos.Controller {
             frm_ModificarMedicamento.FormClosed += CerrarModificarMedicamento;
             frm_ModificarMedicamento.btnCancelar.Click += new EventHandler(CancelarModificarMedicamento);
 
-         
-          
+            frm_MenuPrincipal.mi_MedicamentosBuscar.Click += new EventHandler(OpenConsultarMedicamentos);
+            frm_ConsultaMedicamentos.FormClosed += CerrarConsultarMedicamentos;
+
+            frm_MenuPrincipal.mi_MedicamentosEliminar.Click += new EventHandler(OpenEliminarMedicamentos);
+            frm_EliminarMedicamento.FormClosed += CerrarEliminarMedicamentos;
+
 
             //Pacientes 
             frm_MenuPrincipal.mi_pacientes.DropDownItemClicked += new ToolStripItemClickedEventHandler(color);
@@ -76,8 +130,6 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_pacientes.MouseLeave += new EventHandler(colorCambio);
 
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
-
-
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregarPaciente);
 
@@ -85,6 +137,8 @@ namespace HogarAncianos.Controller {
             frm_ModificarPaciente.FormClosed += CerrarModificarPaciente;
             frm_ModificarPaciente.btnCancelar.Click += new EventHandler(CancelarModificarPaciente);
 
+            frm_MenuPrincipal.mi_pacientesBuscar.Click += new EventHandler(OpenConsultarPaciente);
+            frm_ConsultaPacientes.FormClosed += CerrarConsultarPaciente;
 
             //Usuarios
             frm_MenuPrincipal.mi_UsuariosAgregar.Click += new EventHandler(OpenAgregarUsuarios);
@@ -100,6 +154,21 @@ namespace HogarAncianos.Controller {
             frm_ConsultarUsuario.btnCancelar.Click += new EventHandler(CancelarConsultarUsuario);
 
             //Prescripcion Medicamentos 
+            frm_MenuPrincipal.mi_PrescripcionBuscar.Click += new EventHandler(OpenConsultarPrescripcion);
+            frm_ConsultaPrescripcion.FormClosed += CerrarConsultarPrescripcion;
+
+            frm_MenuPrincipal.mi_PrescripcionaAgregar.Click += new EventHandler(OpenAgregarPrescripcion);
+            frm_AgregarPrescripcion.FormClosed += CerrarAgregarPrescripcion;
+
+
+            frm_MenuPrincipal.mi_PrescripcionEliminar.Click += new EventHandler(OpenEliminarPrescripcion);
+            frm_EliminarPrescripcion.FormClosed += CerrarEliminarPrescripcion;
+
+            frm_MenuPrincipal.mi_PrescripcionModificar.Click += new EventHandler(OpenModificarPrescripcion);
+            frm_ModificarPrescripcion.FormClosed += CerrarModificarPrescripcion;
+
+
+
 
             //Login 
             frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
@@ -209,7 +278,52 @@ namespace HogarAncianos.Controller {
 
         }
 
+        private void OpenConsultarMedicamentos(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ConsultaMedicamentos.ShowDialog();
+
+        }
+
+        private void CerrarEliminarMedicamentos(object sender, EventArgs e)
+        {
+            frm_EliminarMedicamento.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+
+        private void OpenEliminarMedicamentos(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_EliminarMedicamento.ShowDialog();
+
+        }
+
+        private void CerrarConsultarMedicamentos(object sender, EventArgs e)
+        {
+            frm_ConsultaMedicamentos.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+
+
+
+
         //Metodos Paciente 
+        private void OpenConsultarPaciente(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ConsultaPacientes.ShowDialog();
+
+        }
+
+        private void CerrarConsultarPaciente(object sender, EventArgs e)
+        {
+            frm_ConsultaPacientes.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+
         private void color(object sender, EventArgs e)       
         {
             frm_MenuPrincipal.mi_pacientes.ForeColor = Color.Black;
@@ -330,6 +444,64 @@ namespace HogarAncianos.Controller {
            // frm_ConsultarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
+
+
+        //Prescripciones 
+        private void OpenConsultarPrescripcion(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ConsultaPrescripcion.ShowDialog();
+
+        }
+
+        private void CerrarConsultarPrescripcion(object sender, EventArgs e)
+        {
+            frm_ConsultaPrescripcion.Close(); 
+            frm_MenuPrincipal.Show();
+        }
+
+        private void OpenAgregarPrescripcion(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_AgregarPrescripcion.ShowDialog();
+
+        }
+
+        private void CerrarAgregarPrescripcion(object sender, EventArgs e)
+        {
+            frm_AgregarPrescripcion.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void OpenEliminarPrescripcion(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_EliminarPrescripcion.ShowDialog();
+
+        }
+
+        private void CerrarEliminarPrescripcion(object sender, EventArgs e)
+        {
+            frm_EliminarPrescripcion.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void OpenModificarPrescripcion(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarPrescripcion.ShowDialog();
+
+        }
+
+        private void CerrarModificarPrescripcion(object sender, EventArgs e)
+        {
+            frm_ModificarPrescripcion.Close();
+            frm_MenuPrincipal.Show();
+        }
+
+
+
+
 
     }
 }
