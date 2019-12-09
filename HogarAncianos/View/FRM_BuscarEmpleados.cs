@@ -282,5 +282,10 @@ namespace HogarAncianos.View {
             else
                 ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
+
+        private void groupBox2_Enter(object sender, System.EventArgs e)
+        {
+            //borrar
+        }
     }
 }
