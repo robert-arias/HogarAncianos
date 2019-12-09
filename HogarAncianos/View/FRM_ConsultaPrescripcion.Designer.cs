@@ -76,6 +76,7 @@
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(57, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(734, 80);
@@ -85,17 +86,19 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(527, 26);
+            this.textBox3.Location = new System.Drawing.Point(594, 25);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
+            this.textBox3.Size = new System.Drawing.Size(134, 26);
             this.textBox3.TabIndex = 15;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
             this.checkBox2.Location = new System.Drawing.Point(399, 28);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(128, 17);
+            this.checkBox2.Size = new System.Drawing.Size(182, 24);
             this.checkBox2.TabIndex = 14;
             this.checkBox2.Text = "Codigo medicamento:";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -103,26 +106,31 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
             this.checkBox1.Location = new System.Drawing.Point(9, 28);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(112, 17);
+            this.checkBox1.Size = new System.Drawing.Size(154, 24);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Fecha caducidad:";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(127, 25);
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(185, 26);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 53);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.Size = new System.Drawing.Size(153, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Cedula del paciente:";
             // 
