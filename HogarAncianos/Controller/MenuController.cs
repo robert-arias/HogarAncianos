@@ -99,7 +99,7 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_EmpleadosAgregar.Click += new EventHandler(OpenAgregarEmpleado);
             frm_MenuPrincipal.mi_EmpleadosModificar.Click += new EventHandler(OpenModificarEmpleado);
             frm_MenuPrincipal.mi_EmpleadosBuscar.Click += new EventHandler(OpenBuscarEmpleados);
-            frm_MenuPrincipal.mi_EmpleadosReporte.Click += new EventHandler(OpenReporteEmpleados);
+            
             frm_AgregarEmpleado.FormClosed += CerrarAgregarEmpleado;
             frm_ModificarEmpleado.FormClosed += CerrarModificarEmpleado;
             frm_BuscarEmpleados.FormClosed += CerrarBuscarEmpleados;

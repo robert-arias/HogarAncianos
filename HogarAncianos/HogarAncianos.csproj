@@ -307,6 +307,9 @@
     <EmbeddedResource Include="View\FRM_ConsultaPacientes.resx">
       <DependentUpon>FRM_ConsultaPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ConsultaPrescripcion.resx">
+      <DependentUpon>FRM_ConsultaPrescripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ConsultarUsuario.resx">
       <DependentUpon>FRM_ConsultarUsuario.cs</DependentUpon>
     </EmbeddedResource>
