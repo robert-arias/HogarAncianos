@@ -40,7 +40,7 @@ namespace HogarAncianos.View
 
         private void FRM_ConsultarUsuario_Load(object sender, EventArgs e)
         {
-
+            //quitar
         }
     }
 }
