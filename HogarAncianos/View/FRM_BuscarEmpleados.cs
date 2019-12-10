@@ -288,10 +288,16 @@ namespace HogarAncianos.View {
         }
 
         private void AddComboBoxCell(DataTable correos, DataGridViewComboBoxCell ccc) {
-            foreach (DataRow x in correos.Rows) {
-                ccc.Items.Add(x[0]);
+            if (correos.Rows.Count > 0) {
+                foreach (DataRow x in correos.Rows) {
+                    ccc.Items.Add(x[0]);
+                }
+                ccc.Value = correos.Rows[0][0].ToString();
             }
-            ccc.Value = correos.Rows[0][0].ToString();
+            else {
+                ccc.Items.Add("Sin correos.");
+                ccc.Value = "Sin correos.";
+            }
         }
 
     }
