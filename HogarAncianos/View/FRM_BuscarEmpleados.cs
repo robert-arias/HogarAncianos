@@ -286,14 +286,5 @@ namespace HogarAncianos.View {
             else
                 ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
-
-        private List<string> ConvertToList(DataTable correos) {
-            List<string> c = new List<string>();
-            foreach (DataRow x in correos.Rows) {
-                c.Add(x[0].ToString());
-            }
-            return c;
-        }
-
     }
 }
