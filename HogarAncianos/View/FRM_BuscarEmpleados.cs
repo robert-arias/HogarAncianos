@@ -257,24 +257,24 @@ namespace HogarAncianos.View {
                         cacheBusqueda = resultados;
                         int i = dgvResultados.Rows.Add();
                         DataGridViewRow row = dgvResultados.Rows[i];
-                        row.Cells["Cedula"].Value = resultados.Rows[0][0].ToString();
-                        row.Cells["Nombre"].Value = resultados.Rows[0][1].ToString();
-                        row.Cells["Apellidos"].Value = resultados.Rows[0][2].ToString();
-                        row.Cells["FechaNacimiento"].Value = resultados.Rows[0][3].ToString();
-                        row.Cells["PuestoTrabajo"].Value = resultados.Rows[0][6].ToString();
-                        row.Cells["Horario"].Value = resultados.Rows[0][7].ToString();
-                        row.Cells["EstadoLaboral"].Value = resultados.Rows[0][10].ToString();
+                        row.Cells["Cedula"].Value = dataRow[0].ToString();
+                        row.Cells["Nombre"].Value = dataRow[1].ToString();
+                        row.Cells["Apellidos"].Value = dataRow[2].ToString();
+                        row.Cells["FechaNacimiento"].Value = dataRow[3].ToString();
+                        row.Cells["PuestoTrabajo"].Value = dataRow[6].ToString();
+                        row.Cells["Horario"].Value = dataRow[7].ToString();
+                        row.Cells["EstadoLaboral"].Value = dataRow[10].ToString();
 
                         if (dgvResultados.Columns.Contains("Telefono"))
-                            row.Cells["Telefono"].Value = resultados.Rows[0][4].ToString();
+                            row.Cells["Telefono"].Value = dataRow[4].ToString();
                         if (dgvResultados.Columns.Contains("Direccion"))
-                            row.Cells["Direccion"].Value = resultados.Rows[0][5].ToString();
+                            row.Cells["Direccion"].Value = dataRow[5].ToString();
                         if (dgvResultados.Columns.Contains("Salario"))
-                            row.Cells["Salario"].Value = resultados.Rows[0][8].ToString();
+                            row.Cells["Salario"].Value = dataRow[8].ToString();
                         if (dgvResultados.Columns.Contains("FechaContratacion"))
-                            row.Cells["FechaContratacion"].Value = resultados.Rows[0][9].ToString();
+                            row.Cells["FechaContratacion"].Value = dataRow[9].ToString();
                         if (dgvResultados.Columns.Contains("FechaContratacion")) {
-                            DataTable dtCorreos = db.GetCorreosEmpleado(resultados.Rows[0][0].ToString());
+                            DataTable dtCorreos = db.GetCorreosEmpleado(dataRow[0].ToString());
                             List<string> correos = ConvertToList(dtCorreos);
                             ((DataGridViewComboBoxCell)row.Cells["Correo"]).DataSource = correos;
                         }
@@ -286,5 +286,14 @@ namespace HogarAncianos.View {
             else
                 ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
+
+        private List<string> ConvertToList(DataTable correos) {
+            List<string> c = new List<string>();
+            foreach (DataRow x in correos.Rows) {
+                c.Add(x[0].ToString());
+            }
+            return c;
+        }
+
     }
 }
