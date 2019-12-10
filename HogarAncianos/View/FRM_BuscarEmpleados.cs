@@ -1,5 +1,6 @@
 ﻿using HogarAncianos.Controller;
 using HogarAncianos.Model;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -189,6 +190,8 @@ namespace HogarAncianos.View {
                 dgvResultados.Columns.Remove("FechaContratacion");
             if (dgvResultados.Columns.Contains("Correos"))
                 dgvResultados.Columns.Remove("Correos");
+
+            cacheBusqueda = null;
         }
 
         public bool VerificarCampos() {
@@ -250,7 +253,7 @@ namespace HogarAncianos.View {
             if (resultados != null) {
                 if (resultados.Rows.Count > 0) {
 
-                    foreach (DataRow x in resultados.Rows) {
+                    foreach (DataRow dataRow in resultados.Rows) {
                         cacheBusqueda = resultados;
                         int i = dgvResultados.Rows.Add();
                         DataGridViewRow row = dgvResultados.Rows[i];
@@ -271,8 +274,9 @@ namespace HogarAncianos.View {
                         if (dgvResultados.Columns.Contains("FechaContratacion"))
                             row.Cells["FechaContratacion"].Value = resultados.Rows[0][9].ToString();
                         if (dgvResultados.Columns.Contains("FechaContratacion")) {
-                            DataTable correos = db.GetCorreosEmpleado(resultados.Rows[0][0].ToString());
-                            row.Cells["Correo"].Value = correos.Rows[0][0].ToString();
+                            DataTable dtCorreos = db.GetCorreosEmpleado(resultados.Rows[0][0].ToString());
+                            List<string> correos = ConvertToList(dtCorreos);
+                            ((DataGridViewComboBoxCell)row.Cells["Correo"]).DataSource = correos;
                         }
                     }
                 }
@@ -282,5 +286,14 @@ namespace HogarAncianos.View {
             else
                 ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
+
+        private List<string> ConvertToList(DataTable correos) {
+            List<string> c = new List<string>();
+            foreach (DataRow x in correos.Rows) {
+                c.Add(x[0].ToString());
+            }
+            return c;
+        }
+
     }
 }
