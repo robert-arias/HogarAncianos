@@ -144,9 +144,9 @@ namespace HogarAncianos.View {
                     dgvResultados.Columns.Add(correos);
                     correos.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     correos.HeaderText = "Correos";
-                    correos.MinimumWidth = 147;
+                    correos.MinimumWidth = 200;
                     correos.Name = "Correos";
-                    correos.ReadOnly = true;
+                    correos.ReadOnly = false;
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
@@ -273,10 +273,10 @@ namespace HogarAncianos.View {
                             row.Cells["Salario"].Value = dataRow[8].ToString();
                         if (dgvResultados.Columns.Contains("FechaContratacion"))
                             row.Cells["FechaContratacion"].Value = dataRow[9].ToString();
-                        if (dgvResultados.Columns.Contains("FechaContratacion")) {
+                        if (dgvResultados.Columns.Contains("Correos")) {
                             DataTable dtCorreos = db.GetCorreosEmpleado(dataRow[0].ToString());
-                            List<string> correos = ConvertToList(dtCorreos);
-                            ((DataGridViewComboBoxCell)row.Cells["Correo"]).DataSource = correos;
+                            DataGridViewComboBoxCell correosCell = (row.Cells["Correos"] as DataGridViewComboBoxCell);
+                            AddComboBoxCell(dtCorreos, correosCell);
                         }
                     }
                 }
@@ -287,12 +287,11 @@ namespace HogarAncianos.View {
                 ShowMessage("No se han encontrado resultados para la busqueda especificada.");
         }
 
-        private List<string> ConvertToList(DataTable correos) {
-            List<string> c = new List<string>();
+        private void AddComboBoxCell(DataTable correos, DataGridViewComboBoxCell ccc) {
             foreach (DataRow x in correos.Rows) {
-                c.Add(x[0].ToString());
+                ccc.Items.Add(x[0]);
             }
-            return c;
+            ccc.Value = correos.Rows[0][0].ToString();
         }
 
     }
