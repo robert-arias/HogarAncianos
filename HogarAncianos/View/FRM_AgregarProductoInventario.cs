@@ -16,5 +16,10 @@ namespace HogarAncianos.View
         {
             InitializeComponent();
         }
+
+        private void FRM_AgregarProductoInventario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

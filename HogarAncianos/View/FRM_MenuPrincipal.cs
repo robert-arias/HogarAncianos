@@ -19,6 +19,9 @@ namespace HogarAncianos.View {
             menuController = new MenuController(this);
         }
 
-        
+        private void mi_pacientesReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
