@@ -137,7 +137,7 @@
             // 
             this.lbCedula.AutoSize = true;
             this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedula.ForeColor = System.Drawing.Color.Red;
+            this.lbCedula.ForeColor = System.Drawing.Color.White;
             this.lbCedula.Location = new System.Drawing.Point(491, 41);
             this.lbCedula.Name = "lbCedula";
             this.lbCedula.Size = new System.Drawing.Size(15, 20);
@@ -158,7 +158,7 @@
             // 
             this.lbTelefono.AutoSize = true;
             this.lbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefono.ForeColor = System.Drawing.Color.Red;
+            this.lbTelefono.ForeColor = System.Drawing.Color.White;
             this.lbTelefono.Location = new System.Drawing.Point(491, 252);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(15, 20);
@@ -169,7 +169,7 @@
             // 
             this.lbFechaNacimiento.AutoSize = true;
             this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.Red;
+            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.White;
             this.lbFechaNacimiento.Location = new System.Drawing.Point(491, 202);
             this.lbFechaNacimiento.Name = "lbFechaNacimiento";
             this.lbFechaNacimiento.Size = new System.Drawing.Size(15, 20);
@@ -180,7 +180,7 @@
             // 
             this.lbApellidos.AutoSize = true;
             this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApellidos.ForeColor = System.Drawing.Color.Red;
+            this.lbApellidos.ForeColor = System.Drawing.Color.White;
             this.lbApellidos.Location = new System.Drawing.Point(491, 149);
             this.lbApellidos.Name = "lbApellidos";
             this.lbApellidos.Size = new System.Drawing.Size(15, 20);
@@ -191,7 +191,7 @@
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.ForeColor = System.Drawing.Color.Red;
+            this.lbNombre.ForeColor = System.Drawing.Color.Transparent;
             this.lbNombre.Location = new System.Drawing.Point(491, 96);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(15, 20);
@@ -495,7 +495,7 @@
             // 
             this.lbSalario.AutoSize = true;
             this.lbSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalario.ForeColor = System.Drawing.Color.Red;
+            this.lbSalario.ForeColor = System.Drawing.Color.White;
             this.lbSalario.Location = new System.Drawing.Point(452, 138);
             this.lbSalario.Name = "lbSalario";
             this.lbSalario.Size = new System.Drawing.Size(15, 20);
@@ -506,7 +506,7 @@
             // 
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHorario.ForeColor = System.Drawing.Color.Red;
+            this.lbHorario.ForeColor = System.Drawing.Color.White;
             this.lbHorario.Location = new System.Drawing.Point(452, 87);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(15, 20);
@@ -517,7 +517,7 @@
             // 
             this.lbPuesto.AutoSize = true;
             this.lbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPuesto.ForeColor = System.Drawing.Color.Red;
+            this.lbPuesto.ForeColor = System.Drawing.Color.White;
             this.lbPuesto.Location = new System.Drawing.Point(452, 32);
             this.lbPuesto.Name = "lbPuesto";
             this.lbPuesto.Size = new System.Drawing.Size(15, 20);

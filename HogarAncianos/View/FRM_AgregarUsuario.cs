@@ -21,6 +21,23 @@ namespace HogarAncianos.View
             agregarUsuarioController = new AgregarUsuarioController(this);
             EstadoInicial();
         }
+
+        public string GetCedula() {
+            txtCedula.Text = new string(txtCedula.Text.Where(x => char.IsWhiteSpace(x)
+                                                                   || char.IsDigit(x)).ToArray());
+            return txtCedula.Text;
+        }
+
+        public void ActivarCampoUsuario() {
+            txtCedula.Enabled = false;
+            txtUsuario.Enabled = true;
+        }
+
+        public void AgregarInformacionEmpleado(DataTable empleado) {
+            txtNombre.Text = empleado.Rows[0][1].ToString() + " " + empleado.Rows[0][2].ToString();
+            txtRol.Text = empleado.Rows[0][3].ToString();
+        }
+
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Advertencia", MessageBoxButtons.OK);
@@ -32,14 +49,18 @@ namespace HogarAncianos.View
         }
         public Usuario GetUsuario()
         {
-            return new Usuario(txtUsuario.Text,txtContrasenia.Text,cbRol.GetItemText(cbRol.SelectedItem));
+            //Encrypt password
+            byte[] passwordBytes = Encoding.Unicode.GetBytes(txtContrasenia.Text);
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
+
+            return new Usuario(txtUsuario.Text, hashedBytes, txtCedula.Text);
         }
 
         public void ActivarCampos()
         {
             txtUsuario.Enabled = false;
             txtContrasenia.Enabled = true;
-            cbRol.Enabled = true;
             checkBoxMostrarDatos.Enabled = true;
 
             btnAgregar.Enabled = true;
@@ -49,10 +70,10 @@ namespace HogarAncianos.View
         }
 
         public void EstadoInicial()
-        { 
-            txtUsuario.Enabled = true;
+        {
+            txtCedula.Enabled = true;
+            txtUsuario.Enabled = false;
             txtContrasenia.Enabled = false;
-            cbRol.Enabled = false;
             checkBoxMostrarDatos.Enabled = false;
 
             btnAgregar.Enabled = false;
@@ -60,10 +81,11 @@ namespace HogarAncianos.View
             btnVerificar.Enabled = true;
             btnLimpiar.Enabled = true;
 
-
+            txtCedula.Text = "";
+            txtNombre.Text = "";
+            txtRol.Text = "";
             txtUsuario.Text = "";
             txtContrasenia.Text = "";
-            cbRol.SelectedIndex = 0;
 
         }
 
@@ -78,18 +100,7 @@ namespace HogarAncianos.View
             }
             else
             {
-                lbContrasenia.ForeColor = Color.Black;
-
-            }
-
-            if (cbRol.SelectedIndex==0)
-            {
-                cbRol.ForeColor = Color.Red;
-                verificar = true;
-            }
-            else
-            {
-                cbRol.ForeColor = Color.Black;
+                lbContrasenia.ForeColor = Color.White;
 
             }
 

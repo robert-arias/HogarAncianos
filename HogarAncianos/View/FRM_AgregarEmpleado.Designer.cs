@@ -225,7 +225,7 @@
             this.dgvCorreos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCorreos.Name = "dgvCorreos";
             this.dgvCorreos.ReadOnly = true;
-            this.dgvCorreos.RowTemplate.Height = 24;
+            this.dgvCorreos.RowTemplate.Height = 20;
             this.dgvCorreos.Size = new System.Drawing.Size(387, 90);
             this.dgvCorreos.TabIndex = 22;
             // 

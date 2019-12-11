@@ -19,7 +19,7 @@ namespace HogarAncianos.View
         {
             InitializeComponent();
             EstadoInicial();
-            modificarUsuarioController =new  ModificarUsuarioController(this);
+            modificarUsuarioController = new  ModificarUsuarioController(this);
         }
 
 
@@ -52,8 +52,9 @@ namespace HogarAncianos.View
 
         public Usuario GetUsuario()
         {
-            Console.WriteLine(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem) + "INFORMACION DEL USUARIO MODFIICADO");
-            return new Usuario(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem));
+            /* Console.WriteLine(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem) + "INFORMACION DEL USUARIO MODFIICADO");
+             return new Usuario(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem));*/
+            return null;
            
         }
 

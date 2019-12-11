@@ -82,14 +82,14 @@ namespace HogarAncianos.View {
             cbPuesto.SelectedIndex = 0;
             cbPuesto.Text = "Seleccionar";
 
-            lbNombre.ForeColor = Color.Black;
-            lbApellidos.ForeColor = Color.Black;
-            lbFechaNacimiento.ForeColor = Color.Black;
-            lbTelefono.ForeColor = Color.Black;
-            lbDireccion.ForeColor = Color.Black;
-            lbPuesto.ForeColor = Color.Black;
-            lbHorario.ForeColor = Color.Black;
-            lbSalario.ForeColor = Color.Black;
+            lbNombre.ForeColor = Color.White;
+            lbApellidos.ForeColor = Color.White;
+            lbFechaNacimiento.ForeColor = Color.White;
+            lbTelefono.ForeColor = Color.White;
+            lbDireccion.ForeColor = Color.White;
+            lbPuesto.ForeColor = Color.White;
+            lbHorario.ForeColor = Color.White;
+            lbSalario.ForeColor = Color.White;
 
             do {
                 foreach (DataGridViewRow row in dgvCorreos.Rows) {
@@ -99,12 +99,23 @@ namespace HogarAncianos.View {
         }
 
         public void AgregarCorreo() {
-            if (!String.IsNullOrEmpty(txtCorreo.Text) && CorreoValido(txtCorreo.Text)) {
-                dgvCorreos.Rows.Add(txtCorreo.Text);
-                txtCorreo.Text = "";
+            if (!VerificarCorreo(txtCorreo.Text)) {
+                if (!String.IsNullOrEmpty(txtCorreo.Text) && CorreoValido(txtCorreo.Text)) {
+                    dgvCorreos.Rows.Add(txtCorreo.Text);
+                    txtCorreo.Text = "";
+                }
+                else
+                    ShowMessage("Correo no válido.");
             }
             else
-                ShowMessage("Correo no válido.");
+                ShowMessage("El correo ingresado ya existe en la lista.");
+        }
+
+        private bool VerificarCorreo(string correo) {
+            foreach (DataGridViewRow row in dgvCorreos.Rows) {
+                return row.Cells["Correo"].Value.ToString().Equals(correo);
+            }
+            return false;
         }
 
         private bool CorreoValido(string correo) {
@@ -173,6 +184,11 @@ namespace HogarAncianos.View {
                     empty = true;
                     lbSalario.ForeColor = Color.Red;
                 } Convert.ToDouble(txtSalario.Text);
+
+                if ((DateTime.Now.Date < Convert.ToDateTime(txtFechaContratacion.Text).Date)) {
+                    empty = true;
+                    lbFechaContratacion.ForeColor = Color.Red;
+                }
 
                 return empty;
             } catch (FormatException e) {

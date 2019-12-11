@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace HogarAncianos.Model {
     public class ConnectionDB {
@@ -153,24 +154,22 @@ namespace HogarAncianos.Model {
 
         public bool UpdateUsuario(Usuario usuario)
         {
+            string query = $"update Usuarios set contrasenia = @contrasenia where usuario = @usuario";
 
-            string query = "update Usuarios set contrasenia='" + usuario.contrasenia + "',rol='" + usuario.rol+"' where usuario="+usuario.nombreUsuario ;
-            Console.WriteLine("update Usuarios set contrasenia = '" + usuario.contrasenia + "', rol = '" + usuario.rol + "' where usuario = '" + usuario.nombreUsuario + "'" + "ESTE ES EL QUERYYYYYYYYYYYYYYY");
-            try
-            {
+            try {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("update Usuarios set contrasenia = '" + usuario.contrasenia + "', rol = '" + usuario.rol + "' where usuario = '" + usuario.nombreUsuario + "'", connection);
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@usuario", usuario.nombreUsuario);
+                command.Parameters.AddWithValue("@contrasenia", usuario.contrasenia);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
 
             }
-            catch (SQLiteException E)
-            {
-                Debug.WriteLine(E.ToString());
+            catch (SQLiteException e) {
                 return false;
             }
-        }
+        } 
 
        public bool DeleteUsuario(string usuario)
        {
@@ -195,7 +194,6 @@ namespace HogarAncianos.Model {
 
         public DataSet GetUsuario(string usuario)
         {
-            Console.WriteLine(usuario + "LA CEDULA QUE ENTRA EN GET PACIENTE");
             try
             {
                 connection.Open();
@@ -244,9 +242,6 @@ namespace HogarAncianos.Model {
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
                 connection.Close();
-                Console.WriteLine("CAMPO USUARIO "+data.Tables[0].Rows[0][0]);
-                Console.WriteLine("CAMPO CONTRASENIA " + data.Tables[0].Rows[0][1]);
-                Console.WriteLine("CAMPO ROL " + data.Tables[0].Rows[0][2]);
                 return data;
             
             }
@@ -259,12 +254,15 @@ namespace HogarAncianos.Model {
 
         public bool agregarUsuario(Usuario usuario)
         {
-            string query = $"insert into Usuarios values('{usuario.nombreUsuario}','{usuario.contrasenia}','{usuario.rol}')";
+            string query = $"insert into Usuarios(usuario, contrasenia, cedula_empleado) values (@usuario, @contrasenia, @cedula)";
 
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query,connection);
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@usuario", usuario.nombreUsuario);
+                command.Parameters.AddWithValue("@contrasenia", usuario.contrasenia);
+                command.Parameters.AddWithValue("@cedula", usuario.cedula);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -275,11 +273,48 @@ namespace HogarAncianos.Model {
             }
         }
 
+        public bool ExisteUsuarioConCedula(string cedula) {
+            try {
+                string query = $"select * from Usuarios where cedula_empleado = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                connection.Close();
 
-        public bool ExisteUsuario(string usuario)
-        {
-            try
-            {
+                return dataTable.Rows.Count == 0;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
+
+        public DataTable GetEmpleadoUsuario(string cedula) {
+            try {
+                string query = $"select cedula, nombre, apellidos, puesto_trabajo from Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                connection.Close();
+
+                return dataTable;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+
+            public bool ExisteUsuario(string usuario)
+          {
+            try {
                 string query = "select * from Usuarios where usuario='" + usuario + "'";
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
@@ -294,8 +329,7 @@ namespace HogarAncianos.Model {
                     return true;
 
             }
-            catch (SQLiteException e)
-            {
+            catch (SQLiteException e) {
                 connection.Close();
                 Debug.WriteLine(e.ToString());
                 return false;
@@ -314,10 +348,7 @@ namespace HogarAncianos.Model {
                 connection.Close();
 
                 //No encuentra coincidencia; dataset vacío.
-                if (dataSet.Tables[0].Rows.Count == 0)
-                    return false;
-                else
-                    return true;
+                return dataSet.Tables[0].Rows.Count == 0;
             } catch (SQLiteException e) {
                 connection.Close();
                 Debug.WriteLine(e.ToString());

@@ -26,11 +26,16 @@ namespace HogarAncianos.Controller
             //frm_ModificarUsuario.btnLimpiar.Click += new EventHandler(limpiar);
             //frm_ModificarUsuario.cbUsuario.SelectedIndexChanged += new EventHandler(llenarCampos);
             FRM_ConsultarUsuario.Load += new EventHandler(FilldtgUsuarios);
+            FRM_ConsultarUsuario.btnReporte.Click += new EventHandler(RealizarReporte);
         }
 
         public void FilldtgUsuarios(object sender, EventArgs e)
         {
             FRM_ConsultarUsuario.FilldtgUsuarios(connectionDB.GetAllUsuarios());
+        }
+
+        private void RealizarReporte(object sender, EventArgs e) {
+            FRM_ConsultarUsuario.RealizarReporte();
         }
     }
 }
