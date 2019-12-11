@@ -530,5 +530,56 @@ namespace HogarAncianos.Model {
             }
            
         }
+
+        //***********************************************************METODOS PRODUCTOS HIGIENE ****************************************************************************//
+
+
+        public bool VerificarIdentificador(string identificador)
+        {
+            try
+            {
+                string query = $"select identificador_producto from Productos_Higiene where identificador_producto = '{identificador}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
+
+                //No encuentra coincidencia; dataset vacío.
+                return dataTable.Rows.Count == 0;
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
+
+        public bool AgregarProductoHigiene(Productos_Higiene producto)
+         {
+             try
+             {
+                 string insert = $"insert into Productos_Higiene values('{producto.Identificador_producto}', '{producto.Nombre_producto}', " +
+                     $"'{producto.Tipo_producto}', '{producto.Descripcion}', " +
+                     $"{producto.Cantidad})";
+                 SQLiteCommand command = new SQLiteCommand(insert, connection);
+                 connection.Open();
+                 command.ExecuteNonQuery();
+                 connection.Close();
+                 return true;
+             }
+             catch (SQLiteException e)
+             {
+                 connection.Close();
+                 Debug.WriteLine(e.ToString());
+                 return false;
+             }
+         }
+
+
+
+
     }
 }

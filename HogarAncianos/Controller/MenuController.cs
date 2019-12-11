@@ -30,12 +30,12 @@ namespace HogarAncianos.Controller {
         private FRM_EliminarUsuario frm_EliminarUsuario;
         private FRM_ConsultarUsuario frm_ConsultarUsuario;
 
-        //Productos de Hiegiene
+        //Productos de Higiene
         private FRM_AgregarProductoInventario frm_AgregarProductoInventario;
         private FRM_BuscarProducto frm_BuscarProducto;
         private FRM_ModificarProductosHigiene frm_ModificarProductos;
         private FRM_EliminarProducto frm_EliminarProducto;
-        private FRM_AgregarProductosHigiene GetFRM_AgregarProductosHigiene;
+        private FRM_AgregarProductosHigiene frm_AgregarProductosHigiene;
         private FRM_SalidaProductos frm_SalidaProductos;
 
         //Prescripciones 
@@ -44,18 +44,9 @@ namespace HogarAncianos.Controller {
         private FRM_ConsultaPrescripcion frm_ConsultaPrescripcion;
         private FRM_EliminarPrescripcion frm_EliminarPrescripcion;
 
-       
-
         //Login
         private FRM_Login frm_login; 
-
-
-
-
-
-
-
-
+               
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
             frm_MenuPrincipal = menuPrincipal;
          
@@ -63,6 +54,9 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado = new FRM_AgregarEmpleado();
             frm_ModificarEmpleado = new FRM_ModificarEmpleado();
             frm_BuscarEmpleados = new FRM_BuscarEmpleados();
+
+            //Productos higiene
+            frm_AgregarProductosHigiene = new FRM_AgregarProductosHigiene();
 
             //Pacientes 
             frm_AgregarPaciente = new FRM_AgregarPaciente();
@@ -106,6 +100,9 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregar);
 
             //Productos de Limpieza
+            frm_MenuPrincipal.mi_ProductosLimpiezaAgregar.Click += new EventHandler(OpenAgregarProductoHigiene);
+            frm_AgregarProductosHigiene.FormClosed += CerrarAgregarProductoHigiene;
+            frm_AgregarProductosHigiene.btCancelar.Click += new EventHandler(CerrarAgregarProductoHigiene);
 
             //Medicamentos 
           
@@ -190,6 +187,22 @@ namespace HogarAncianos.Controller {
             frm_login.Close();
             frm_MenuPrincipal.Show();
         }
+
+        //Metodos limpieza
+        private void OpenAgregarProductoHigiene(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_AgregarProductosHigiene.ShowDialog();
+        }
+
+        private void CerrarAgregarProductoHigiene(object sender, EventArgs e)
+        {
+            frm_AgregarProductosHigiene.Close();
+            frm_MenuPrincipal.Show();
+            frm_AgregarProductosHigiene.EstadoInicial();
+        }
+
+
         //Metodos Empleados 
 
         private void OpenAgregarEmpleado(object sender, EventArgs e) {

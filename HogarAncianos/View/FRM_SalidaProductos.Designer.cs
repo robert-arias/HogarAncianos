@@ -247,7 +247,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Name = "FRM_SalidaProductos";
-            this.Text = "FRM_SalidaProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Salida productos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
