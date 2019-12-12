@@ -97,7 +97,8 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado.FormClosed += CerrarAgregarEmpleado;
             frm_ModificarEmpleado.FormClosed += CerrarModificarEmpleado;
             frm_BuscarEmpleados.FormClosed += CerrarBuscarEmpleados;
-            frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregar);
+            frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregarEmpleado);
+            frm_ModificarEmpleado.btnCancelar.Click += new EventHandler(CancelarModificarEmpleado);
 
             //Productos de Limpieza
             frm_MenuPrincipal.mi_ProductosLimpiezaAgregar.Click += new EventHandler(OpenAgregarProductoHigiene);
@@ -236,7 +237,7 @@ namespace HogarAncianos.Controller {
         private void CerrarModificarEmpleado(object sender, EventArgs e) {
             frm_ModificarEmpleado.Close();
             frm_MenuPrincipal.Show();
-            //frm_ModificarEmpleado.EstadoInicial();
+            frm_ModificarEmpleado.EstadoInicial();
         }
 
         private void CerrarBuscarEmpleados(object sender, EventArgs e) {
@@ -245,10 +246,16 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Show();
         }
 
-        private void CancelarAgregar(object sender, EventArgs e) {
+        private void CancelarAgregarEmpleado(object sender, EventArgs e) {
             frm_AgregarEmpleado.Close();
             frm_MenuPrincipal.Show();
             frm_AgregarEmpleado.EstadoInicial();
+        }
+
+        private void CancelarModificarEmpleado(object sender, EventArgs e) {
+            frm_ModificarEmpleado.Close();
+            frm_MenuPrincipal.Show();
+            frm_ModificarEmpleado.EstadoInicial();
         }
 
 

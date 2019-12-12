@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.lbCedula = new System.Windows.Forms.Label();
@@ -136,7 +138,7 @@
             // 
             this.lbCedula.AutoSize = true;
             this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedula.ForeColor = System.Drawing.Color.Red;
+            this.lbCedula.ForeColor = System.Drawing.Color.White;
             this.lbCedula.Location = new System.Drawing.Point(491, 41);
             this.lbCedula.Name = "lbCedula";
             this.lbCedula.Size = new System.Drawing.Size(15, 20);
@@ -157,7 +159,7 @@
             // 
             this.lbTelefono.AutoSize = true;
             this.lbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefono.ForeColor = System.Drawing.Color.Red;
+            this.lbTelefono.ForeColor = System.Drawing.Color.White;
             this.lbTelefono.Location = new System.Drawing.Point(491, 252);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(15, 20);
@@ -168,7 +170,7 @@
             // 
             this.lbFechaNacimiento.AutoSize = true;
             this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.Red;
+            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.White;
             this.lbFechaNacimiento.Location = new System.Drawing.Point(491, 202);
             this.lbFechaNacimiento.Name = "lbFechaNacimiento";
             this.lbFechaNacimiento.Size = new System.Drawing.Size(15, 20);
@@ -179,7 +181,7 @@
             // 
             this.lbApellidos.AutoSize = true;
             this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApellidos.ForeColor = System.Drawing.Color.Red;
+            this.lbApellidos.ForeColor = System.Drawing.Color.White;
             this.lbApellidos.Location = new System.Drawing.Point(491, 149);
             this.lbApellidos.Name = "lbApellidos";
             this.lbApellidos.Size = new System.Drawing.Size(15, 20);
@@ -190,7 +192,7 @@
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.ForeColor = System.Drawing.Color.Red;
+            this.lbNombre.ForeColor = System.Drawing.Color.White;
             this.lbNombre.Location = new System.Drawing.Point(491, 96);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(15, 20);
@@ -217,9 +219,25 @@
             this.dgvCorreos.AllowUserToAddRows = false;
             this.dgvCorreos.AllowUserToDeleteRows = false;
             this.dgvCorreos.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCorreos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCorreos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCorreos.Enabled = false;
             this.dgvCorreos.Location = new System.Drawing.Point(643, 242);
             this.dgvCorreos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -245,7 +263,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(299, 27);
-            this.txtCorreo.TabIndex = 21;
+            this.txtCorreo.TabIndex = 7;
             // 
             // btnAgregarCorreo
             // 
@@ -259,7 +277,7 @@
             this.btnAgregarCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarCorreo.Name = "btnAgregarCorreo";
             this.btnAgregarCorreo.Size = new System.Drawing.Size(104, 43);
-            this.btnAgregarCorreo.TabIndex = 20;
+            this.btnAgregarCorreo.TabIndex = 8;
             this.btnAgregarCorreo.Text = "Agregar";
             this.btnAgregarCorreo.UseVisualStyleBackColor = false;
             // 
@@ -271,7 +289,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(244, 27);
-            this.txtTelefono.TabIndex = 19;
+            this.txtTelefono.TabIndex = 5;
             // 
             // label2
             // 
@@ -359,7 +377,7 @@
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(243, 27);
-            this.txtApellidos.TabIndex = 18;
+            this.txtApellidos.TabIndex = 3;
             // 
             // txtNombre
             // 
@@ -369,7 +387,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(243, 27);
-            this.txtNombre.TabIndex = 16;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtFechaNacimiento
             // 
@@ -380,7 +398,7 @@
             this.txtFechaNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(243, 27);
-            this.txtFechaNacimiento.TabIndex = 12;
+            this.txtFechaNacimiento.TabIndex = 4;
             // 
             // btnVerificar
             // 
@@ -393,7 +411,7 @@
             this.btnVerificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(111, 38);
-            this.btnVerificar.TabIndex = 13;
+            this.btnVerificar.TabIndex = 1;
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = false;
             // 
@@ -404,7 +422,7 @@
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(243, 27);
-            this.txtCedula.TabIndex = 11;
+            this.txtCedula.TabIndex = 0;
             // 
             // label1
             // 
@@ -486,7 +504,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(156, 39);
-            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
@@ -494,7 +512,7 @@
             // 
             this.lbSalario.AutoSize = true;
             this.lbSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalario.ForeColor = System.Drawing.Color.Red;
+            this.lbSalario.ForeColor = System.Drawing.Color.White;
             this.lbSalario.Location = new System.Drawing.Point(452, 140);
             this.lbSalario.Name = "lbSalario";
             this.lbSalario.Size = new System.Drawing.Size(15, 20);
@@ -505,7 +523,7 @@
             // 
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHorario.ForeColor = System.Drawing.Color.Red;
+            this.lbHorario.ForeColor = System.Drawing.Color.White;
             this.lbHorario.Location = new System.Drawing.Point(452, 87);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(15, 20);
@@ -516,7 +534,7 @@
             // 
             this.lbPuesto.AutoSize = true;
             this.lbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPuesto.ForeColor = System.Drawing.Color.Red;
+            this.lbPuesto.ForeColor = System.Drawing.Color.White;
             this.lbPuesto.Location = new System.Drawing.Point(452, 32);
             this.lbPuesto.Name = "lbPuesto";
             this.lbPuesto.Size = new System.Drawing.Size(15, 20);
@@ -547,7 +565,7 @@
             this.cbPuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPuesto.Name = "cbPuesto";
             this.cbPuesto.Size = new System.Drawing.Size(233, 28);
-            this.cbPuesto.TabIndex = 31;
+            this.cbPuesto.TabIndex = 9;
             // 
             // label12
             // 
@@ -599,7 +617,7 @@
             this.txtFechaContratacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFechaContratacion.Name = "txtFechaContratacion";
             this.txtFechaContratacion.Size = new System.Drawing.Size(293, 27);
-            this.txtFechaContratacion.TabIndex = 27;
+            this.txtFechaContratacion.TabIndex = 12;
             // 
             // label11
             // 
@@ -653,7 +671,7 @@
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(204, 27);
-            this.txtSalario.TabIndex = 24;
+            this.txtSalario.TabIndex = 11;
             // 
             // txtHorario
             // 
@@ -663,7 +681,7 @@
             this.txtHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.Size = new System.Drawing.Size(233, 27);
-            this.txtHorario.TabIndex = 23;
+            this.txtHorario.TabIndex = 10;
             // 
             // label9
             // 
@@ -688,7 +706,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FRM_AgregarEmpleado";
-            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar empleado";
             this.groupBox1.ResumeLayout(false);
