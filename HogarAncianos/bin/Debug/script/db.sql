@@ -38,7 +38,6 @@ PRIMARY KEY(cedula));
 
 CREATE TABLE 'Prescripcion'(
 'num' INTEGER,
-'fecha_caducidad' TEXT,
 'cedula_paciente'TEXT,
 PRIMARY KEY(num));
 FOREIGN KEY (cedula_paciente) REFERENCES Pacientes(cedula);
@@ -48,6 +47,7 @@ FOREIGN KEY (cedula_paciente) REFERENCES Pacientes(cedula);
 CREATE TABLE 'Prescripcion_Medicamentos'(
 'num' INTEGER,
 'codigo_medicamento' TEXT,
+'fecha_caducidad' TEXT,
 PRIMARY KEY(num,'codigo_medicamento');
 FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento);
 )
