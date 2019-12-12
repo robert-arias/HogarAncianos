@@ -29,21 +29,24 @@ namespace HogarAncianos.Controller
         }
 
         private void VerificarCedula(object sender, EventArgs e) {
-            if (!connection.ExisteCedula(frm_AgregarUsuario.GetCedula())) {
-                if (connection.ExisteUsuarioConCedula(frm_AgregarUsuario.GetCedula())) {
-                    frm_AgregarUsuario.ActivarCampoUsuario();
-                    frm_AgregarUsuario.AgregarInformacionEmpleado(connection.GetEmpleadoUsuario(
-                        frm_AgregarUsuario.GetCedula()));
-                }
-                else {
-                    frm_AgregarUsuario.ShowMessage("El empleado con la cédula ingresada ya posee un usuario.");
+            if (!string.IsNullOrEmpty(frm_AgregarUsuario.GetCedula()) && frm_AgregarUsuario.GetCedula().Length >= 9) {
+                if (!connection.ExisteCedula(frm_AgregarUsuario.GetCedula())) {
+                    if (connection.ExisteUsuarioConCedula(frm_AgregarUsuario.GetCedula())) {
+                        frm_AgregarUsuario.ActivarCampoUsuario();
+                        frm_AgregarUsuario.AgregarInformacionEmpleado(connection.GetEmpleadoUsuario(
+                            frm_AgregarUsuario.GetCedula()));
+                    }
+                    else {
+                        frm_AgregarUsuario.ShowMessage("El empleado con la cédula ingresada ya posee un usuario.");
 
+                    }
                 }
+                else
+                    frm_AgregarUsuario.ShowMessage("La cédula ingresada no existe.");
             }
-            else {
-                frm_AgregarUsuario.ShowMessage("La cédula ingresada no existe.");
-
-            }
+            else
+                frm_AgregarUsuario.ShowMessage("El formato de la cédula es incorrecto.");
+            
         }
 
         public void VerificarUsuarioEnter(object sender, KeyEventArgs e)
@@ -84,7 +87,7 @@ namespace HogarAncianos.Controller
         {
             if (!frm_AgregarUsuario.VerificarCampos())
             {
-                connection.agregarUsuario(frm_AgregarUsuario.GetUsuario());
+                connection.AgregarUsuario(frm_AgregarUsuario.GetUsuario());
                 frm_AgregarUsuario.ShowMessage("El usuario ha sido agregado exitosamente.");
                 frm_AgregarUsuario.EstadoInicial();
             }

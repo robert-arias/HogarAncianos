@@ -48,7 +48,7 @@ namespace HogarAncianos.Controller
 
         public void llenarCampos(object sender, EventArgs e)
         {
-            if (connection.GetUsuario(frm_ModificarUsuario.GetNombreUsuario()).Tables[0].Rows.Count != 0)
+            if (connection.GetUsuario(frm_ModificarUsuario.GetNombreUsuario()).Rows.Count != 0)
             {
                 frm_ModificarUsuario.llenarCampos(connection.GetUsuario(frm_ModificarUsuario.GetNombreUsuario()));
                 frm_ModificarUsuario.ActivarCampos();
