@@ -10,16 +10,16 @@ namespace HogarAncianos.Model
     {
 
         public string nombreUsuario { get; set; }
-        public string contrasenia { get; set; }
-        public string rol { get; set; }
+        public byte[] contrasenia { get; set; }
+        public string cedula { get; set; }
 
 
 
-        public Usuario (string nombreUsuario, string contrasenia, string rol)
+        public Usuario (string nombreUsuario, byte[] contrasenia, string cedula)
         {
             this.nombreUsuario = nombreUsuario;
             this.contrasenia = contrasenia;
-            this.rol = rol;
+            this.cedula = cedula;
             
         }
 

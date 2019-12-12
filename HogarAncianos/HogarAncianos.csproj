@@ -93,6 +93,7 @@
     <Compile Include="Controller\AgregarEmpleadosController.cs" />
     <Compile Include="Controller\AgregarMedicamentoController.cs" />
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
+    <Compile Include="Controller\AgregarProductoHigieneController.cs" />
     <Compile Include="Controller\AgregarUsuarioController.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
@@ -112,6 +113,23 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\CrystalReportsUsuario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportsUsuario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\DataSetUsuario.cs">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataSetUsuario.Designer.cs">
+      <DependentUpon>DataSetUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataSetUsuario1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_AgregarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +280,12 @@
     <Compile Include="View\FRM_ModificarUsuario.Designer.cs">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ReporteUsuarioPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ReporteUsuarioPrueba.Designer.cs">
+      <DependentUpon>FRM_ReporteUsuarioPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_SalidaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +301,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CrystalReportsUsuario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportsUsuario.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarEmpleado.resx">
       <DependentUpon>FRM_AgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +380,9 @@
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ReporteUsuarioPrueba.resx">
+      <DependentUpon>FRM_ReporteUsuarioPrueba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_SalidaProductos.resx">
       <DependentUpon>FRM_SalidaProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,11 +396,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="View\DataSetUsuario.xsc">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetUsuario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsuario1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\DataSetUsuario.xss">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

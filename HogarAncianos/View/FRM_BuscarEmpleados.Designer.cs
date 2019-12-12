@@ -45,6 +45,8 @@
             this.cbCorreo = new System.Windows.Forms.CheckBox();
             this.cbTelefono = new System.Windows.Forms.CheckBox();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +54,6 @@
             this.PuestoTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
@@ -67,7 +67,7 @@
             this.label1.Location = new System.Drawing.Point(81, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Búsqueda:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -77,7 +77,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(178, 55);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(499, 23);
+            this.txtBuscar.Size = new System.Drawing.Size(499, 27);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
@@ -119,7 +119,7 @@
             this.cbEstadoLaboral.Enabled = false;
             this.cbEstadoLaboral.Location = new System.Drawing.Point(195, 177);
             this.cbEstadoLaboral.Name = "cbEstadoLaboral";
-            this.cbEstadoLaboral.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoLaboral.Size = new System.Drawing.Size(18, 17);
             this.cbEstadoLaboral.TabIndex = 10;
             this.cbEstadoLaboral.UseVisualStyleBackColor = true;
             // 
@@ -134,7 +134,7 @@
             "Inactivo"});
             this.ddlEstadoLaboral.Location = new System.Drawing.Point(219, 171);
             this.ddlEstadoLaboral.Name = "ddlEstadoLaboral";
-            this.ddlEstadoLaboral.Size = new System.Drawing.Size(175, 28);
+            this.ddlEstadoLaboral.Size = new System.Drawing.Size(175, 33);
             this.ddlEstadoLaboral.TabIndex = 9;
             // 
             // label4
@@ -145,7 +145,7 @@
             this.label4.Location = new System.Drawing.Point(8, 174);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "Estado laboral:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -156,7 +156,7 @@
             this.cbPuestoTrabajo.Enabled = false;
             this.cbPuestoTrabajo.Location = new System.Drawing.Point(195, 128);
             this.cbPuestoTrabajo.Name = "cbPuestoTrabajo";
-            this.cbPuestoTrabajo.Size = new System.Drawing.Size(15, 14);
+            this.cbPuestoTrabajo.Size = new System.Drawing.Size(18, 17);
             this.cbPuestoTrabajo.TabIndex = 7;
             this.cbPuestoTrabajo.UseVisualStyleBackColor = true;
             // 
@@ -168,7 +168,7 @@
             this.label3.Location = new System.Drawing.Point(8, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 20);
+            this.label3.Size = new System.Drawing.Size(170, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Puesto de trabajo:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -195,7 +195,7 @@
             "Trabajadora social"});
             this.ddlPuesto.Location = new System.Drawing.Point(219, 122);
             this.ddlPuesto.Name = "ddlPuesto";
-            this.ddlPuesto.Size = new System.Drawing.Size(175, 28);
+            this.ddlPuesto.Size = new System.Drawing.Size(175, 33);
             this.ddlPuesto.TabIndex = 5;
             // 
             // dtpFechaContratacion
@@ -206,7 +206,7 @@
             this.dtpFechaContratacion.Location = new System.Drawing.Point(195, 77);
             this.dtpFechaContratacion.Name = "dtpFechaContratacion";
             this.dtpFechaContratacion.ShowCheckBox = true;
-            this.dtpFechaContratacion.Size = new System.Drawing.Size(200, 26);
+            this.dtpFechaContratacion.Size = new System.Drawing.Size(200, 30);
             this.dtpFechaContratacion.TabIndex = 4;
             // 
             // label2
@@ -217,7 +217,7 @@
             this.label2.Location = new System.Drawing.Point(7, 77);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 20);
+            this.label2.Size = new System.Drawing.Size(211, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha de contratación:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -229,7 +229,7 @@
             this.rbApellidos.ForeColor = System.Drawing.Color.White;
             this.rbApellidos.Location = new System.Drawing.Point(297, 27);
             this.rbApellidos.Name = "rbApellidos";
-            this.rbApellidos.Size = new System.Drawing.Size(91, 24);
+            this.rbApellidos.Size = new System.Drawing.Size(113, 29);
             this.rbApellidos.TabIndex = 2;
             this.rbApellidos.Text = "Apellidos";
             this.rbApellidos.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@
             this.rbNombre.ForeColor = System.Drawing.Color.White;
             this.rbNombre.Location = new System.Drawing.Point(179, 27);
             this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(83, 24);
+            this.rbNombre.Size = new System.Drawing.Size(102, 29);
             this.rbNombre.TabIndex = 1;
             this.rbNombre.Text = "Nombre";
             this.rbNombre.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.rbCedula.ForeColor = System.Drawing.Color.White;
             this.rbCedula.Location = new System.Drawing.Point(12, 28);
             this.rbCedula.Name = "rbCedula";
-            this.rbCedula.Size = new System.Drawing.Size(156, 24);
+            this.rbCedula.Size = new System.Drawing.Size(192, 29);
             this.rbCedula.TabIndex = 0;
             this.rbCedula.TabStop = true;
             this.rbCedula.Text = "Número de cédula";
@@ -275,7 +275,6 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos extra";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // cbSalario
             // 
@@ -284,7 +283,7 @@
             this.cbSalario.ForeColor = System.Drawing.Color.White;
             this.cbSalario.Location = new System.Drawing.Point(12, 124);
             this.cbSalario.Name = "cbSalario";
-            this.cbSalario.Size = new System.Drawing.Size(77, 24);
+            this.cbSalario.Size = new System.Drawing.Size(95, 29);
             this.cbSalario.TabIndex = 5;
             this.cbSalario.Text = "Salario";
             this.cbSalario.UseVisualStyleBackColor = true;
@@ -296,7 +295,7 @@
             this.cbFechaContratacion.ForeColor = System.Drawing.Color.White;
             this.cbFechaContratacion.Location = new System.Drawing.Point(207, 76);
             this.cbFechaContratacion.Name = "cbFechaContratacion";
-            this.cbFechaContratacion.Size = new System.Drawing.Size(187, 24);
+            this.cbFechaContratacion.Size = new System.Drawing.Size(227, 29);
             this.cbFechaContratacion.TabIndex = 3;
             this.cbFechaContratacion.Text = "Fecha de contratación";
             this.cbFechaContratacion.UseVisualStyleBackColor = true;
@@ -308,7 +307,7 @@
             this.cbDireccion.ForeColor = System.Drawing.Color.White;
             this.cbDireccion.Location = new System.Drawing.Point(12, 76);
             this.cbDireccion.Name = "cbDireccion";
-            this.cbDireccion.Size = new System.Drawing.Size(94, 24);
+            this.cbDireccion.Size = new System.Drawing.Size(115, 29);
             this.cbDireccion.TabIndex = 2;
             this.cbDireccion.Text = "Dirección";
             this.cbDireccion.UseVisualStyleBackColor = true;
@@ -320,7 +319,7 @@
             this.cbCorreo.ForeColor = System.Drawing.Color.White;
             this.cbCorreo.Location = new System.Drawing.Point(206, 27);
             this.cbCorreo.Name = "cbCorreo";
-            this.cbCorreo.Size = new System.Drawing.Size(157, 24);
+            this.cbCorreo.Size = new System.Drawing.Size(193, 29);
             this.cbCorreo.TabIndex = 1;
             this.cbCorreo.Text = "Correo electrónico";
             this.cbCorreo.UseVisualStyleBackColor = true;
@@ -332,7 +331,7 @@
             this.cbTelefono.ForeColor = System.Drawing.Color.White;
             this.cbTelefono.Location = new System.Drawing.Point(12, 28);
             this.cbTelefono.Name = "cbTelefono";
-            this.cbTelefono.Size = new System.Drawing.Size(157, 24);
+            this.cbTelefono.Size = new System.Drawing.Size(191, 29);
             this.cbTelefono.TabIndex = 0;
             this.cbTelefono.Text = "Número telefónico";
             this.cbTelefono.UseVisualStyleBackColor = true;
@@ -353,11 +352,32 @@
             this.EstadoLaboral});
             this.dgvResultados.Location = new System.Drawing.Point(43, 348);
             this.dgvResultados.Name = "dgvResultados";
-            this.dgvResultados.ReadOnly = true;
             this.dgvResultados.RowTemplate.Height = 24;
             this.dgvResultados.ShowEditingIcon = false;
             this.dgvResultados.Size = new System.Drawing.Size(910, 227);
             this.dgvResultados.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(697, 581);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(256, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Realizar reporte de resultados";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(806, 55);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // Cedula
             // 
@@ -416,31 +436,9 @@
             this.EstadoLaboral.ReadOnly = true;
             this.EstadoLaboral.Width = 147;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(697, 581);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Realizar reporte de resultados";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(806, 55);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
             // FRM_BuscarEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(992, 624);
