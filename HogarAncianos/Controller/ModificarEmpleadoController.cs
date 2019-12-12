@@ -62,7 +62,7 @@ namespace HogarAncianos.Controller {
             if (!frm_ModificarEmpleado.VerificarCampos()) {
                 if (frm_ModificarEmpleado.ShowConfirmation()) {
                     if (db.ModificarEmpleado(frm_ModificarEmpleado.GetEmpleado())) {
-                        frm_ModificarEmpleado.ShowMessage("Se ha agregado al nuevo empleado con éxito.");
+                        frm_ModificarEmpleado.ShowMessage("Se ha modificado el empleado con éxito.");
                         frm_ModificarEmpleado.EstadoInicial();
                     }
                     else
