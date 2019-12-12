@@ -33,17 +33,17 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.dtgMedicamentos = new System.Windows.Forms.DataGridView();
+            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
+            this.btnResultados = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).BeginInit();
             this.SuspendLayout();
@@ -92,8 +92,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.rbNombre);
+            this.groupBox1.Controls.Add(this.rbCodigo);
             this.groupBox1.Location = new System.Drawing.Point(136, 97);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(481, 76);
@@ -101,28 +101,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
             // 
-            // checkBox2
+            // rbNombre
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(268, 28);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(63, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Nombre";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(265, 20);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(62, 17);
+            this.rbNombre.TabIndex = 1;
+            this.rbNombre.TabStop = true;
+            this.rbNombre.Text = "Nombre";
+            this.rbNombre.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // rbCodigo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(132, 28);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Codigo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(108, 20);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rbCodigo.TabIndex = 0;
+            this.rbCodigo.TabStop = true;
+            this.rbCodigo.Text = "Codigo";
+            this.rbCodigo.UseVisualStyleBackColor = true;
             // 
             // dtgMedicamentos
             // 
+            this.dtgMedicamentos.AllowUserToAddRows = false;
+            this.dtgMedicamentos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMedicamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -136,36 +140,6 @@
             this.dtgMedicamentos.Size = new System.Drawing.Size(645, 196);
             this.dtgMedicamentos.TabIndex = 13;
             // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Unidad
-            // 
-            this.Unidad.HeaderText = "Unidad Medida";
-            this.Unidad.Name = "Unidad";
-            // 
-            // CantidadD
-            // 
-            this.CantidadD.HeaderText = "Cantidad Disponible";
-            this.CantidadD.Name = "CantidadD";
-            // 
-            // CantidadP
-            // 
-            this.CantidadP.HeaderText = "Cantidad Prescrita";
-            this.CantidadP.Name = "CantidadP";
-            // 
             // btnReporteMedicamentos
             // 
             this.btnReporteMedicamentos.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -177,16 +151,52 @@
             this.btnReporteMedicamentos.Text = "Realizar reporte de resultados";
             this.btnReporteMedicamentos.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnResultados
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(59, 448);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 26);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Todos los resultados";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultados.Location = new System.Drawing.Point(59, 448);
+            this.btnResultados.Name = "btnResultados";
+            this.btnResultados.Size = new System.Drawing.Size(256, 26);
+            this.btnResultados.TabIndex = 15;
+            this.btnResultados.Text = "Todos los resultados";
+            this.btnResultados.UseVisualStyleBackColor = false;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codigo_medicamento";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre_medicamento";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "categoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Unidad
+            // 
+            this.Unidad.DataPropertyName = "unidad_medida";
+            this.Unidad.HeaderText = "Unidad Medida";
+            this.Unidad.Name = "Unidad";
+            // 
+            // CantidadD
+            // 
+            this.CantidadD.DataPropertyName = "cantidad_disponible";
+            this.CantidadD.HeaderText = "Cantidad Disponible";
+            this.CantidadD.Name = "CantidadD";
+            // 
+            // CantidadP
+            // 
+            this.CantidadP.DataPropertyName = "cantidad_prescrita";
+            this.CantidadP.HeaderText = "Cantidad Prescrita";
+            this.CantidadP.Name = "CantidadP";
             // 
             // FRM_ConsultaMedicamentos
             // 
@@ -194,7 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(816, 505);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnResultados);
             this.Controls.Add(this.btnReporteMedicamentos);
             this.Controls.Add(this.dtgMedicamentos);
             this.Controls.Add(this.groupBox1);
@@ -204,7 +214,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FRM_ConsultaMedicamentos";
             this.Text = "FRM_ConsultaMedicamentos";
-            this.Load += new System.EventHandler(this.FRM_ConsultaMedicamentos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).EndInit();
@@ -221,15 +230,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgMedicamentos;
+        public System.Windows.Forms.Button btnReporteMedicamentos;
+        public System.Windows.Forms.Button btnResultados;
+        private System.Windows.Forms.RadioButton rbNombre;
+        private System.Windows.Forms.RadioButton rbCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadD;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadP;
-        private System.Windows.Forms.Button btnReporteMedicamentos;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

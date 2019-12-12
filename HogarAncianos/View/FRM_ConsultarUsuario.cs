@@ -45,13 +45,7 @@ namespace HogarAncianos.View
 
         public void RealizarReporte() {
             DataSetUsuario dataSetUsuario = new DataSetUsuario();
-            int fila = dtUsuarios.Rows.Count - 2;
-            Console.WriteLine("Fila 0 columna 1" + dtUsuarios[0, 0].Value.ToString());
-            Console.WriteLine("Fila 0 columna 2" + dtUsuarios[0, 1].Value.ToString());
-            Console.WriteLine("Fila 0 columna 3" + dtUsuarios[0, 2].Value.ToString());
-            Console.WriteLine("Fila 1 columna 0" + dtUsuarios[1, 0].Value.ToString());
-            Console.WriteLine("Fila 1 columna 1" + dtUsuarios[1, 1].Value.ToString());
-            Console.WriteLine("Fila 1 columna 2" + dtUsuarios[1, 2].Value.ToString());
+            int fila = dtUsuarios.Rows.Count - 2;   
             for (int i = 0; i <= fila; i++) {
                 dataSetUsuario.Tables[0].Rows.Add
                     (new object[] {    dtUsuarios[0, i].Value.ToString(),
@@ -65,7 +59,6 @@ namespace HogarAncianos.View
             string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, fileName);
             Console.WriteLine(path);
             report.Load(path);
-            //  report.Load(System.Windows.Forms.Application.StartupPath + "//HogarAncianos//View//CrystalReportsUsuario.rpt");
             report.SetDataSource(dataSetUsuario);
             reporteUsuarioPrueba.crystalReportViewer1.ReportSource = report;
             reporteUsuarioPrueba.ShowDialog();

@@ -33,6 +33,27 @@ namespace HogarAncianos.Model {
         }
 
         //***********************************************************METODOS PACIENTES ****************************************************************************//
+        public DataSet GetBusquedaPaciente(string query)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
         public bool ExisteCedulaPaciente(string cedula)
         {
             try
@@ -148,6 +169,8 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
+
+     
 
 
         //***********************************************************METODOS USUARIOS ****************************************************************************//
@@ -488,7 +511,28 @@ namespace HogarAncianos.Model {
             }
         }
 
-     
+
+        public DataSet GetAllMedicamento()
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Medicamentos", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+             
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
 
         public bool DeleteMedicamento(string codigo)
         {
@@ -529,6 +573,27 @@ namespace HogarAncianos.Model {
                 return false;
             }
            
+        }
+
+        public DataSet GetBusquedaMedicamento(string query)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
         }
 
         //***********************************************************METODOS PRODUCTOS HIGIENE ****************************************************************************//

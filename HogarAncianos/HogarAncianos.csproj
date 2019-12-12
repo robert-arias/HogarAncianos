@@ -96,6 +96,8 @@
     <Compile Include="Controller\AgregarProductoHigieneController.cs" />
     <Compile Include="Controller\AgregarUsuarioController.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
+    <Compile Include="Controller\BuscarMedicamentosController.cs" />
+    <Compile Include="Controller\BuscarPacientesController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
     <Compile Include="Controller\EliminarUsuarioController.cs" />
@@ -113,11 +115,44 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\CrystalReportEmpleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CrystalReportMedicamentos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportMedicamentos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CrystalReportPacientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPacientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CrystalReportsUsuario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportsUsuario.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\DataSetEmpleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataSetMedicamentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMedicamentos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataSetPacientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPacientes.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\DataSetUsuario.cs">
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
@@ -280,6 +315,18 @@
     <Compile Include="View\FRM_ModificarUsuario.Designer.cs">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ReporteMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ReporteMedicamentos.Designer.cs">
+      <DependentUpon>FRM_ReporteMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FRM_ReportePacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ReportePacientes.Designer.cs">
+      <DependentUpon>FRM_ReportePacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ReporteUsuarioPrueba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +348,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CrystalReportEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportEmpleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CrystalReportMedicamentos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportMedicamentos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CrystalReportPacientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPacientes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CrystalReportsUsuario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportsUsuario.cs</LastGenOutput>
@@ -380,6 +439,12 @@
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ReporteMedicamentos.resx">
+      <DependentUpon>FRM_ReporteMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ReportePacientes.resx">
+      <DependentUpon>FRM_ReportePacientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ReporteUsuarioPrueba.resx">
       <DependentUpon>FRM_ReporteUsuarioPrueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +461,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="View\DataSetEmpleados.xsc">
+      <DependentUpon>DataSetEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetEmpleados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEmpleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\DataSetEmpleados.xss">
+      <DependentUpon>DataSetEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetMedicamentos.xsc">
+      <DependentUpon>DataSetMedicamentos.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetMedicamentos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMedicamentos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\DataSetMedicamentos.xss">
+      <DependentUpon>DataSetMedicamentos.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetPacientes.xsc">
+      <DependentUpon>DataSetPacientes.xsd</DependentUpon>
+    </None>
+    <None Include="View\DataSetPacientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPacientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\DataSetPacientes.xss">
+      <DependentUpon>DataSetPacientes.xsd</DependentUpon>
+    </None>
     <None Include="View\DataSetUsuario.xsc">
       <DependentUpon>DataSetUsuario.xsd</DependentUpon>
     </None>
