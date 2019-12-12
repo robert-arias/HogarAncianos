@@ -52,6 +52,27 @@ namespace HogarAncianos.Model {
             }
         }
 
+        public int GetTotalRegistrosPrescripcion()
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select Count(*)+1 from Prescripcion", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return int.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
         public bool ExisteCedulaPaciente(string cedula)
         {
             try
@@ -145,8 +166,31 @@ namespace HogarAncianos.Model {
 
 
         }
-        //string query = "update Empleados set Nombre = '" + empleado.Nombre + "', Sueldo = " + empleado.Sueldo +
-        //      " where EmpleadoID = " + empleado.EmpleadoID;
+
+        public DataSet GetNombrePaciente(string cedula)
+        {
+           
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select nombre, apellidos from Pacientes where cedula='" + cedula + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+       
         public bool UpdatePaciente (Paciente paciente)
         {
             string query = "update Pacientes set nombre ='" + paciente.nombre + "' , apellidos='" + paciente.apellidos + "',fecha_nacimiento='" + paciente.fechaNacimiento + "',edad=" + paciente.edad + ",sexo='" + paciente.sexo + "' where cedula= "+ paciente.cedula;
@@ -541,6 +585,28 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
+        //update Bebidas set Stock = Stock - " + cantidad + " where BebidaID = "
+        //            + bebidaID, connection
+
+        public bool UpdateCantidadDisponibleMedicamento(string codigo, int cantidad)
+        {
+            string query = "update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='" + codigo /*+ ""*/;
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='"+codigo+"'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
 
 
         public DataSet GetMedicamento(string codigo)
@@ -565,6 +631,31 @@ namespace HogarAncianos.Model {
                 throw;
             }
         }
+
+        public DataSet GetNombre_CantidadDisponible_Medicamento(string codigo)
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select nombre_medicamento,cantidad_disponible from Medicamentos where codigo_medicamento = '" + codigo + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+
+    
+
 
 
         public DataSet GetAllMedicamento()

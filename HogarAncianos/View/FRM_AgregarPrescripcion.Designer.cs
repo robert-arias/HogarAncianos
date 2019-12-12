@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAgregarCorreo = new System.Windows.Forms.Button();
+            this.btnAgregarMedicamento = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.btnEliminarCorreo = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtFechaCaducidad = new System.Windows.Forms.DateTimePicker();
+            this.btnEliminarmMedicamento = new System.Windows.Forms.Button();
+            this.labelCantidadDisponible = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.dtgMedicamento = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,42 +47,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnVerificar = new System.Windows.Forms.Button();
+            this.btnVerificarMedicamento = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnVerificarPaciente = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbNumero = new System.Windows.Forms.TextBox();
             this.IdPrescripcion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamento)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnAgregarCorreo);
+            this.groupBox1.Controls.Add(this.btnAgregarMedicamento);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
-            this.groupBox1.Controls.Add(this.btnEliminarCorreo);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtFechaCaducidad);
+            this.groupBox1.Controls.Add(this.btnEliminarmMedicamento);
+            this.groupBox1.Controls.Add(this.labelCantidadDisponible);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.dtgMedicamento);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.lbCedula);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.btnVerificar);
+            this.groupBox1.Controls.Add(this.btnVerificarMedicamento);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,22 +94,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del medicamento";
             // 
-            // btnAgregarCorreo
+            // btnAgregarMedicamento
             // 
-            this.btnAgregarCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAgregarCorreo.Enabled = false;
-            this.btnAgregarCorreo.FlatAppearance.BorderSize = 0;
-            this.btnAgregarCorreo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCorreo.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarCorreo.Location = new System.Drawing.Point(538, 34);
-            this.btnAgregarCorreo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregarCorreo.Name = "btnAgregarCorreo";
-            this.btnAgregarCorreo.Size = new System.Drawing.Size(78, 29);
-            this.btnAgregarCorreo.TabIndex = 118;
-            this.btnAgregarCorreo.Text = "Agregar";
-            this.btnAgregarCorreo.UseVisualStyleBackColor = false;
+            this.btnAgregarMedicamento.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarMedicamento.Enabled = false;
+            this.btnAgregarMedicamento.FlatAppearance.BorderSize = 0;
+            this.btnAgregarMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnAgregarMedicamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnAgregarMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMedicamento.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarMedicamento.Location = new System.Drawing.Point(538, 34);
+            this.btnAgregarMedicamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarMedicamento.Name = "btnAgregarMedicamento";
+            this.btnAgregarMedicamento.Size = new System.Drawing.Size(78, 29);
+            this.btnAgregarMedicamento.TabIndex = 118;
+            this.btnAgregarMedicamento.Text = "Agregar";
+            this.btnAgregarMedicamento.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -123,43 +123,43 @@
             this.label9.TabIndex = 115;
             this.label9.Text = "Fecha de caducidad:";
             // 
-            // txtFechaNacimiento
+            // txtFechaCaducidad
             // 
-            this.txtFechaNacimiento.Enabled = false;
-            this.txtFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(220, 162);
-            this.txtFechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(183, 23);
-            this.txtFechaNacimiento.TabIndex = 116;
+            this.txtFechaCaducidad.Enabled = false;
+            this.txtFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaCaducidad.Location = new System.Drawing.Point(220, 162);
+            this.txtFechaCaducidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
+            this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 23);
+            this.txtFechaCaducidad.TabIndex = 116;
             // 
-            // btnEliminarCorreo
+            // btnEliminarmMedicamento
             // 
-            this.btnEliminarCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEliminarCorreo.Enabled = false;
-            this.btnEliminarCorreo.FlatAppearance.BorderSize = 0;
-            this.btnEliminarCorreo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnEliminarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnEliminarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCorreo.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminarCorreo.Location = new System.Drawing.Point(27, 202);
-            this.btnEliminarCorreo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarCorreo.Name = "btnEliminarCorreo";
-            this.btnEliminarCorreo.Size = new System.Drawing.Size(75, 35);
-            this.btnEliminarCorreo.TabIndex = 114;
-            this.btnEliminarCorreo.Text = "Eliminar";
-            this.btnEliminarCorreo.UseVisualStyleBackColor = false;
+            this.btnEliminarmMedicamento.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEliminarmMedicamento.Enabled = false;
+            this.btnEliminarmMedicamento.FlatAppearance.BorderSize = 0;
+            this.btnEliminarmMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnEliminarmMedicamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnEliminarmMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarmMedicamento.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarmMedicamento.Location = new System.Drawing.Point(27, 202);
+            this.btnEliminarmMedicamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarmMedicamento.Name = "btnEliminarmMedicamento";
+            this.btnEliminarmMedicamento.Size = new System.Drawing.Size(75, 35);
+            this.btnEliminarmMedicamento.TabIndex = 114;
+            this.btnEliminarmMedicamento.Text = "Eliminar";
+            this.btnEliminarmMedicamento.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // labelCantidadDisponible
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(419, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 20);
-            this.label8.TabIndex = 113;
-            this.label8.Text = "0";
+            this.labelCantidadDisponible.AutoSize = true;
+            this.labelCantidadDisponible.ForeColor = System.Drawing.Color.White;
+            this.labelCantidadDisponible.Location = new System.Drawing.Point(419, 137);
+            this.labelCantidadDisponible.Name = "labelCantidadDisponible";
+            this.labelCantidadDisponible.Size = new System.Drawing.Size(19, 20);
+            this.labelCantidadDisponible.TabIndex = 113;
+            this.labelCantidadDisponible.Text = "0";
             // 
             // label7
             // 
@@ -184,29 +184,30 @@
             this.label6.TabIndex = 110;
             this.label6.Text = "Cantidad:";
             // 
-            // textBox2
+            // txtCantidad
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(220, 122);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 24);
-            this.textBox2.TabIndex = 111;
+            this.txtCantidad.Enabled = false;
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(220, 122);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(183, 24);
+            this.txtCantidad.TabIndex = 111;
             // 
-            // dataGridView1
+            // dtgMedicamento
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgMedicamento.AllowUserToAddRows = false;
+            this.dtgMedicamento.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(128, 202);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(526, 170);
-            this.dataGridView1.TabIndex = 109;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgMedicamento.Location = new System.Drawing.Point(128, 202);
+            this.dtgMedicamento.Name = "dtgMedicamento";
+            this.dtgMedicamento.Size = new System.Drawing.Size(526, 170);
+            this.dtgMedicamento.TabIndex = 109;
             // 
             // Codigo
             // 
@@ -290,24 +291,26 @@
             this.txtNombre.Size = new System.Drawing.Size(183, 24);
             this.txtNombre.TabIndex = 99;
             // 
-            // btnVerificar
+            // btnVerificarMedicamento
             // 
-            this.btnVerificar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerificar.FlatAppearance.BorderSize = 0;
-            this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerificar.ForeColor = System.Drawing.Color.Black;
-            this.btnVerificar.Location = new System.Drawing.Point(446, 34);
-            this.btnVerificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(69, 29);
-            this.btnVerificar.TabIndex = 97;
-            this.btnVerificar.Text = "Verificar";
-            this.btnVerificar.UseVisualStyleBackColor = false;
+            this.btnVerificarMedicamento.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerificarMedicamento.Enabled = false;
+            this.btnVerificarMedicamento.FlatAppearance.BorderSize = 0;
+            this.btnVerificarMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificarMedicamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificarMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerificarMedicamento.ForeColor = System.Drawing.Color.Black;
+            this.btnVerificarMedicamento.Location = new System.Drawing.Point(446, 34);
+            this.btnVerificarMedicamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerificarMedicamento.Name = "btnVerificarMedicamento";
+            this.btnVerificarMedicamento.Size = new System.Drawing.Size(69, 29);
+            this.btnVerificarMedicamento.TabIndex = 97;
+            this.btnVerificarMedicamento.Text = "Verificar";
+            this.btnVerificarMedicamento.UseVisualStyleBackColor = false;
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(220, 39);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
@@ -329,10 +332,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btnLimpiar);
+            this.groupBox2.Controls.Add(this.btnVerificarPaciente);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtNombrePaciente);
             this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,35 +347,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del paciente";
             // 
-            // button3
+            // btnLimpiar
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(547, 32);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 29);
-            this.button3.TabIndex = 121;
-            this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Location = new System.Drawing.Point(547, 32);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(69, 29);
+            this.btnLimpiar.TabIndex = 121;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnVerificarPaciente
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(459, 32);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 29);
-            this.button4.TabIndex = 120;
-            this.button4.Text = "Verificar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnVerificarPaciente.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerificarPaciente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificarPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnVerificarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerificarPaciente.ForeColor = System.Drawing.Color.Black;
+            this.btnVerificarPaciente.Location = new System.Drawing.Point(459, 32);
+            this.btnVerificarPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerificarPaciente.Name = "btnVerificarPaciente";
+            this.btnVerificarPaciente.Size = new System.Drawing.Size(69, 29);
+            this.btnVerificarPaciente.TabIndex = 120;
+            this.btnVerificarPaciente.Text = "Verificar";
+            this.btnVerificarPaciente.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -386,15 +389,15 @@
             this.label4.TabIndex = 117;
             this.label4.Text = "Nombre:";
             // 
-            // textBox1
+            // txtNombrePaciente
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(220, 78);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 24);
-            this.textBox1.TabIndex = 119;
+            this.txtNombrePaciente.Enabled = false;
+            this.txtNombrePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombrePaciente.Location = new System.Drawing.Point(220, 78);
+            this.txtNombrePaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombrePaciente.Name = "txtNombrePaciente";
+            this.txtNombrePaciente.Size = new System.Drawing.Size(308, 24);
+            this.txtNombrePaciente.TabIndex = 119;
             // 
             // txtCedula
             // 
@@ -445,12 +448,13 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // tbNumero
             // 
-            this.textBox3.Location = new System.Drawing.Point(605, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 22;
+            this.tbNumero.Enabled = false;
+            this.tbNumero.Location = new System.Drawing.Point(605, 12);
+            this.tbNumero.Name = "tbNumero";
+            this.tbNumero.Size = new System.Drawing.Size(120, 20);
+            this.tbNumero.TabIndex = 22;
             // 
             // IdPrescripcion
             // 
@@ -470,7 +474,7 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(757, 612);
             this.Controls.Add(this.IdPrescripcion);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbNumero);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox2);
@@ -479,7 +483,7 @@
             this.Text = "FRM_AgregarPrescripcion";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamento)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -489,38 +493,38 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbCedula;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label lbCedula;
+        public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.Button btnVerificar;
+        public System.Windows.Forms.DataGridView dtgMedicamento;
+        public System.Windows.Forms.Label labelCantidadDisponible;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtCantidad;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.Button btnVerificarMedicamento;
         public System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.Button btnLimpiar;
+        public System.Windows.Forms.Button btnVerificarPaciente;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtNombrePaciente;
         public System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        public System.Windows.Forms.Button btnEliminarCorreo;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker txtFechaNacimiento;
-        public System.Windows.Forms.Button btnAgregarCorreo;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        public System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        public System.Windows.Forms.Button btnEliminarmMedicamento;
+        public System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker txtFechaCaducidad;
+        public System.Windows.Forms.Button btnAgregarMedicamento;
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label IdPrescripcion;
+        public System.Windows.Forms.TextBox tbNumero;
+        public System.Windows.Forms.Label IdPrescripcion;
     }
 }
