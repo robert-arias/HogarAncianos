@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 
 namespace HogarAncianos.Model {
     public class ConnectionDB {
@@ -366,12 +364,12 @@ namespace HogarAncianos.Model {
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                dataSQLite.Fill(dataSet);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
                 connection.Close();
 
                 //No encuentra coincidencia; dataset vacío.
-                return dataSet.Tables[0].Rows.Count == 0;
+                return dataTable.Rows.Count == 0;
             } catch (SQLiteException e) {
                 connection.Close();
                 Debug.WriteLine(e.ToString());
@@ -402,6 +400,63 @@ namespace HogarAncianos.Model {
                 Debug.WriteLine(e.ToString());
                 return false;
             }
+        }
+
+        public DataSet GetEmpleado(string cedula) {
+            try {
+                string query = $"select * from Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataSet dataTable = new DataSet();
+                dataSQLite.Fill(dataTable, "Empleado");
+
+                query = $"select correo from Correos_Empleados where cedula = '{cedula}'";
+                SQLiteCommand command2 = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite2 = new SQLiteDataAdapter(command2);
+                dataSQLite2.Fill(dataTable, "Correos");
+                connection.Close();
+
+                return dataTable;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+        public bool ModificarEmpleado(Empleado empleado) {
+            try {
+                string modificar = $"update Empleados set telefono = '{empleado.Telefono}', " +
+                    $"direccion = '{empleado.Direccion}', puesto_trabajo = '{empleado.PuestoTrabajo}', " +
+                    $"horario_trabajo = '{empleado.HorarioTrabajo}', salario_base_mensual = {empleado.Salario}, " +
+                    $"estado_laboral = '{empleado.EstadoLaboral}' where cedula = '{empleado.Cedula}'";
+
+                SQLiteCommand command = new SQLiteCommand(modificar, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                string delete = $"delete from Correos_Empleados where cedula = '{empleado.Cedula}'";
+                SQLiteCommand c = new SQLiteCommand(delete, connection);
+                c.ExecuteNonQuery();
+
+                foreach (string correo in empleado.Correos) {
+                    string s = $"insert into Correos_Empleados values('{empleado.Cedula}', '{correo}')";
+                    SQLiteCommand i = new SQLiteCommand(s, connection);
+                    i.ExecuteNonQuery();
+                }
+
+                connection.Close();
+
+                return true;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+
         }
 
         public DataTable GetBusquedaEmpleados(string query) {
@@ -642,6 +697,51 @@ namespace HogarAncianos.Model {
                  return false;
              }
          }
+
+        public bool modificarProductoHigiene(Productos_Higiene producto)
+        {
+            string query = "update Productos_Higiene set nombre_producto ='" + producto.Nombre_producto + "' , tipo_producto='" + producto.Tipo_producto + "',descripcion='" + producto.Descripcion + "' where identificador_producto = '" + producto.Identificador_producto+"'";
+
+            Console.WriteLine(query);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+        public DataSet GetProductosHigiene(string identificador)
+        {
+            Console.WriteLine(identificador);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Productos_Higiene where identificador_producto ='" + identificador + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
 
 
 

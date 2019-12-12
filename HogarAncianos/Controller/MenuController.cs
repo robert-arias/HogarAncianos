@@ -57,6 +57,8 @@ namespace HogarAncianos.Controller {
 
             //Productos higiene
             frm_AgregarProductosHigiene = new FRM_AgregarProductosHigiene();
+            frm_ModificarProductos = new FRM_ModificarProductosHigiene();
+            frm_AgregarProductoInventario = new FRM_AgregarProductoInventario();
 
             //Pacientes 
             frm_AgregarPaciente = new FRM_AgregarPaciente();
@@ -97,15 +99,23 @@ namespace HogarAncianos.Controller {
             frm_AgregarEmpleado.FormClosed += CerrarAgregarEmpleado;
             frm_ModificarEmpleado.FormClosed += CerrarModificarEmpleado;
             frm_BuscarEmpleados.FormClosed += CerrarBuscarEmpleados;
-            frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregar);
+            frm_AgregarEmpleado.btnCancelar.Click += new EventHandler(CancelarAgregarEmpleado);
+            frm_ModificarEmpleado.btnCancelar.Click += new EventHandler(CancelarModificarEmpleado);
 
             //Productos de Limpieza
             frm_MenuPrincipal.mi_ProductosLimpiezaAgregar.Click += new EventHandler(OpenAgregarProductoHigiene);
             frm_AgregarProductosHigiene.FormClosed += CerrarAgregarProductoHigiene;
             frm_AgregarProductosHigiene.btCancelar.Click += new EventHandler(CerrarAgregarProductoHigiene);
+            frm_MenuPrincipal.mi_ProductosLimpiezaModificar.Click += new EventHandler(OpenModificarProductoHigiene);
+            frm_ModificarProductos.FormClosed += CerrarModificarProductoHigiene;
+            frm_ModificarProductos.btCancelar.Click += new EventHandler(CerrarModificarProductoHigiene);
+            frm_MenuPrincipal.mi_ProductosLimpiezaAgregarInventario.Click += new EventHandler(OpenAgregarProductoHigieneInventario);
+            frm_AgregarProductoInventario.FormClosed += CerrarAgregarProductoHigieneInventario;
+            frm_AgregarProductoInventario.btCancelar.Click += new EventHandler(CerrarAgregarProductoHigieneInventario);
+            //CerrarAgregarProductoHigieneInventario
 
             //Medicamentos 
-          
+
             frm_MenuPrincipal.mi_MedicamentosAgregar.Click += new EventHandler(OpenAgregarMedicamento);
             frm_AgregarMedicamento.FormClosed += CerrarAgregarMedicamento;
             frm_AgregarMedicamento.btnCancelar.Click += new EventHandler(CancelarAgregarMedicamento);
@@ -201,6 +211,32 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Show();
             frm_AgregarProductosHigiene.EstadoInicial();
         }
+        private void CerrarModificarProductoHigiene(object sender, EventArgs e)
+        {
+            frm_ModificarProductos.Close();
+            frm_MenuPrincipal.Show();
+            frm_ModificarProductos.EstadoInicial();
+        }
+
+        private void OpenModificarProductoHigiene(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_ModificarProductos.ShowDialog();
+        }
+
+        private void OpenAgregarProductoHigieneInventario(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_AgregarProductoInventario.ShowDialog();
+        }
+
+        private void CerrarAgregarProductoHigieneInventario(object sender, EventArgs e)
+        {
+            frm_AgregarProductoInventario.Close();
+            frm_MenuPrincipal.Show();
+           // frm_AgregarProductoInventario.EstadoInicial();
+        }
+
 
 
         //Metodos Empleados 
@@ -236,7 +272,7 @@ namespace HogarAncianos.Controller {
         private void CerrarModificarEmpleado(object sender, EventArgs e) {
             frm_ModificarEmpleado.Close();
             frm_MenuPrincipal.Show();
-            //frm_ModificarEmpleado.EstadoInicial();
+            frm_ModificarEmpleado.EstadoInicial();
         }
 
         private void CerrarBuscarEmpleados(object sender, EventArgs e) {
@@ -245,10 +281,16 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Show();
         }
 
-        private void CancelarAgregar(object sender, EventArgs e) {
+        private void CancelarAgregarEmpleado(object sender, EventArgs e) {
             frm_AgregarEmpleado.Close();
             frm_MenuPrincipal.Show();
             frm_AgregarEmpleado.EstadoInicial();
+        }
+
+        private void CancelarModificarEmpleado(object sender, EventArgs e) {
+            frm_ModificarEmpleado.Close();
+            frm_MenuPrincipal.Show();
+            frm_ModificarEmpleado.EstadoInicial();
         }
 
 

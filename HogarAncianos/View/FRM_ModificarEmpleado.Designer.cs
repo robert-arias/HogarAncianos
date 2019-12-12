@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.lbCedula = new System.Windows.Forms.Label();
@@ -219,9 +221,28 @@
             this.dgvCorreos.AllowUserToDeleteRows = false;
             this.dgvCorreos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCorreos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCorreos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCorreos.Enabled = false;
+            this.dgvCorreos.EnableHeadersVisualStyles = false;
+            this.dgvCorreos.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvCorreos.Location = new System.Drawing.Point(643, 242);
             this.dgvCorreos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCorreos.Name = "dgvCorreos";
@@ -255,10 +276,10 @@
             this.btnAgregarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnAgregarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCorreo.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarCorreo.Location = new System.Drawing.Point(947, 180);
+            this.btnAgregarCorreo.Location = new System.Drawing.Point(948, 186);
             this.btnAgregarCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarCorreo.Name = "btnAgregarCorreo";
-            this.btnAgregarCorreo.Size = new System.Drawing.Size(104, 43);
+            this.btnAgregarCorreo.Size = new System.Drawing.Size(104, 33);
             this.btnAgregarCorreo.TabIndex = 20;
             this.btnAgregarCorreo.Text = "Agregar";
             this.btnAgregarCorreo.UseVisualStyleBackColor = false;
@@ -689,7 +710,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FRM_ModificarEmpleado";
-            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar empleado";
             this.groupBox1.ResumeLayout(false);

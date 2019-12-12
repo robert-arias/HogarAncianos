@@ -26,33 +26,14 @@ namespace HogarAncianos.Controller {
         }
 
         private void VerificarCedula(object sender, EventArgs e) {
-            if (!string.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
-                frm_AgregarEmpleados.GetCedula().Length >= 9) {
-                if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
-                    frm_AgregarEmpleados.ActivarCampos();
-                else
-                    frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los " +
-                        "registros.");
-            }
-            else
-                frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+            VerificandoCedula();
         }
 
         private void VerificarCedulaEnter(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                if (!String.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
-                frm_AgregarEmpleados.GetCedula().Length >= 9) {
-                    if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
-                        frm_AgregarEmpleados.ActivarCampos();
-                    else
-                        frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los " +
-                            "registros.");
-                }
-                else
-                    frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
-                        " menos de 9 dígitos.");
-                e.SuppressKeyPress = true; //remove ding windows sound.
+                VerificandoCedula();
             }
+            e.SuppressKeyPress = true; //remove ding windows sound.
         }
 
         private void AgregarCorreo(object sender, EventArgs e) {
@@ -76,17 +57,34 @@ namespace HogarAncianos.Controller {
 
         private void AgregarEmpleado(object sender, EventArgs e) {
             if (!frm_AgregarEmpleados.VerificarCampos()) {
-                if (db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado())) {
-                    frm_AgregarEmpleados.ShowMessage("Se ha agregado al nuevo empleado con éxito.");
-                    frm_AgregarEmpleados.EstadoInicial();
+                if (frm_AgregarEmpleados.ShowConfirmation()) {
+                    if (db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado())) {
+                        frm_AgregarEmpleados.ShowMessage("Se ha agregado al nuevo empleado con éxito.");
+                        frm_AgregarEmpleados.EstadoInicial();
+                    }
+                    else
+                        frm_AgregarEmpleados.ShowMessage("Se ha producido un error.\nVerifique los datos.");
                 }
-                else
-                    frm_AgregarEmpleados.ShowMessage("Se ha producido un error.\nVerifique los datos.");
             }
             else {
                 frm_AgregarEmpleados.ShowMessage("Algunos campos se encuentran vacíos." +
                     "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
             }
+        }
+
+        private void VerificandoCedula() {
+            if (!String.IsNullOrEmpty(frm_AgregarEmpleados.GetCedula()) &&
+                frm_AgregarEmpleados.GetCedula().Length >= 9) {
+                if (!db.ExisteCedula(frm_AgregarEmpleados.GetCedula()))
+                    frm_AgregarEmpleados.ActivarCampos();
+                else
+                    frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los " +
+                        "registros.");
+            }
+            else
+                frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                    " menos de 9 dígitos.");
+            
         }
 
     }

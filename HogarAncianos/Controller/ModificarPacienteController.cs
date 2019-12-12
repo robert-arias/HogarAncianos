@@ -28,8 +28,7 @@ namespace HogarAncianos.Controller
             frm_ModificarPaciente.btnModificar.Click += new EventHandler(ModificarPaciente);
             frm_ModificarPaciente.btnVerificar.Click += new EventHandler(VerificarCedulaPaciente);
             frm_ModificarPaciente.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaPacienteEnter);
-            frm_ModificarPaciente.btnLimpiar.Click += new EventHandler(Limpiar);     
-     
+            frm_ModificarPaciente.btnLimpiar.Click += new EventHandler(Limpiar);
         }
 
 
