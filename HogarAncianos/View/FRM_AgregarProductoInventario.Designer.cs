@@ -29,35 +29,37 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btLimpiar = new System.Windows.Forms.Button();
+            this.txbNombreProducto = new System.Windows.Forms.TextBox();
+            this.rbHigienePersonal = new System.Windows.Forms.RadioButton();
+            this.rbLimpieza = new System.Windows.Forms.RadioButton();
+            this.txbCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btAgregar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.txbIdentificadorProducto = new System.Windows.Forms.TextBox();
+            this.btVerificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btVerificar);
+            this.groupBox1.Controls.Add(this.txbIdentificadorProducto);
+            this.groupBox1.Controls.Add(this.btLimpiar);
+            this.groupBox1.Controls.Add(this.txbNombreProducto);
+            this.groupBox1.Controls.Add(this.rbHigienePersonal);
+            this.groupBox1.Controls.Add(this.rbLimpieza);
+            this.groupBox1.Controls.Add(this.txbCantidad);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -69,61 +71,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "InformacionProductoInventario";
             // 
-            // button3
+            // btLimpiar
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(351, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btLimpiar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpiar.Location = new System.Drawing.Point(436, 34);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(75, 33);
+            this.btLimpiar.TabIndex = 12;
+            this.btLimpiar.Text = "Limpiar";
+            this.btLimpiar.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // txbNombreProducto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 21);
-            this.comboBox1.TabIndex = 1;
+            this.txbNombreProducto.Location = new System.Drawing.Point(140, 74);
+            this.txbNombreProducto.Name = "txbNombreProducto";
+            this.txbNombreProducto.Size = new System.Drawing.Size(176, 20);
+            this.txbNombreProducto.TabIndex = 9;
             // 
-            // textBox2
+            // rbHigienePersonal
             // 
-            this.textBox2.Location = new System.Drawing.Point(140, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 9;
+            this.rbHigienePersonal.AutoSize = true;
+            this.rbHigienePersonal.Checked = true;
+            this.rbHigienePersonal.Location = new System.Drawing.Point(140, 107);
+            this.rbHigienePersonal.Name = "rbHigienePersonal";
+            this.rbHigienePersonal.Size = new System.Drawing.Size(104, 17);
+            this.rbHigienePersonal.TabIndex = 8;
+            this.rbHigienePersonal.TabStop = true;
+            this.rbHigienePersonal.Text = "Higiene personal";
+            this.rbHigienePersonal.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbLimpieza
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(212, 107);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(104, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Higiene personal";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbLimpieza.AutoSize = true;
+            this.rbLimpieza.Location = new System.Drawing.Point(250, 107);
+            this.rbLimpieza.Name = "rbLimpieza";
+            this.rbLimpieza.Size = new System.Drawing.Size(66, 17);
+            this.rbLimpieza.TabIndex = 7;
+            this.rbLimpieza.Text = "Limpieza";
+            this.rbLimpieza.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // txbCantidad
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(140, 107);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Limpieza";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(142, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "0";
+            this.txbCantidad.Location = new System.Drawing.Point(142, 137);
+            this.txbCantidad.Name = "txbCantidad";
+            this.txbCantidad.Size = new System.Drawing.Size(174, 20);
+            this.txbCantidad.TabIndex = 6;
+            this.txbCantidad.Text = "0";
             // 
             // label5
             // 
@@ -134,13 +128,13 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha ingreso:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(142, 170);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(174, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Value = new System.DateTime(2019, 12, 3, 18, 21, 54, 0);
+            this.dtpFecha.Location = new System.Drawing.Point(142, 170);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(174, 20);
+            this.dtpFecha.TabIndex = 4;
+            this.dtpFecha.Value = new System.DateTime(2019, 12, 3, 18, 21, 54, 0);
             // 
             // label4
             // 
@@ -186,27 +180,44 @@
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
             // 
-            // button1
+            // btAgregar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(184, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btAgregar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgregar.Location = new System.Drawing.Point(184, 296);
+            this.btAgregar.Name = "btAgregar";
+            this.btAgregar.Size = new System.Drawing.Size(106, 43);
+            this.btAgregar.TabIndex = 10;
+            this.btAgregar.Text = "Agregar";
+            this.btAgregar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btCancelar
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(336, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 43);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(336, 296);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 43);
+            this.btCancelar.TabIndex = 11;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            // 
+            // txbIdentificadorProducto
+            // 
+            this.txbIdentificadorProducto.Location = new System.Drawing.Point(177, 42);
+            this.txbIdentificadorProducto.Name = "txbIdentificadorProducto";
+            this.txbIdentificadorProducto.Size = new System.Drawing.Size(139, 20);
+            this.txbIdentificadorProducto.TabIndex = 13;
+            // 
+            // btVerificar
+            // 
+            this.btVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btVerificar.Location = new System.Drawing.Point(339, 34);
+            this.btVerificar.Name = "btVerificar";
+            this.btVerificar.Size = new System.Drawing.Size(75, 29);
+            this.btVerificar.TabIndex = 14;
+            this.btVerificar.Text = "Verificar";
+            this.btVerificar.UseVisualStyleBackColor = true;
             // 
             // FRM_AgregarProductoInventario
             // 
@@ -215,10 +226,11 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(606, 363);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btAgregar);
+            this.Controls.Add(this.btCancelar);
             this.Name = "FRM_AgregarProductoInventario";
-            this.Text = "FRM_AgregarProductoInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Agregar Producto Inventario";
             this.Load += new System.EventHandler(this.FRM_AgregarProductoInventario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -235,15 +247,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.TextBox txbNombreProducto;
+        private System.Windows.Forms.RadioButton rbHigienePersonal;
+        private System.Windows.Forms.RadioButton rbLimpieza;
+        private System.Windows.Forms.TextBox txbCantidad;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txbIdentificadorProducto;
+        public System.Windows.Forms.Button btVerificar;
+        public System.Windows.Forms.Button btLimpiar;
+        public System.Windows.Forms.Button btAgregar;
+        public System.Windows.Forms.Button btCancelar;
     }
 }
