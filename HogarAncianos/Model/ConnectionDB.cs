@@ -633,6 +633,51 @@ namespace HogarAncianos.Model {
              }
          }
 
+        public bool modificarProductoHigiene(Productos_Higiene producto)
+        {
+            string query = "update Productos_Higiene set nombre_producto ='" + producto.Nombre_producto + "' , tipo_producto='" + producto.Tipo_producto + "',descripcion='" + producto.Descripcion + "' where identificador_producto = '" + producto.Identificador_producto+"'";
+
+            Console.WriteLine(query);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+        public DataSet GetProductosHigiene(string identificador)
+        {
+            Console.WriteLine(identificador);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Productos_Higiene where identificador_producto ='" + identificador + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+
 
 
 

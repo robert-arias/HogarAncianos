@@ -103,6 +103,7 @@
     <Compile Include="Controller\ModificarEmpleadoController.cs" />
     <Compile Include="Controller\ModificarMedicamentoController.cs" />
     <Compile Include="Controller\ModificarPacienteController.cs" />
+    <Compile Include="Controller\ModificarProductoHigieneController.cs" />
     <Compile Include="Controller\ModificarUsuarioController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
