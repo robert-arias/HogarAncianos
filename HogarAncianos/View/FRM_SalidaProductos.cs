@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HogarAncianos.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace HogarAncianos.View
 {
     public partial class FRM_SalidaProductos : Form
     {
-        public FRM_SalidaProductos()
+        public FRM_SalidaProductos(Usuario usuario)
         {
             InitializeComponent();
         }

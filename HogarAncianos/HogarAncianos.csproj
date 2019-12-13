@@ -110,6 +110,7 @@
     <Compile Include="Controller\BuscarPacientesController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
+    <Compile Include="Controller\EliminarProductoController.cs" />
     <Compile Include="Controller\EliminarUsuarioController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MenuController.cs" />

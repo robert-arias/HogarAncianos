@@ -35,9 +35,9 @@ namespace HogarAncianos.Controller {
         private FRM_AgregarProductoInventario frm_AgregarProductoInventario;
        // private FRM_BuscarProducto frm_BuscarProducto;
         private FRM_ModificarProductosHigiene frm_ModificarProductos;
-       // private FRM_EliminarProducto frm_EliminarProducto;
+        private FRM_EliminarProducto frm_EliminarProducto;
         private FRM_AgregarProductosHigiene frm_AgregarProductosHigiene;
-       // private FRM_SalidaProductos frm_SalidaProductos;
+       private FRM_SalidaProductos frm_SalidaProductos;
 
         //Prescripciones 
         private FRM_AgregarPrescripcion frm_AgregarPrescripcion;
@@ -61,6 +61,8 @@ namespace HogarAncianos.Controller {
             frm_AgregarProductosHigiene = new FRM_AgregarProductosHigiene();
             frm_ModificarProductos = new FRM_ModificarProductosHigiene();
             frm_AgregarProductoInventario = new FRM_AgregarProductoInventario();
+            frm_EliminarProducto = new FRM_EliminarProducto();
+            frm_SalidaProductos = new FRM_SalidaProductos(LOGGED_USER);
 
             //Pacientes 
             frm_AgregarPaciente = new FRM_AgregarPaciente();
@@ -113,7 +115,9 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_ProductosLimpiezaAgregarInventario.Click += new EventHandler(OpenAgregarProductoHigieneInventario);
             frm_AgregarProductoInventario.FormClosed += CerrarAgregarProductoHigieneInventario;
             frm_AgregarProductoInventario.btCancelar.Click += new EventHandler(CerrarAgregarProductoHigieneInventario);
-            //CerrarAgregarProductoHigieneInventario
+            frm_MenuPrincipal.mi_ProductosLimpiezaEliminar.Click += new EventHandler(OpenEliminarProductosLimpieza);
+            frm_EliminarProducto.FormClosed += CerrarEliminarProductosLimpieza;
+            frm_EliminarProducto.btCancelar.Click += new EventHandler(CerrarEliminarProductosLimpieza);
 
             //Medicamentos 
 
@@ -242,13 +246,25 @@ namespace HogarAncianos.Controller {
             frm_AgregarProductoInventario.ShowDialog();
         }
 
+        private void OpenEliminarProductosLimpieza(object sender, EventArgs e)
+        {
+            frm_MenuPrincipal.Hide();
+            frm_EliminarProducto.ShowDialog();
+        }
+
         private void CerrarAgregarProductoHigieneInventario(object sender, EventArgs e)
         {
             frm_AgregarProductoInventario.Close();
             frm_MenuPrincipal.Show();
-           // frm_AgregarProductoInventario.EstadoInicial();
+           frm_AgregarProductoInventario.EstadoInicial();
         }
 
+        private void CerrarEliminarProductosLimpieza(object sender, EventArgs e)
+        {
+            frm_EliminarProducto.Close();
+            frm_MenuPrincipal.Show();
+            frm_EliminarProducto.EstadoInicial();
+        }
 
 
         //Metodos Empleados 

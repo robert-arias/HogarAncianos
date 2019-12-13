@@ -942,12 +942,35 @@ namespace HogarAncianos.Model {
                 throw;
             }
         }
+        public bool DeleteProducto(string identificador)
+        {
+            string query = $"delete from Productos_Higiene where identificador_producto = '{identificador}'";
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }
+            catch (SQLiteException)
+            {
+                return false;
+            }
+
+        }
 
 
 
 
-            //METODOS PRESCRIPCION 
-            public bool AgregarPrescripcion(Prescripcion prescripcion)
+
+
+
+
+
+        //METODOS PRESCRIPCION 
+        public bool AgregarPrescripcion(Prescripcion prescripcion)
         {
             try
             {
