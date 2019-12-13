@@ -64,7 +64,7 @@ namespace HogarAncianos.View
 
         public bool VerificarCampos()
         {
-            return string.IsNullOrEmpty(txbNombreProducto.Text) || string.IsNullOrEmpty(txbDescripcion.Text); 
+            return string.IsNullOrEmpty(txbCantidad.Text) || string.IsNullOrEmpty(txbDescripcion.Text); 
             
         }
         public Productos_Higiene GetProductoHigiene()

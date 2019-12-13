@@ -878,10 +878,76 @@ namespace HogarAncianos.Model {
 
         }
 
+        public bool AgregarProductoInventario(Inventario_Productos inventario)
+        {
+            try
+            {
+                string insert = $"insert into Inventario_Productos (identificador_producto, cantidad, fecha_ingreso) values('{inventario.Identificador_producto}', {inventario.Cantidad},'{inventario.Fecha_ingreso}')";
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                insert = $"update Productos_Higiene set cantidad = cantidad + {inventario.Cantidad} " +
+                    $"where identificador_producto = '{inventario.Identificador_producto}'";
+                SQLiteCommand c = new SQLiteCommand(insert, connection);
+                c.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
+        public bool VerificarIdentificadorInventario(string identificador)
+        {
+            try
+            {
+                string query = $"select identificador_producto from Productos_Higiene where identificador_producto = '{identificador}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
+
+               
+                return dataTable.Rows.Count == 0;
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+        }
+
+        public DataSet GetProductosInventario(string identificador)
+        {
+            Console.WriteLine(identificador);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select nombre_producto, tipo_producto from Productos_Higiene where identificador_producto ='" + identificador + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
 
 
-        //METODOS PRESCRIPCION 
-        public bool AgregarPrescripcion(Prescripcion prescripcion)
+
+
+            //METODOS PRESCRIPCION 
+            public bool AgregarPrescripcion(Prescripcion prescripcion)
         {
             try
             {

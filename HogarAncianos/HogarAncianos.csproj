@@ -103,6 +103,7 @@
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
     <Compile Include="Controller\AgregarPrescripcionController.cs" />
     <Compile Include="Controller\AgregarProductoHigieneController.cs" />
+    <Compile Include="Controller\AgregarProductoInventarioController.cs" />
     <Compile Include="Controller\AgregarUsuarioController.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarMedicamentosController.cs" />
