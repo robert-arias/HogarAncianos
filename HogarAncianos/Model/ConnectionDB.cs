@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace HogarAncianos.Model {
     public class ConnectionDB {
@@ -17,6 +18,15 @@ namespace HogarAncianos.Model {
         private void RealizarConexion() {
             if (!Directory.Exists("./Data")) {
                 Directory.CreateDirectory("./Data");
+                CrearBD();
+            }
+            else {
+                CrearBD();
+            }
+        }
+
+        private void CrearBD() {
+            if (!File.Exists("./Data/database.sqlite3")) {
                 SQLiteConnection.CreateFile("./Data/database.sqlite3");
                 connection = new SQLiteConnection("Data Source=./Data/database.sqlite3");
 
@@ -25,10 +35,25 @@ namespace HogarAncianos.Model {
                 connection.Open();
                 c.ExecuteNonQuery();
                 connection.Close();
+
+                CrearUsuarioAdmin();
+
             }
-            else {
+            else
                 connection = new SQLiteConnection("Data Source=./Data/database.sqlite3");
-            }
+        }
+
+        private void CrearUsuarioAdmin() {
+            Empleado empleado = new Empleado("0", "Admin", "Admin", "01/01/2001", "0", "none", null, "Administradora",
+                "none", 0, "01/01/2001", "A");
+            AgregarEmpleado(empleado);
+
+            byte[] passwordBytes = Encoding.Unicode.GetBytes("admin");
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
+
+            Usuario usuario = new Usuario("admin", hashedBytes, "0");
+            AgregarUsuario(usuario);
         }
 
         //***********************************************************METODOS PACIENTES ****************************************************************************//
@@ -258,19 +283,17 @@ namespace HogarAncianos.Model {
 
        }
 
-        public DataSet GetUsuario(string usuario)
+        public DataTable GetUsuario(string usuario)
         {
             try
             {
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand("select * from Usuarios where usuario='" + usuario + "'", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
-                DataSet data = new DataSet();
+                DataTable data = new DataTable();
                 sqlDataAdapter.Fill(data);
                 connection.Close();
                 return data;
-
-
             }
             catch (SQLiteException e)
             {
@@ -318,7 +341,7 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public bool agregarUsuario(Usuario usuario)
+        public bool AgregarUsuario(Usuario usuario)
         {
             string query = $"insert into Usuarios(usuario, contrasenia, cedula_empleado) values (@usuario, @contrasenia, @cedula)";
 
@@ -402,6 +425,26 @@ namespace HogarAncianos.Model {
             }
         }
         //***********************************************************METODOS EMPLEADOS ****************************************************************************//
+
+
+       public string GetPuestoTrabajo(string cedula) {
+            try {
+                string query = $"select puesto_trabajo from Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
+
+                return dataTable.Rows[0][0].ToString();
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
 
         public bool ExisteCedula(string cedula) {
             try {

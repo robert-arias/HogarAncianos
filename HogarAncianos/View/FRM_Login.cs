@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HogarAncianos.Controller;
+using HogarAncianos.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,50 +10,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HogarAncianos.View
-{
-    public partial class FRM_Login : Form
-    {
-        public FRM_Login()
-        {
+namespace HogarAncianos.View {
+    public partial class FRM_Login : Form {
+
+        private LoginController controller;
+        private Usuario usuario;
+
+        public FRM_Login() {
             InitializeComponent();
+            controller = new LoginController(this);
+            usuario = null;
         }
 
-        private void lineShape1_Click(object sender, EventArgs e)
-        {
-
+        public void ShowMessage(string message) {
+            MessageBox.Show(message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void txtUsuario_Enter(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "USUARIO")
-            {
-                txtUsuario.Text = "";
+        public bool VerificarCampos() {
+            return string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text);
+        }
+
+        public string GetUsername() {
+            return txtUsuario.Text;
+        }
+
+        public bool CheckPassword(DataTable user) {
+            byte[] passwordBytes = Encoding.Unicode.GetBytes(txtContrasenia.Text);
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
+
+            if (Convert.ToBase64String(hashedBytes).Equals(Convert.ToBase64String((byte[])user.Rows[0][1]))) {
+                usuario = new Usuario(user.Rows[0][0].ToString(), null, user.Rows[0][2].ToString());
+                return true;
             }
+            else
+                return false;
         }
 
-        private void txtContrasenia_Leave(object sender, EventArgs e)
-        {
-            if (txtContrasenia.Text == "")
-            {
-                txtContrasenia.Text = "CONTRASEÑA";
-            }
+        public Usuario GetUsuario() {
+            return usuario;
         }
 
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "")
-            {
-                txtUsuario.Text = "USUARIO";
-            }
+        public void SetUsuario() {
+            usuario = null;
         }
 
-        private void txtContrasenia_Enter(object sender, EventArgs e)
-        {
-            if (txtContrasenia.Text == "CONTRASEÑA")
-            {
-                txtContrasenia.Text = "";
-            }
+        public void EstadoInicial() {
+            txtContrasenia.Text = "";
+            txtUsuario.Text = "";
         }
+
     }
 }

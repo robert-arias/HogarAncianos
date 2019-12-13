@@ -23,12 +23,12 @@ namespace HogarAncianos.View
         }
 
 
-        public void llenarCampos(DataSet data)
+        public void llenarCampos(DataTable data)
         {
-            txtContrasenia.Text = data.Tables[0].Rows[0][1].ToString();
-            cbRol.SelectedItem = data.Tables[0].Rows[0][2].ToString();
+            txtContrasenia.Text = data.Rows[0][1].ToString();
+            cbRol.SelectedItem = data.Rows[0][2].ToString();
 
-            Console.WriteLine(data.Tables[0].Rows[0][1].ToString() + "LLenar campos metodooo usuarioooooooooooooooooooo");
+            Console.WriteLine(data.Rows[0][1].ToString() + "LLenar campos metodooo usuarioooooooooooooooooooo");
         }
         public void FillUsuarios(DataSet usuario)
         {

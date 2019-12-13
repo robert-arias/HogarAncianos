@@ -18,7 +18,6 @@ namespace HogarAncianos.View {
         }
 
         public string GetCedula() {
-            //Quita símbolos y letras.
             txtCedula.Text = new string(txtCedula.Text.Where(x => !char.IsWhiteSpace(x)
                                                                     && char.IsDigit(x)).ToArray());
             return txtCedula.Text;
