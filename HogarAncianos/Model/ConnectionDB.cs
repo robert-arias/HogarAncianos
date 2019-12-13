@@ -257,7 +257,7 @@ namespace HogarAncianos.Model {
                 return true;
 
             }
-            catch (SQLiteException e) {
+            catch (SQLiteException) {
                 return false;
             }
         } 
@@ -276,7 +276,7 @@ namespace HogarAncianos.Model {
                 
 
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 return false;
             }
@@ -356,7 +356,7 @@ namespace HogarAncianos.Model {
                 connection.Close();
                 return true;
 
-            } catch (SQLiteException e)
+            } catch (SQLiteException)
             {
                 return false;
             }
@@ -738,7 +738,7 @@ namespace HogarAncianos.Model {
 
 
             }
-            catch (SQLiteException e)
+            catch (SQLiteException )
             {
                 return false;
             }
@@ -934,6 +934,77 @@ namespace HogarAncianos.Model {
 
         }
 
+        public DataSet GetPrescripcionesUnPaciente(string cedula)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select num from Prescripcion where cedula_paciente='" + cedula + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+
+        public DataSet GetPrescripciones_MedicamentosUnPaciente(int num)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento where num=" + num + "", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+
+        public DataSet GetDatosMedicamento_Prescripcion(string codigo, int num)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento where codigo_medicamento=" + codigo + " and num="+num+"", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
 
 
     }

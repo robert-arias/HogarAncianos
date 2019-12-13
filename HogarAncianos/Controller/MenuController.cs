@@ -33,11 +33,11 @@ namespace HogarAncianos.Controller {
 
         //Productos de Higiene
         private FRM_AgregarProductoInventario frm_AgregarProductoInventario;
-        private FRM_BuscarProducto frm_BuscarProducto;
+       // private FRM_BuscarProducto frm_BuscarProducto;
         private FRM_ModificarProductosHigiene frm_ModificarProductos;
-        private FRM_EliminarProducto frm_EliminarProducto;
+       // private FRM_EliminarProducto frm_EliminarProducto;
         private FRM_AgregarProductosHigiene frm_AgregarProductosHigiene;
-        private FRM_SalidaProductos frm_SalidaProductos;
+       // private FRM_SalidaProductos frm_SalidaProductos;
 
         //Prescripciones 
         private FRM_AgregarPrescripcion frm_AgregarPrescripcion;
