@@ -36,6 +36,25 @@ CREATE TABLE 'Pacientes'
  'sexo' TEXT,
 PRIMARY KEY(cedula));
 
+CREATE TABLE 'Prescripcion'(
+'num' INTEGER,
+'cedula_paciente'TEXT,
+PRIMARY KEY(num));
+FOREIGN KEY (cedula_paciente) REFERENCES Pacientes(cedula);
+)
+
+
+CREATE TABLE 'Prescripcion_Medicamentos'(
+'num' INTEGER,
+'codigo_medicamento' TEXT,
+'fecha_caducidad' TEXT,
+PRIMARY KEY(num,'codigo_medicamento');
+FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento);
+)
+
+
+
+
 CREATE TABLE "Usuarios" (
 	'usuario'	TEXT,
 	'contrasenia'	TEXT,

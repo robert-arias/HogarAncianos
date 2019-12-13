@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using HogarAncianos.Model;
 using HogarAncianos.View;
 
@@ -27,6 +28,7 @@ namespace HogarAncianos.Controller {
             frm_BuscarEmpleados.cbCorreo.CheckedChanged += new EventHandler(NuevoCamposResultados);
             frm_BuscarEmpleados.btnCancelar.Click += new EventHandler(EstadoInicial);
             frm_BuscarEmpleados.btnBuscar.Click += new EventHandler(RealizarBusqueda);
+            frm_BuscarEmpleados.txtBuscar.KeyDown += new KeyEventHandler(RealizarBusquedaEnter);
         }
 
         private void BuscarPorCedula(object sender, EventArgs e) {
@@ -50,6 +52,16 @@ namespace HogarAncianos.Controller {
         }
 
         private void RealizarBusqueda(object sender, EventArgs e) {
+            RealizandoBusqueda();
+        }
+
+        private void RealizarBusquedaEnter(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter)
+                RealizandoBusqueda();
+            e.SuppressKeyPress = true; //remove ding windows sound.
+        }
+
+        private void RealizandoBusqueda() {
             if (!frm_BuscarEmpleados.VerificarCampos()) {
                 frm_BuscarEmpleados.LimpiarBusquedas();
                 frm_BuscarEmpleados.RealizarBusqueda(connection.GetBusquedaEmpleados(

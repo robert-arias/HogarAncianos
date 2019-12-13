@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 
 namespace HogarAncianos.Model {
     public class ConnectionDB {
@@ -33,6 +31,48 @@ namespace HogarAncianos.Model {
         }
 
         //***********************************************************METODOS PACIENTES ****************************************************************************//
+        public DataSet GetBusquedaPaciente(string query)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        public int GetTotalRegistrosPrescripcion()
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select Count(*)+1 from Prescripcion", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return int.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
         public bool ExisteCedulaPaciente(string cedula)
         {
             try
@@ -126,8 +166,31 @@ namespace HogarAncianos.Model {
 
 
         }
-        //string query = "update Empleados set Nombre = '" + empleado.Nombre + "', Sueldo = " + empleado.Sueldo +
-        //      " where EmpleadoID = " + empleado.EmpleadoID;
+
+        public DataSet GetNombrePaciente(string cedula)
+        {
+           
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select nombre, apellidos from Pacientes where cedula='" + cedula + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
+       
         public bool UpdatePaciente (Paciente paciente)
         {
             string query = "update Pacientes set nombre ='" + paciente.nombre + "' , apellidos='" + paciente.apellidos + "',fecha_nacimiento='" + paciente.fechaNacimiento + "',edad=" + paciente.edad + ",sexo='" + paciente.sexo + "' where cedula= "+ paciente.cedula;
@@ -148,6 +211,8 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
+
+     
 
 
         //***********************************************************METODOS USUARIOS ****************************************************************************//
@@ -343,12 +408,12 @@ namespace HogarAncianos.Model {
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                dataSQLite.Fill(dataSet);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
                 connection.Close();
 
                 //No encuentra coincidencia; dataset vacío.
-                return dataSet.Tables[0].Rows.Count == 0;
+                return dataTable.Rows.Count == 0;
             } catch (SQLiteException e) {
                 connection.Close();
                 Debug.WriteLine(e.ToString());
@@ -379,6 +444,63 @@ namespace HogarAncianos.Model {
                 Debug.WriteLine(e.ToString());
                 return false;
             }
+        }
+
+        public DataSet GetEmpleado(string cedula) {
+            try {
+                string query = $"select * from Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataSet dataTable = new DataSet();
+                dataSQLite.Fill(dataTable, "Empleado");
+
+                query = $"select correo from Correos_Empleados where cedula = '{cedula}'";
+                SQLiteCommand command2 = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite2 = new SQLiteDataAdapter(command2);
+                dataSQLite2.Fill(dataTable, "Correos");
+                connection.Close();
+
+                return dataTable;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+        public bool ModificarEmpleado(Empleado empleado) {
+            try {
+                string modificar = $"update Empleados set telefono = '{empleado.Telefono}', " +
+                    $"direccion = '{empleado.Direccion}', puesto_trabajo = '{empleado.PuestoTrabajo}', " +
+                    $"horario_trabajo = '{empleado.HorarioTrabajo}', salario_base_mensual = {empleado.Salario}, " +
+                    $"estado_laboral = '{empleado.EstadoLaboral}' where cedula = '{empleado.Cedula}'";
+
+                SQLiteCommand command = new SQLiteCommand(modificar, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                string delete = $"delete from Correos_Empleados where cedula = '{empleado.Cedula}'";
+                SQLiteCommand c = new SQLiteCommand(delete, connection);
+                c.ExecuteNonQuery();
+
+                foreach (string correo in empleado.Correos) {
+                    string s = $"insert into Correos_Empleados values('{empleado.Cedula}', '{correo}')";
+                    SQLiteCommand i = new SQLiteCommand(s, connection);
+                    i.ExecuteNonQuery();
+                }
+
+                connection.Close();
+
+                return true;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return false;
+            }
+
         }
 
         public DataTable GetBusquedaEmpleados(string query) {
@@ -463,6 +585,28 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
+        //update Bebidas set Stock = Stock - " + cantidad + " where BebidaID = "
+        //            + bebidaID, connection
+
+        public bool UpdateCantidadDisponibleMedicamento(string codigo, int cantidad)
+        {
+            string query = "update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='" + codigo /*+ ""*/;
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='"+codigo+"'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
 
 
         public DataSet GetMedicamento(string codigo)
@@ -488,7 +632,53 @@ namespace HogarAncianos.Model {
             }
         }
 
-     
+        public DataSet GetNombre_CantidadDisponible_Medicamento(string codigo)
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select nombre_medicamento,cantidad_disponible from Medicamentos where codigo_medicamento = '" + codigo + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+                
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+
+    
+
+
+
+        public DataSet GetAllMedicamento()
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Medicamentos", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+
+             
+                return data;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
 
         public bool DeleteMedicamento(string codigo)
         {
@@ -529,6 +719,27 @@ namespace HogarAncianos.Model {
                 return false;
             }
            
+        }
+
+        public DataSet GetBusquedaMedicamento(string query)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
         }
 
         //***********************************************************METODOS PRODUCTOS HIGIENE ****************************************************************************//
@@ -577,6 +788,51 @@ namespace HogarAncianos.Model {
                  return false;
              }
          }
+
+        public bool modificarProductoHigiene(Productos_Higiene producto)
+        {
+            string query = "update Productos_Higiene set nombre_producto ='" + producto.Nombre_producto + "' , tipo_producto='" + producto.Tipo_producto + "',descripcion='" + producto.Descripcion + "' where identificador_producto = '" + producto.Identificador_producto+"'";
+
+            Console.WriteLine(query);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+        public DataSet GetProductosHigiene(string identificador)
+        {
+            Console.WriteLine(identificador);
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Productos_Higiene where identificador_producto ='" + identificador + "'", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
 
 
 

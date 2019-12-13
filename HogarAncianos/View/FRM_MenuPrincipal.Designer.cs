@@ -75,8 +75,8 @@
             this.mi_Login});
             this.ms_Menu.Location = new System.Drawing.Point(0, 0);
             this.ms_Menu.Name = "ms_Menu";
-            this.ms_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.ms_Menu.Size = new System.Drawing.Size(851, 24);
+            this.ms_Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.ms_Menu.Size = new System.Drawing.Size(1135, 28);
             this.ms_Menu.TabIndex = 0;
             // 
             // mi_Empleados
@@ -88,25 +88,25 @@
             this.mi_Empleados.ForeColor = System.Drawing.Color.White;
             this.mi_Empleados.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.mi_Empleados.Name = "mi_Empleados";
-            this.mi_Empleados.Size = new System.Drawing.Size(77, 20);
+            this.mi_Empleados.Size = new System.Drawing.Size(95, 24);
             this.mi_Empleados.Text = "Empleados";
             // 
             // mi_EmpleadosAgregar
             // 
             this.mi_EmpleadosAgregar.Name = "mi_EmpleadosAgregar";
-            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(216, 26);
             this.mi_EmpleadosAgregar.Text = "Agregar";
             // 
             // mi_EmpleadosModificar
             // 
             this.mi_EmpleadosModificar.Name = "mi_EmpleadosModificar";
-            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(216, 26);
             this.mi_EmpleadosModificar.Text = "Modificar";
             // 
             // mi_EmpleadosBuscar
             // 
             this.mi_EmpleadosBuscar.Name = "mi_EmpleadosBuscar";
-            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(216, 26);
             this.mi_EmpleadosBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpieza
@@ -119,31 +119,31 @@
             this.mi_ProductosLimpiezaInventario});
             this.mi_ProductosLimpieza.ForeColor = System.Drawing.Color.White;
             this.mi_ProductosLimpieza.Name = "mi_ProductosLimpieza";
-            this.mi_ProductosLimpieza.Size = new System.Drawing.Size(139, 20);
+            this.mi_ProductosLimpieza.Size = new System.Drawing.Size(172, 24);
             this.mi_ProductosLimpieza.Text = "Productos de Limpieza";
             // 
             // mi_ProductosLimpiezaAgregar
             // 
             this.mi_ProductosLimpiezaAgregar.Name = "mi_ProductosLimpiezaAgregar";
-            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(150, 26);
             this.mi_ProductosLimpiezaAgregar.Text = "Agregar";
             // 
             // mi_ProductosLimpiezaModificar
             // 
             this.mi_ProductosLimpiezaModificar.Name = "mi_ProductosLimpiezaModificar";
-            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(150, 26);
             this.mi_ProductosLimpiezaModificar.Text = "Modificar";
             // 
             // mi_ProductosLimpiezaBuscar
             // 
             this.mi_ProductosLimpiezaBuscar.Name = "mi_ProductosLimpiezaBuscar";
-            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(150, 26);
             this.mi_ProductosLimpiezaBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpiezaEliminar
             // 
             this.mi_ProductosLimpiezaEliminar.Name = "mi_ProductosLimpiezaEliminar";
-            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(150, 26);
             this.mi_ProductosLimpiezaEliminar.Text = "Eliminar";
             // 
             // mi_ProductosLimpiezaInventario
@@ -152,19 +152,19 @@
             this.mi_ProductosLimpiezaAgregarInventario,
             this.mi_ProductosLimpiezaSalidaInventario});
             this.mi_ProductosLimpiezaInventario.Name = "mi_ProductosLimpiezaInventario";
-            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(180, 22);
+            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(150, 26);
             this.mi_ProductosLimpiezaInventario.Text = "Inventario";
             // 
             // mi_ProductosLimpiezaAgregarInventario
             // 
             this.mi_ProductosLimpiezaAgregarInventario.Name = "mi_ProductosLimpiezaAgregarInventario";
-            this.mi_ProductosLimpiezaAgregarInventario.Size = new System.Drawing.Size(168, 22);
+            this.mi_ProductosLimpiezaAgregarInventario.Size = new System.Drawing.Size(202, 26);
             this.mi_ProductosLimpiezaAgregarInventario.Text = "Agregar Producto";
             // 
             // mi_ProductosLimpiezaSalidaInventario
             // 
             this.mi_ProductosLimpiezaSalidaInventario.Name = "mi_ProductosLimpiezaSalidaInventario";
-            this.mi_ProductosLimpiezaSalidaInventario.Size = new System.Drawing.Size(168, 22);
+            this.mi_ProductosLimpiezaSalidaInventario.Size = new System.Drawing.Size(202, 26);
             this.mi_ProductosLimpiezaSalidaInventario.Text = "Salida Producto";
             // 
             // mi_pacientes
@@ -175,25 +175,25 @@
             this.mi_pacientesBuscar});
             this.mi_pacientes.ForeColor = System.Drawing.Color.White;
             this.mi_pacientes.Name = "mi_pacientes";
-            this.mi_pacientes.Size = new System.Drawing.Size(69, 20);
+            this.mi_pacientes.Size = new System.Drawing.Size(82, 24);
             this.mi_pacientes.Text = "Pacientes";
             // 
             // mi_pacientesAgregar
             // 
             this.mi_pacientesAgregar.Name = "mi_pacientesAgregar";
-            this.mi_pacientesAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesAgregar.Text = "Agregar";
             // 
             // mi_pacientesModificar
             // 
             this.mi_pacientesModificar.Name = "mi_pacientesModificar";
-            this.mi_pacientesModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesModificar.Text = "Modificar";
             // 
             // mi_pacientesBuscar
             // 
             this.mi_pacientesBuscar.Name = "mi_pacientesBuscar";
-            this.mi_pacientesBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_pacientesBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_pacientesBuscar.Text = "Buscar";
             // 
             // mi_Medicamentos
@@ -205,31 +205,31 @@
             this.mi_MedicamentosBuscar});
             this.mi_Medicamentos.ForeColor = System.Drawing.Color.White;
             this.mi_Medicamentos.Name = "mi_Medicamentos";
-            this.mi_Medicamentos.Size = new System.Drawing.Size(98, 20);
+            this.mi_Medicamentos.Size = new System.Drawing.Size(119, 24);
             this.mi_Medicamentos.Text = "Medicamentos";
             // 
             // mi_MedicamentosAgregar
             // 
             this.mi_MedicamentosAgregar.Name = "mi_MedicamentosAgregar";
-            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosAgregar.Text = "Agregar";
             // 
             // mi_MedicamentosModificar
             // 
             this.mi_MedicamentosModificar.Name = "mi_MedicamentosModificar";
-            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosModificar.Text = "Modificar";
             // 
             // mi_MedicamentosEliminar
             // 
             this.mi_MedicamentosEliminar.Name = "mi_MedicamentosEliminar";
-            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosEliminar.Text = "Eliminar";
             // 
             // mi_MedicamentosBuscar
             // 
             this.mi_MedicamentosBuscar.Name = "mi_MedicamentosBuscar";
-            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_MedicamentosBuscar.Text = "Buscar";
             // 
             // mi_Prescripcion
@@ -241,31 +241,31 @@
             this.mi_PrescripcionBuscar});
             this.mi_Prescripcion.ForeColor = System.Drawing.Color.White;
             this.mi_Prescripcion.Name = "mi_Prescripcion";
-            this.mi_Prescripcion.Size = new System.Drawing.Size(182, 20);
+            this.mi_Prescripcion.Size = new System.Drawing.Size(224, 24);
             this.mi_Prescripcion.Text = "Prescripción de Medicamentos";
             // 
             // mi_PrescripcionaAgregar
             // 
             this.mi_PrescripcionaAgregar.Name = "mi_PrescripcionaAgregar";
-            this.mi_PrescripcionaAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_PrescripcionaAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_PrescripcionaAgregar.Text = "Agregar";
             // 
             // mi_PrescripcionModificar
             // 
             this.mi_PrescripcionModificar.Name = "mi_PrescripcionModificar";
-            this.mi_PrescripcionModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_PrescripcionModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_PrescripcionModificar.Text = "Modificar";
             // 
             // mi_PrescripcionEliminar
             // 
             this.mi_PrescripcionEliminar.Name = "mi_PrescripcionEliminar";
-            this.mi_PrescripcionEliminar.Size = new System.Drawing.Size(180, 22);
+            this.mi_PrescripcionEliminar.Size = new System.Drawing.Size(148, 26);
             this.mi_PrescripcionEliminar.Text = "Eliminar";
             // 
             // mi_PrescripcionBuscar
             // 
             this.mi_PrescripcionBuscar.Name = "mi_PrescripcionBuscar";
-            this.mi_PrescripcionBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_PrescripcionBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_PrescripcionBuscar.Text = "Buscar";
             // 
             // mi_Usuarios
@@ -276,25 +276,25 @@
             this.mi_UsuariosBuscar});
             this.mi_Usuarios.ForeColor = System.Drawing.Color.White;
             this.mi_Usuarios.Name = "mi_Usuarios";
-            this.mi_Usuarios.Size = new System.Drawing.Size(64, 20);
+            this.mi_Usuarios.Size = new System.Drawing.Size(77, 24);
             this.mi_Usuarios.Text = "Usuarios";
             // 
             // mi_UsuariosAgregar
             // 
             this.mi_UsuariosAgregar.Name = "mi_UsuariosAgregar";
-            this.mi_UsuariosAgregar.Size = new System.Drawing.Size(180, 22);
+            this.mi_UsuariosAgregar.Size = new System.Drawing.Size(148, 26);
             this.mi_UsuariosAgregar.Text = "Agregar";
             // 
             // mi_UsuariosModificar
             // 
             this.mi_UsuariosModificar.Name = "mi_UsuariosModificar";
-            this.mi_UsuariosModificar.Size = new System.Drawing.Size(180, 22);
+            this.mi_UsuariosModificar.Size = new System.Drawing.Size(148, 26);
             this.mi_UsuariosModificar.Text = "Modificar";
             // 
             // mi_UsuariosBuscar
             // 
             this.mi_UsuariosBuscar.Name = "mi_UsuariosBuscar";
-            this.mi_UsuariosBuscar.Size = new System.Drawing.Size(180, 22);
+            this.mi_UsuariosBuscar.Size = new System.Drawing.Size(148, 26);
             this.mi_UsuariosBuscar.Text = "Buscar";
             // 
             // mi_Login
@@ -304,36 +304,35 @@
             this.mi_Login_CerrarSesion});
             this.mi_Login.ForeColor = System.Drawing.Color.White;
             this.mi_Login.Name = "mi_Login";
-            this.mi_Login.Size = new System.Drawing.Size(49, 20);
+            this.mi_Login.Size = new System.Drawing.Size(58, 24);
             this.mi_Login.Text = "Login";
             // 
             // mi_Login_IniciarSesion
             // 
             this.mi_Login_IniciarSesion.Name = "mi_Login_IniciarSesion";
-            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(180, 22);
+            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(169, 26);
             this.mi_Login_IniciarSesion.Text = "Iniciar sesion";
             // 
             // mi_Login_CerrarSesion
             // 
             this.mi_Login_CerrarSesion.Name = "mi_Login_CerrarSesion";
-            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(180, 22);
+            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(169, 26);
             this.mi_Login_CerrarSesion.Text = "Cerrar sesion";
             // 
             // FRM_MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(851, 406);
+            this.ClientSize = new System.Drawing.Size(1135, 500);
             this.Controls.Add(this.ms_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ms_Menu;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FRM_MenuPrincipal";
-            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ms_Menu.ResumeLayout(false);

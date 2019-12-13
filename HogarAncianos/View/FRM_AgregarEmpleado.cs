@@ -19,9 +19,19 @@ namespace HogarAncianos.View {
 
         public string GetCedula() {
             //Quita símbolos y letras.
-            txtCedula.Text = new string(txtCedula.Text.Where(x => char.IsWhiteSpace(x)
-                                                                    || char.IsDigit(x)).ToArray());
+            txtCedula.Text = new string(txtCedula.Text.Where(x => !char.IsWhiteSpace(x)
+                                                                    && char.IsDigit(x)).ToArray());
             return txtCedula.Text;
+        }
+
+        public bool ShowConfirmation() {
+            string message = "¿Desea agregar al empleado " + txtNombre.Text + " " + txtApellidos.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK) {
+                return true;
+            }
+
+            return false;
         }
 
         public void ShowMessage(string message) {
@@ -204,8 +214,6 @@ namespace HogarAncianos.View {
             foreach (DataGridViewRow row in dgvCorreos.Rows) {
                 correos[row.Index] = row.Cells["Correo"].Value.ToString();
             }
-
-            Console.WriteLine(cbPuesto.GetItemText(cbPuesto.SelectedItem));
 
             return new Empleado(txtCedula.Text, txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
                 txtTelefono.Text, txtDireccion.Text, correos, cbPuesto.GetItemText(cbPuesto.SelectedItem),
