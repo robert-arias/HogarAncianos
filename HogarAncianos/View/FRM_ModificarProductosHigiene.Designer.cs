@@ -64,13 +64,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(758, 344);
+            this.groupBox1.Size = new System.Drawing.Size(758, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Productos Higiene";
             // 
             // btVerificar
             // 
+            this.btVerificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btVerificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btVerificar.Location = new System.Drawing.Point(511, 46);
@@ -79,7 +80,7 @@
             this.btVerificar.Size = new System.Drawing.Size(100, 30);
             this.btVerificar.TabIndex = 6;
             this.btVerificar.Text = "Verificar";
-            this.btVerificar.UseVisualStyleBackColor = true;
+            this.btVerificar.UseVisualStyleBackColor = false;
             // 
             // txbIdentificadorProducto
             // 
@@ -198,7 +199,7 @@
             this.btModificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btModificar.Enabled = false;
             this.btModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModificar.Location = new System.Drawing.Point(283, 417);
+            this.btModificar.Location = new System.Drawing.Point(301, 351);
             this.btModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btModificar.Name = "btModificar";
             this.btModificar.Size = new System.Drawing.Size(127, 36);
@@ -210,7 +211,7 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(425, 417);
+            this.btCancelar.Location = new System.Drawing.Point(443, 351);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(127, 36);
@@ -223,7 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(850, 480);
+            this.ClientSize = new System.Drawing.Size(850, 418);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btModificar);
             this.Controls.Add(this.groupBox1);
