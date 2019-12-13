@@ -1,4 +1,5 @@
-﻿using HogarAncianos.View;
+﻿using HogarAncianos.Model;
+using HogarAncianos.View;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -45,7 +46,8 @@ namespace HogarAncianos.Controller {
         private FRM_EliminarPrescripcion frm_EliminarPrescripcion;
 
         //Login
-        private FRM_Login frm_login; 
+        private FRM_Login frm_Login;
+        private Usuario LOGGED_USER;
                
         public MenuController(FRM_MenuPrincipal menuPrincipal) {
             frm_MenuPrincipal = menuPrincipal;
@@ -72,8 +74,7 @@ namespace HogarAncianos.Controller {
             frm_EliminarMedicamento = new FRM_EliminarMedicamento();
 
             //Login
-            frm_login = new FRM_Login();
-
+            frm_Login = new FRM_Login();
          
            //Usuario
             frm_ModificarUsuario = new FRM_ModificarUsuario();
@@ -130,12 +131,7 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_MedicamentosEliminar.Click += new EventHandler(OpenEliminarMedicamentos);
             frm_EliminarMedicamento.FormClosed += CerrarEliminarMedicamentos;
 
-
-            //Pacientes 
-            frm_MenuPrincipal.mi_pacientes.DropDownItemClicked += new ToolStripItemClickedEventHandler(color);
-            frm_MenuPrincipal.mi_pacientes.MouseDown += new MouseEventHandler(color);
-            frm_MenuPrincipal.mi_pacientes.MouseLeave += new EventHandler(colorCambio);
-
+            //Pacientes
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
             frm_AgregarPaciente.FormClosed += CerrarAgregarPaciente;
             frm_AgregarPaciente.btnCancelar.Click += new EventHandler(CancelarAgregarPaciente);
@@ -173,15 +169,12 @@ namespace HogarAncianos.Controller {
 
             frm_MenuPrincipal.mi_PrescripcionModificar.Click += new EventHandler(OpenModificarPrescripcion);
             frm_ModificarPrescripcion.FormClosed += CerrarModificarPrescripcion;
-
-
-
+            
 
             //Login 
             frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
-            frm_login.FormClosed += CerrarLogin;
-
-
+            frm_Login.FormClosed += CerrarLogin;
+            frm_MenuPrincipal.mi_Login_CerrarSesion.Click += new EventHandler(CerrarSesion);
         }
 
         //Metodos Login
@@ -189,13 +182,32 @@ namespace HogarAncianos.Controller {
         private void OpenIniciarSesion(object sender, EventArgs e)
         {
             frm_MenuPrincipal.Hide();
-            frm_login.ShowDialog();       
+            frm_Login.ShowDialog();       
         }
 
         private void CerrarLogin(object sender, EventArgs e)
         {
-            frm_login.Close();
+            frm_Login.Close();
             frm_MenuPrincipal.Show();
+            frm_Login.EstadoInicial();
+            /*LOGGED_USER = frm_Login.GetUsuario();
+            EnableMenuItems();*/
+        }
+
+        private void CerrarSesion(object sender, EventArgs e) {
+            /*if (LOGGED_USER != null) {
+                string message = "¿Seguro que desea cerrar sesión?";
+                DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (boton == DialogResult.OK) {
+                    LOGGED_USER = null;
+                    DisableMenuItems();
+                    frm_Login.SetUsuario();
+                }
+                LOGGED_USER = frm_Login.GetUsuario();
+                //EnableMenuItems();
+            }
+            else
+                MessageBox.Show("No ha iniciado sesión.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
         }
 
         //Metodos limpieza
@@ -378,16 +390,6 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Show();
         }
 
-
-        private void color(object sender, EventArgs e)       
-        {
-            frm_MenuPrincipal.mi_pacientes.ForeColor = Color.Black;
-        }
-        private void colorCambio(object sender, EventArgs e)
-        {
-            frm_MenuPrincipal.mi_pacientes.ForeColor = Color.White;
-        }
-
         private void OpenAgregarPaciente(object sender, EventArgs e)
         {
             frm_MenuPrincipal.Hide();
@@ -555,8 +557,41 @@ namespace HogarAncianos.Controller {
         }
 
 
+        private void EnableMenuItems() {
+            /*
+             * CAMBIAR ESTO, VERIFICAR DE MEJOR MANERA, PRINCIPALMENTE CUANDO EL USUARIO NO ES NI ADMIN NI ENFERMERA
+             * SOLO PUEDE SACAR PRODUCTOS E INGRESARLOS, DEBO PONER LOS OTROS MI ESCONDIDOS.
+             */
+             
+            ConnectionDB db = new ConnectionDB();
+            string rol = db.GetPuestoTrabajo(LOGGED_USER.cedula);
+            if (LOGGED_USER != null) {
+                if (LOGGED_USER.cedula.Equals("0") || rol.Equals("Administradora")) {
+                    frm_MenuPrincipal.mi_Empleados.Visible = true;
+                    frm_MenuPrincipal.mi_ProductosLimpieza.Visible = true;
+                    frm_MenuPrincipal.mi_pacientes.Visible = true;
+                    frm_MenuPrincipal.mi_Medicamentos.Visible = true;
+                    frm_MenuPrincipal.mi_Prescripcion.Visible = true;
+                    frm_MenuPrincipal.mi_Usuarios.Visible = true;
+                }
+                else if (rol.Equals("Enfermera")) {
+                    frm_MenuPrincipal.mi_pacientes.Visible = true;
+                    frm_MenuPrincipal.mi_Medicamentos.Visible = true;
+                    frm_MenuPrincipal.mi_Prescripcion.Visible = true;
+                }
+                else
+                    frm_MenuPrincipal.mi_ProductosLimpieza.Visible = true;
+            }
+        }
 
-
+        private void DisableMenuItems() {
+            frm_MenuPrincipal.mi_Empleados.Visible = false;
+            frm_MenuPrincipal.mi_ProductosLimpieza.Visible = false;
+            frm_MenuPrincipal.mi_pacientes.Visible = false;
+            frm_MenuPrincipal.mi_Medicamentos.Visible = false;
+            frm_MenuPrincipal.mi_Prescripcion.Visible = false;
+            frm_MenuPrincipal.mi_Usuarios.Visible = false;
+        }
 
     }
 }

@@ -32,8 +32,8 @@ namespace HogarAncianos.Controller {
         private void VerificarCedulaEnter(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
                 VerificandoCedula();
+                e.SuppressKeyPress = true; //remove ding windows sound.
             }
-            e.SuppressKeyPress = true; //remove ding windows sound.
         }
 
         private void AgregarCorreo(object sender, EventArgs e) {

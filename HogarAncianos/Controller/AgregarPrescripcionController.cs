@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HogarAncianos.Model;
 using HogarAncianos.View;
 
@@ -12,6 +13,7 @@ namespace HogarAncianos.Controller
     {
         FRM_AgregarPrescripcion FRM_AgregarPrescripcion;
         ConnectionDB connectionDB;
+        
         public AgregarPrescripcionController(FRM_AgregarPrescripcion FRM_AgregarPrescripcion)
         {
             this.connectionDB = new ConnectionDB();
@@ -19,7 +21,7 @@ namespace HogarAncianos.Controller
             AgregarEventos();
             NumeroPrescripcion();
             FRM_AgregarPrescripcion.EstadoInicial();
-
+           
         }
 
         public void AgregarEventos()
@@ -29,7 +31,7 @@ namespace HogarAncianos.Controller
             FRM_AgregarPrescripcion.btnVerificarMedicamento.Click += new EventHandler(Verificar);
             FRM_AgregarPrescripcion.btnVerificarPaciente.Click += new EventHandler(VerificarPaciente);
             FRM_AgregarPrescripcion.btnLimpiar.Click += new EventHandler(Limpiar);
-
+            FRM_AgregarPrescripcion.btnAgregar.Click += new EventHandler(AgregarPrescripcion);
         }
 
         public void NumeroPrescripcion()
@@ -53,6 +55,10 @@ namespace HogarAncianos.Controller
                     }
 
                 }
+                else
+                {
+                     FRM_AgregarPrescripcion.MensajeError("La cedula digitada no se encuentra en los registros");
+                }
                
         }
 
@@ -69,6 +75,10 @@ namespace HogarAncianos.Controller
                 FRM_AgregarPrescripcion.labelCantidadDisponible.Text= connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
 
             }
+            else
+            {
+                FRM_AgregarPrescripcion.MensajeError("El codigo digitado no se encuentra ingresado en los registros");
+            }
         }
 
         public void AgregarMedicamento(object sender, EventArgs e)
@@ -82,8 +92,39 @@ namespace HogarAncianos.Controller
             FRM_AgregarPrescripcion.EliminarMedicamento();
         }
 
+        public void AgregarPrescripcion(object sender, EventArgs e)
+        {
+            
+                if (FRM_AgregarPrescripcion.dtgMedicamento.Rows.Count > 0)
+                {
+
+                    if (connectionDB.AgregarPrescripcion_Medicamentos(FRM_AgregarPrescripcion.GetPrescripcionMedicamentos()))
+                    {
+                        if (connectionDB.AgregarPrescripcion(FRM_AgregarPrescripcion.GetPrescripcion()))
+                        {
+                            FRM_AgregarPrescripcion.MensajeInformativo("Prescripcion agregada exitosamente");
+                            NumeroPrescripcion();
+                           FRM_AgregarPrescripcion.EstadoInicial();
+                         }
+                        else
+                        {
+                            FRM_AgregarPrescripcion.MensajeError("No ha agregado la prescripcion.");
+                        }
+                    }
+                    else
+                    {
+                         FRM_AgregarPrescripcion.MensajeError("No ha agregado  la prescripcion medicamentos.");
+                    }
+                }
+                else
+                {
+                    FRM_AgregarPrescripcion.MensajeError("No ha agregado medicamentos a la prescripcion.");
+                }
+                                                   
+        }
+
         
-       
+
 
     }
 }

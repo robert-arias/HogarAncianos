@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace HogarAncianos.Model {
     public class ConnectionDB {
@@ -16,6 +18,15 @@ namespace HogarAncianos.Model {
         private void RealizarConexion() {
             if (!Directory.Exists("./Data")) {
                 Directory.CreateDirectory("./Data");
+                CrearBD();
+            }
+            else {
+                CrearBD();
+            }
+        }
+
+        private void CrearBD() {
+            if (!File.Exists("./Data/database.sqlite3")) {
                 SQLiteConnection.CreateFile("./Data/database.sqlite3");
                 connection = new SQLiteConnection("Data Source=./Data/database.sqlite3");
 
@@ -24,10 +35,25 @@ namespace HogarAncianos.Model {
                 connection.Open();
                 c.ExecuteNonQuery();
                 connection.Close();
+
+                CrearUsuarioAdmin();
+
             }
-            else {
+            else
                 connection = new SQLiteConnection("Data Source=./Data/database.sqlite3");
-            }
+        }
+
+        private void CrearUsuarioAdmin() {
+            Empleado empleado = new Empleado("0", "Admin", "Admin", "01/01/2001", "0", "none", null, "Administradora",
+                "none", 0, "01/01/2001", "A");
+            AgregarEmpleado(empleado);
+
+            byte[] passwordBytes = Encoding.Unicode.GetBytes("admin");
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
+
+            Usuario usuario = new Usuario("admin", hashedBytes, "0");
+            AgregarUsuario(usuario);
         }
 
         //***********************************************************METODOS PACIENTES ****************************************************************************//
@@ -257,19 +283,17 @@ namespace HogarAncianos.Model {
 
        }
 
-        public DataSet GetUsuario(string usuario)
+        public DataTable GetUsuario(string usuario)
         {
             try
             {
                 connection.Open();
                 SQLiteCommand command = new SQLiteCommand("select * from Usuarios where usuario='" + usuario + "'", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
-                DataSet data = new DataSet();
+                DataTable data = new DataTable();
                 sqlDataAdapter.Fill(data);
                 connection.Close();
                 return data;
-
-
             }
             catch (SQLiteException e)
             {
@@ -317,7 +341,7 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public bool agregarUsuario(Usuario usuario)
+        public bool AgregarUsuario(Usuario usuario)
         {
             string query = $"insert into Usuarios(usuario, contrasenia, cedula_empleado) values (@usuario, @contrasenia, @cedula)";
 
@@ -401,6 +425,26 @@ namespace HogarAncianos.Model {
             }
         }
         //***********************************************************METODOS EMPLEADOS ****************************************************************************//
+
+
+       public string GetPuestoTrabajo(string cedula) {
+            try {
+                string query = $"select puesto_trabajo from Empleados where cedula = '{cedula}'";
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
+
+                return dataTable.Rows[0][0].ToString();
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
 
         public bool ExisteCedula(string cedula) {
             try {
@@ -593,8 +637,8 @@ namespace HogarAncianos.Model {
             string query = "update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='" + codigo /*+ ""*/;
             try
             {
-                connection.Open();
-                SQLiteCommand command = new SQLiteCommand("update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='"+codigo+"'", connection);
+               // connection.Open();
+                SQLiteCommand command = new SQLiteCommand("update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + ", cantidad_prescrita= cantidad_prescrita +"+cantidad+" where codigo_medicamento='"+codigo+"'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -834,6 +878,61 @@ namespace HogarAncianos.Model {
 
         }
 
+
+
+        //METODOS PRESCRIPCION 
+        public bool AgregarPrescripcion(Prescripcion prescripcion)
+        {
+            try
+            {
+                string insert = $"insert into Prescripcion values({prescripcion.num},'{prescripcion.cedula_paciente}')";
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
+                Console.WriteLine(insert);
+                connection.Open();
+                Console.WriteLine("LLEGUE A PRESCRIPCION");
+                command.ExecuteNonQuery();
+                connection.Close();
+                Console.WriteLine("cerre conexion");
+                return true;
+            }
+            catch (SQLiteException e)
+            {
+                Console.WriteLine("LLEGUE AL CATCH");
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "EL ERRORRRRRRRRRRRRRRRRRRRRRR");
+                return false;
+            }
+
+        }
+
+        public bool AgregarPrescripcion_Medicamentos(List<Prescripcion_Medicamentos> prescripcion)
+        {        
+            try
+            {               
+                foreach (Prescripcion_Medicamentos i in prescripcion)
+                {
+                    string insert = $"insert into Prescripcion_Medicamento values({i.num},'{i.codigo_medicamento}','{i.fecha_caducidad}',{i.cantidad_prescrita})";
+
+                    SQLiteCommand command = new SQLiteCommand(insert, connection);
+                    Console.WriteLine(insert);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    UpdateCantidadDisponibleMedicamento(i.codigo_medicamento,i.cantidad_prescrita);
+                    connection.Close();
+                }
+                
+               
+                return true;
+            }
+            catch (SQLiteException e)
+            {
+                
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "Error");
+                return false;
+            }
+
+        }
 
 
 

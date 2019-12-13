@@ -23,8 +23,8 @@ namespace HogarAncianos.View
         }
 
         public string GetCedula() {
-            txtCedula.Text = new string(txtCedula.Text.Where(x => char.IsWhiteSpace(x)
-                                                                   || char.IsDigit(x)).ToArray());
+            txtCedula.Text = new string(txtCedula.Text.Where(x => !char.IsWhiteSpace(x)
+                                                                    && char.IsDigit(x)).ToArray());
             return txtCedula.Text;
         }
 
