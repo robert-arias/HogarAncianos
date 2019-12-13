@@ -25,7 +25,16 @@ namespace HogarAncianos.View
             
             
         }
-
+        public void LimpiarBusqueda()
+        {
+            do
+            {
+                foreach (DataGridViewRow row in dtgMedicamento.Rows)
+                {
+                    dtgMedicamento.Rows.Remove(row);
+                }
+            } while (dtgMedicamento.Rows.Count >= 1);
+        }
         public void ActivarCampos()
         {
            
@@ -66,6 +75,9 @@ namespace HogarAncianos.View
             txtFechaCaducidad.Text = "";
             txtCedula.Text = "";
             txtCodigo.Text = "";
+
+            LimpiarBusqueda();
+
 
 
         }
@@ -155,9 +167,32 @@ namespace HogarAncianos.View
 
         }
 
+        public Prescripcion GetPrescripcion()
+        {
+            return new Prescripcion(int.Parse(tbNumero.Text),txtCedula.Text);
+        }
+
+        public List<Prescripcion_Medicamentos> GetPrescripcionMedicamentos()
+        {
+            List<Prescripcion_Medicamentos> lista_medicamentos = new List<Prescripcion_Medicamentos>();
+
+            foreach (DataGridViewRow row in dtgMedicamento.Rows)
+            {
+
+                Prescripcion_Medicamentos medicamento = new Prescripcion_Medicamentos();
+                medicamento.num = int.Parse(tbNumero.Text);
+                medicamento.codigo_medicamento = row.Cells["Codigo"].Value.ToString();
+                medicamento.fecha_caducidad = row.Cells["Fecha"].Value.ToString();
+                medicamento.cantidad_prescrita = int.Parse(row.Cells["CantidadPrescrita"].Value.ToString());
+
+                lista_medicamentos.Add(medicamento);
+            }
+
+            return lista_medicamentos;
+        }
 
 
-       
+
         public void EliminarMedicamento()
         {
 
