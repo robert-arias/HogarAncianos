@@ -728,12 +728,13 @@ namespace HogarAncianos.Model {
 
         public bool DeleteMedicamento(string codigo)
         {
-            string query = "delete from Medicamentos where codigo_medicamento='" + codigo;
+            string query = "delete from Medicamentos where codigo_medicamento='" + codigo+"'";
 
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query, connection);
+                Console.WriteLine("CODIGO"+codigo);
+                SQLiteCommand command = new SQLiteCommand("delete from Medicamentos where codigo_medicamento='" + codigo + "'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -1029,6 +1030,64 @@ namespace HogarAncianos.Model {
 
         }
 
+        public bool DeletePrescripcion(string codigo, DataSet prescripcion)
+        {
+            try
+            {               
+                foreach (DataRow row in prescripcion.Tables[0].Rows)
+                {   
+                    foreach(DataColumn column in prescripcion.Tables[0].Columns)
+                    {
+                        if (row["codigo_medicamento"].ToString() == codigo)
+                        {
+                            SQLiteCommand command = new SQLiteCommand("delete from Prescripcion_Medicamento where codigo_medicamento='" + codigo+"'", connection);
+                            connection.Open();
+                            command.ExecuteNonQuery();                         
+                            connection.Close();
+
+                        }
+                        
+                    }
+
+                }
+                return true;
+
+
+            }
+            catch (SQLiteException e)
+            {
+
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "Error");
+                return false;
+            }
+        }
+
+        public int ExisteMedicamentoEnPrescripcion(string codigo)
+        {
+            try
+            {
+
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select Count(*) from Prescripcion_Medicamento where codigo_medicamento='" + codigo + "'", connection);               
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                Console.WriteLine("RESULTADO DEL COUNT"+ int.Parse(data.Tables[0].Rows[0][0].ToString()));
+                return int.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            }
+            catch (SQLiteException e)
+            {
+
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "Error");
+                return 0;
+            }
+        }
+
+
         public bool AgregarPrescripcion_Medicamentos(List<Prescripcion_Medicamentos> prescripcion)
         {        
             try
@@ -1149,6 +1208,29 @@ namespace HogarAncianos.Model {
 
         }
 
+        public DataSet GetPrescripciones_Medicamentos()
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return data;
+
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+
+
+        }
 
         public bool Update_Cantidad_Feha(Prescripcion_Medicamentos medicamentos)
         {

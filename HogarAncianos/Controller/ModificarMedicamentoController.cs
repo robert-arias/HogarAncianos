@@ -68,6 +68,7 @@ namespace HogarAncianos.Controller
                 {
 
                     llenarCampos();
+
                 }
                 else
                 {

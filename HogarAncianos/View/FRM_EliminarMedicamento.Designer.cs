@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
@@ -55,20 +55,20 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // btnAgregar
+            // btnEliminar
             // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAgregar.Enabled = false;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(170, 212);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(117, 41);
-            this.btnAgregar.TabIndex = 21;
-            this.btnAgregar.Text = "Eliminar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(170, 212);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(117, 41);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -190,7 +190,7 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(636, 282);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FRM_EliminarMedicamento";
             this.Text = "FRM_EliminarMedicamento";
@@ -203,7 +203,7 @@
         #endregion
 
         public System.Windows.Forms.Button btnCancelar;
-        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.Button btnVerificar;
