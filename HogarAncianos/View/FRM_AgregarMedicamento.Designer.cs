@@ -30,13 +30,11 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
-            this.txtMedida = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lbCantidadPrescrita = new System.Windows.Forms.Label();
             this.lbCantidadDisponible = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.txtCantidadPrescrita = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -52,14 +50,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CadetBlue;
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.cbUnidadMedida);
-            this.groupBox1.Controls.Add(this.txtMedida);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnVerificar);
             this.groupBox1.Controls.Add(this.lbCantidadPrescrita);
@@ -102,14 +102,6 @@
             this.cbUnidadMedida.Name = "cbUnidadMedida";
             this.cbUnidadMedida.Size = new System.Drawing.Size(77, 26);
             this.cbUnidadMedida.TabIndex = 96;
-            // 
-            // txtMedida
-            // 
-            this.txtMedida.Location = new System.Drawing.Point(206, 207);
-            this.txtMedida.Multiline = true;
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(98, 26);
-            this.txtMedida.TabIndex = 95;
             // 
             // btnLimpiar
             // 
@@ -176,16 +168,6 @@
             this.label8.Size = new System.Drawing.Size(152, 20);
             this.label8.TabIndex = 88;
             this.label8.Text = "Cantidad disponible:";
-            // 
-            // txtCantidadDisponible
-            // 
-            this.txtCantidadDisponible.Enabled = false;
-            this.txtCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadDisponible.Location = new System.Drawing.Point(207, 258);
-            this.txtCantidadDisponible.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
-            this.txtCantidadDisponible.Size = new System.Drawing.Size(183, 24);
-            this.txtCantidadDisponible.TabIndex = 90;
             // 
             // txtCantidadPrescrita
             // 
@@ -366,6 +348,25 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(468, 149);
+            this.maskedTextBox1.Mask = "99999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 29);
+            this.maskedTextBox1.TabIndex = 97;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            // 
+            // txtCantidadDisponible
+            // 
+            this.txtCantidadDisponible.Enabled = false;
+            this.txtCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadDisponible.Location = new System.Drawing.Point(207, 258);
+            this.txtCantidadDisponible.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(183, 24);
+            this.txtCantidadDisponible.TabIndex = 90;
+            // 
             // FRM_AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +390,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbCantidadDisponible;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCantidadDisponible;
         public System.Windows.Forms.TextBox txtCantidadPrescrita;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbCategoria;
@@ -408,7 +408,8 @@
         public System.Windows.Forms.Button btnVerificar;
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.ComboBox cbUnidadMedida;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox txtCantidadDisponible;
     }
 }
