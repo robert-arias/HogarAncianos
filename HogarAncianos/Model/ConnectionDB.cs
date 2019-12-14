@@ -78,26 +78,7 @@ namespace HogarAncianos.Model {
             }
         }
 
-        public int GetTotalRegistrosPrescripcion()
-        {
-
-            try
-            {
-                connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select Count(*)+1 from Prescripcion", connection);
-                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
-                DataSet data = new DataSet();
-                sqlDataAdapter.Fill(data);
-                connection.Close();
-                return int.Parse(data.Tables[0].Rows[0][0].ToString());
-
-            }
-            catch (SQLiteException e)
-            {
-                Debug.WriteLine(e.ToString());
-                throw;
-            }
-        }
+       
 
         public bool ExisteCedulaPaciente(string cedula)
         {
@@ -629,9 +610,8 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
-        //update Bebidas set Stock = Stock - " + cantidad + " where BebidaID = "
-        //            + bebidaID, connection
-
+        
+       
         public bool UpdateCantidadDisponibleMedicamento(string codigo, int cantidad)
         {
             string query = "update Medicamentos set cantidad_disponible= cantidad_disponible -" + cantidad + " where codigo_medicamento='" + codigo /*+ ""*/;
@@ -650,6 +630,28 @@ namespace HogarAncianos.Model {
                 return false;
             }
         }
+
+
+        public bool UpdateCantidadDisponible_CantidadPrescrita(string codigo, int cantidadPrescritaModificada, int cantidadPrescritaAnterior)
+        {
+            Console.WriteLine("Entre al metodo actualizar");
+            try
+            {
+                 connection.Open();
+                SQLiteCommand command = new SQLiteCommand("update Medicamentos set cantidad_disponible= (cantidad_disponible +" + cantidadPrescritaAnterior + ")-"+cantidadPrescritaModificada+" , cantidad_prescrita= (cantidad_prescrita -" + cantidadPrescritaAnterior + ") + "+cantidadPrescritaModificada+" where codigo_medicamento='" + codigo + "'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
+        }
+
+       
 
 
 
@@ -981,7 +983,26 @@ namespace HogarAncianos.Model {
 
 
         }
+        public int GetTotalRegistrosPrescripcion()
+        {
 
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("select Count(*)+1 from Prescripcion", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+                return int.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString());
+                throw;
+            }
+        }
         public DataSet GetDatosMedicamento_Prescripcion(string codigo, int num)
         {
 
@@ -1004,6 +1025,27 @@ namespace HogarAncianos.Model {
             }
 
 
+        }
+
+
+        public bool Update_Cantidad_Feha(Prescripcion_Medicamentos medicamentos)
+        {
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("Update Prescripcion_Medicamento set  cantidad_prescrita= " + medicamentos.cantidad_prescrita + ",  fecha_caducidad='"+medicamentos.fecha_caducidad+"' where codigo_medicamento='" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "", connection);
+                Console.WriteLine("necesito ver el error Update Prescripcion_Medicamento set  cantidad_prescrita = " + medicamentos.cantidad_prescrita + ", fecha_caducidad = '"+medicamentos.fecha_caducidad+"' where codigo_medicamento = '" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "");
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException E)
+            {
+                Debug.WriteLine(E.ToString());
+                return false;
+            }
         }
 
 

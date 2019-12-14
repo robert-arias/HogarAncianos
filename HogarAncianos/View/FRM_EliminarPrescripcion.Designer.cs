@@ -49,6 +49,7 @@
             this.lbCedula = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPrescripciones)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,6 +59,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.CadetBlue;
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dtgPrescripciones);
             this.groupBox2.Controls.Add(this.button3);
@@ -70,7 +72,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(72)))));
             this.groupBox2.Location = new System.Drawing.Point(12, 36);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(777, 257);
+            this.groupBox2.Size = new System.Drawing.Size(929, 257);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del paciente";
@@ -187,7 +189,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(72)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 299);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(777, 242);
+            this.groupBox1.Size = new System.Drawing.Size(929, 242);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del medicamento";
@@ -200,10 +202,10 @@
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(586, 45);
+            this.btnModificar.Location = new System.Drawing.Point(586, 50);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(122, 35);
+            this.btnModificar.Size = new System.Drawing.Size(122, 26);
             this.btnModificar.TabIndex = 25;
             this.btnModificar.Text = "Eliminar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -216,7 +218,7 @@
             this.Nombre,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(555, 168);
             this.dataGridView1.TabIndex = 109;
@@ -298,12 +300,27 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(543, 117);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 26);
+            this.button2.TabIndex = 124;
+            this.button2.Text = "Seleccionar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // FRM_EliminarPrescripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(816, 596);
+            this.ClientSize = new System.Drawing.Size(1011, 596);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -342,5 +359,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button button2;
     }
 }

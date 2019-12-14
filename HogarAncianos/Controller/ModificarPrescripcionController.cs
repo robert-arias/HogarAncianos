@@ -13,13 +13,14 @@ namespace HogarAncianos.Controller
     {
         ConnectionDB connection;
         FRM_ModificarPrescripcion fRM_ModificarPrescripcion;
+      
         public ModificarPrescripcionController(FRM_ModificarPrescripcion fRM_ModificarPrescripcion)
         {
             connection = new ConnectionDB();
             this.fRM_ModificarPrescripcion = fRM_ModificarPrescripcion;
             AgregarEventos();
             fRM_ModificarPrescripcion.EstadoInicial();
-
+          
         }
 
         public void AgregarEventos()
@@ -28,7 +29,7 @@ namespace HogarAncianos.Controller
             fRM_ModificarPrescripcion.btnSeleccionar.Click += new EventHandler(Seleccionar);
             fRM_ModificarPrescripcion.btnSeleccionarMedicamento.Click += new EventHandler(SeleccionarMedicamento);
             fRM_ModificarPrescripcion.btnLimpiar.Click += new EventHandler(Limpiar);
-
+            fRM_ModificarPrescripcion.btnModificar.Click += new EventHandler(ModificarMedicamento);
         }
 
         public void Limpiar(object sender, EventArgs e)
@@ -42,6 +43,8 @@ namespace HogarAncianos.Controller
             {
                 fRM_ModificarPrescripcion.llenarCampos(connection.GetDatosMedicamento_Prescripcion(fRM_ModificarPrescripcion.GetCodigoMedicamento(fRM_ModificarPrescripcion.IndexMedicamento()),fRM_ModificarPrescripcion.GetNumPrescripcion(fRM_ModificarPrescripcion.IndexMedicamento())));
                 fRM_ModificarPrescripcion.labelCantidadDisponible.Text = connection.GetNombre_CantidadDisponible_Medicamento(fRM_ModificarPrescripcion.GetCodigoMedicamento(fRM_ModificarPrescripcion.IndexMedicamento())).Tables[0].Rows[0][1].ToString();
+              
+         
                 fRM_ModificarPrescripcion.ActivarCamposSeleccionMedicamentos();
             }
             else
@@ -83,6 +86,37 @@ namespace HogarAncianos.Controller
                 fRM_ModificarPrescripcion.MensajeError("Hay campos vacios");
             }
            
+        }
+
+        public void ModificarMedicamento(object sender, EventArgs e)
+        {
+
+            if (fRM_ModificarPrescripcion.VerificarMedicamentos())
+            {
+               
+
+                if (connection.UpdateCantidadDisponible_CantidadPrescrita
+                    (
+                    fRM_ModificarPrescripcion.GetCodigo(),
+                    fRM_ModificarPrescripcion.GetCantidaModificada(),
+                    fRM_ModificarPrescripcion.GetCantidadAnterior())
+                    )
+
+                {
+                    if (connection.Update_Cantidad_Feha(fRM_ModificarPrescripcion.GetMedicamentoModificado()))
+                    {
+                        fRM_ModificarPrescripcion.MensajeInformativo("Modificacion exitosa");
+                        fRM_ModificarPrescripcion.EstadoInicialDespuesDeModificar();
+                    }
+
+                    
+                }
+                else
+                {
+                    fRM_ModificarPrescripcion.MensajeError("Verifique los datos ");
+                }
+            }
+
         }
 
         

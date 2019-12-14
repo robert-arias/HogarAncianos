@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HogarAncianos.Controller;
+using HogarAncianos.Model;
 
 namespace HogarAncianos.View
 {
@@ -92,10 +93,7 @@ namespace HogarAncianos.View
 
         }
 
-        public int IndexMedicamento()
-        {
-            return dtgMedicamento.CurrentCell.RowIndex;
-        }
+        
 
         public string GetCodigoMedicamento(int fila)
         {
@@ -103,6 +101,7 @@ namespace HogarAncianos.View
         }
         public int GetNumPrescripcion(int fila)
         {
+          
             return int.Parse(dtgMedicamento[0, fila].Value.ToString());
         }
 
@@ -155,16 +154,71 @@ namespace HogarAncianos.View
             } while (dtgMedicamento.Rows.Count >= 1);
         }
 
-        public string GetCodigo()
-        {
-            return txtCodigo.Text;
-        }
+        
 
         public string GetCedula()
         {
             return txtCedulaPaciente.Text;
         }
 
-       
+
+        public Prescripcion_Medicamentos GetMedicamentoModificado()
+        {
+
+            return new Prescripcion_Medicamentos(int.Parse(labelPrescripcion.Text),txtCodigo.Text,txtFechaCaducidad.Text,int.Parse(txtCantidadPrescritaNueva.Text));
+
+        }
+
+        public int IndexMedicamento()
+        {
+            return dtgMedicamento.CurrentCell.RowIndex;
+        }
+        public string GetCodigo()
+        {
+            return txtCodigo.Text;
+        }
+
+        public int GetNumPrescripcion()
+        {
+            return int.Parse(labelPrescripcion.Text);
+        }
+
+        public int GetCantidaModificada()
+        {
+            return int.Parse(txtCantidadPrescritaNueva.Text);
+        }
+
+        public int GetCantidadAnterior()
+        {
+           
+            return int.Parse(txtCantidad.Text);
+        }
+
+
+        public void EstadoInicialDespuesDeModificar()
+        {
+            labelPrescripcion.Text = "";
+            txtCodigo.Text = "";
+            txtFechaCaducidad.Text = "";
+            txtCantidad.Text = "";
+
+            btnModificar.Enabled = false;
+            btnCancelar.Enabled = false;
+            txtFechaCaducidad.Enabled = false;
+            txtCantidad.Enabled = false;
+        }
+
+        public bool VerificarMedicamentos()
+        {
+            if (!string.IsNullOrEmpty(labelPrescripcion.Text) && !string.IsNullOrEmpty(txtCantidad.Text) && !string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtFechaCaducidad.Text))
+                return true;
+            else
+                return false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
