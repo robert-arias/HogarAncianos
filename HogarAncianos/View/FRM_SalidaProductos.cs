@@ -1,30 +1,32 @@
-﻿using HogarAncianos.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HogarAncianos.Controller;
+﻿using HogarAncianos.Controller;
 using HogarAncianos.Model;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 
-namespace HogarAncianos.View
-{
+namespace HogarAncianos.View {
     public partial class FRM_SalidaProductos : Form
     {
         private SalidaProductosController salidaProductosController;
         private int cantidad;
         private Usuario usuario;
-        public FRM_SalidaProductos(Usuario usuario)
+
+        public FRM_SalidaProductos()
         {
             InitializeComponent();
             salidaProductosController = new SalidaProductosController(this);
-            this.usuario = usuario;
+            usuario = null;
             cantidad = 0;
+        }
+
+        public void SetEmpleado(Usuario usuario) {
+            this.usuario = usuario;
+            ConnectionDB connection = new ConnectionDB();
+            string nombreCompleto = connection.GetNombreCompletoEmpleado(usuario.cedula);
+            txbCedula.Text = usuario.cedula;
+            txbNombreCompleto.Text = nombreCompleto;
         }
 
         public string GetIdentificador()
@@ -60,20 +62,13 @@ namespace HogarAncianos.View
         }
 
         
-        public void llenarCampos(DataSet data)
+        public void LlenarCampos(DataSet data)
         {
             txbNombre.Text = data.Tables[0].Rows[0][1].ToString();
             if (data.Tables[0].Rows[0][2].ToString().Equals("Higiene personal"))
                 rbHigienePersonal.Checked = true;
             else
                 rbLimpieza.Checked = true;
-            ConnectionDB connection = new ConnectionDB();
-            DataSet empleado = connection.GetEmpleado(usuario.cedula);
-            txbCedula.Text = empleado.Tables["Empleado"].Rows[0][0].ToString();
-            txbNombreCompleto.Text=empleado.Tables["Empleado"].Rows[0][1].ToString() +" "+ empleado.Tables["Empleado"].Rows[0][2].ToString();
-
-
-
         }
         public void ShowMessage(string message)
         {

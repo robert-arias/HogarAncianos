@@ -33,7 +33,7 @@ namespace HogarAncianos.Controller {
 
         //Productos de Higiene
         private FRM_AgregarProductoInventario frm_AgregarProductoInventario;
-        private FRM_BuscarProducto frm_BuscarProducto;
+        private FRM_BuscarProductos frm_BuscarProducto;
         private FRM_ModificarProductosHigiene frm_ModificarProductos;
         private FRM_EliminarProducto frm_EliminarProducto;
         private FRM_AgregarProductosHigiene frm_AgregarProductosHigiene;
@@ -62,7 +62,8 @@ namespace HogarAncianos.Controller {
             frm_ModificarProductos = new FRM_ModificarProductosHigiene();
             frm_AgregarProductoInventario = new FRM_AgregarProductoInventario();
             frm_EliminarProducto = new FRM_EliminarProducto();
-            frm_SalidaProductos = new FRM_SalidaProductos(LOGGED_USER);
+            frm_SalidaProductos = new FRM_SalidaProductos();
+            frm_BuscarProducto = new FRM_BuscarProductos();
 
             //Pacientes 
             frm_AgregarPaciente = new FRM_AgregarPaciente();
@@ -121,6 +122,8 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_ProductosLimpiezaSalidaInventario.Click += new EventHandler(OpenSalidaProductosLimpieza);
             frm_SalidaProductos.FormClosed += CerrarSalidaProductosLimpieza;
             frm_SalidaProductos.btCancelar.Click += new EventHandler(CerrarSalidaProductosLimpieza);
+            frm_MenuPrincipal.mi_ProductosLimpiezaBuscar.Click += new EventHandler(OpenBuscarProductos);
+            frm_BuscarProducto.FormClosed += CerrarBuscarProductos;
 
             //Medicamentos 
 
@@ -197,8 +200,8 @@ namespace HogarAncianos.Controller {
             frm_Login.Close();
             frm_MenuPrincipal.Show();
             frm_Login.EstadoInicial();
-            /*LOGGED_USER = frm_Login.GetUsuario();
-            EnableMenuItems();*/
+            LOGGED_USER = frm_Login.GetUsuario();
+            //EnableMenuItems();
         }
 
         private void CerrarSesion(object sender, EventArgs e) {
@@ -254,18 +257,31 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Hide();
             frm_EliminarProducto.ShowDialog();
         }
+
         private void OpenSalidaProductosLimpieza(object sender, EventArgs e)
         {
             frm_MenuPrincipal.Hide();
+            frm_SalidaProductos.SetEmpleado(LOGGED_USER);
             frm_SalidaProductos.ShowDialog();
         }
+
+        private void OpenBuscarProductos(object sender, EventArgs e) {
+            frm_MenuPrincipal.Hide();
+            frm_BuscarProducto.ShowDialog();
+        }
+
         private void CerrarSalidaProductosLimpieza(object sender, EventArgs e)
         {
             frm_SalidaProductos.Close();
             frm_MenuPrincipal.Show();
-           frm_SalidaProductos.EstadoInicial();
+            frm_SalidaProductos.EstadoInicial();
         }
 
+        private void CerrarBuscarProductos(object sender, EventArgs e) {
+            frm_BuscarProducto.Close();
+            frm_MenuPrincipal.Show();
+            //frm_BuscarProducto.EstadoInicial();
+        }
 
         private void CerrarAgregarProductoHigieneInventario(object sender, EventArgs e)
         {

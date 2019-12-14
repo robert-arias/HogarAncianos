@@ -74,7 +74,6 @@ D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\Hog
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\ShockwaveFlashObjects.dll
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\stdole.dll
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProducto.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPacientes.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultarUsuario.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarMedicamento.resources
@@ -230,4 +229,4 @@ D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\Hog
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
