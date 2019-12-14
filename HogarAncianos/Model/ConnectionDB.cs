@@ -970,6 +970,17 @@ namespace HogarAncianos.Model {
 
         }
 
+        public string GetNombreCompletoEmpleado(string cedula) {
+            string query = $"select nombre, apellidos from Empleados where cedula = '{cedula}'";
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand(query, connection);
+            SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            dataSQLite.Fill(dataTable);
+
+            return dataTable.Rows[0][0].ToString() + " " + dataTable.Rows[0][1].ToString();
+        }
+
         public bool ExtraerProductoInventario(Salida_Productos salida)
         {
             try

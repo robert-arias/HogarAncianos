@@ -38,7 +38,7 @@ namespace HogarAncianos.Controller
                 if (!db.VerificarIdentificador(frm_SalidaProductos.GetIdentificador()))
                 {
                     frm_SalidaProductos.ActivarCampos();
-                    frm_SalidaProductos.llenarCampos(db.GetProductosHigiene(frm_SalidaProductos.GetIdentificador()));
+                    frm_SalidaProductos.LlenarCampos(db.GetProductosHigiene(frm_SalidaProductos.GetIdentificador()));
                 }
                 else
                     frm_SalidaProductos.ShowMessage("El identificador ingresado no existe en nuestros registros.");
