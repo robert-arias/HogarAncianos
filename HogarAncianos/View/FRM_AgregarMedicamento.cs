@@ -24,8 +24,8 @@ namespace HogarAncianos.View
 
         public Medicamento GetMedicamento()
         {         
-            return new Medicamento(txtCodigo.Text, txtNombre.Text, txtMedida.Text +"  "+cbUnidadMedida.SelectedItem  , cbCategoria.SelectedItem.ToString(),
-            Convert.ToInt32(txtCantidadDisponible.Text), Convert.ToInt32(txtCantidadPrescrita.Text));
+            return new Medicamento(txtCodigo.Text, txtNombre.Text, maskedTextBox1.Text +"  "+cbUnidadMedida.SelectedItem  , cbCategoria.SelectedItem.ToString(),
+            Convert.ToInt32(maskedTextBox1.Text), Convert.ToInt32(txtCantidadPrescrita.Text));
 
         }
 
@@ -53,9 +53,9 @@ namespace HogarAncianos.View
         {
             txtCodigo.Enabled = false;
             txtNombre.Enabled = true;
-            txtMedida.Enabled = true;
+            maskedTextBox1.Enabled = true;
             cbCategoria.Enabled = true;
-            txtCantidadDisponible.Enabled = true;
+            maskedTextBox1.Enabled = true;
            
 
             btnAgregar.Enabled = true;
@@ -69,16 +69,16 @@ namespace HogarAncianos.View
         {
             txtCodigo.Enabled = true;
             txtNombre.Enabled = false;
-            txtMedida.Enabled = false;
+            maskedTextBox1.Enabled = false;
             cbCategoria.Enabled = false;
-            txtCantidadDisponible.Enabled = false;
+            maskedTextBox1.Enabled = false;
             txtCantidadPrescrita.Enabled = false;
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
-            txtMedida.Text = "";
+            maskedTextBox1.Text = "";
             cbCategoria.SelectedIndex = 0;
-            txtCantidadDisponible.Text = "";
+            maskedTextBox1.Text = "";
            
 
             btnAgregar.Enabled = false;
@@ -89,9 +89,9 @@ namespace HogarAncianos.View
 
             lbCodigo.ForeColor = Color.Black;
             lbNombre.ForeColor = Color.Black;
-            txtMedida.ForeColor = Color.Black;
+            maskedTextBox1.ForeColor = Color.Black;
             cbCategoria.ForeColor = Color.Black;
-            txtCantidadDisponible.ForeColor = Color.Black;
+            maskedTextBox1.ForeColor = Color.Black;
             txtCantidadPrescrita.ForeColor = Color.Black;
 
             lbCodigo.Visible = false;
@@ -144,7 +144,7 @@ namespace HogarAncianos.View
                 lbCategoria.ForeColor = Color.Black;
             }
 
-            if (string.IsNullOrEmpty(txtMedida.Text))
+            if (string.IsNullOrEmpty(maskedTextBox1.Text))
             {
                 lbUnidadMedida.Visible = true;
                 lbUnidadMedida.ForeColor = Color.Red;
@@ -156,7 +156,7 @@ namespace HogarAncianos.View
                 lbUnidadMedida.ForeColor = Color.Black;
             }
 
-            if (string.IsNullOrEmpty(txtCantidadDisponible.Text))
+            if (string.IsNullOrEmpty(maskedTextBox1.Text))
             {
                 
                 lbCantidadDisponible.Visible = true;
