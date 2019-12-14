@@ -108,6 +108,7 @@
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarMedicamentosController.cs" />
     <Compile Include="Controller\BuscarPacientesController.cs" />
+    <Compile Include="Controller\BuscarProductosController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
     <Compile Include="Controller\EliminarProductoController.cs" />
@@ -242,11 +243,11 @@
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FRM_BuscarProducto.cs">
+    <Compile Include="View\FRM_BuscarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FRM_BuscarProducto.Designer.cs">
-      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    <Compile Include="View\FRM_BuscarProductos.Designer.cs">
+      <DependentUpon>FRM_BuscarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_ConsultaMedicamentos.cs">
       <SubType>Form</SubType>
@@ -421,8 +422,8 @@
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FRM_BuscarProducto.resx">
-      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="View\FRM_BuscarProductos.resx">
+      <DependentUpon>FRM_BuscarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ConsultaMedicamentos.resx">
       <DependentUpon>FRM_ConsultaMedicamentos.cs</DependentUpon>

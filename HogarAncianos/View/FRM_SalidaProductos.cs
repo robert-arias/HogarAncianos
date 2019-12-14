@@ -12,12 +12,21 @@ namespace HogarAncianos.View {
         private SalidaProductosController salidaProductosController;
         private int cantidad;
         private Usuario usuario;
-        public FRM_SalidaProductos(Usuario usuario)
+
+        public FRM_SalidaProductos()
         {
             InitializeComponent();
             salidaProductosController = new SalidaProductosController(this);
-            this.usuario = usuario;
+            usuario = null;
             cantidad = 0;
+        }
+
+        public void SetEmpleado(Usuario usuario) {
+            this.usuario = usuario;
+            ConnectionDB connection = new ConnectionDB();
+            string nombreCompleto = connection.GetNombreCompletoEmpleado(usuario.cedula);
+            txbCedula.Text = usuario.cedula;
+            txbNombreCompleto.Text = nombreCompleto;
         }
 
         public string GetIdentificador()
@@ -60,13 +69,6 @@ namespace HogarAncianos.View {
                 rbHigienePersonal.Checked = true;
             else
                 rbLimpieza.Checked = true;
-            ConnectionDB connection = new ConnectionDB();
-            string nombreCompleto = connection.GetNombreCompletoEmpleado(usuario.cedula);
-            txbCedula.Text = usuario.cedula;
-            txbNombreCompleto.Text = nombreCompleto;
-
-
-
         }
         public void ShowMessage(string message)
         {

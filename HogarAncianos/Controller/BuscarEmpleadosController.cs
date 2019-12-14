@@ -56,9 +56,10 @@ namespace HogarAncianos.Controller {
         }
 
         private void RealizarBusquedaEnter(object sender, KeyEventArgs e) {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter) {
                 RealizandoBusqueda();
-            e.SuppressKeyPress = true; //remove ding windows sound.
+                e.SuppressKeyPress = true; //remove ding windows sound.
+            }
         }
 
         private void RealizandoBusqueda() {
