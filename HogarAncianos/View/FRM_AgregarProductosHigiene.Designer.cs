@@ -52,69 +52,75 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(43, 40);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(20, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.Size = new System.Drawing.Size(141, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Identificador Producto:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(43, 72);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(43, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.Size = new System.Drawing.Size(117, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre Producto:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(43, 112);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(121, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tipo:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(43, 153);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(95, 153);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(65, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Cantidad:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(456, 67);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Descripción:";
             // 
             // txbNombreProducto
             // 
             this.txbNombreProducto.Enabled = false;
-            this.txbNombreProducto.Location = new System.Drawing.Point(142, 69);
+            this.txbNombreProducto.Location = new System.Drawing.Point(167, 67);
             this.txbNombreProducto.Name = "txbNombreProducto";
-            this.txbNombreProducto.Size = new System.Drawing.Size(241, 20);
+            this.txbNombreProducto.Size = new System.Drawing.Size(216, 22);
             this.txbNombreProducto.TabIndex = 13;
             // 
             // rbLimpieza
             // 
             this.rbLimpieza.AutoSize = true;
             this.rbLimpieza.Enabled = false;
-            this.rbLimpieza.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rbLimpieza.Location = new System.Drawing.Point(203, 112);
+            this.rbLimpieza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLimpieza.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbLimpieza.Location = new System.Drawing.Point(303, 112);
             this.rbLimpieza.Name = "rbLimpieza";
-            this.rbLimpieza.Size = new System.Drawing.Size(66, 17);
+            this.rbLimpieza.Size = new System.Drawing.Size(80, 20);
             this.rbLimpieza.TabIndex = 15;
             this.rbLimpieza.TabStop = true;
             this.rbLimpieza.Text = "Limpieza";
@@ -125,10 +131,11 @@
             this.rbHigienePersonal.AutoSize = true;
             this.rbHigienePersonal.Checked = true;
             this.rbHigienePersonal.Enabled = false;
-            this.rbHigienePersonal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rbHigienePersonal.Location = new System.Drawing.Point(92, 112);
+            this.rbHigienePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbHigienePersonal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbHigienePersonal.Location = new System.Drawing.Point(167, 112);
             this.rbHigienePersonal.Name = "rbHigienePersonal";
-            this.rbHigienePersonal.Size = new System.Drawing.Size(105, 17);
+            this.rbHigienePersonal.Size = new System.Drawing.Size(130, 20);
             this.rbHigienePersonal.TabIndex = 16;
             this.rbHigienePersonal.TabStop = true;
             this.rbHigienePersonal.Text = "Higiene Personal";
@@ -142,9 +149,11 @@
             // txbCantidad
             // 
             this.txbCantidad.Enabled = false;
-            this.txbCantidad.Location = new System.Drawing.Point(101, 150);
+            this.txbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCantidad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txbCantidad.Location = new System.Drawing.Point(167, 150);
             this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(44, 20);
+            this.txbCantidad.Size = new System.Drawing.Size(216, 22);
             this.txbCantidad.TabIndex = 20;
             this.txbCantidad.Text = "0";
             // 
@@ -153,7 +162,7 @@
             this.btVerificar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVerificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btVerificar.Location = new System.Drawing.Point(308, 30);
+            this.btVerificar.Location = new System.Drawing.Point(459, 28);
             this.btVerificar.Name = "btVerificar";
             this.btVerificar.Size = new System.Drawing.Size(88, 29);
             this.btVerificar.TabIndex = 21;
@@ -165,7 +174,7 @@
             this.btLimpiar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btLimpiar.Location = new System.Drawing.Point(402, 30);
+            this.btLimpiar.Location = new System.Drawing.Point(553, 27);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(88, 30);
             this.btLimpiar.TabIndex = 22;
@@ -178,7 +187,7 @@
             this.btAgregar.Enabled = false;
             this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btAgregar.Location = new System.Drawing.Point(246, 294);
+            this.btAgregar.Location = new System.Drawing.Point(254, 294);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(90, 36);
             this.btAgregar.TabIndex = 23;
@@ -190,7 +199,7 @@
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btCancelar.Location = new System.Drawing.Point(399, 294);
+            this.btCancelar.Location = new System.Drawing.Point(360, 294);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(90, 36);
             this.btCancelar.TabIndex = 24;
@@ -209,9 +218,9 @@
             // 
             // txbIdentificadorProducto
             // 
-            this.txbIdentificadorProducto.Location = new System.Drawing.Point(163, 37);
+            this.txbIdentificadorProducto.Location = new System.Drawing.Point(167, 37);
             this.txbIdentificadorProducto.Name = "txbIdentificadorProducto";
-            this.txbIdentificadorProducto.Size = new System.Drawing.Size(124, 20);
+            this.txbIdentificadorProducto.Size = new System.Drawing.Size(216, 22);
             this.txbIdentificadorProducto.TabIndex = 12;
             // 
             // groupBox1
@@ -229,6 +238,8 @@
             this.groupBox1.Controls.Add(this.rbLimpieza);
             this.groupBox1.Controls.Add(this.txbCantidad);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(28, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(729, 232);
@@ -267,11 +278,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox txbCantidad;
         private System.Windows.Forms.TextBox txbDescripcion;
-        private System.Windows.Forms.TextBox txbIdentificadorProducto;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btVerificar;
         public System.Windows.Forms.Button btLimpiar;
         public System.Windows.Forms.Button btAgregar;
         public System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox txbIdentificadorProducto;
     }
 }

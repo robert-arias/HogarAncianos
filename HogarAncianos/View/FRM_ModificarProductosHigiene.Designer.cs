@@ -234,10 +234,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbNombreProducto;
-        private System.Windows.Forms.TextBox txbIdentificadorProducto;
         public System.Windows.Forms.Button btVerificar;
         public System.Windows.Forms.Button btLimpiar;
         public System.Windows.Forms.Button btModificar;
         public System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox txbIdentificadorProducto;
     }
 }

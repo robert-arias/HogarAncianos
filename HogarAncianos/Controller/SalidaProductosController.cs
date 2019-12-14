@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HogarAncianos.Model;
 using HogarAncianos.View;
+using System.Windows.Forms;
 
 namespace HogarAncianos.Controller
 {
@@ -24,6 +25,9 @@ namespace HogarAncianos.Controller
         private void AgregarEventos()
         {
             frm_SalidaProductos.btLimpiar.Click += new EventHandler(BotonLimpiar);
+            frm_SalidaProductos.btVerificar.Click += new EventHandler(VerificarIdentificador);
+            frm_SalidaProductos.btSustraer.Click += new EventHandler(ExtraerProductoInventario);
+            frm_SalidaProductos.txbIdentificadorProducto.KeyDown += new KeyEventHandler(VerificarIdentificadorEnter);
         }
         private void BotonLimpiar(object sender, EventArgs e)
         {
@@ -32,6 +36,20 @@ namespace HogarAncianos.Controller
         }
 
         private void VerificarIdentificador(object sender, EventArgs e)
+        {
+            Verificar();
+        }
+
+        private void VerificarIdentificadorEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Verificar();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void Verificar()
         {
             if (!String.IsNullOrEmpty(frm_SalidaProductos.GetIdentificador()))
             {
@@ -53,16 +71,20 @@ namespace HogarAncianos.Controller
             {
                 if (frm_SalidaProductos.VericarCantidad())
                 {
-                    if (db.ExtraerProductoInventario(frm_SalidaProductos.GetSalidaProducto()))
+                    if (frm_SalidaProductos.ShowConfirmation())
                     {
-                        frm_SalidaProductos.ShowMessage("Se ha sustraido la cantidad del producto con éxito.");
-                        frm_SalidaProductos.EstadoInicial();
+                        if (db.ExtraerProductoInventario(frm_SalidaProductos.GetSalidaProducto()))
+                        {
+                            frm_SalidaProductos.ShowMessage("Se ha sustraido la cantidad del producto con éxito.");
+                            frm_SalidaProductos.EstadoInicial();
+                        }
                     }
-                   else
-                        frm_SalidaProductos.ShowMessage("La cantidad a extraer, supera la cantidad actual.\nVerifique los datos.");
+                    else
+                        frm_SalidaProductos.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                    
                 }
                 else
-                    frm_SalidaProductos.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                    frm_SalidaProductos.ShowMessage("La cantidad a extraer, supera la cantidad actual.\nVerifique los datos."); 
             }
             else
             {

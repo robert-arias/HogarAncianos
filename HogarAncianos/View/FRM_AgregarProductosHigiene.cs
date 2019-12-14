@@ -43,6 +43,7 @@ namespace HogarAncianos.View
             rbLimpieza.Enabled = true;
             btAgregar.Enabled = true;
             btVerificar.Enabled = true;
+            btCancelar.Enabled = true;
         }
 
         public void EstadoInicial()
@@ -56,6 +57,7 @@ namespace HogarAncianos.View
             btVerificar.Enabled = true;
             btLimpiar.Enabled = false;
             rbHigienePersonal.Checked = true;
+            btCancelar.Enabled = true; 
 
             txbIdentificadorProducto.Text = "";
             txbNombreProducto.Text = "";
@@ -76,6 +78,18 @@ namespace HogarAncianos.View
                 tipo = "Limpieza";
             return new Productos_Higiene(txbIdentificadorProducto.Text, txbNombreProducto.Text, tipo, 
                 txbDescripcion.Text, 0);
+        }
+
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar el producto " + txbNombreProducto.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
         }
 
 

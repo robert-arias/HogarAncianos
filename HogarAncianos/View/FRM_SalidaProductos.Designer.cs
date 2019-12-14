@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbCantidadExistente = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbCantidadSustraer = new System.Windows.Forms.TextBox();
             this.txbCedula = new System.Windows.Forms.TextBox();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.txbIdentificadorProducto = new System.Windows.Forms.TextBox();
@@ -47,12 +51,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btSustraer = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.txbCantidadSustraer = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txbCantidadExistente);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txbCantidadSustraer);
             this.groupBox1.Controls.Add(this.txbCedula);
             this.groupBox1.Controls.Add(this.btLimpiar);
@@ -78,6 +84,44 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Extraer productos";
+            // 
+            // txbCantidadExistente
+            // 
+            this.txbCantidadExistente.Enabled = false;
+            this.txbCantidadExistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCantidadExistente.Location = new System.Drawing.Point(180, 213);
+            this.txbCantidadExistente.Name = "txbCantidadExistente";
+            this.txbCantidadExistente.Size = new System.Drawing.Size(242, 26);
+            this.txbCantidadExistente.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(180, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(242, 26);
+            this.textBox1.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(22, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Cantidad existente:";
+            // 
+            // txbCantidadSustraer
+            // 
+            this.txbCantidadSustraer.Enabled = false;
+            this.txbCantidadSustraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCantidadSustraer.Location = new System.Drawing.Point(180, 180);
+            this.txbCantidadSustraer.Name = "txbCantidadSustraer";
+            this.txbCantidadSustraer.Size = new System.Drawing.Size(242, 26);
+            this.txbCantidadSustraer.TabIndex = 21;
             // 
             // txbCedula
             // 
@@ -277,15 +321,6 @@
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             // 
-            // txbCantidadSustraer
-            // 
-            this.txbCantidadSustraer.Enabled = false;
-            this.txbCantidadSustraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCantidadSustraer.Location = new System.Drawing.Point(180, 180);
-            this.txbCantidadSustraer.Name = "txbCantidadSustraer";
-            this.txbCantidadSustraer.Size = new System.Drawing.Size(242, 26);
-            this.txbCantidadSustraer.TabIndex = 21;
-            // 
             // FRM_SalidaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,11 +355,14 @@
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.TextBox txbNombreCompleto;
         private System.Windows.Forms.TextBox txbCedula;
-        private System.Windows.Forms.TextBox txbIdentificadorProducto;
         public System.Windows.Forms.Button btLimpiar;
         public System.Windows.Forms.Button btVerificar;
         public System.Windows.Forms.Button btSustraer;
         public System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.TextBox txbCantidadSustraer;
+        private System.Windows.Forms.TextBox txbCantidadExistente;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txbIdentificadorProducto;
     }
 }

@@ -49,7 +49,8 @@ namespace HogarAncianos.View
             btModificar.Enabled = false;
             btVerificar.Enabled = true;
             btLimpiar.Enabled = true;
-           
+            btCancelar.Enabled = true;
+
 
             txbIdentificadorProducto.Text = "";
             txbNombreProducto.Text = "";
@@ -73,6 +74,7 @@ namespace HogarAncianos.View
             btModificar.Enabled = true;
             btVerificar.Enabled = false;
             btLimpiar.Enabled = true;
+            btCancelar.Enabled = true;
         }
 
         public bool VerificarCampos()
@@ -91,6 +93,18 @@ namespace HogarAncianos.View
                 tipo = "Limpieza";
             return new Productos_Higiene(txbIdentificadorProducto.Text, txbNombreProducto.Text, tipo,
                 txbDescripcion.Text, 0);
+        }
+
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea modificar el producto " + txbNombreProducto.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
         }
 
 
