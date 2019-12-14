@@ -944,18 +944,51 @@ namespace HogarAncianos.Model {
         }
         public bool DeleteProducto(string identificador)
         {
-            string query = $"delete from Productos_Higiene where identificador_producto = '{identificador}'";
-
+            
             try
             {
+                string insert= $"delete from Inventario_Productos where identificador_producto = '{identificador}'";
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query, connection);
                 command.ExecuteNonQuery();
+                insert= $"delete from Salida_Productos where identificador_producto = '{identificador}'";
+                SQLiteCommand co = new SQLiteCommand(insert, connection);
+                co.ExecuteNonQuery();
+                insert = $"delete from Productos_Higiene where identificador_producto = '{identificador}'";
+                SQLiteCommand c = new SQLiteCommand(insert, connection);
+                c.ExecuteNonQuery();
                 connection.Close();
                 return true;
             }
             catch (SQLiteException)
             {
+                return false;
+            }
+
+        }
+
+        public bool ExtraerProductoInventario(Salida_Productos salida)
+        {
+            try
+            {
+                string insert = $"insert into Salida_Productos (identificador_producto, cantidad_sustraer," +
+                    $" fecha_salida, cedula_empleado) " +
+                    $"values('{salida.Identificador_producto}', {salida.Cantidad_sustraer}," +
+                    $"'{salida.Fecha_salida}', '{salida.Cedula_empleado}')";
+                SQLiteCommand command = new SQLiteCommand(insert, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                insert = $"update Productos_Higiene set cantidad = cantidad - {salida.Cantidad_sustraer} " +
+                    $"where identificador_producto = '{salida.Identificador_producto}'";
+                SQLiteCommand c = new SQLiteCommand(insert, connection);
+                c.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }
+            catch (SQLiteException e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
                 return false;
             }
 

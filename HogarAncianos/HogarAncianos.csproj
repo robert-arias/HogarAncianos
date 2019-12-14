@@ -120,6 +120,7 @@
     <Compile Include="Controller\ModificarPrescripcionController.cs" />
     <Compile Include="Controller\ModificarProductoHigieneController.cs" />
     <Compile Include="Controller\ModificarUsuarioController.cs" />
+    <Compile Include="Controller\SalidaProductosController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Inventario_Productos.cs" />

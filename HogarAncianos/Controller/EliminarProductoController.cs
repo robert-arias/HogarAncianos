@@ -66,6 +66,7 @@ namespace HogarAncianos.Controller
                 if (frm_EliminarProducto.ShowConfirmation())
                 {
                     //Llamamos a bse de datos y le pasamos el identificador.
+                    db.DeleteProducto(frm_EliminarProducto.GetIdentificador());
                     frm_EliminarProducto.EstadoInicial();
                     frm_EliminarProducto.ShowMessage("Se ha eliminado el producto correctamente.", "Mensaje");
 
