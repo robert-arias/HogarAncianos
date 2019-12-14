@@ -1,14 +1,17 @@
-﻿using HogarAncianos.Controller;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using HogarAncianos.Controller;
 using HogarAncianos.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace HogarAncianos.View {
     public partial class FRM_BuscarEmpleados : Form {
 
-
+        FRM_ReporteEmpleados FRM_ReporteEmpleados;
         private BuscarEmpleadosController controller;
         private ConnectionDB db;
         private DataTable cacheBusqueda;
@@ -19,8 +22,112 @@ namespace HogarAncianos.View {
             ddlPuesto.Text = "Seleccionar";
             ddlEstadoLaboral.Text = "Seleccionar";
             dgvResultados.AllowUserToResizeColumns = true;
+            FRM_ReporteEmpleados = new FRM_ReporteEmpleados();
             db = new ConnectionDB();
             controller = new BuscarEmpleadosController(this, db);
+        }
+
+        public void RealizarReporte()
+        {
+            DataSetEmpleados dataSetEmpleados = new DataSetEmpleados();
+            int fila = dgvResultados.Rows.Count - 1;
+            Console.WriteLine(fila + "fila");
+
+            if (dgvResultados.Columns.Count - 1 > 0)             
+            {
+                string telefono="-";
+                string direccion = "-";
+                string correo = "-";
+                string salario="-";
+                string fecha="-";
+
+                    for (int i = 0; i <= fila; i++)
+                    {
+
+                            if (dgvResultados.Columns.Contains("Telefono"))
+                            {
+                                    telefono=dgvResultados["Telefono", i].Value.ToString();
+                            }
+                            else
+                            {
+                               telefono="-";
+                            }
+
+                            if (dgvResultados.Columns.Contains("Direccion"))
+                            {
+                                     direccion= dgvResultados["Direccion", i].Value.ToString();
+                             }
+                            else
+                            {
+                                direccion = "-";
+                            }
+                            if (dgvResultados.Columns.Contains("Salario"))
+                            {
+                                 salario= dgvResultados["Salario", i].Value.ToString();
+                            }
+                            else
+                            {
+                                salario= "-";
+                            }
+                           if (dgvResultados.Columns.Contains("Correos"))
+                            {
+                                  correo= dgvResultados["Correos", i].Value.ToString();
+                            }
+                            else
+                            {
+                               correo = "-";
+                            }
+                            if (dgvResultados.Columns.Contains("FechaContratacion"))
+                            {
+                                    fecha = dgvResultados["FechaContratacion", i].Value.ToString();
+                            }
+                            else
+                            {
+                                fecha = "-";
+                            }
+
+
+
+                    dataSetEmpleados.Tables[0].Rows.Add
+                            (new object[] {
+
+                              dgvResultados[0, i].Value.ToString(),
+                              dgvResultados[1, i].Value.ToString(),
+                              dgvResultados[2, i].Value.ToString(),
+                              dgvResultados[3, i].Value.ToString(),
+                              dgvResultados[4, i].Value.ToString(),
+                              dgvResultados[5, i].Value.ToString(),
+                              dgvResultados[6, i].Value.ToString(),                                                                                  
+                              telefono,
+                              direccion,
+                              correo,
+                              salario,
+                              fecha
+
+
+                            }
+                            );
+                    }
+
+
+                ReportDocument report = new ReportDocument();
+                string fileName = "View\\CrystalReportEmpleados.rpt";
+                string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, fileName);
+                Console.WriteLine(path);
+                report.Load(path);
+                report.SetDataSource(dataSetEmpleados);
+                FRM_ReporteEmpleados.crystalReportViewer1.ReportSource = report;
+                FRM_ReporteEmpleados.ShowDialog();
+            }
+
+            else
+            {
+                ShowMessage("No hay resultados que reportar");
+            }
+        
+
+           
+
         }
 
         public void DesactivarBuscarPor() {
