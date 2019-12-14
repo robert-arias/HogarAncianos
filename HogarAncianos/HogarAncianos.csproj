@@ -103,12 +103,14 @@
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
     <Compile Include="Controller\AgregarPrescripcionController.cs" />
     <Compile Include="Controller\AgregarProductoHigieneController.cs" />
+    <Compile Include="Controller\AgregarProductoInventarioController.cs" />
     <Compile Include="Controller\AgregarUsuarioController.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarMedicamentosController.cs" />
     <Compile Include="Controller\BuscarPacientesController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
+    <Compile Include="Controller\EliminarProductoController.cs" />
     <Compile Include="Controller\EliminarUsuarioController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MenuController.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Controller\ModificarPrescripcionController.cs" />
     <Compile Include="Controller\ModificarProductoHigieneController.cs" />
     <Compile Include="Controller\ModificarUsuarioController.cs" />
+    <Compile Include="Controller\SalidaProductosController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Inventario_Productos.cs" />
