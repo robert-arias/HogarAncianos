@@ -74,7 +74,7 @@ namespace HogarAncianos.View {
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
-                        RealizarBusqueda(cacheBusqueda);
+                        ResultadoBusqueda(cacheBusqueda);
                     }
                 }
                 else
@@ -93,7 +93,7 @@ namespace HogarAncianos.View {
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
-                        RealizarBusqueda(cacheBusqueda);
+                        ResultadoBusqueda(cacheBusqueda);
                     }
                 }
                 else
@@ -112,7 +112,7 @@ namespace HogarAncianos.View {
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
-                        RealizarBusqueda(cacheBusqueda);
+                        ResultadoBusqueda(cacheBusqueda);
                     }
                 }
                 else
@@ -131,7 +131,7 @@ namespace HogarAncianos.View {
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
-                        RealizarBusqueda(cacheBusqueda);
+                        ResultadoBusqueda(cacheBusqueda);
                     }
                 }
                 else
@@ -150,7 +150,7 @@ namespace HogarAncianos.View {
 
                     if (cacheBusqueda != null) {
                         LimpiarBusquedas();
-                        RealizarBusqueda(cacheBusqueda);
+                        ResultadoBusqueda(cacheBusqueda);
                     }
                 }
                 else
@@ -249,7 +249,7 @@ namespace HogarAncianos.View {
             return query;
         }
 
-        public void RealizarBusqueda(DataTable resultados) {
+        public void ResultadoBusqueda(DataTable resultados) {
             if (resultados != null) {
                 if (resultados.Rows.Count > 0) {
 

@@ -65,7 +65,7 @@ namespace HogarAncianos.Controller {
         private void RealizandoBusqueda() {
             if (!frm_BuscarEmpleados.VerificarCampos()) {
                 frm_BuscarEmpleados.LimpiarBusquedas();
-                frm_BuscarEmpleados.RealizarBusqueda(connection.GetBusquedaEmpleados(
+                frm_BuscarEmpleados.ResultadoBusqueda(connection.GetBusquedaEmpleados(
                     frm_BuscarEmpleados.GetBusqueda()));
             }
             else

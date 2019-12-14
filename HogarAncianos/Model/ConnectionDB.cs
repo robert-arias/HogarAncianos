@@ -1009,7 +1009,32 @@ namespace HogarAncianos.Model {
         }
 
 
+        public DataSet GetBusquedaProducto(string queryProductos, string queryEntradas, string querySalidas) {
+            try {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(queryProductos, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataSet dataSet = new DataSet();
+                dataSQLite.Fill(dataSet, "Productos_Higiene");
 
+                SQLiteCommand command2 = new SQLiteCommand(queryEntradas, connection);
+                SQLiteDataAdapter dataSQLite2 = new SQLiteDataAdapter(command2);
+                dataSQLite2.Fill(dataSet, "Inventario_Productos");
+
+                SQLiteCommand command3 = new SQLiteCommand(querySalidas, connection);
+                SQLiteDataAdapter dataSQLite3 = new SQLiteDataAdapter(command3);
+                dataSQLite3.Fill(dataSet, "Salida_Productos");
+
+                connection.Close();
+
+                return dataSet;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
 
 
 

@@ -28,6 +28,7 @@ namespace HogarAncianos.Controller {
             frm_BuscarProductos.rbNombre.CheckedChanged += new EventHandler(BuscarPorNombre);
             frm_BuscarProductos.btnBuscar.Click += new EventHandler(BuscarProductos);
             frm_BuscarProductos.txtBuscar.KeyDown += new KeyEventHandler(BuscarProductosEnter);
+            frm_BuscarProductos.btnCancelar.Click += new EventHandler(Cancelar);
         }
 
         private void BuscarPorIdentificador(object sender, EventArgs e) {
@@ -61,8 +62,18 @@ namespace HogarAncianos.Controller {
             }
         }
 
-        private void Buscar() {
+        private void Cancelar(object sender, EventArgs e) {
+            frm_BuscarProductos.EstadoInicial();
+        }
 
+        private void Buscar() {
+            if (!frm_BuscarProductos.VerificarCampos()) {
+                frm_BuscarProductos.ResultadoBusqueda(db.GetBusquedaProducto(frm_BuscarProductos.GetBusqueda(),
+                    frm_BuscarProductos.GetEntradas(), frm_BuscarProductos.GetSalidas()));
+            }
+            else
+                frm_BuscarProductos.ShowMessage("Verifique que los datos ingresados para la búsqueda sean correctos",
+                    "Mensaje");
         }
 
     }
