@@ -34,6 +34,8 @@ namespace HogarAncianos.Controller
             FRM_AgregarPrescripcion.btnAgregar.Click += new EventHandler(AgregarPrescripcion);
             FRM_AgregarPrescripcion.txtCantidad.KeyPress += new KeyPressEventHandler(ValidarCantidad);
             FRM_AgregarPrescripcion.txtCedula.KeyPress += new KeyPressEventHandler(ValidarCedula);
+            FRM_AgregarPrescripcion.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaEnter);
+            FRM_AgregarPrescripcion.txtCodigo.KeyDown += new KeyEventHandler(VerificarCodigoEnter);
         }
 
         public void NumeroPrescripcion()
@@ -53,13 +55,14 @@ namespace HogarAncianos.Controller
                     }
                     else
                     {
-                        FRM_AgregarPrescripcion.MensajeError("Hay campos vacios");
+                        FRM_AgregarPrescripcion.MensajeError("El número de cédula ingresado no se encuentra en los registros ");
                     }
 
                 }
                 else
                 {
-                     FRM_AgregarPrescripcion.MensajeError("La cedula digitada no se encuentra en los registros");
+                     FRM_AgregarPrescripcion.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                    " menos de 9 dígitos.");
                 }
                
         }
@@ -68,6 +71,63 @@ namespace HogarAncianos.Controller
         {
             FRM_AgregarPrescripcion.EstadoInicial();
         }
+
+        public void VerificarCedulaEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (FRM_AgregarPrescripcion.VerificarPaciente())
+                {
+                    if (connectionDB.ExisteCedulaPaciente(FRM_AgregarPrescripcion.GetCedula()))
+                    {
+                        FRM_AgregarPrescripcion.txtNombrePaciente.Text = connectionDB.GetNombrePaciente(FRM_AgregarPrescripcion.GetCedula()).Tables[0].Rows[0][0].ToString() + " " + connectionDB.GetNombrePaciente(FRM_AgregarPrescripcion.GetCedula()).Tables[0].Rows[0][1].ToString();
+                        FRM_AgregarPrescripcion.ActivarCampos();
+                    }
+                    else
+                    {
+                        FRM_AgregarPrescripcion.MensajeError("El número de cédula ingresado no se encuentra en los registros ");
+                    }
+
+                }
+                else
+                {
+                    FRM_AgregarPrescripcion.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                   " menos de 9 dígitos.");
+                }
+
+                e.SuppressKeyPress = true; //remove ding windows sound.
+            }
+
+        }
+        private void VerificarCodigoEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (connectionDB.ExisteCodigoMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
+                {
+                    FRM_AgregarPrescripcion.ActivarAgregarMedicamento();
+                    FRM_AgregarPrescripcion.txtNombre.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][0].ToString();
+
+
+                    if (!FRM_AgregarPrescripcion.VerificarMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
+                    {
+                        FRM_AgregarPrescripcion.labelCantidadDisponible.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
+                    }
+                    else
+                    {
+                        int cantidad = int.Parse(connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString()) - FRM_AgregarPrescripcion.RetornarCantidadDisponible(FRM_AgregarPrescripcion.GetCodigo());
+                        FRM_AgregarPrescripcion.labelCantidadDisponible.Text = cantidad.ToString();
+                    }
+
+                }
+                else
+                {
+                    FRM_AgregarPrescripcion.MensajeError("El código digitado no se encuentra ingresado en los registros.");
+                }
+                e.SuppressKeyPress = true; //remove ding windows sound.
+            }
+        }
+        
 
         public void Verificar(object sender, EventArgs e)
         {
@@ -86,14 +146,11 @@ namespace HogarAncianos.Controller
                     int cantidad= int.Parse(connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString()) - FRM_AgregarPrescripcion.RetornarCantidadDisponible(FRM_AgregarPrescripcion.GetCodigo());
                     FRM_AgregarPrescripcion.labelCantidadDisponible.Text = cantidad.ToString();
                 }
-                
-
-                   
-
+                                
             }
             else
             {
-                FRM_AgregarPrescripcion.MensajeError("El codigo digitado no se encuentra ingresado en los registros");
+                FRM_AgregarPrescripcion.MensajeError("El código digitado no se encuentra ingresado en los registros.");
             }
         }
 
@@ -125,28 +182,37 @@ namespace HogarAncianos.Controller
             
                 if (FRM_AgregarPrescripcion.dtgMedicamento.Rows.Count > 0)
                 {
-
-                    if (connectionDB.AgregarPrescripcion_Medicamentos(FRM_AgregarPrescripcion.GetPrescripcionMedicamentos()))
+                    if (FRM_AgregarPrescripcion.ShowConfirmation())
                     {
-                        if (connectionDB.AgregarPrescripcion(FRM_AgregarPrescripcion.GetPrescripcion()))
-                        {
-                            FRM_AgregarPrescripcion.MensajeInformativo("Prescripcion agregada exitosamente");
-                            NumeroPrescripcion();
-                           FRM_AgregarPrescripcion.EstadoInicial();
-                         }
-                        else
-                        {
-                            FRM_AgregarPrescripcion.MensajeError("No ha agregado la prescripcion.");
-                        }
+
+                            if (connectionDB.AgregarPrescripcion_Medicamentos(FRM_AgregarPrescripcion.GetPrescripcionMedicamentos()))
+                            {
+                                if (connectionDB.AgregarPrescripcion(FRM_AgregarPrescripcion.GetPrescripcion()))
+                                {
+                                    FRM_AgregarPrescripcion.MensajeInformativo("Prescripción agregada exitosamente.");
+                                    NumeroPrescripcion();
+                                    FRM_AgregarPrescripcion.EstadoInicial();
+                                }
+                                else
+                                {
+                                    FRM_AgregarPrescripcion.MensajeError("La  prescripción no ha sido agregada.");
+                                    FRM_AgregarPrescripcion.EstadoInicial();
+                                }
+                            }
+                            else
+                            {
+                                FRM_AgregarPrescripcion.MensajeError("La  prescripción no ha sido agregada.");
+                            }
+
                     }
                     else
                     {
-                         FRM_AgregarPrescripcion.MensajeError("No ha agregado  la prescripcion medicamentos.");
+                      FRM_AgregarPrescripcion.MensajeError("La  prescripción no ha sido agregada.");
                     }
                 }
                 else
                 {
-                    FRM_AgregarPrescripcion.MensajeError("No ha agregado medicamentos a la prescripcion.");
+                    FRM_AgregarPrescripcion.MensajeError("No ha agregado medicamentos a la  prescripción.");
                 }
                                                    
         }

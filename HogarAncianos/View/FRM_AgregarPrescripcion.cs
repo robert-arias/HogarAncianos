@@ -89,6 +89,17 @@ namespace HogarAncianos.View
 
         }
 
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar la prescripción codigo: " + tbNumero.Text +"  "+ " al paciente:  " + txtNombrePaciente.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public void EstadoInicialMedicamento()
         {
@@ -126,7 +137,7 @@ namespace HogarAncianos.View
 
         public bool VerificarPaciente()
         {
-            if (!string.IsNullOrEmpty(txtCedula.Text))
+            if (!string.IsNullOrEmpty(txtCedula.Text) && txtCedula.Text.Length >= 9)
             {
 
                 return true;
@@ -226,7 +237,7 @@ namespace HogarAncianos.View
                 }
                 else
                 {
-                    MensajeError("Hay campos vacios");
+                    MensajeError("Hay campos vacios.");
                 }
             }
             else
@@ -264,16 +275,24 @@ namespace HogarAncianos.View
         }
 
 
-
+      
+       
         public void EliminarMedicamento()
         {
-
-            int index = dtgMedicamento.CurrentCell.RowIndex;
-            if (index > -1)
+            try
             {
-                dtgMedicamento.Rows.RemoveAt(index);
-                dtgMedicamento.Refresh();
+                int index = dtgMedicamento.CurrentCell.RowIndex;
+                if (index > -1)
+                {
+                    dtgMedicamento.Rows.RemoveAt(index);
+                    dtgMedicamento.Refresh();
+                }
             }
+            catch (NullReferenceException)
+            {
+                MensajeError("Debe seleccionar el medicamento a eliminar.");
+            }
+         
         }
 
 
@@ -294,7 +313,7 @@ namespace HogarAncianos.View
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo Numeros");
+                MessageBox.Show("Solo se admiten números.");
             }
         }
 
@@ -315,7 +334,7 @@ namespace HogarAncianos.View
             else
             {
                 v.Handled = true;
-                MessageBox.Show("Solo Letras");
+                MessageBox.Show("Solo se admiten letras.");
             }
         }
 
