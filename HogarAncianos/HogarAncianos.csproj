@@ -345,6 +345,12 @@
     <Compile Include="View\FRM_ModificarUsuario.Designer.cs">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRM_ReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRM_ReporteEmpleados.Designer.cs">
+      <DependentUpon>FRM_ReporteEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRM_ReporteMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,7 +386,7 @@
     </Compile>
     <EmbeddedResource Include="View\CrystalReportEmpleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportEmpleados.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportEmpleados1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CrystalReportMedicamentos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -472,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ModificarUsuario.resx">
       <DependentUpon>FRM_ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRM_ReporteEmpleados.resx">
+      <DependentUpon>FRM_ReporteEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ReporteMedicamentos.resx">
       <DependentUpon>FRM_ReporteMedicamentos.cs</DependentUpon>

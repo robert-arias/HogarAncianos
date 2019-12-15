@@ -29,6 +29,12 @@ namespace HogarAncianos.Controller {
             frm_BuscarEmpleados.btnCancelar.Click += new EventHandler(EstadoInicial);
             frm_BuscarEmpleados.btnBuscar.Click += new EventHandler(RealizarBusqueda);
             frm_BuscarEmpleados.txtBuscar.KeyDown += new KeyEventHandler(RealizarBusquedaEnter);
+            frm_BuscarEmpleados.btnReporte.Click += new EventHandler(Reporte);
+        }
+
+        private void Reporte(object sender, EventArgs e)
+        {
+            frm_BuscarEmpleados.RealizarReporte();
         }
 
         private void BuscarPorCedula(object sender, EventArgs e) {

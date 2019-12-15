@@ -155,7 +155,46 @@ C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.pdb
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\EntityFramework.dll
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
+C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.Properties.Resources.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarEmpleado.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPaciente.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductoInventario.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaMedicamentos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPacientes.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultarUsuario.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarMedicamento.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarProducto.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarUsuario.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_MenuPrincipal.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarEmpleado.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPrescripcion.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarProductosHigiene.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteEmpleados.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteUsuarioPrueba.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_SalidaProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.GenerateResource.cache
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\HogarAncianos.exe.config
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\HogarAncianos.exe
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\HogarAncianos.pdb
@@ -163,6 +202,7 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisio
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\EntityFramework.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\FlashControlV71.dll
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
@@ -188,45 +228,6 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\EntityFramewor
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\System.Data.SQLite.xml
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.Properties.Resources.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarEmpleado.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarMedicamento.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPaciente.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarPrescripcion.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductoInventario.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProducto.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaMedicamentos.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPacientes.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPrescripcion.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultarUsuario.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarMedicamento.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarPrescripcion.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarProducto.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarUsuario.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_Login.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_MenuPrincipal.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarEmpleado.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarMedicamento.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPaciente.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPrescripcion.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarProductosHigiene.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarUsuario.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteUsuarioPrueba.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_SalidaProductos.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.GenerateResource.cache
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.pdb
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteMedicamentos.resources
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReportePacientes.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
