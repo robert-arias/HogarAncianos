@@ -38,10 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.dtgMedicamento = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.lbCedula = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +57,10 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbNumero = new System.Windows.Forms.TextBox();
             this.IdPrescripcion = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamento)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -197,6 +197,7 @@
             // dtgMedicamento
             // 
             this.dtgMedicamento.AllowUserToAddRows = false;
+            this.dtgMedicamento.AllowUserToDeleteRows = false;
             this.dtgMedicamento.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMedicamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -206,32 +207,9 @@
             this.Fecha});
             this.dtgMedicamento.Location = new System.Drawing.Point(128, 202);
             this.dtgMedicamento.Name = "dtgMedicamento";
+            this.dtgMedicamento.ReadOnly = true;
             this.dtgMedicamento.Size = new System.Drawing.Size(526, 170);
             this.dtgMedicamento.TabIndex = 109;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 120;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 120;
-            // 
-            // CantidadPrescrita
-            // 
-            this.CantidadPrescrita.HeaderText = "Cantidad Prescrita";
-            this.CantidadPrescrita.Name = "CantidadPrescrita";
-            this.CantidadPrescrita.Width = 120;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha de caducidad";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 120;
             // 
             // button1
             // 
@@ -328,7 +306,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 20);
             this.label1.TabIndex = 94;
-            this.label1.Text = "Codigo del medicamento:";
+            this.label1.Text = "Código del medicamento:";
             // 
             // groupBox2
             // 
@@ -465,7 +443,35 @@
             this.IdPrescripcion.Name = "IdPrescripcion";
             this.IdPrescripcion.Size = new System.Drawing.Size(129, 16);
             this.IdPrescripcion.TabIndex = 23;
-            this.IdPrescripcion.Text = "Codigo prescripcion";
+            this.IdPrescripcion.Text = "Código prescripcion";
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 120;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 120;
+            // 
+            // CantidadPrescrita
+            // 
+            this.CantidadPrescrita.HeaderText = "Cantidad Prescrita";
+            this.CantidadPrescrita.Name = "CantidadPrescrita";
+            this.CantidadPrescrita.ReadOnly = true;
+            this.CantidadPrescrita.Width = 120;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha de caducidad";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 120;
             // 
             // FRM_AgregarPrescripcion
             // 
@@ -480,6 +486,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FRM_AgregarPrescripcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_AgregarPrescripcion";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -514,10 +521,6 @@
         public System.Windows.Forms.TextBox txtNombrePaciente;
         public System.Windows.Forms.TextBox txtCedula;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        public System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         public System.Windows.Forms.Button btnEliminarmMedicamento;
         public System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker txtFechaCaducidad;
@@ -526,5 +529,9 @@
         public System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.TextBox tbNumero;
         public System.Windows.Forms.Label IdPrescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }

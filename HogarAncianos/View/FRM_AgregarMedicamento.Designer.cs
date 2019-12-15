@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lbCantidadPrescrita = new System.Windows.Forms.Label();
             this.lbCantidadDisponible = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.txtCantidadPrescrita = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -50,8 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del medicamento";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(206, 207);
+            this.maskedTextBox1.Mask = "99999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 29);
+            this.maskedTextBox1.TabIndex = 97;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // cbUnidadMedida
             // 
@@ -168,6 +178,16 @@
             this.label8.Size = new System.Drawing.Size(152, 20);
             this.label8.TabIndex = 88;
             this.label8.Text = "Cantidad disponible:";
+            // 
+            // txtCantidadDisponible
+            // 
+            this.txtCantidadDisponible.Enabled = false;
+            this.txtCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadDisponible.Location = new System.Drawing.Point(207, 258);
+            this.txtCantidadDisponible.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(183, 24);
+            this.txtCantidadDisponible.TabIndex = 90;
             // 
             // txtCantidadPrescrita
             // 
@@ -347,25 +367,6 @@
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(468, 149);
-            this.maskedTextBox1.Mask = "99999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 29);
-            this.maskedTextBox1.TabIndex = 97;
-            this.maskedTextBox1.ValidatingType = typeof(int);
-            // 
-            // txtCantidadDisponible
-            // 
-            this.txtCantidadDisponible.Enabled = false;
-            this.txtCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadDisponible.Location = new System.Drawing.Point(207, 258);
-            this.txtCantidadDisponible.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
-            this.txtCantidadDisponible.Size = new System.Drawing.Size(183, 24);
-            this.txtCantidadDisponible.TabIndex = 90;
             // 
             // FRM_AgregarMedicamento
             // 

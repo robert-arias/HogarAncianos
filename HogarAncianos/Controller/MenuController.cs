@@ -171,6 +171,7 @@ namespace HogarAncianos.Controller {
 
             frm_MenuPrincipal.mi_PrescripcionaAgregar.Click += new EventHandler(OpenAgregarPrescripcion);
             frm_AgregarPrescripcion.FormClosed += CerrarAgregarPrescripcion;
+            frm_AgregarPrescripcion.btnCancelar.Click += new EventHandler(CancelarAgregarPrescripcion);
 
 
             frm_MenuPrincipal.mi_PrescripcionEliminar.Click += new EventHandler(OpenEliminarPrescripcion);
@@ -567,7 +568,17 @@ namespace HogarAncianos.Controller {
         {
             frm_AgregarPrescripcion.Close();
             frm_MenuPrincipal.Show();
+            frm_AgregarPrescripcion.EstadoInicial();
         }
+
+
+        private void CancelarAgregarPrescripcion(object sender, EventArgs e)
+        {
+            frm_AgregarPrescripcion.Close();
+            frm_MenuPrincipal.Show();
+            frm_AgregarPrescripcion.EstadoInicial();
+        }
+      
 
         private void OpenEliminarPrescripcion(object sender, EventArgs e)
         {

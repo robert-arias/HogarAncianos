@@ -16,14 +16,14 @@ namespace HogarAncianos.View
     {
         AgregarPrescripcionController agregarPrescripcionController;
         ConnectionDB connectionDB;
-        
+
         public FRM_AgregarPrescripcion()
         {
             InitializeComponent();
             agregarPrescripcionController = new AgregarPrescripcionController(this);
             connectionDB = new ConnectionDB();
-            
-            
+
+
         }
         public void LimpiarBusqueda()
         {
@@ -37,19 +37,26 @@ namespace HogarAncianos.View
         }
         public void ActivarCampos()
         {
-           
+
             txtCantidad.Enabled = true;
             txtFechaCaducidad.Enabled = true;
             txtCedula.Enabled = false;
             txtCodigo.Enabled = true;
 
-            btnAgregarMedicamento.Enabled = true;
+           
             btnVerificarMedicamento.Enabled = true;
             btnEliminarmMedicamento.Enabled = true;
             btnAgregar.Enabled = true;
             btnCancelar.Enabled = true;
         }
-        
+
+        public void ActivarAgregarMedicamento()
+        {
+            btnAgregarMedicamento.Enabled = true;
+            txtCantidad.Enabled = true;
+            txtFechaCaducidad.Enabled = true;
+        }
+
         public void EstadoInicial()
         {
             txtNombrePaciente.Enabled = false;
@@ -82,6 +89,42 @@ namespace HogarAncianos.View
 
         }
 
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar la prescripción codigo: " + tbNumero.Text +"  "+ " al paciente:  " + txtNombrePaciente.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void EstadoInicialMedicamento()
+        {
+            
+            txtNombre.Enabled = false;
+            txtCantidad.Enabled = false;
+            txtFechaCaducidad.Enabled = false;     
+          
+          
+
+
+            btnAgregarMedicamento.Enabled = false;
+            btnVerificarMedicamento.Enabled = true;
+                                      
+            txtNombre.Text = "";
+            txtCantidad.Text = "";
+            txtFechaCaducidad.Text = "";          
+            txtCodigo.Text = "";
+            labelCantidadDisponible.Text = "";
+
+
+
+
+        }
+
         public void MensajeInformativo(string message)
         {
             MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -94,7 +137,7 @@ namespace HogarAncianos.View
 
         public bool VerificarPaciente()
         {
-            if(!string.IsNullOrEmpty(txtCedula.Text))
+            if (!string.IsNullOrEmpty(txtCedula.Text) && txtCedula.Text.Length >= 9)
             {
 
                 return true;
@@ -103,7 +146,45 @@ namespace HogarAncianos.View
             return false;
         }
 
-        private bool VerificarMedicamento(string codigo)
+        public void ActualizarCantidad(string codigo, int cantidad)
+        {
+
+            foreach (DataGridViewRow row in dtgMedicamento.Rows)
+            {
+
+                if (row.Cells["Codigo"].Value.ToString().Equals(codigo))
+                {
+                    dtgMedicamento[row.Cells["CantidadPrescrita"].ColumnIndex, row.Index].Value = int.Parse(dtgMedicamento[2, row.Index].Value.ToString()) + cantidad;
+                    dtgMedicamento.Refresh();
+
+                }
+
+
+            }
+        }
+
+        public int RetornarCantidadDisponible(string codigo)
+        {
+            int cantidadObtenida = 0;
+
+            foreach (DataGridViewRow row in dtgMedicamento.Rows)
+            {
+
+                if (row.Cells["Codigo"].Value.ToString().Equals(codigo))
+                {
+                    cantidadObtenida = int.Parse(dtgMedicamento[2, row.Index].Value.ToString());
+                    
+
+                }
+
+
+            }
+
+
+            return cantidadObtenida;
+        }
+
+        public bool VerificarMedicamento(string codigo)
         {
             foreach (DataGridViewRow row in dtgMedicamento.Rows)
             {
@@ -111,7 +192,7 @@ namespace HogarAncianos.View
                 {
                     return true;
                 }
-              
+
             }
             return false;
         }
@@ -133,9 +214,9 @@ namespace HogarAncianos.View
             {
                 if (!string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtCantidad.Text) && !string.IsNullOrEmpty(txtFechaCaducidad.Text))
                 {
-                    
 
-                    if (int.Parse(txtCantidad.Text)<= int.Parse(labelCantidadDisponible.Text))
+
+                    if (int.Parse(txtCantidad.Text) <= int.Parse(labelCantidadDisponible.Text))
                     {
                         dtgMedicamento.Rows.Add(txtCodigo.Text, txtNombre.Text, txtCantidad.Text, txtFechaCaducidad.Text);
                         //connectionDB.UpdateCantidadDisponibleMedicamento(txtCodigo.Text, int.Parse(txtCantidad.Text));
@@ -152,24 +233,26 @@ namespace HogarAncianos.View
                     {
                         MensajeError("La cantidad prescrita es mayor que la cantidad disponible ");
                     }
-                   
+
                 }
                 else
                 {
-                    MensajeError("Hay campos vacios");
+                    MensajeError("Hay campos vacios.");
                 }
             }
             else
             {
-                MensajeInformativo("El medicamento ingresado ya existe en la lista.");
+                txtFechaCaducidad.Enabled = false;
+                ActualizarCantidad(txtCodigo.Text, int.Parse(txtCantidad.Text));
+                Console.WriteLine("Entro al else");
             }
-                
+
 
         }
 
         public Prescripcion GetPrescripcion()
         {
-            return new Prescripcion(int.Parse(tbNumero.Text),txtCedula.Text);
+            return new Prescripcion(int.Parse(tbNumero.Text), txtCedula.Text);
         }
 
         public List<Prescripcion_Medicamentos> GetPrescripcionMedicamentos()
@@ -192,21 +275,75 @@ namespace HogarAncianos.View
         }
 
 
-
+      
+       
         public void EliminarMedicamento()
         {
-
-            int index = dtgMedicamento.CurrentCell.RowIndex;
-            if (index > -1)
+            try
             {
-                dtgMedicamento.Rows.RemoveAt(index);
-                dtgMedicamento.Refresh();
+                int index = dtgMedicamento.CurrentCell.RowIndex;
+                if (index > -1)
+                {
+                    dtgMedicamento.Rows.RemoveAt(index);
+                    dtgMedicamento.Refresh();
+                }
+            }
+            catch (NullReferenceException)
+            {
+                MensajeError("Debe seleccionar el medicamento a eliminar.");
+            }
+         
+        }
+
+
+        public static void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+        public static void SoloLetras(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten letras.");
             }
         }
 
 
-       
 
 
     }
+
+
+
+
 }
