@@ -259,9 +259,8 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(129, 37);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(442, 28);
+            this.txtBuscar.Size = new System.Drawing.Size(442, 20);
             this.txtBuscar.TabIndex = 16;
             // 
             // label1
