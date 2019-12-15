@@ -38,28 +38,24 @@ PRIMARY KEY(cedula));
 
 CREATE TABLE 'Prescripcion'(
 'num' INTEGER,
-'cedula_paciente'TEXT,
-PRIMARY KEY(num));
-FOREIGN KEY (cedula_paciente) REFERENCES Pacientes(cedula);
-)
-
+'cedula_paciente' TEXT,
+PRIMARY KEY(num),
+FOREIGN KEY (cedula_paciente) REFERENCES Pacientes(cedula));
 
 CREATE TABLE 'Prescripcion_Medicamentos'(
 'num' INTEGER,
 'codigo_medicamento' TEXT,
 'fecha_caducidad' TEXT,
-PRIMARY KEY(num,'codigo_medicamento');
-FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento);
-)
+PRIMARY KEY(num, codigo_medicamento),
+FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento),
+FOREIGN KEY (num) REFERENCES Prescripcion(num));
 
-
-
-
-CREATE TABLE "Usuarios" (
-	'usuario'	TEXT,
-	'contrasenia'	TEXT,
-	'rol'	TEXT,
-	PRIMARY KEY("usuario"));
+CREATE TABLE usuarios
+('usuario' text,
+'contrasenia' blob,
+'cedula_empleado' text,
+primary key(usuario),
+foreign key(cedula_empleado) references Empleados(cedula));
 
 CREATE TABLE 'Productos_Higiene'
 (
@@ -67,7 +63,7 @@ CREATE TABLE 'Productos_Higiene'
 'nombre_producto' TEXT,
 'tipo_producto' TEXT,
 'descripcion' TEXT,
- 'cantidad' INTEGER,
+'cantidad' INTEGER,
  PRIMARY KEY(identificador_producto));
  
 CREATE TABLE "Inventario_Productos" (
@@ -86,4 +82,3 @@ CREATE TABLE "Salida_Productos"(
 "cedula_empleado" TEXT,
 FOREIGN KEY (identificador_producto) REFERENCES Productos_Higiene(identificador_producto),
 FOREIGN KEY (cedula_empleado) REFERENCES Empleados(cedula));
-
