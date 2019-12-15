@@ -17,16 +17,14 @@ namespace HogarAncianos.Controller
             this.FRM_ConsultarUsuario = FRM_ConsultarUsuario;
             connectionDB = new ConnectionDB();
             AgregarEventosConsultarUsuario();
-            //  FRM_ConsultarUsuario.FilldtgUsuarios(connectionDB.GetAllUsuarios());
+           
         }
 
         public void AgregarEventosConsultarUsuario()
         {
-            //frm_ModificarUsuario.btnModificar.Click += new EventHandler(modificarUsuario);
-            //frm_ModificarUsuario.btnLimpiar.Click += new EventHandler(limpiar);
-            //frm_ModificarUsuario.cbUsuario.SelectedIndexChanged += new EventHandler(llenarCampos);
+           
             FRM_ConsultarUsuario.Load += new EventHandler(FilldtgUsuarios);
-            FRM_ConsultarUsuario.btnReporte.Click += new EventHandler(RealizarReporte);
+            
         }
 
         public void FilldtgUsuarios(object sender, EventArgs e)
@@ -34,8 +32,6 @@ namespace HogarAncianos.Controller
             FRM_ConsultarUsuario.FilldtgUsuarios(connectionDB.GetAllUsuarios());
         }
 
-        private void RealizarReporte(object sender, EventArgs e) {
-            FRM_ConsultarUsuario.RealizarReporte();
-        }
+        
     }
 }

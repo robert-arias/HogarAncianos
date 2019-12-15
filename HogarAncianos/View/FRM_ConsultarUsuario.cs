@@ -17,12 +17,12 @@ namespace HogarAncianos.View
     public partial class FRM_ConsultarUsuario : Form
     {
         BuscarUsuarioController buscarUsuarioController;
-        FRM_ReporteUsuarioPrueba reporteUsuarioPrueba;
+       
         public FRM_ConsultarUsuario()
         {
             InitializeComponent();
             buscarUsuarioController = new BuscarUsuarioController(this);
-            reporteUsuarioPrueba = new FRM_ReporteUsuarioPrueba();
+           
         }
 
         private void SetdtUsuarios()
@@ -43,26 +43,7 @@ namespace HogarAncianos.View
             dtUsuarios.DataSource = usuarios.Tables[0];             
         }
 
-        public void RealizarReporte() {
-            DataSetUsuario dataSetUsuario = new DataSetUsuario();
-            int fila = dtUsuarios.Rows.Count - 2;   
-            for (int i = 0; i <= fila; i++) {
-                dataSetUsuario.Tables[0].Rows.Add
-                    (new object[] {    dtUsuarios[0, i].Value.ToString(),
-                           dtUsuarios[1, i].Value.ToString(),
-                           dtUsuarios[2, i].Value.ToString()}
-                    );
-            }
-
-            ReportDocument report = new ReportDocument();
-            string fileName = "View\\CrystalReportsUsuario.rpt";
-            string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, fileName);
-            Console.WriteLine(path);
-            report.Load(path);
-            report.SetDataSource(dataSetUsuario);
-            reporteUsuarioPrueba.crystalReportViewer1.ReportSource = report;
-            reporteUsuarioPrueba.ShowDialog();
-        }
+        
 
     }
 }

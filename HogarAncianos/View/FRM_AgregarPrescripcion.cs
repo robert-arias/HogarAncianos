@@ -231,13 +231,13 @@ namespace HogarAncianos.View
                     }
                     else
                     {
-                        MensajeError("La cantidad prescrita es mayor que la cantidad disponible ");
+                        MensajeError("La cantidad prescrita es mayor que la cantidad disponible. ");
                     }
 
                 }
                 else
                 {
-                    MensajeError("Hay campos vacios.");
+                    MensajeError("Verifique los datos, hay campos que se encuentran vacios.");
                 }
             }
             else

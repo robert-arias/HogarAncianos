@@ -158,12 +158,6 @@
       <DependentUpon>CrystalReportPrescripcion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\CrystalReportsUsuario.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportsUsuario.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="View\DataSetEmpleados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,17 +177,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPrescripcion.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataSetUsuario.cs">
-      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataSetUsuario.Designer.cs">
-      <DependentUpon>DataSetUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataSetUsuario1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_AgregarEmpleado.cs">
       <SubType>Form</SubType>
@@ -363,12 +346,6 @@
     <Compile Include="View\FRM_ReportePacientes.Designer.cs">
       <DependentUpon>FRM_ReportePacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FRM_ReporteUsuarioPrueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FRM_ReporteUsuarioPrueba.Designer.cs">
-      <DependentUpon>FRM_ReporteUsuarioPrueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FRM_SalidaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,10 +376,6 @@
     <EmbeddedResource Include="View\CrystalReportPrescripcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportPrescripcion.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CrystalReportsUsuario.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportsUsuario.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_AgregarEmpleado.resx">
       <DependentUpon>FRM_AgregarEmpleado.cs</DependentUpon>
@@ -488,9 +461,6 @@
     <EmbeddedResource Include="View\FRM_ReportePacientes.resx">
       <DependentUpon>FRM_ReportePacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FRM_ReporteUsuarioPrueba.resx">
-      <DependentUpon>FRM_ReporteUsuarioPrueba.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_SalidaProductos.resx">
       <DependentUpon>FRM_SalidaProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,17 +517,6 @@
     </None>
     <None Include="View\DataSetPrescripcion.xss">
       <DependentUpon>DataSetPrescripcion.xsd</DependentUpon>
-    </None>
-    <None Include="View\DataSetUsuario.xsc">
-      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
-    </None>
-    <None Include="View\DataSetUsuario.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetUsuario1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\DataSetUsuario.xss">
-      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

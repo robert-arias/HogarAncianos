@@ -21,6 +21,62 @@ namespace HogarAncianos.View
             modificarPrescripcionController = new ModificarPrescripcionController(this);
         }
 
+        public static void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+        public static void SoloLetras(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten letras.");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void EstadoInicial()
         {
@@ -29,7 +85,9 @@ namespace HogarAncianos.View
             txtCodigo.Enabled = false;
             txtFechaCaducidad.Enabled = false;
             txtCantidad.Enabled = false;
+            txtCantidadPrescritaNueva.Enabled = false;
 
+            txtCantidadPrescritaNueva.Text = "";
             txtCedulaPaciente.Text = "";
             txtNombrePaciente.Text = "";
             txtCodigo.Text = "";
@@ -63,7 +121,8 @@ namespace HogarAncianos.View
             btnModificar.Enabled = true;
             btnCancelar.Enabled = true;
             txtFechaCaducidad.Enabled = true;
-            txtCantidad.Enabled = true;
+            txtCantidad.Enabled = false;
+            txtCantidadPrescritaNueva.Enabled = true;
         }
 
 
@@ -124,7 +183,7 @@ namespace HogarAncianos.View
 
         public bool VerificarPaciente()
         {
-            if (!string.IsNullOrEmpty(txtCedulaPaciente.Text))
+            if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && txtCedulaPaciente.Text.Length >= 9)
             {
 
                 return true;
@@ -201,6 +260,8 @@ namespace HogarAncianos.View
             txtCodigo.Text = "";
             txtFechaCaducidad.Text = "";
             txtCantidad.Text = "";
+            labelCantidadDisponible.Text = "";
+            txtCantidadPrescritaNueva.Text = "";
 
             btnModificar.Enabled = false;
             btnCancelar.Enabled = false;
@@ -216,9 +277,6 @@ namespace HogarAncianos.View
                 return false;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
