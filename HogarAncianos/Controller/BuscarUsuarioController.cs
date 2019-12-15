@@ -23,7 +23,7 @@ namespace HogarAncianos.Controller
         public void AgregarEventosConsultarUsuario()
         {
             frm_ConsultarUsuario.btnBuscar.Click += new EventHandler(BuscarBoton);
-            frm_ConsultarUsuario.btnReporte.Click += new EventHandler(RealizarReporte);
+            
             frm_ConsultarUsuario.txtBuscar.KeyDown += new KeyEventHandler(BuscarEnter);
             frm_ConsultarUsuario.btnCancelar.Click += new EventHandler(Cancelar);
         }
@@ -51,8 +51,6 @@ namespace HogarAncianos.Controller
                 frm_ConsultarUsuario.ShowMessage("Verifique que los datos de la búsqueda sean correctos.");
         }
 
-        private void RealizarReporte(object sender, EventArgs e) {
-            frm_ConsultarUsuario.RealizarReporte();
-        }
+      
     }
 }
