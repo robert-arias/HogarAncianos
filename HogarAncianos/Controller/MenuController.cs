@@ -280,7 +280,7 @@ namespace HogarAncianos.Controller {
         private void CerrarBuscarProductos(object sender, EventArgs e) {
             frm_BuscarProducto.Close();
             frm_MenuPrincipal.Show();
-            //frm_BuscarProducto.EstadoInicial();
+            frm_BuscarProducto.EstadoInicial();
         }
 
         private void CerrarAgregarProductoHigieneInventario(object sender, EventArgs e)
