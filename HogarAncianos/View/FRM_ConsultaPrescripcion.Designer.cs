@@ -28,55 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtCodigoMedicamento = new System.Windows.Forms.TextBox();
+            this.checkBoxCodigoMedicamento = new System.Windows.Forms.CheckBox();
+            this.checkBoxFechaCaducidad = new System.Windows.Forms.CheckBox();
+            this.dateTimeFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtCedulaPaciente = new System.Windows.Forms.TextBox();
+            this.dtgConsultaPrescripcion = new System.Windows.Forms.DataGridView();
             this.Prescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReporteMedicamentos = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnTodosLosResultados = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaPrescripcion)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(727, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 34);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(727, 49);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 34);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(622, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(622, 49);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(85, 34);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.txtCodigoMedicamento);
+            this.groupBox1.Controls.Add(this.checkBoxCodigoMedicamento);
+            this.groupBox1.Controls.Add(this.checkBoxFechaCaducidad);
+            this.groupBox1.Controls.Add(this.dateTimeFechaCaducidad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(72)))));
             this.groupBox1.Location = new System.Drawing.Point(57, 99);
@@ -86,13 +86,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
             // 
-            // dateTimePicker2
+            // txtCodigoMedicamento
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(160, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(222, 26);
-            this.dateTimePicker2.TabIndex = 12;
+            this.txtCodigoMedicamento.Location = new System.Drawing.Point(594, 25);
+            this.txtCodigoMedicamento.Name = "txtCodigoMedicamento";
+            this.txtCodigoMedicamento.Size = new System.Drawing.Size(134, 26);
+            this.txtCodigoMedicamento.TabIndex = 15;
+            // 
+            // checkBoxCodigoMedicamento
+            // 
+            this.checkBoxCodigoMedicamento.AutoSize = true;
+            this.checkBoxCodigoMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCodigoMedicamento.ForeColor = System.Drawing.Color.White;
+            this.checkBoxCodigoMedicamento.Location = new System.Drawing.Point(399, 28);
+            this.checkBoxCodigoMedicamento.Name = "checkBoxCodigoMedicamento";
+            this.checkBoxCodigoMedicamento.Size = new System.Drawing.Size(182, 24);
+            this.checkBoxCodigoMedicamento.TabIndex = 14;
+            this.checkBoxCodigoMedicamento.Text = "Codigo medicamento:";
+            this.checkBoxCodigoMedicamento.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFechaCaducidad
+            // 
+            this.checkBoxFechaCaducidad.AutoSize = true;
+            this.checkBoxFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFechaCaducidad.ForeColor = System.Drawing.Color.White;
+            this.checkBoxFechaCaducidad.Location = new System.Drawing.Point(9, 28);
+            this.checkBoxFechaCaducidad.Name = "checkBoxFechaCaducidad";
+            this.checkBoxFechaCaducidad.Size = new System.Drawing.Size(154, 24);
+            this.checkBoxFechaCaducidad.TabIndex = 13;
+            this.checkBoxFechaCaducidad.Text = "Fecha caducidad:";
+            this.checkBoxFechaCaducidad.UseVisualStyleBackColor = true;
+            // 
+            // dateTimeFechaCaducidad
+            // 
+            this.dateTimeFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeFechaCaducidad.Location = new System.Drawing.Point(160, 28);
+            this.dateTimeFechaCaducidad.Name = "dateTimeFechaCaducidad";
+            this.dateTimeFechaCaducidad.Size = new System.Drawing.Size(222, 26);
+            this.dateTimeFechaCaducidad.TabIndex = 12;
             // 
             // label2
             // 
@@ -105,26 +136,26 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Cedula del paciente:";
             // 
-            // textBox2
+            // txtCedulaPaciente
             // 
-            this.textBox2.Location = new System.Drawing.Point(164, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(440, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtCedulaPaciente.Location = new System.Drawing.Point(164, 50);
+            this.txtCedulaPaciente.Name = "txtCedulaPaciente";
+            this.txtCedulaPaciente.Size = new System.Drawing.Size(440, 20);
+            this.txtCedulaPaciente.TabIndex = 10;
             // 
-            // dataGridView1
+            // dtgConsultaPrescripcion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgConsultaPrescripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgConsultaPrescripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prescripcion,
             this.Codigo,
             this.Nombre,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(57, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(734, 170);
-            this.dataGridView1.TabIndex = 110;
+            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(57, 212);
+            this.dtgConsultaPrescripcion.Name = "dtgConsultaPrescripcion";
+            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(734, 170);
+            this.dtgConsultaPrescripcion.TabIndex = 110;
             // 
             // Prescripcion
             // 
@@ -167,47 +198,16 @@
             this.btnReporteMedicamentos.Text = "Realizar reporte de resultados";
             this.btnReporteMedicamentos.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnTodosLosResultados
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(12, 404);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 34);
-            this.button3.TabIndex = 112;
-            this.button3.Text = "Todos los resultados";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(594, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 26);
-            this.textBox3.TabIndex = 15;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(399, 28);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(182, 24);
-            this.checkBox2.TabIndex = 14;
-            this.checkBox2.Text = "Codigo medicamento:";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(9, 28);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(154, 24);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Fecha caducidad:";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnTodosLosResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTodosLosResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTodosLosResultados.Location = new System.Drawing.Point(12, 404);
+            this.btnTodosLosResultados.Name = "btnTodosLosResultados";
+            this.btnTodosLosResultados.Size = new System.Drawing.Size(256, 34);
+            this.btnTodosLosResultados.TabIndex = 112;
+            this.btnTodosLosResultados.Text = "Todos los resultados";
+            this.btnTodosLosResultados.UseVisualStyleBackColor = false;
             // 
             // FRM_ConsultaPrescripcion
             // 
@@ -215,19 +215,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(842, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnTodosLosResultados);
             this.Controls.Add(this.btnReporteMedicamentos);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dtgConsultaPrescripcion);
+            this.Controls.Add(this.txtCedulaPaciente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnBuscar);
             this.Name = "FRM_ConsultaPrescripcion";
             this.Text = "FRM_ConsultaPrescripcion";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaPrescripcion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,22 +235,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.Button btnReporteMedicamentos;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtCedulaPaciente;
+        public System.Windows.Forms.DateTimePicker dateTimeFechaCaducidad;
+        public System.Windows.Forms.DataGridView dtgConsultaPrescripcion;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        public System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        public System.Windows.Forms.Button btnReporteMedicamentos;
+        public System.Windows.Forms.TextBox txtCodigoMedicamento;
+        public System.Windows.Forms.CheckBox checkBoxCodigoMedicamento;
+        public System.Windows.Forms.CheckBox checkBoxFechaCaducidad;
+        public System.Windows.Forms.Button btnTodosLosResultados;
     }
 }
