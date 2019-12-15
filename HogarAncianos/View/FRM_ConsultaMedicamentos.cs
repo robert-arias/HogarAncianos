@@ -27,6 +27,15 @@ namespace HogarAncianos.View
 
         public void EstadoInicial()
         {
+            LimpiarBusqueda();
+            txtBuscar.Text = "";
+            rbNombre.Checked = false;
+            rbCodigo.Checked = false;
+
+        }
+
+        public void LimpiarBusqueda()
+        {
             do
             {
                 foreach (DataGridViewRow row in dtgMedicamentos.Rows)
@@ -34,7 +43,6 @@ namespace HogarAncianos.View
                     dtgMedicamentos.Rows.Remove(row);
                 }
             } while (dtgMedicamentos.Rows.Count >= 1);
-
         }
 
        
@@ -64,7 +72,18 @@ namespace HogarAncianos.View
         public bool verificar()
         {
             bool verificar = false;
-            if (!string.IsNullOrEmpty(txtBuscar.Text))
+            
+           if (!string.IsNullOrEmpty(txtBuscar.Text) && !rbCodigo.Checked && !rbNombre.Checked)
+            {
+                verificar = false;
+            }
+
+            if (string.IsNullOrEmpty(txtBuscar.Text) && !rbCodigo.Checked && !rbNombre.Checked)
+            {
+                verificar = false;
+            }
+
+            if (!string.IsNullOrEmpty(txtBuscar.Text) && (rbCodigo.Checked || rbNombre.Checked) )
             {
                 verificar = true;
 

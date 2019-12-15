@@ -404,15 +404,17 @@ namespace HogarAncianos.Controller {
         private void CerrarEliminarMedicamentos(object sender, EventArgs e)
         {
             frm_EliminarMedicamento.Close();
-            frm_EliminarMedicamento.EstadoInicial();
+           
             frm_MenuPrincipal.Show();
+            frm_EliminarMedicamento.EstadoInicial();
         }
 
         private void CancelarEliminarMedicamentos(object sender, EventArgs e)
         {
             frm_EliminarMedicamento.Close();
-            frm_EliminarMedicamento.EstadoInicial();
+           
             frm_MenuPrincipal.Show();
+            frm_EliminarMedicamento.EstadoInicial();
         }
 
 

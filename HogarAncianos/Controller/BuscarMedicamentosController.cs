@@ -44,7 +44,15 @@ namespace HogarAncianos.Controller
 
         public void TodosLosMedicamentos(object sender, EventArgs e)
         {
-            FRM_ConsultaMedicamentos.FillBusqueda(connectionDB.GetAllMedicamento());
+            if(connectionDB.GetAllMedicamento().Tables[0].Rows.Count > 0)
+            {
+                FRM_ConsultaMedicamentos.FillBusqueda(connectionDB.GetAllMedicamento());
+            }
+            else
+            {
+                FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados.");
+            }
+           
 
         }
 
