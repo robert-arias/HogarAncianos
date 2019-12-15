@@ -108,6 +108,7 @@
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarMedicamentosController.cs" />
     <Compile Include="Controller\BuscarPacientesController.cs" />
+    <Compile Include="Controller\BuscarPrescripcionController.cs" />
     <Compile Include="Controller\BuscarProductosController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
