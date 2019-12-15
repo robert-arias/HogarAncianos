@@ -361,29 +361,31 @@ namespace HogarAncianos.View {
                 if (resultados.Rows.Count > 0) {
 
                     foreach (DataRow dataRow in resultados.Rows) {
-                        cacheBusqueda = resultados;
-                        int i = dgvResultados.Rows.Add();
-                        DataGridViewRow row = dgvResultados.Rows[i];
-                        row.Cells["Cedula"].Value = dataRow[0].ToString();
-                        row.Cells["Nombre"].Value = dataRow[1].ToString();
-                        row.Cells["Apellidos"].Value = dataRow[2].ToString();
-                        row.Cells["FechaNacimiento"].Value = dataRow[3].ToString();
-                        row.Cells["PuestoTrabajo"].Value = dataRow[6].ToString();
-                        row.Cells["Horario"].Value = dataRow[7].ToString();
-                        row.Cells["EstadoLaboral"].Value = dataRow[10].ToString();
+                        if (!dataRow[0].ToString().Equals("0")) {
+                            cacheBusqueda = resultados;
+                            int i = dgvResultados.Rows.Add();
+                            DataGridViewRow row = dgvResultados.Rows[i];
+                            row.Cells["Cedula"].Value = dataRow[0].ToString();
+                            row.Cells["Nombre"].Value = dataRow[1].ToString();
+                            row.Cells["Apellidos"].Value = dataRow[2].ToString();
+                            row.Cells["FechaNacimiento"].Value = dataRow[3].ToString();
+                            row.Cells["PuestoTrabajo"].Value = dataRow[6].ToString();
+                            row.Cells["Horario"].Value = dataRow[7].ToString();
+                            row.Cells["EstadoLaboral"].Value = dataRow[10].ToString();
 
-                        if (dgvResultados.Columns.Contains("Telefono"))
-                            row.Cells["Telefono"].Value = dataRow[4].ToString();
-                        if (dgvResultados.Columns.Contains("Direccion"))
-                            row.Cells["Direccion"].Value = dataRow[5].ToString();
-                        if (dgvResultados.Columns.Contains("Salario"))
-                            row.Cells["Salario"].Value = dataRow[8].ToString();
-                        if (dgvResultados.Columns.Contains("FechaContratacion"))
-                            row.Cells["FechaContratacion"].Value = dataRow[9].ToString();
-                        if (dgvResultados.Columns.Contains("Correos")) {
-                            DataTable dtCorreos = db.GetCorreosEmpleado(dataRow[0].ToString());
-                            DataGridViewComboBoxCell correosCell = (row.Cells["Correos"] as DataGridViewComboBoxCell);
-                            AddComboBoxCell(dtCorreos, correosCell);
+                            if (dgvResultados.Columns.Contains("Telefono"))
+                                row.Cells["Telefono"].Value = dataRow[4].ToString();
+                            if (dgvResultados.Columns.Contains("Direccion"))
+                                row.Cells["Direccion"].Value = dataRow[5].ToString();
+                            if (dgvResultados.Columns.Contains("Salario"))
+                                row.Cells["Salario"].Value = dataRow[8].ToString();
+                            if (dgvResultados.Columns.Contains("FechaContratacion"))
+                                row.Cells["FechaContratacion"].Value = dataRow[9].ToString();
+                            if (dgvResultados.Columns.Contains("Correos")) {
+                                DataTable dtCorreos = db.GetCorreosEmpleado(dataRow[0].ToString());
+                                DataGridViewComboBoxCell correosCell = (row.Cells["Correos"] as DataGridViewComboBoxCell);
+                                AddComboBoxCell(dtCorreos, correosCell);
+                            }
                         }
                     }
                 }

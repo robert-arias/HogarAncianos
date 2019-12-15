@@ -30,6 +30,12 @@ namespace HogarAncianos.Controller {
             frm_BuscarEmpleados.btnBuscar.Click += new EventHandler(RealizarBusqueda);
             frm_BuscarEmpleados.txtBuscar.KeyDown += new KeyEventHandler(RealizarBusquedaEnter);
             frm_BuscarEmpleados.btnReporte.Click += new EventHandler(Reporte);
+            frm_BuscarEmpleados.btnTodosEmpleados.Click += new EventHandler(TodosEmpleados);
+        }
+
+        private void TodosEmpleados(object sender, EventArgs e) {
+            frm_BuscarEmpleados.LimpiarBusquedas();
+            frm_BuscarEmpleados.ResultadoBusqueda(connection.GetBusquedaEmpleados($"select * from Empleados"));
         }
 
         private void Reporte(object sender, EventArgs e)
