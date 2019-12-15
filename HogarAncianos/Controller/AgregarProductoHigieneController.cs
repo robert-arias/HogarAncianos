@@ -22,6 +22,8 @@ namespace HogarAncianos.Controller
             frm_AgregarProductosHigiene.btVerificar.Click += new EventHandler(VerificarIdentificador);
             frm_AgregarProductosHigiene.btLimpiar.Click += new EventHandler(BotonLimpiar);
             frm_AgregarProductosHigiene.btAgregar.Click += new EventHandler(AgregarProductoHigiene);
+            frm_AgregarProductosHigiene.txbIdentificadorProducto.KeyDown += new KeyEventHandler(VerificarIdentificadorEnter);
+           
         }
 
         private void BotonLimpiar(object sender, EventArgs e)
@@ -30,7 +32,20 @@ namespace HogarAncianos.Controller
 
         }
 
+        private void VerificarIdentificadorEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Verificar();
+                e.SuppressKeyPress = true;
+            }
+        }
         private void VerificarIdentificador(object sender, EventArgs e)
+        {
+            Verificar();
+        }
+
+        private void Verificar()
         {
             if (!String.IsNullOrEmpty(frm_AgregarProductosHigiene.GetIdentificador()))
             {
@@ -47,19 +62,25 @@ namespace HogarAncianos.Controller
 
 
             
-             private void AgregarProductoHigiene(object sender, EventArgs e) {
-                if (!frm_AgregarProductosHigiene.VerificarCampos()) {
-                    if (db.AgregarProductoHigiene(frm_AgregarProductosHigiene.GetProductoHigiene())) {
-                       frm_AgregarProductosHigiene.ShowMessage("Se ha agregado un nuevo producto de higiene con éxito.");
-                       frm_AgregarProductosHigiene.EstadoInicial();
+             private void AgregarProductoHigiene(object sender, EventArgs e)
+             {
+                if (!frm_AgregarProductosHigiene.VerificarCampos())
+                {
+                    if (frm_AgregarProductosHigiene.ShowConfirmation())
+                    {
+                        if (db.AgregarProductoHigiene(frm_AgregarProductosHigiene.GetProductoHigiene()))
+                        {
+                            frm_AgregarProductosHigiene.ShowMessage("Se ha agregado un nuevo producto de higiene con éxito.");
+                            frm_AgregarProductosHigiene.EstadoInicial();
+                        }
                     }
                     else
-                        frm_AgregarProductosHigiene.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                        frm_AgregarProductosHigiene.ShowMessage("Se ha producido un error.\nVerifique los datos.");    
                 }
-                else {
-                    frm_AgregarProductosHigiene.ShowMessage("Algunos campos se encuentran vacíos. ");
+                    else 
+                        frm_AgregarProductosHigiene.ShowMessage("Algunos campos se encuentran vacíos. ");
                 }
-            }
+             }
 
              
         }

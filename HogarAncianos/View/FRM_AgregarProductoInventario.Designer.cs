@@ -162,7 +162,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(215, 22);
             this.dtpFecha.TabIndex = 4;
-            this.dtpFecha.Value = new System.DateTime(2019, 12, 3, 18, 21, 54, 0);
+            this.dtpFecha.Value = new System.DateTime(2019, 12, 14, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -265,10 +265,10 @@
         private System.Windows.Forms.RadioButton rbLimpieza;
         private System.Windows.Forms.TextBox txbCantidad;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
-        private System.Windows.Forms.TextBox txbIdentificadorProducto;
         public System.Windows.Forms.Button btVerificar;
         public System.Windows.Forms.Button btLimpiar;
         public System.Windows.Forms.Button btAgregar;
         public System.Windows.Forms.Button btCancelar;
+        public System.Windows.Forms.TextBox txbIdentificadorProducto;
     }
 }

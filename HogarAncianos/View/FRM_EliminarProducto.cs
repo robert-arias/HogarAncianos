@@ -57,7 +57,7 @@ namespace HogarAncianos.View
         {
             btVerificar.Enabled = true;
             btEliminar.Enabled = false;
-            btCancelar.Enabled = false;
+            btCancelar.Enabled = true;
             txbIdentificadorProducto.Enabled = false;
 
             txbCantidad.Text = "0";

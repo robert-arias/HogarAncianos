@@ -51,10 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -95,12 +103,15 @@
     <Compile Include="Controller\AgregarPacienteCotroller.cs" />
     <Compile Include="Controller\AgregarPrescripcionController.cs" />
     <Compile Include="Controller\AgregarProductoHigieneController.cs" />
+    <Compile Include="Controller\AgregarProductoInventarioController.cs" />
     <Compile Include="Controller\AgregarUsuarioController.cs" />
     <Compile Include="Controller\BuscarEmpleadosController.cs" />
     <Compile Include="Controller\BuscarMedicamentosController.cs" />
     <Compile Include="Controller\BuscarPacientesController.cs" />
+    <Compile Include="Controller\BuscarProductosController.cs" />
     <Compile Include="Controller\BuscarUsuarioController.cs" />
     <Compile Include="Controller\EliminarMedicamentoController.cs" />
+    <Compile Include="Controller\EliminarProductoController.cs" />
     <Compile Include="Controller\EliminarUsuarioController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MenuController.cs" />
@@ -110,6 +121,7 @@
     <Compile Include="Controller\ModificarPrescripcionController.cs" />
     <Compile Include="Controller\ModificarProductoHigieneController.cs" />
     <Compile Include="Controller\ModificarUsuarioController.cs" />
+    <Compile Include="Controller\SalidaProductosController.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Inventario_Productos.cs" />
@@ -231,11 +243,11 @@
     <Compile Include="View\FRM_BuscarEmpleados.Designer.cs">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FRM_BuscarProducto.cs">
+    <Compile Include="View\FRM_BuscarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FRM_BuscarProducto.Designer.cs">
-      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    <Compile Include="View\FRM_BuscarProductos.Designer.cs">
+      <DependentUpon>FRM_BuscarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FRM_ConsultaMedicamentos.cs">
       <SubType>Form</SubType>
@@ -410,8 +422,8 @@
     <EmbeddedResource Include="View\FRM_BuscarEmpleados.resx">
       <DependentUpon>FRM_BuscarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FRM_BuscarProducto.resx">
-      <DependentUpon>FRM_BuscarProducto.cs</DependentUpon>
+    <EmbeddedResource Include="View\FRM_BuscarProductos.resx">
+      <DependentUpon>FRM_BuscarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRM_ConsultaMedicamentos.resx">
       <DependentUpon>FRM_ConsultaMedicamentos.cs</DependentUpon>

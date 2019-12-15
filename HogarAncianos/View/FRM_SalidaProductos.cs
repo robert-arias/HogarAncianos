@@ -10,7 +10,7 @@ namespace HogarAncianos.View {
     public partial class FRM_SalidaProductos : Form
     {
         private SalidaProductosController salidaProductosController;
-        private int cantidad;
+        
         private Usuario usuario;
 
         public FRM_SalidaProductos()
@@ -18,7 +18,7 @@ namespace HogarAncianos.View {
             InitializeComponent();
             salidaProductosController = new SalidaProductosController(this);
             usuario = null;
-            cantidad = 0;
+            
         }
 
         public void SetEmpleado(Usuario usuario) {
@@ -47,18 +47,21 @@ namespace HogarAncianos.View {
             btLimpiar.Enabled = true;
             dtpFecha.Enabled = false;
             txbCantidadSustraer.Enabled = false;
+            txbCantidadExistente.Enabled = false;
+            btCancelar.Enabled = true;
 
-            txbCedula.Text = "";
-            txbNombreCompleto.Text = "";
+            
             txbCantidadSustraer.Text = "0";
+            txbCantidadExistente.Text = "0";
             txbIdentificadorProducto.Text = "";
             txbNombre.Text = "";
-            cantidad = 0;
+            
         }
         public bool VericarCantidad()
         {
             int c = Convert.ToInt32(txbCantidadSustraer.Text);
-            return (cantidad - c) >= 0;
+            int e = Convert.ToInt32(txbCantidadExistente.Text);
+            return (e - c) >= 0;
         }
 
         
@@ -69,6 +72,8 @@ namespace HogarAncianos.View {
                 rbHigienePersonal.Checked = true;
             else
                 rbLimpieza.Checked = true;
+
+            txbCantidadExistente.Text = data.Tables[0].Rows[0][4].ToString();
         }
         public void ShowMessage(string message)
         {
@@ -78,15 +83,16 @@ namespace HogarAncianos.View {
         public void ActivarCampos()
         {
             txbIdentificadorProducto.Enabled = true;
-            txbNombre.Enabled = true;
-            rbHigienePersonal.Enabled = true;
-            rbLimpieza.Enabled = true;
-            rbHigienePersonal.Checked = true;
-            btSustraer.Enabled = false;
+            txbNombre.Enabled = false;
+            rbHigienePersonal.Enabled = false;
+            rbLimpieza.Enabled = false;
+            btSustraer.Enabled = true;
             btVerificar.Enabled = true;
             btLimpiar.Enabled = true;
-            dtpFecha.Enabled = true;
+            dtpFecha.Enabled = false;
             txbCantidadSustraer.Enabled = true;
+            txbCantidadExistente.Enabled = false;
+            btCancelar.Enabled = true;
         }
 
         public bool VerificarCampos()
@@ -102,6 +108,17 @@ namespace HogarAncianos.View {
                 return false;
             }
 
+        }
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea sustraer la cantidad " + txbCantidadSustraer.Text + ", \n del producto " + txbNombre.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Salida_Productos GetSalidaProducto()

@@ -52,7 +52,7 @@
             this.PuestoTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoLaboral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -414,16 +414,16 @@
             this.EstadoLaboral.ReadOnly = true;
             this.EstadoLaboral.Width = 147;
             // 
-            // button1
+            // btnReporte
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(697, 581);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Realizar reporte de resultados";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnReporte.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Location = new System.Drawing.Point(697, 581);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(256, 27);
+            this.btnReporte.TabIndex = 6;
+            this.btnReporte.Text = "Realizar reporte de resultados";
+            this.btnReporte.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
@@ -443,7 +443,7 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(992, 624);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -476,7 +476,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvResultados;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnReporte;
         public System.Windows.Forms.RadioButton rbApellidos;
         public System.Windows.Forms.RadioButton rbNombre;
         public System.Windows.Forms.RadioButton rbCedula;
