@@ -75,7 +75,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(851, 406);
+            this.panelContenedor.Size = new System.Drawing.Size(849, 407);
             this.panelContenedor.TabIndex = 2;
             // 
             // panel1
@@ -84,14 +84,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 40);
+            this.panel1.Size = new System.Drawing.Size(849, 40);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.ms_Menu);
-            this.panel2.Location = new System.Drawing.Point(0, 37);
+            this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(194, 369);
             this.panel2.TabIndex = 0;
@@ -124,7 +124,7 @@
             this.mi_Login.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mi_Login_IniciarSesion,
             this.mi_Login_CerrarSesion});
-            this.mi_Login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_Login.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_Login.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_Login.Name = "mi_Login";
             this.mi_Login.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -135,13 +135,13 @@
             // mi_Login_IniciarSesion
             // 
             this.mi_Login_IniciarSesion.Name = "mi_Login_IniciarSesion";
-            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(180, 26);
+            this.mi_Login_IniciarSesion.Size = new System.Drawing.Size(182, 26);
             this.mi_Login_IniciarSesion.Text = "Iniciar sesion";
             // 
             // mi_Login_CerrarSesion
             // 
             this.mi_Login_CerrarSesion.Name = "mi_Login_CerrarSesion";
-            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(180, 26);
+            this.mi_Login_CerrarSesion.Size = new System.Drawing.Size(182, 26);
             this.mi_Login_CerrarSesion.Text = "Cerrar sesion";
             // 
             // mi_Empleados
@@ -150,7 +150,7 @@
             this.mi_EmpleadosAgregar,
             this.mi_EmpleadosModificar,
             this.mi_EmpleadosBuscar});
-            this.mi_Empleados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_Empleados.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_Empleados.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_Empleados.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.mi_Empleados.Name = "mi_Empleados";
@@ -162,19 +162,19 @@
             // mi_EmpleadosAgregar
             // 
             this.mi_EmpleadosAgregar.Name = "mi_EmpleadosAgregar";
-            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(154, 26);
+            this.mi_EmpleadosAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_EmpleadosAgregar.Text = "Agregar";
             // 
             // mi_EmpleadosModificar
             // 
             this.mi_EmpleadosModificar.Name = "mi_EmpleadosModificar";
-            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(154, 26);
+            this.mi_EmpleadosModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_EmpleadosModificar.Text = "Modificar";
             // 
             // mi_EmpleadosBuscar
             // 
             this.mi_EmpleadosBuscar.Name = "mi_EmpleadosBuscar";
-            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(154, 26);
+            this.mi_EmpleadosBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_EmpleadosBuscar.Text = "Buscar";
             // 
             // mi_Medicamentos
@@ -184,7 +184,7 @@
             this.mi_MedicamentosModificar,
             this.mi_MedicamentosEliminar,
             this.mi_MedicamentosBuscar});
-            this.mi_Medicamentos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_Medicamentos.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_Medicamentos.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_Medicamentos.Name = "mi_Medicamentos";
             this.mi_Medicamentos.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -195,25 +195,25 @@
             // mi_MedicamentosAgregar
             // 
             this.mi_MedicamentosAgregar.Name = "mi_MedicamentosAgregar";
-            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(154, 26);
+            this.mi_MedicamentosAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_MedicamentosAgregar.Text = "Agregar";
             // 
             // mi_MedicamentosModificar
             // 
             this.mi_MedicamentosModificar.Name = "mi_MedicamentosModificar";
-            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(154, 26);
+            this.mi_MedicamentosModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_MedicamentosModificar.Text = "Modificar";
             // 
             // mi_MedicamentosEliminar
             // 
             this.mi_MedicamentosEliminar.Name = "mi_MedicamentosEliminar";
-            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(154, 26);
+            this.mi_MedicamentosEliminar.Size = new System.Drawing.Size(180, 26);
             this.mi_MedicamentosEliminar.Text = "Eliminar";
             // 
             // mi_MedicamentosBuscar
             // 
             this.mi_MedicamentosBuscar.Name = "mi_MedicamentosBuscar";
-            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(154, 26);
+            this.mi_MedicamentosBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_MedicamentosBuscar.Text = "Buscar";
             // 
             // mi_pacientes
@@ -222,7 +222,7 @@
             this.mi_pacientesAgregar,
             this.mi_pacientesModificar,
             this.mi_pacientesBuscar});
-            this.mi_pacientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_pacientes.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_pacientes.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_pacientes.Name = "mi_pacientes";
             this.mi_pacientes.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -233,19 +233,19 @@
             // mi_pacientesAgregar
             // 
             this.mi_pacientesAgregar.Name = "mi_pacientesAgregar";
-            this.mi_pacientesAgregar.Size = new System.Drawing.Size(154, 26);
+            this.mi_pacientesAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_pacientesAgregar.Text = "Agregar";
             // 
             // mi_pacientesModificar
             // 
             this.mi_pacientesModificar.Name = "mi_pacientesModificar";
-            this.mi_pacientesModificar.Size = new System.Drawing.Size(154, 26);
+            this.mi_pacientesModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_pacientesModificar.Text = "Modificar";
             // 
             // mi_pacientesBuscar
             // 
             this.mi_pacientesBuscar.Name = "mi_pacientesBuscar";
-            this.mi_pacientesBuscar.Size = new System.Drawing.Size(154, 26);
+            this.mi_pacientesBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_pacientesBuscar.Text = "Buscar";
             // 
             // mi_Prescripcion
@@ -255,7 +255,7 @@
             this.mi_PrescripcionModificar,
             this.mi_PrescripcionEliminar,
             this.mi_PrescripcionBuscar});
-            this.mi_Prescripcion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_Prescripcion.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_Prescripcion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_Prescripcion.Name = "mi_Prescripcion";
             this.mi_Prescripcion.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -266,25 +266,25 @@
             // mi_PrescripcionaAgregar
             // 
             this.mi_PrescripcionaAgregar.Name = "mi_PrescripcionaAgregar";
-            this.mi_PrescripcionaAgregar.Size = new System.Drawing.Size(154, 26);
+            this.mi_PrescripcionaAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_PrescripcionaAgregar.Text = "Agregar";
             // 
             // mi_PrescripcionModificar
             // 
             this.mi_PrescripcionModificar.Name = "mi_PrescripcionModificar";
-            this.mi_PrescripcionModificar.Size = new System.Drawing.Size(154, 26);
+            this.mi_PrescripcionModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_PrescripcionModificar.Text = "Modificar";
             // 
             // mi_PrescripcionEliminar
             // 
             this.mi_PrescripcionEliminar.Name = "mi_PrescripcionEliminar";
-            this.mi_PrescripcionEliminar.Size = new System.Drawing.Size(154, 26);
+            this.mi_PrescripcionEliminar.Size = new System.Drawing.Size(180, 26);
             this.mi_PrescripcionEliminar.Text = "Eliminar";
             // 
             // mi_PrescripcionBuscar
             // 
             this.mi_PrescripcionBuscar.Name = "mi_PrescripcionBuscar";
-            this.mi_PrescripcionBuscar.Size = new System.Drawing.Size(154, 26);
+            this.mi_PrescripcionBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_PrescripcionBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpieza
@@ -295,7 +295,7 @@
             this.mi_ProductosLimpiezaBuscar,
             this.mi_ProductosLimpiezaEliminar,
             this.mi_ProductosLimpiezaInventario});
-            this.mi_ProductosLimpieza.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_ProductosLimpieza.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold);
             this.mi_ProductosLimpieza.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_ProductosLimpieza.Name = "mi_ProductosLimpieza";
             this.mi_ProductosLimpieza.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -306,25 +306,25 @@
             // mi_ProductosLimpiezaAgregar
             // 
             this.mi_ProductosLimpiezaAgregar.Name = "mi_ProductosLimpiezaAgregar";
-            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(159, 26);
+            this.mi_ProductosLimpiezaAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_ProductosLimpiezaAgregar.Text = "Agregar";
             // 
             // mi_ProductosLimpiezaModificar
             // 
             this.mi_ProductosLimpiezaModificar.Name = "mi_ProductosLimpiezaModificar";
-            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(159, 26);
+            this.mi_ProductosLimpiezaModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_ProductosLimpiezaModificar.Text = "Modificar";
             // 
             // mi_ProductosLimpiezaBuscar
             // 
             this.mi_ProductosLimpiezaBuscar.Name = "mi_ProductosLimpiezaBuscar";
-            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(159, 26);
+            this.mi_ProductosLimpiezaBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_ProductosLimpiezaBuscar.Text = "Buscar";
             // 
             // mi_ProductosLimpiezaEliminar
             // 
             this.mi_ProductosLimpiezaEliminar.Name = "mi_ProductosLimpiezaEliminar";
-            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(159, 26);
+            this.mi_ProductosLimpiezaEliminar.Size = new System.Drawing.Size(180, 26);
             this.mi_ProductosLimpiezaEliminar.Text = "Eliminar";
             // 
             // mi_ProductosLimpiezaInventario
@@ -333,19 +333,19 @@
             this.mi_ProductosLimpiezaAgregarInventario,
             this.mi_ProductosLimpiezaSalidaInventario});
             this.mi_ProductosLimpiezaInventario.Name = "mi_ProductosLimpiezaInventario";
-            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(159, 26);
+            this.mi_ProductosLimpiezaInventario.Size = new System.Drawing.Size(180, 26);
             this.mi_ProductosLimpiezaInventario.Text = "Inventario";
             // 
             // mi_ProductosLimpiezaAgregarInventario
             // 
             this.mi_ProductosLimpiezaAgregarInventario.Name = "mi_ProductosLimpiezaAgregarInventario";
-            this.mi_ProductosLimpiezaAgregarInventario.Size = new System.Drawing.Size(215, 26);
+            this.mi_ProductosLimpiezaAgregarInventario.Size = new System.Drawing.Size(211, 26);
             this.mi_ProductosLimpiezaAgregarInventario.Text = "Agregar Producto";
             // 
             // mi_ProductosLimpiezaSalidaInventario
             // 
             this.mi_ProductosLimpiezaSalidaInventario.Name = "mi_ProductosLimpiezaSalidaInventario";
-            this.mi_ProductosLimpiezaSalidaInventario.Size = new System.Drawing.Size(215, 26);
+            this.mi_ProductosLimpiezaSalidaInventario.Size = new System.Drawing.Size(211, 26);
             this.mi_ProductosLimpiezaSalidaInventario.Text = "Salida Producto";
             // 
             // mi_Usuarios
@@ -354,7 +354,7 @@
             this.mi_UsuariosAgregar,
             this.mi_UsuariosModificar,
             this.mi_UsuariosBuscar});
-            this.mi_Usuarios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mi_Usuarios.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mi_Usuarios.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mi_Usuarios.Name = "mi_Usuarios";
             this.mi_Usuarios.Padding = new System.Windows.Forms.Padding(4, 11, 4, 10);
@@ -365,19 +365,19 @@
             // mi_UsuariosAgregar
             // 
             this.mi_UsuariosAgregar.Name = "mi_UsuariosAgregar";
-            this.mi_UsuariosAgregar.Size = new System.Drawing.Size(154, 26);
+            this.mi_UsuariosAgregar.Size = new System.Drawing.Size(180, 26);
             this.mi_UsuariosAgregar.Text = "Agregar";
             // 
             // mi_UsuariosModificar
             // 
             this.mi_UsuariosModificar.Name = "mi_UsuariosModificar";
-            this.mi_UsuariosModificar.Size = new System.Drawing.Size(154, 26);
+            this.mi_UsuariosModificar.Size = new System.Drawing.Size(180, 26);
             this.mi_UsuariosModificar.Text = "Modificar";
             // 
             // mi_UsuariosBuscar
             // 
             this.mi_UsuariosBuscar.Name = "mi_UsuariosBuscar";
-            this.mi_UsuariosBuscar.Size = new System.Drawing.Size(154, 26);
+            this.mi_UsuariosBuscar.Size = new System.Drawing.Size(180, 26);
             this.mi_UsuariosBuscar.Text = "Buscar";
             // 
             // FRM_MenuPrincipal
@@ -385,7 +385,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(215)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(851, 406);
+            this.ClientSize = new System.Drawing.Size(849, 407);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
