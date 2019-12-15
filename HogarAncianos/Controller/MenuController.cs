@@ -164,7 +164,6 @@ namespace HogarAncianos.Controller {
 
             frm_MenuPrincipal.mi_UsuariosBuscar.Click += new EventHandler(OpenConsultarUsuario);
             frm_ConsultarUsuario.FormClosed += CerrarConsultarUsuario;
-            frm_ConsultarUsuario.btnCancelar.Click += new EventHandler(CancelarConsultarUsuario);
 
             //Prescripcion Medicamentos 
             frm_MenuPrincipal.mi_PrescripcionBuscar.Click += new EventHandler(OpenConsultarPrescripcion);
@@ -539,14 +538,7 @@ namespace HogarAncianos.Controller {
         private void CerrarConsultarUsuario(object sender, EventArgs e)
         {
             frm_ConsultarUsuario.Close();
-            //frm_ConsultarUsuario.EstadoInicial();
-            frm_MenuPrincipal.Show();
-        }
-
-        private void CancelarConsultarUsuario(object sender, EventArgs e)
-        {
-            frm_ConsultarUsuario.Close();
-           // frm_ConsultarUsuario.EstadoInicial();
+            frm_ConsultarUsuario.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 

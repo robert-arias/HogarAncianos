@@ -32,20 +32,26 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).BeginInit();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.rbUsuario = new System.Windows.Forms.RadioButton();
+            this.rbCedula = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(561, 50);
+            this.btnCancelar.Location = new System.Drawing.Point(739, 62);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 27);
+            this.btnCancelar.Size = new System.Drawing.Size(144, 33);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -54,20 +60,21 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(424, 50);
+            this.btnBuscar.Location = new System.Drawing.Point(590, 62);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(141, 33);
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(154, 54);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Location = new System.Drawing.Point(205, 66);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(234, 23);
+            this.txtBuscar.Size = new System.Drawing.Size(376, 27);
             this.txtBuscar.TabIndex = 9;
             // 
             // label1
@@ -75,29 +82,30 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(69, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Búsqueda:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dtUsuarios
+            // dgvUsuarios
             // 
-            this.dtUsuarios.AllowUserToAddRows = false;
-            this.dtUsuarios.AllowUserToDeleteRows = false;
-            this.dtUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Usuario,
-            this.Contrasenia,
-            this.Rol});
-            this.dtUsuarios.Location = new System.Drawing.Point(55, 127);
-            this.dtUsuarios.Name = "dtUsuarios";
-            this.dtUsuarios.ReadOnly = true;
-            this.dtUsuarios.Size = new System.Drawing.Size(589, 186);
-            this.dtUsuarios.TabIndex = 12;
+            this.Rol,
+            this.Empleado});
+            this.dgvUsuarios.Location = new System.Drawing.Point(74, 178);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.Size = new System.Drawing.Size(810, 229);
+            this.dgvUsuarios.TabIndex = 12;
             // 
             // Usuario
             // 
@@ -107,14 +115,6 @@
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
             // 
-            // Contrasenia
-            // 
-            this.Contrasenia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Contrasenia.HeaderText = "Contraseña";
-            this.Contrasenia.MinimumWidth = 200;
-            this.Contrasenia.Name = "Contrasenia";
-            this.Contrasenia.ReadOnly = true;
-            // 
             // Rol
             // 
             this.Rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -123,20 +123,85 @@
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
             // 
+            // Empleado
+            // 
+            this.Empleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.MinimumWidth = 200;
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Location = new System.Drawing.Point(728, 415);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(155, 33);
+            this.btnReporte.TabIndex = 13;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            // 
+            // rbUsuario
+            // 
+            this.rbUsuario.AutoSize = true;
+            this.rbUsuario.Checked = true;
+            this.rbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbUsuario.Location = new System.Drawing.Point(6, 26);
+            this.rbUsuario.Name = "rbUsuario";
+            this.rbUsuario.Size = new System.Drawing.Size(172, 24);
+            this.rbUsuario.TabIndex = 14;
+            this.rbUsuario.TabStop = true;
+            this.rbUsuario.Text = "Nombre de usuario";
+            this.rbUsuario.UseVisualStyleBackColor = true;
+            // 
+            // rbCedula
+            // 
+            this.rbCedula.AutoSize = true;
+            this.rbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCedula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rbCedula.Location = new System.Drawing.Point(188, 26);
+            this.rbCedula.Name = "rbCedula";
+            this.rbCedula.Size = new System.Drawing.Size(182, 24);
+            this.rbCedula.TabIndex = 15;
+            this.rbCedula.Text = "Cédula de empleado";
+            this.rbCedula.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbCedula);
+            this.groupBox1.Controls.Add(this.rbUsuario);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(205, 102);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(376, 69);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar por";
+            // 
             // FRM_ConsultarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(694, 386);
-            this.Controls.Add(this.dtUsuarios);
+            this.ClientSize = new System.Drawing.Size(925, 475);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnReporte);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRM_ConsultarUsuario";
-            this.Text = "FRM_ConsultarUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Buscar usuarios";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,11 +211,15 @@
 
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dtUsuarios;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        public System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        public System.Windows.Forms.RadioButton rbUsuario;
+        public System.Windows.Forms.RadioButton rbCedula;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtBuscar;
     }
 }

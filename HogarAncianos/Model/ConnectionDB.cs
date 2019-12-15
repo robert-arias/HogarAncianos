@@ -219,10 +219,29 @@ namespace HogarAncianos.Model {
             }
         }
 
-     
+
 
 
         //***********************************************************METODOS USUARIOS ****************************************************************************//
+
+
+        public DataTable GetBusquedaUsuarios(string query) {
+            try {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteDataAdapter dataSQLite = new SQLiteDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                dataSQLite.Fill(dataTable);
+                connection.Close();
+
+                return dataTable;
+            }
+            catch (SQLiteException e) {
+                connection.Close();
+                Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
 
         public bool UpdateUsuario(Usuario usuario)
         {

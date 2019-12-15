@@ -76,7 +76,7 @@ namespace HogarAncianos.Controller {
             }
             else
                 frm_BuscarEmpleados.ShowMessage("Verifique que todos los datos selecccionados e ingresados " +
-                    "sean correctos.");
+                    "sean correctos.", "Mensaje");
         }
 
     }

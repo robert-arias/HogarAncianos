@@ -122,7 +122,7 @@ namespace HogarAncianos.View {
 
             else
             {
-                ShowMessage("No hay resultados que reportar");
+                ShowMessage("No hay resultados que reportar", "Mensaje");
             }
         
 
@@ -265,8 +265,8 @@ namespace HogarAncianos.View {
             }
         }
 
-        public void ShowMessage(string message) {
-            MessageBox.Show(message, "Advertencia");
+        public void ShowMessage(string message, string title) {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void ActivarBuscarPor() {
@@ -388,10 +388,10 @@ namespace HogarAncianos.View {
                     }
                 }
                 else
-                    ShowMessage("No se han encontrado resultados para la búsqueda especificada.");
+                    ShowMessage("No se han encontrado resultados para la búsqueda especificada.", "Mensaje");
             }
             else
-                ShowMessage("No se han encontrado resultados para la busqueda especificada.");
+                ShowMessage("No se han encontrado resultados para la busqueda especificada.", "Mensaje");
         }
 
         private void AddComboBoxCell(DataTable correos, DataGridViewComboBoxCell ccc) {
