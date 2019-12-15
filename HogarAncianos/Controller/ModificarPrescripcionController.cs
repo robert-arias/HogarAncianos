@@ -50,12 +50,12 @@ namespace HogarAncianos.Controller
 
         public void ValidarCantidad(object sender, KeyPressEventArgs e)
         {
-            FRM_AgregarPrescripcion.SoloNumeros(e);
+            fRM_ModificarPrescripcion.SoloNumeros(e);
         }
 
         public void ValidarCedula(object sender, KeyPressEventArgs e)
         {
-            FRM_AgregarPrescripcion.SoloNumeros(e);
+            fRM_ModificarPrescripcion.SoloNumeros(e);
         }
 
         public void Limpiar(object sender, EventArgs e)

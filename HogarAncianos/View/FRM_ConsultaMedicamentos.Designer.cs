@@ -36,14 +36,14 @@
             this.rbNombre = new System.Windows.Forms.RadioButton();
             this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.dtgMedicamentos = new System.Windows.Forms.DataGridView();
-            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
-            this.btnResultados = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
+            this.btnResultados = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,8 @@
             // 
             this.groupBox1.Controls.Add(this.rbNombre);
             this.groupBox1.Controls.Add(this.rbCodigo);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(136, 97);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(481, 76);
@@ -104,9 +106,11 @@
             // rbNombre
             // 
             this.rbNombre.AutoSize = true;
+            this.rbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNombre.ForeColor = System.Drawing.Color.White;
             this.rbNombre.Location = new System.Drawing.Point(265, 20);
             this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(62, 17);
+            this.rbNombre.Size = new System.Drawing.Size(83, 24);
             this.rbNombre.TabIndex = 1;
             this.rbNombre.TabStop = true;
             this.rbNombre.Text = "Nombre";
@@ -115,9 +119,11 @@
             // rbCodigo
             // 
             this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCodigo.ForeColor = System.Drawing.Color.White;
             this.rbCodigo.Location = new System.Drawing.Point(108, 20);
             this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(58, 17);
+            this.rbCodigo.Size = new System.Drawing.Size(77, 24);
             this.rbCodigo.TabIndex = 0;
             this.rbCodigo.TabStop = true;
             this.rbCodigo.Text = "Codigo";
@@ -139,28 +145,6 @@
             this.dtgMedicamentos.Name = "dtgMedicamentos";
             this.dtgMedicamentos.Size = new System.Drawing.Size(645, 196);
             this.dtgMedicamentos.TabIndex = 13;
-            // 
-            // btnReporteMedicamentos
-            // 
-            this.btnReporteMedicamentos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnReporteMedicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteMedicamentos.Location = new System.Drawing.Point(463, 448);
-            this.btnReporteMedicamentos.Name = "btnReporteMedicamentos";
-            this.btnReporteMedicamentos.Size = new System.Drawing.Size(256, 26);
-            this.btnReporteMedicamentos.TabIndex = 14;
-            this.btnReporteMedicamentos.Text = "Realizar reporte de resultados";
-            this.btnReporteMedicamentos.UseVisualStyleBackColor = false;
-            // 
-            // btnResultados
-            // 
-            this.btnResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResultados.Location = new System.Drawing.Point(59, 448);
-            this.btnResultados.Name = "btnResultados";
-            this.btnResultados.Size = new System.Drawing.Size(256, 26);
-            this.btnResultados.TabIndex = 15;
-            this.btnResultados.Text = "Todos los resultados";
-            this.btnResultados.UseVisualStyleBackColor = false;
             // 
             // Codigo
             // 
@@ -197,6 +181,28 @@
             this.CantidadP.DataPropertyName = "cantidad_prescrita";
             this.CantidadP.HeaderText = "Cantidad Prescrita";
             this.CantidadP.Name = "CantidadP";
+            // 
+            // btnReporteMedicamentos
+            // 
+            this.btnReporteMedicamentos.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReporteMedicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteMedicamentos.Location = new System.Drawing.Point(463, 448);
+            this.btnReporteMedicamentos.Name = "btnReporteMedicamentos";
+            this.btnReporteMedicamentos.Size = new System.Drawing.Size(256, 26);
+            this.btnReporteMedicamentos.TabIndex = 14;
+            this.btnReporteMedicamentos.Text = "Realizar reporte de resultados";
+            this.btnReporteMedicamentos.UseVisualStyleBackColor = false;
+            // 
+            // btnResultados
+            // 
+            this.btnResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultados.Location = new System.Drawing.Point(59, 448);
+            this.btnResultados.Name = "btnResultados";
+            this.btnResultados.Size = new System.Drawing.Size(256, 26);
+            this.btnResultados.TabIndex = 15;
+            this.btnResultados.Text = "Todos los resultados";
+            this.btnResultados.UseVisualStyleBackColor = false;
             // 
             // FRM_ConsultaMedicamentos
             // 

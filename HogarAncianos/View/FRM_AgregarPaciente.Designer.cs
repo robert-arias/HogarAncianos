@@ -165,6 +165,7 @@
             this.lbSexo.TabIndex = 66;
             this.lbSexo.Text = "*";
             this.toolTipSexo.SetToolTip(this.lbSexo, "Debe seleccionar una opcion");
+            this.lbSexo.Visible = false;
             // 
             // label7
             // 
@@ -190,6 +191,7 @@
             this.lbEdad.TabIndex = 64;
             this.lbEdad.Text = "*";
             this.toolTipEdad.SetToolTip(this.lbEdad, "Edad debe ser superior a 18 años ");
+            this.lbEdad.Visible = false;
             // 
             // label5
             // 
@@ -214,7 +216,8 @@
             this.lbCedula.Size = new System.Drawing.Size(14, 18);
             this.lbCedula.TabIndex = 62;
             this.lbCedula.Text = "*";
-            this.toolTipCedula.SetToolTip(this.lbCedula, "La cedula debe contener 9 o mas digitos");
+            this.toolTipCedula.SetToolTip(this.lbCedula, "La cédula  debe contener 9 o mas digitos");
+            this.lbCedula.Visible = false;
             // 
             // lbFechaNacimiento
             // 
@@ -227,7 +230,8 @@
             this.lbFechaNacimiento.Size = new System.Drawing.Size(14, 18);
             this.lbFechaNacimiento.TabIndex = 61;
             this.lbFechaNacimiento.Text = "*";
-            this.toolTipFechaNacimiento.SetToolTip(this.lbFechaNacimiento, "Edad debe ser superior a 18 años ");
+            this.toolTipFechaNacimiento.SetToolTip(this.lbFechaNacimiento, "Edad debe ser superior o igual a 18 años ");
+            this.lbFechaNacimiento.Visible = false;
             // 
             // lbApellidos
             // 
@@ -241,6 +245,7 @@
             this.lbApellidos.TabIndex = 60;
             this.lbApellidos.Text = "*";
             this.toolTipApellidos.SetToolTip(this.lbApellidos, "No ha digitado apellidos");
+            this.lbApellidos.Visible = false;
             // 
             // lbNombre
             // 
@@ -254,6 +259,7 @@
             this.lbNombre.TabIndex = 59;
             this.lbNombre.Text = "*";
             this.toolTipNombre.SetToolTip(this.lbNombre, "No ha digitado un nombre");
+            this.lbNombre.Visible = false;
             // 
             // label2
             // 
@@ -393,33 +399,33 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbSexo;
-        private System.Windows.Forms.Label lbSexo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbEdad;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbCedula;
-        private System.Windows.Forms.Label lbFechaNacimiento;
-        private System.Windows.Forms.Label lbApellidos;
-        private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.DateTimePicker txtFechaNacimiento;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.ComboBox cbSexo;
+        public System.Windows.Forms.Label lbSexo;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label lbEdad;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lbCedula;
+        public System.Windows.Forms.Label lbFechaNacimiento;
+        public System.Windows.Forms.Label lbApellidos;
+        public System.Windows.Forms.Label lbNombre;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtApellidos;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.DateTimePicker txtFechaNacimiento;
         public System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.Button btnVerificar;
-        private System.Windows.Forms.ToolTip toolTipCedula;
-        private System.Windows.Forms.ToolTip toolTipApellidos;
-        private System.Windows.Forms.ToolTip toolTipNombre;
-        private System.Windows.Forms.ToolTip toolTipFechaNacimiento;
-        private System.Windows.Forms.ToolTip toolTipEdad;
-        private System.Windows.Forms.ToolTip toolTipSexo;
-        private System.Windows.Forms.TextBox txtEdad;
+        public System.Windows.Forms.ToolTip toolTipCedula;
+        public System.Windows.Forms.ToolTip toolTipApellidos;
+        public System.Windows.Forms.ToolTip toolTipNombre;
+        public System.Windows.Forms.ToolTip toolTipFechaNacimiento;
+        public System.Windows.Forms.ToolTip toolTipEdad;
+        public System.Windows.Forms.ToolTip toolTipSexo;
+        public System.Windows.Forms.TextBox txtEdad;
         public System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.Button btnCancelar;
     }

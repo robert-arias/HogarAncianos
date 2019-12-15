@@ -21,7 +21,7 @@ namespace HogarAncianos.View
             modificarPrescripcionController = new ModificarPrescripcionController(this);
         }
 
-        public static void SoloNumeros(KeyPressEventArgs v)
+        public  void SoloNumeros(KeyPressEventArgs v)
         {
             if (Char.IsDigit(v.KeyChar))
             {
@@ -42,7 +42,7 @@ namespace HogarAncianos.View
             }
         }
 
-        public static void SoloLetras(KeyPressEventArgs v)
+        public  void SoloLetras(KeyPressEventArgs v)
         {
             if (Char.IsLetter(v.KeyChar))
             {

@@ -49,58 +49,56 @@ namespace HogarAncianos.View
         {
             bool vacio = false;
 
-         
+            if (string.IsNullOrEmpty(txtCedula.Text))
+            {
+                lbCedula.Visible = true;
+                vacio = true;
+            }
+            else
+            {
+                lbCedula.Visible = false;
+            }
+
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 lbNombre.Visible = true;
-                lbNombre.ForeColor = Color.Red;
                 vacio = true;
             }
             else
             {
                 lbNombre.Visible = false;
-                lbNombre.ForeColor = Color.Black;
             }
 
 
             if (string.IsNullOrEmpty(txtApellidos.Text))
             {
                 lbApellidos.Visible = true;
-                lbApellidos.ForeColor = Color.Red;
                 vacio = true;
             }
             else
             {
                 lbApellidos.Visible = false;
-                lbApellidos.ForeColor = Color.Black;
+
             }
 
             if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18)
             {
                 lbFechaNacimiento.Visible = true;
-                lbEdad.Visible = true;
-                lbEdad.ForeColor = Color.Red;
-                lbFechaNacimiento.ForeColor = Color.Red;
                 vacio = true;
             }
             else
             {
                 lbFechaNacimiento.Visible = false;
-                lbFechaNacimiento.ForeColor = Color.Black;
-                lbEdad.Visible = false;
-                lbEdad.ForeColor = Color.Black;
             }
 
             if (cbSexo.SelectedIndex == 0)
             {
                 lbSexo.Visible = true;
-                lbSexo.ForeColor = Color.Red;
                 vacio = true;
             }
             else
             {
                 lbSexo.Visible = false;
-                lbSexo.ForeColor = Color.Black;
             }
 
 
@@ -158,9 +156,72 @@ namespace HogarAncianos.View
             return new Paciente(txtCedula.Text, txtNombre.Text, txtApellidos.Text, txtFechaNacimiento.Text,
             Convert.ToInt16(txtEdad.Text), cbSexo.SelectedItem.ToString());
 
-            //cbCedulaIdentidad.GetItemText(cbCedulaIdentidad.SelectedItem)
+          
         }
 
+
+        public void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+        public void SoloLetras(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten letras.");
+            }
+        }
+
+        public void MensajeInformativo(string message)
+        {
+            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea modificar la informacion del paciente cédula: " + txtCedula.Text + "  " + " nombre:  " + txtNombre.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
         private void FRM_ModificarPaciente_Load(object sender, EventArgs e)
         {
 

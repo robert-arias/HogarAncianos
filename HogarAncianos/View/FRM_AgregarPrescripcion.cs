@@ -25,6 +25,7 @@ namespace HogarAncianos.View
 
 
         }
+
         public void LimpiarBusqueda()
         {
             do
@@ -35,6 +36,7 @@ namespace HogarAncianos.View
                 }
             } while (dtgMedicamento.Rows.Count >= 1);
         }
+
         public void ActivarCampos()
         {
 
@@ -149,11 +151,10 @@ namespace HogarAncianos.View
         public void ActualizarCantidad(string codigo, int cantidad)
         {
 
-            foreach (DataGridViewRow row in dtgMedicamento.Rows)
-            {
+            foreach (DataGridViewRow row in dtgMedicamento.Rows) {
 
-                if (row.Cells["Codigo"].Value.ToString().Equals(codigo))
-                {
+                if (row.Cells["Codigo"].Value.ToString().Equals(codigo)){
+
                     dtgMedicamento[row.Cells["CantidadPrescrita"].ColumnIndex, row.Index].Value = int.Parse(dtgMedicamento[2, row.Index].Value.ToString()) + cantidad;
                     dtgMedicamento.Refresh();
 
@@ -296,7 +297,7 @@ namespace HogarAncianos.View
         }
 
 
-        public static void SoloNumeros(KeyPressEventArgs v)
+        public  void SoloNumeros(KeyPressEventArgs v)
         {
             if (Char.IsDigit(v.KeyChar))
             {
@@ -317,7 +318,7 @@ namespace HogarAncianos.View
             }
         }
 
-        public static void SoloLetras(KeyPressEventArgs v)
+        public  void SoloLetras(KeyPressEventArgs v)
         {
             if (Char.IsLetter(v.KeyChar))
             {

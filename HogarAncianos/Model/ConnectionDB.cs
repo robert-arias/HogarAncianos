@@ -59,7 +59,7 @@ namespace HogarAncianos.Model {
         //***********************************************************METODOS PACIENTES ****************************************************************************//
         public DataSet GetBusquedaPaciente(string query)
         {
-
+            Console.WriteLine("El query que llega"+query );
             try
             {
                 connection.Open();
@@ -68,13 +68,15 @@ namespace HogarAncianos.Model {
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
                 connection.Close();
+               
                 return data;
 
             }
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 

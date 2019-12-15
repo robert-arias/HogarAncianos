@@ -29,8 +29,32 @@ namespace HogarAncianos.Controller
             frm_AgregarPaciente.btnVerificar.Click += new EventHandler(VerificarCedulaPaciente);
             frm_AgregarPaciente.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaPacienteEnter);
             frm_AgregarPaciente.btnLimpiar.Click += new EventHandler(Limpiar);
-         
+            frm_AgregarPaciente.txtCedula.KeyPress += new KeyPressEventHandler(ValidarCedula);
+            frm_AgregarPaciente.txtEdad.KeyPress += new KeyPressEventHandler(ValidarEdad);
+            frm_AgregarPaciente.txtNombre.KeyPress += new KeyPressEventHandler(ValidarNombre);
+            frm_AgregarPaciente.txtApellidos.KeyPress += new KeyPressEventHandler(ValidarApellidos);
 
+        }
+
+
+        public void ValidarCedula(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarPaciente.SoloNumeros(e);
+        }
+
+        public void ValidarEdad(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarPaciente.SoloNumeros(e);
+        }
+
+        public void ValidarNombre(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarPaciente.SoloLetras(e);
+        }
+
+        public void ValidarApellidos(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarPaciente.SoloLetras(e);
         }
 
 
@@ -47,19 +71,20 @@ namespace HogarAncianos.Controller
                     }
                     else
                     {
-                        frm_AgregarPaciente.ShowMessage("La cédula de identidad ingresada se encuentra en los registros.");
+                        frm_AgregarPaciente.MensajeError("La cédula de identidad ingresada se encuentra en los registros.");
                     }
 
                 }
                 else
                 {
-                    frm_AgregarPaciente.ShowMessage("Faltan digitos.");
+                    frm_AgregarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                   " menos de 9 dígitos.");
                 } 
 
             }
             else
             {
-                frm_AgregarPaciente.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+                frm_AgregarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío.");
 
             }    
     
@@ -80,20 +105,23 @@ namespace HogarAncianos.Controller
                         }
                         else
                         {
-                            frm_AgregarPaciente.ShowMessage("La cédula de identidad ingresada se encuentra en los registros.");
+                            frm_AgregarPaciente.MensajeError("La cédula de identidad ingresada se encuentra en los registros.");
                         }
 
                     }
                     else
                     {
-                        frm_AgregarPaciente.ShowMessage("Faltan digitos.");
+                        frm_AgregarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                       " menos de 9 dígitos.");
                     }
 
                 }
                 else
                 
-                    frm_AgregarPaciente.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
-                   e.SuppressKeyPress = true; //remove ding windows sound.
+                    frm_AgregarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío.");
+
+                
+                e.SuppressKeyPress = true; //remove ding windows sound.
 
             }
         }
@@ -107,24 +135,28 @@ namespace HogarAncianos.Controller
         {
             if (!frm_AgregarPaciente.VerificarCampos())
             {
-                if(frm_AgregarPaciente.ShowMessage2("¿Esta seguro de añadir el paciente?"))
+                if (frm_AgregarPaciente.ShowConfirmation())
                 {
                     if (connectionDB.AgregarPaciente(frm_AgregarPaciente.GetPaciente()))
                     {
-                        frm_AgregarPaciente.ShowMessage("Se ha agregado al nuevo paciente con éxito.");
+                        frm_AgregarPaciente.MensajeInformativo("Se ha agregado al nuevo paciente con éxito.");
                         frm_AgregarPaciente.EstadoInicial();
                     }
                     else
                     {
-                        frm_AgregarPaciente.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                        frm_AgregarPaciente.MensajeError("Se ha producido un error.\nVerifique los datos.");
 
                     }
+                }
+                else
+                {
+                    frm_AgregarPaciente.MensajeInformativo("Se ha agregado al nuevo paciente con éxito.");
                 }
               
             }
             else
             {
-                frm_AgregarPaciente.ShowMessage("Algunos campos se encuentran vacíos." +
+                frm_AgregarPaciente.MensajeError("Algunos campos se encuentran vacíos." +
                     "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
             }
         }

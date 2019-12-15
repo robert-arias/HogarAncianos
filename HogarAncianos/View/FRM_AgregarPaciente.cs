@@ -22,70 +22,100 @@ namespace HogarAncianos.View
             cbSexo.Text = "Seleccionar";
         }
 
-      
-    public bool VerificarCampos()
+        public void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+        public  void SoloLetras(KeyPressEventArgs v)
+        {
+            if (Char.IsLetter(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten letras.");
+            }
+        }
+        public bool VerificarCampos()
        {
            bool vacio = false;
 
             if (string.IsNullOrEmpty(txtCedula.Text)) {
-                lbCedula.Visible = true;
-                lbCedula.ForeColor = Color.Red;
-
+                lbCedula.Visible = true;              
                 vacio= true;
             }
             else
             {
-                lbCedula.Visible = false;
-                lbCedula.ForeColor = Color.Black;
+                lbCedula.Visible = false;              
             }
                
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                lbNombre.Visible = true;
-                lbNombre.ForeColor = Color.Red;
+                lbNombre.Visible = true;              
                 vacio = true;
             }
             else
             {
-                lbNombre.Visible = false;
-                lbNombre.ForeColor = Color.Black;
+                lbNombre.Visible = false;               
             }
 
          
             if (string.IsNullOrEmpty(txtApellidos.Text))
             {
-                lbApellidos.Visible = true;
-                lbApellidos.ForeColor = Color.Red;
+                lbApellidos.Visible = true;              
                 vacio = true;
             }
             else
             {
                 lbApellidos.Visible = false;
-                lbApellidos.ForeColor = Color.Black;
+                
             }
 
             if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18)
             {
-                lbFechaNacimiento.Visible = true;
-                lbFechaNacimiento.ForeColor = Color.Red;
+                lbFechaNacimiento.Visible = true;               
                 vacio = true;
             }
             else
             {
-                lbFechaNacimiento.Visible = false;
-                lbFechaNacimiento.ForeColor = Color.Black;
+                lbFechaNacimiento.Visible = false;                
             }
 
             if (cbSexo.SelectedIndex == 0)
             {
-                lbSexo.Visible = true;
-                lbSexo.ForeColor = Color.Red;               
+                lbSexo.Visible = true;                           
                 vacio = true;
             }
             else
             {
-                lbSexo.Visible = false;
-                lbSexo.ForeColor = Color.Black;
+                lbSexo.Visible = false;              
             }
 
 
@@ -134,12 +164,7 @@ namespace HogarAncianos.View
             btnLimpiar.Enabled = true;
 
 
-            lbCedula.ForeColor = Color.Black;
-            lbNombre.ForeColor = Color.Black;
-            lbApellidos.ForeColor = Color.Black;
-            lbFechaNacimiento.ForeColor = Color.Black;
-            lbEdad.ForeColor = Color.Black;
-            lbSexo.ForeColor = Color.Black;
+           
 
             lbCedula.Visible = false;
             lbNombre.Visible = false;
@@ -147,6 +172,19 @@ namespace HogarAncianos.View
             lbFechaNacimiento.Visible = false;
             lbSexo.Visible = false;
             lbEdad.Visible = false;
+        }
+
+
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar al paciente cédula: " + txtCedula.Text + "  " + " nombre:  " + txtNombre.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Paciente GetPaciente()
@@ -158,21 +196,22 @@ namespace HogarAncianos.View
 
         }
 
+        public void MensajeInformativo(string message)
+        {
+            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Advertencia", MessageBoxButtons.OK);
         }
 
-        public bool ShowMessage2(string menssage)
-        {
-            DialogResult boton= MessageBox.Show(menssage, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            if (boton == DialogResult.OK)
-            {
-                return true;
-            }
-
-            return false;
-        }
+       
 
         private void txtFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {

@@ -18,7 +18,7 @@ namespace HogarAncianos.Controller
         {
             this.frm_ModificarPaciente = frm_ModificarPaciente;
             connectionDB = new ConnectionDB();
-           // FillPacientes();
+          
             AgregarEventosModificarPaciente();
             
         }
@@ -29,9 +29,32 @@ namespace HogarAncianos.Controller
             frm_ModificarPaciente.btnVerificar.Click += new EventHandler(VerificarCedulaPaciente);
             frm_ModificarPaciente.txtCedula.KeyDown += new KeyEventHandler(VerificarCedulaPacienteEnter);
             frm_ModificarPaciente.btnLimpiar.Click += new EventHandler(Limpiar);
+            frm_ModificarPaciente.txtCedula.KeyPress += new KeyPressEventHandler(ValidarCedula);
+            frm_ModificarPaciente.txtEdad.KeyPress += new KeyPressEventHandler(ValidarEdad);
+            frm_ModificarPaciente.txtNombre.KeyPress += new KeyPressEventHandler(ValidarNombre);
+            frm_ModificarPaciente.txtApellidos.KeyPress += new KeyPressEventHandler(ValidarApellidos);
+
         }
 
+        public void ValidarCedula(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarPaciente.SoloNumeros(e);
+        }
 
+        public void ValidarEdad(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarPaciente.SoloNumeros(e);
+        }
+
+        public void ValidarNombre(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarPaciente.SoloLetras(e);
+        }
+
+        public void ValidarApellidos(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarPaciente.SoloLetras(e);
+        }
 
         private void llenarCampos()
         {
@@ -55,18 +78,19 @@ namespace HogarAncianos.Controller
                     }
                     else
                     {
-                        frm_ModificarPaciente.ShowMessage("La cédula de identidad ingresada no se encuentra en los registros.");
+                        frm_ModificarPaciente.MensajeError("La cédula de identidad ingresada no se encuentra en los registros.");
                     }
                 }
                 else
                 {
-                    frm_ModificarPaciente.ShowMessage("Faltan digitos.");
+                    frm_ModificarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                   " menos de 9 dígitos.");
                 }
 
             }
             else
             {
-                frm_ModificarPaciente.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+                frm_ModificarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío.");
 
             }
 
@@ -84,22 +108,25 @@ namespace HogarAncianos.Controller
                         if (connectionDB.ExisteCedulaPaciente(frm_ModificarPaciente.GetCedula()))
                         {
                             llenarCampos();
+
                         }
                         else
                         {
-                            frm_ModificarPaciente.ShowMessage("La cédula de identidad ingresada no se encuentra en los registros.");
+                            frm_ModificarPaciente.MensajeError("La cédula de identidad ingresada no se encuentra en los registros.");
                         }
-
                     }
                     else
                     {
-                        frm_ModificarPaciente.ShowMessage("Faltan digitos.");
+                        frm_ModificarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
+                       " menos de 9 dígitos.");
                     }
 
                 }
                 else
+                
+                    frm_ModificarPaciente.MensajeError("El campo \"número de cédula\" se encuentra vacío.");
 
-                    frm_ModificarPaciente.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+                
 
                 e.SuppressKeyPress = true; //remove ding windows sound.
 
@@ -117,13 +144,30 @@ namespace HogarAncianos.Controller
         {
             if (!frm_ModificarPaciente.VerificarCampos())
             {
-                connectionDB.UpdatePaciente(frm_ModificarPaciente.GetPaciente());
-                frm_ModificarPaciente.ShowMessage("Paciente modificado con exito");
-                frm_ModificarPaciente.EstadoInicial();
+                if (frm_ModificarPaciente.ShowConfirmation())
+                {
+                    if (connectionDB.UpdatePaciente(frm_ModificarPaciente.GetPaciente()))
+                    {
+                        frm_ModificarPaciente.ShowMessage("Paciente modificado con  éxito.");
+                        frm_ModificarPaciente.EstadoInicial();
+
+                    }
+                    else
+                    {
+                        frm_ModificarPaciente.MensajeError("No se ha modificado al paciente.");
+                    }
+                   
+                }
+                else
+                {
+                    frm_ModificarPaciente.MensajeError("No se ha modificado al paciente.");
+                }
+              
             }
             else
             {
-                frm_ModificarPaciente.ShowMessage("Espacios vacios ");
+                frm_ModificarPaciente.MensajeError("Algunos campos se encuentran vacíos." +
+                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
             }
 
         }

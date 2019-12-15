@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HogarAncianos.View;
 using HogarAncianos.Model;
+using System.Windows.Forms;
 
 namespace HogarAncianos.Controller
 {
@@ -22,6 +23,7 @@ namespace HogarAncianos.Controller
 
         public void AgregarEventos()
         {
+            frm_ConsultaPacientes.txtBuscar.KeyDown += new KeyEventHandler(RealizarBusquedaEnter);
             frm_ConsultaPacientes.btnCancelar.Click += new EventHandler(EstadoInicial);
            frm_ConsultaPacientes.btnBuscar.Click += new EventHandler(RealizarBusqueda);
             frm_ConsultaPacientes.checkBoxSexo.Click += new EventHandler(ActivarDesactivarSexo);
@@ -79,15 +81,23 @@ namespace HogarAncianos.Controller
         {
             if (frm_ConsultaPacientes.verificar())
             {
-                if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1)
+                if (frm_ConsultaPacientes.GetBusquedaPacientes() != "")
                 {
-                    frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
-                   
+                    if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1 )
+                    {
+                        frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
+
+                    }
+                    else
+                    {
+                        frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                    }
                 }
                 else
                 {
                     frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
                 }
+               
                
             }
             else
@@ -95,6 +105,41 @@ namespace HogarAncianos.Controller
                 frm_ConsultaPacientes.MensajeError("Verifique que todos los datos selecccionados e ingresados " +
                     "sean correctos.");
             } 
+
+        }
+
+
+        public void RealizarBusquedaEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (frm_ConsultaPacientes.verificar())
+                {
+                    if (frm_ConsultaPacientes.GetBusquedaPacientes() != "")
+                    {
+                        if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1)
+                        {
+                            frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
+
+                        }
+                        else
+                        {
+                            frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                        }
+                    }
+                    else
+                    {
+                        frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                    }
+
+                }
+                else
+                
+                   frm_ConsultaPacientes.MensajeError("Verifique que todos los datos selecccionados e ingresados " +
+                        "sean correctos.");
+                e.SuppressKeyPress = true; //remove ding windows sound.
+
+            }
 
         }
     }

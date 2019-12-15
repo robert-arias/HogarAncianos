@@ -58,19 +58,25 @@ namespace HogarAncianos.View
 
         public void EstadoInicial()
         {
-            checkBoxEdad.Checked = false;
-            checkBoxNombre.Checked = false;
-            checkBoxSexo.Checked = false;
-            checkBoxApellidos.Checked = false;
-            checkBoxCedula.Checked = false;
+            
 
-
+            txtBuscar.Text = "";
             checkBoxEdad.Enabled = true;
             checkBoxNombre.Enabled = true;
             checkBoxSexo.Enabled = true;
             checkBoxApellidos.Enabled = true;
             checkBoxCedula.Enabled = true;
+            rbFemenino.Checked = false;
+            rbMasculino.Checked = false;
+            rbFemenino.Enabled = false;
+            rbFemenino.Enabled = false;
 
+            
+            checkBoxEdad.Checked = false;
+            checkBoxSexo.Checked = false;
+            checkBoxCedula.Checked = false;
+            checkBoxNombre.Checked = false;
+            checkBoxApellidos.Checked = false;
 
             LimpiarBusqueda();
 
@@ -94,6 +100,8 @@ namespace HogarAncianos.View
         {
             if (checkBoxCedula.Checked)
             {
+                rbFemenino.Checked = false;
+                rbMasculino.Checked = false;
                 checkBoxEdad.Enabled = false;
                 checkBoxNombre.Enabled = false;
                 checkBoxSexo.Enabled = false;
@@ -118,6 +126,8 @@ namespace HogarAncianos.View
         {
             if (checkBoxNombre.Checked)
             {
+                rbFemenino.Checked = false;
+                rbMasculino.Checked = false;
                 checkBoxEdad.Enabled = false;
                 checkBoxCedula.Enabled = false;
                 checkBoxSexo.Enabled = false;
@@ -142,6 +152,8 @@ namespace HogarAncianos.View
         {
             if (checkBoxApellidos.Checked)
             {
+                rbFemenino.Checked = false;
+                rbMasculino.Checked = false;
                 checkBoxEdad.Enabled = false;
                 checkBoxNombre.Enabled = false;
                 checkBoxSexo.Enabled = false;
@@ -188,15 +200,18 @@ namespace HogarAncianos.View
                 checkBoxApellidos.Enabled = false;
                 rbFemenino.Checked = true;
                 rbMasculino.Checked = false;
+                rbFemenino.Enabled = true;
+                rbMasculino.Enabled = true;
             }
             else
             {
+                rbFemenino.Checked = false;
+                rbMasculino.Checked = false;
                 gbSexo.Enabled = false;
                 checkBoxCedula.Enabled = true;
                 checkBoxNombre.Enabled = true;
                 checkBoxApellidos.Enabled = true;
-                rbFemenino.Checked = false;
-                rbMasculino.Checked = false;
+               
             }
 
         }
@@ -247,7 +262,9 @@ namespace HogarAncianos.View
             else if (rbMasculino.Checked) {
                 query = $"select * from Pacientes where sexo = 'Masculino'";
             }
-            Console.WriteLine(query + "REVISAR");
+            Console.WriteLine( "Sentencia que envia el buscar"+ query +"/n");
+
+
             return query;
 
           
@@ -271,6 +288,7 @@ namespace HogarAncianos.View
             else if (string.IsNullOrEmpty(txtBuscar.Text) && checkBoxSexo.Checked && checkBoxEdad.Checked)
             {
                 verificar = false;
+                txtBuscar.Text = "";
             }
             else if (string.IsNullOrEmpty(txtBuscar.Text) && checkBoxSexo.Checked)
             {
@@ -278,9 +296,14 @@ namespace HogarAncianos.View
                 {
                     verificar = true;
                 }
+            }else if (!checkBoxCedula.Checked && !checkBoxNombre.Checked && !checkBoxApellidos.Checked && !checkBoxEdad.Checked && !checkBoxSexo.Checked)
+            {
+                verificar = false;
+                txtBuscar.Text = "";
             }
-
+            Console.WriteLine("Resultado del metodo verificar"+verificar);
             return verificar;
+
         }
 
       
