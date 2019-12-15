@@ -158,51 +158,70 @@ namespace HogarAncianos.View {
                     empty = true;
                     lbNombre.ForeColor = Color.Red;
                 }
+                else
+                    lbNombre.ForeColor = Color.White;
 
                 if (string.IsNullOrEmpty(txtApellidos.Text)) {
                     empty = true;
                     lbApellidos.ForeColor = Color.Red;
                 }
+                else
+                    lbApellidos.ForeColor = Color.White;
 
                 if ((DateTime.Now.Year - Convert.ToDateTime(txtFechaNacimiento.Text).Year) < 18) {
                     empty = true;
                     lbFechaNacimiento.ForeColor = Color.Red;
                 }
+                else
+                    lbFechaNacimiento.ForeColor = Color.White;
 
                 if (string.IsNullOrEmpty(txtTelefono.Text)) {
                     empty = true;
                     lbTelefono.ForeColor = Color.Red;
                 }
+                else
+                    lbTelefono.ForeColor = Color.White;
 
                 if (string.IsNullOrEmpty(txtDireccion.Text)) {
                     empty = true;
                     lbDireccion.ForeColor = Color.Red;
                 }
+                else
+                    lbDireccion.ForeColor = Color.White;
 
                 if (cbPuesto.SelectedIndex == 0) {
                     empty = true;
                     lbPuesto.ForeColor = Color.Red;
                 }
+                else
+                    lbPuesto.ForeColor = Color.White;
 
                 if (string.IsNullOrEmpty(txtHorario.Text)) {
                     empty = true;
                     lbHorario.ForeColor = Color.Red;
                 }
+                else
+                    lbHorario.ForeColor = Color.White;
 
                 if (string.IsNullOrEmpty(txtSalario.Text)) {
                     empty = true;
                     lbSalario.ForeColor = Color.Red;
-                } Convert.ToDouble(txtSalario.Text);
+                }
+                else
+                    lbSalario.ForeColor = Color.White;
 
                 if ((DateTime.Now.Date < Convert.ToDateTime(txtFechaContratacion.Text).Date)) {
                     empty = true;
                     lbFechaContratacion.ForeColor = Color.Red;
                 }
+                else
+                    lbFechaContratacion.ForeColor = Color.White;
+
+                Convert.ToDouble(txtSalario.Text);
 
                 return empty;
             } catch (FormatException e) {
                 lbSalario.ForeColor = Color.Red;
-                Debug.WriteLine(e.ToString());
                 return true;
             }
         }
