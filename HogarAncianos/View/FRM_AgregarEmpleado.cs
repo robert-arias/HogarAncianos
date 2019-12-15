@@ -73,7 +73,7 @@ namespace HogarAncianos.View {
             txtSalario.Enabled = false;
             txtFechaContratacion.Enabled = false;
             btnAgregar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnCancelar.Enabled = true;
             btnEliminarCorreo.Enabled = false;
 
             txtCedula.Text = "";

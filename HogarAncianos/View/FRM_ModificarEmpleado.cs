@@ -67,6 +67,7 @@ namespace HogarAncianos.View {
             btnEliminarCorreo.Enabled = true;
             rbActivo.Enabled = true;
             rbInactivo.Enabled = true;
+            btnCancelar.Enabled = true;
         }
 
         public void EstadoInicial() {
@@ -81,7 +82,7 @@ namespace HogarAncianos.View {
             txtHorario.Enabled = false;
             txtSalario.Enabled = false;
             btnModificar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnCancelar.Enabled = true;
             btnEliminarCorreo.Enabled = false;
             rbActivo.Enabled = false;
             rbInactivo.Enabled = false;
