@@ -79,9 +79,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(16, 52);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1111, 313);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -92,7 +92,7 @@
             this.txbCantidadExistente.Enabled = false;
             this.txbCantidadExistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCantidadExistente.Location = new System.Drawing.Point(240, 262);
-            this.txbCantidadExistente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCantidadExistente.Margin = new System.Windows.Forms.Padding(4);
             this.txbCantidadExistente.Name = "txbCantidadExistente";
             this.txbCantidadExistente.Size = new System.Drawing.Size(321, 30);
             this.txbCantidadExistente.TabIndex = 24;
@@ -102,7 +102,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(240, 262);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(321, 30);
             this.textBox1.TabIndex = 23;
@@ -124,7 +124,7 @@
             this.txbCantidadSustraer.Enabled = false;
             this.txbCantidadSustraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCantidadSustraer.Location = new System.Drawing.Point(240, 222);
-            this.txbCantidadSustraer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCantidadSustraer.Margin = new System.Windows.Forms.Padding(4);
             this.txbCantidadSustraer.Name = "txbCantidadSustraer";
             this.txbCantidadSustraer.Size = new System.Drawing.Size(321, 30);
             this.txbCantidadSustraer.TabIndex = 21;
@@ -134,7 +134,7 @@
             this.txbCedula.Enabled = false;
             this.txbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCedula.Location = new System.Drawing.Point(781, 119);
-            this.txbCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCedula.Margin = new System.Windows.Forms.Padding(4);
             this.txbCedula.Name = "txbCedula";
             this.txbCedula.Size = new System.Drawing.Size(309, 30);
             this.txbCedula.TabIndex = 20;
@@ -145,7 +145,7 @@
             this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btLimpiar.Location = new System.Drawing.Point(703, 39);
-            this.btLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(100, 37);
             this.btLimpiar.TabIndex = 19;
@@ -156,7 +156,7 @@
             // 
             this.txbIdentificadorProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbIdentificadorProducto.Location = new System.Drawing.Point(240, 38);
-            this.txbIdentificadorProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbIdentificadorProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txbIdentificadorProducto.Name = "txbIdentificadorProducto";
             this.txbIdentificadorProducto.Size = new System.Drawing.Size(321, 30);
             this.txbIdentificadorProducto.TabIndex = 18;
@@ -167,7 +167,7 @@
             this.btVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVerificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btVerificar.Location = new System.Drawing.Point(595, 38);
-            this.btVerificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btVerificar.Margin = new System.Windows.Forms.Padding(4);
             this.btVerificar.Name = "btVerificar";
             this.btVerificar.Size = new System.Drawing.Size(100, 37);
             this.btVerificar.TabIndex = 17;
@@ -180,7 +180,7 @@
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(240, 167);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(321, 30);
             this.dtpFecha.TabIndex = 14;
@@ -193,7 +193,7 @@
             this.rbHigienePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbHigienePersonal.ForeColor = System.Drawing.Color.White;
             this.rbHigienePersonal.Location = new System.Drawing.Point(240, 117);
-            this.rbHigienePersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbHigienePersonal.Margin = new System.Windows.Forms.Padding(4);
             this.rbHigienePersonal.Name = "rbHigienePersonal";
             this.rbHigienePersonal.Size = new System.Drawing.Size(179, 29);
             this.rbHigienePersonal.TabIndex = 13;
@@ -208,7 +208,7 @@
             this.rbLimpieza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLimpieza.ForeColor = System.Drawing.Color.White;
             this.rbLimpieza.Location = new System.Drawing.Point(443, 118);
-            this.rbLimpieza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbLimpieza.Margin = new System.Windows.Forms.Padding(4);
             this.rbLimpieza.Name = "rbLimpieza";
             this.rbLimpieza.Size = new System.Drawing.Size(111, 29);
             this.rbLimpieza.TabIndex = 12;
@@ -220,7 +220,7 @@
             this.txbNombre.Enabled = false;
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNombre.Location = new System.Drawing.Point(240, 78);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(321, 30);
             this.txbNombre.TabIndex = 11;
@@ -230,7 +230,7 @@
             this.txbNombreCompleto.Enabled = false;
             this.txbNombreCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNombreCompleto.Location = new System.Drawing.Point(781, 164);
-            this.txbNombreCompleto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombreCompleto.Margin = new System.Windows.Forms.Padding(4);
             this.txbNombreCompleto.Name = "txbNombreCompleto";
             this.txbNombreCompleto.Size = new System.Drawing.Size(309, 30);
             this.txbNombreCompleto.TabIndex = 9;
@@ -325,7 +325,7 @@
             this.btSustraer.Enabled = false;
             this.btSustraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSustraer.Location = new System.Drawing.Point(483, 391);
-            this.btSustraer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSustraer.Margin = new System.Windows.Forms.Padding(4);
             this.btSustraer.Name = "btSustraer";
             this.btSustraer.Size = new System.Drawing.Size(121, 41);
             this.btSustraer.TabIndex = 15;
@@ -338,7 +338,7 @@
             this.btCancelar.Enabled = false;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(628, 391);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(121, 41);
             this.btCancelar.TabIndex = 16;
@@ -354,8 +354,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btSustraer);
             this.Controls.Add(this.btCancelar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FRM_SalidaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salida productos";

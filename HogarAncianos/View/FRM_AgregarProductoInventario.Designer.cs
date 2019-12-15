@@ -67,9 +67,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(37, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(776, 292);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -81,7 +81,7 @@
             this.btVerificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btVerificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btVerificar.Location = new System.Drawing.Point(560, 53);
-            this.btVerificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btVerificar.Margin = new System.Windows.Forms.Padding(4);
             this.btVerificar.Name = "btVerificar";
             this.btVerificar.Size = new System.Drawing.Size(100, 36);
             this.btVerificar.TabIndex = 14;
@@ -91,7 +91,7 @@
             // txbIdentificadorProducto
             // 
             this.txbIdentificadorProducto.Location = new System.Drawing.Point(256, 53);
-            this.txbIdentificadorProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbIdentificadorProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txbIdentificadorProducto.Name = "txbIdentificadorProducto";
             this.txbIdentificadorProducto.Size = new System.Drawing.Size(285, 26);
             this.txbIdentificadorProducto.TabIndex = 0;
@@ -102,7 +102,7 @@
             this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btLimpiar.Location = new System.Drawing.Point(668, 53);
-            this.btLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(100, 36);
             this.btLimpiar.TabIndex = 12;
@@ -113,7 +113,7 @@
             // 
             this.txbNombreProducto.Enabled = false;
             this.txbNombreProducto.Location = new System.Drawing.Point(256, 87);
-            this.txbNombreProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombreProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txbNombreProducto.Name = "txbNombreProducto";
             this.txbNombreProducto.Size = new System.Drawing.Size(285, 26);
             this.txbNombreProducto.TabIndex = 9;
@@ -124,7 +124,7 @@
             this.rbHigienePersonal.Checked = true;
             this.rbHigienePersonal.Enabled = false;
             this.rbHigienePersonal.Location = new System.Drawing.Point(256, 132);
-            this.rbHigienePersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbHigienePersonal.Margin = new System.Windows.Forms.Padding(4);
             this.rbHigienePersonal.Name = "rbHigienePersonal";
             this.rbHigienePersonal.Size = new System.Drawing.Size(156, 24);
             this.rbHigienePersonal.TabIndex = 8;
@@ -137,7 +137,7 @@
             this.rbLimpieza.AutoSize = true;
             this.rbLimpieza.Enabled = false;
             this.rbLimpieza.Location = new System.Drawing.Point(436, 132);
-            this.rbLimpieza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbLimpieza.Margin = new System.Windows.Forms.Padding(4);
             this.rbLimpieza.Name = "rbLimpieza";
             this.rbLimpieza.Size = new System.Drawing.Size(98, 24);
             this.rbLimpieza.TabIndex = 7;
@@ -148,7 +148,7 @@
             // 
             this.txbCantidad.Enabled = false;
             this.txbCantidad.Location = new System.Drawing.Point(256, 169);
-            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(285, 26);
             this.txbCantidad.TabIndex = 2;
@@ -169,7 +169,7 @@
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(256, 209);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(285, 26);
             this.dtpFecha.TabIndex = 4;
@@ -229,7 +229,7 @@
             this.btAgregar.Enabled = false;
             this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAgregar.Location = new System.Drawing.Point(245, 364);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(141, 53);
             this.btAgregar.TabIndex = 10;
@@ -242,7 +242,7 @@
             this.btCancelar.Enabled = false;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(448, 364);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(141, 53);
             this.btCancelar.TabIndex = 11;
@@ -258,8 +258,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btAgregar);
             this.Controls.Add(this.btCancelar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FRM_AgregarProductoInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Producto Inventario";

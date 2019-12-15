@@ -339,18 +339,16 @@ namespace HogarAncianos.View {
 
         private string GetConditions(string query) {
             if (dtpFechaContratacion.Checked)
-                return query += $" and fecha_contratacion = '{dtpFechaContratacion.Text}'";
+                query += $" and fecha_contratacion = '{dtpFechaContratacion.Text}'";
 
             if (cbPuestoTrabajo.Checked)
-                return query += $" and puesto_trabajo = '{ddlPuesto.GetItemText(ddlPuesto.SelectedItem)}'";
+                query += $" and puesto_trabajo = '{ddlPuesto.GetItemText(ddlPuesto.SelectedItem)}'";
 
             if (cbEstadoLaboral.Checked) {
                 if (ddlEstadoLaboral.SelectedIndex == 1)
                     query += $" and estado_laboral = 'A'";
                 else
                     query += $" and estado_laboral = 'I'";
-
-                return query;
             }
 
             return query;
