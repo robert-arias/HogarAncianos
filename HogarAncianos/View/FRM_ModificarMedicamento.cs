@@ -78,7 +78,7 @@ namespace HogarAncianos.View
             txtMedida.Enabled = true;
             cbCategoria.Enabled = true;
             txtCantidadDisponible.Enabled = true;
-
+            cbUnidadMedida.Enabled = true;
 
             btnModificar.Enabled = true;
             btnVerificar.Enabled = true;
@@ -101,7 +101,8 @@ namespace HogarAncianos.View
             txtMedida.Text = "";
             cbCategoria.SelectedIndex = 0;
             txtCantidadDisponible.Text = "";
-
+            cbUnidadMedida.SelectedIndex = 0;
+            cbUnidadMedida.Enabled = false;
 
             btnModificar.Enabled = false;
             btnVerificar.Enabled = true;
@@ -109,47 +110,115 @@ namespace HogarAncianos.View
             btnLimpiar.Enabled = true;
 
         }
+        public void MensajeInformativo(string message)
+        {
+            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar el medicamento código: " + txtCodigo.Text + "  " + " nombre:  " + txtNombre.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public bool VerificarCampos()
         {
             bool vacio = false;
 
             if (string.IsNullOrEmpty(txtCodigo.Text))
-            {             
+            {
+                lbCodigo.Visible = true;
                 vacio = true;
             }
-           
+            else
+            {
+                lbCodigo.Visible = false;
+
+            }
 
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                
+                lbNombre.Visible = true;
+
                 vacio = true;
             }
-            
+            else
+            {
+                lbNombre.Visible = false;
+
+            }
 
 
             if (cbCategoria.SelectedIndex == 0)
             {
-               
-                vacio = true;
-            }
-           
+                lbCategoria.Visible = true;
 
-            if (string.IsNullOrEmpty(txtMedida.Text))
-            {
-               
                 vacio = true;
             }
-            
+            else
+            {
+                lbCategoria.Visible = false;
+
+            }
+
+            if (string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex == 0 || !string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex == 0 ||
+                string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex != 0)
+            {
+                lbUnidadMedida.Visible = true;
+
+                vacio = true;
+            }
+            else
+            {
+                lbUnidadMedida.Visible = false;
+
+            }
 
             if (string.IsNullOrEmpty(txtCantidadDisponible.Text))
             {
 
-               
+                lbCantidadDisponible.Visible = true;
+
                 vacio = true;
 
             }
-          
+            else
+            {
+                lbCantidadDisponible.Visible = false;
+
+            }
 
 
             return vacio;

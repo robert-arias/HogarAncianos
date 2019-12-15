@@ -33,8 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
-            this.lbCodigo = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -75,8 +73,6 @@
             this.groupBox1.BackColor = System.Drawing.Color.CadetBlue;
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnVerificar);
-            this.groupBox1.Controls.Add(this.lbCodigo);
-            this.groupBox1.Controls.Add(this.lbNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtCodigo);
@@ -119,28 +115,6 @@
             this.btnVerificar.TabIndex = 93;
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = false;
-            // 
-            // lbCodigo
-            // 
-            this.lbCodigo.AutoSize = true;
-            this.lbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodigo.Location = new System.Drawing.Point(393, 65);
-            this.lbCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCodigo.Name = "lbCodigo";
-            this.lbCodigo.Size = new System.Drawing.Size(14, 18);
-            this.lbCodigo.TabIndex = 80;
-            this.lbCodigo.Text = "*";
-            // 
-            // lbNombre
-            // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(393, 110);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(14, 18);
-            this.lbNombre.TabIndex = 77;
-            this.lbNombre.Text = "*";
             // 
             // label2
             // 
@@ -207,8 +181,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnLimpiar;
         public System.Windows.Forms.Button btnVerificar;
-        private System.Windows.Forms.Label lbCodigo;
-        private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtCodigo;

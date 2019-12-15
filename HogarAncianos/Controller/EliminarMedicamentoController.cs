@@ -40,41 +40,59 @@ namespace HogarAncianos.Controller
             {
                 if (connectionDB.ExisteMedicamentoEnPrescripcion(fRM_EliminarMedicamento.GetCodigo()) > 0)
                 {
-                   if (connectionDB.DeletePrescripcion(fRM_EliminarMedicamento.GetCodigo(), connectionDB.GetPrescripciones_Medicamentos()))
+                    if (fRM_EliminarMedicamento.ShowConfirmation1())
+                    {
+
+                        if (connectionDB.DeletePrescripcion(fRM_EliminarMedicamento.GetCodigo(), connectionDB.GetPrescripciones_Medicamentos()))
+                        {
+
+                                if (connectionDB.DeleteMedicamento(fRM_EliminarMedicamento.GetCodigo()))
+                                {
+                                    fRM_EliminarMedicamento.ShowMessage("Medicamento eliminado con exito.");
+                                    fRM_EliminarMedicamento.EstadoInicial();
+                                }
+                                else
+                                {
+                                    fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino de los registros ");
+                                }
+
+                        }
+                        else
+                        {
+                            fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino de los registros.");
+                        }
+                    }
+                    else
+                    {
+                        fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino de los registros.");
+                    }
+                  
+                }
+                else
+                {
+                    if (fRM_EliminarMedicamento.ShowConfirmation())
                     {
                         if (connectionDB.DeleteMedicamento(fRM_EliminarMedicamento.GetCodigo()))
                         {
-                            fRM_EliminarMedicamento.ShowMessage("Medicamento Eliminado con exito ");
+                            fRM_EliminarMedicamento.ShowMessage("Medicamento eliminado con exito ");
                             fRM_EliminarMedicamento.EstadoInicial();
                         }
                         else
                         {
-                            fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino en medicamentos ");
+                            fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino.");
                         }
-
                     }
                     else
                     {
-                        fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino ");
+                        fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino.");
                     }
-                }
-                else
-                {
-                    if (connectionDB.DeleteMedicamento(fRM_EliminarMedicamento.GetCodigo()))
-                    {
-                        fRM_EliminarMedicamento.ShowMessage("Medicamento Eliminado con exito ");
-                        fRM_EliminarMedicamento.EstadoInicial();
-                    }
-                    else
-                    {
-                        fRM_EliminarMedicamento.ShowMessage("El medicamento no se elimino en medicamentos ");
-                    }
+                   
                 }
                
             }
             else
             {
-                fRM_EliminarMedicamento.ShowMessage("Espacios vacios ");
+                fRM_EliminarMedicamento.MensajeError("El campo \"código de medicamento\" se encuentra vacío.");
             }
 
         }

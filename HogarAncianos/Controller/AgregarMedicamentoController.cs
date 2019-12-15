@@ -20,17 +20,29 @@ namespace HogarAncianos.Controller
             this.frm_AgregarMedicamento = frm_agregarMedicamento;
             AgregarEventosMedicamentos();
             connectionDB = new ConnectionDB();
+            
            
         }
         private void AgregarEventosMedicamentos()
         {
-            frm_AgregarMedicamento.btnAgregar.Click += new EventHandler(AgregarPaciente);
+            frm_AgregarMedicamento.btnAgregar.Click += new EventHandler(AgregarMedicamento);
             frm_AgregarMedicamento.btnVerificar.Click += new EventHandler(VerificarCodigoMedicamento);
-            frm_AgregarMedicamento.btnVerificar.KeyDown += new KeyEventHandler(VerificarCodigoMedicamentoEnter);
+            frm_AgregarMedicamento.txtCodigo.KeyDown += new KeyEventHandler(VerificarCodigoMedicamentoEnter);
             frm_AgregarMedicamento.btnLimpiar.Click += new EventHandler(Limpiar);
-
-
+            frm_AgregarMedicamento.txtCantidadDisponible.KeyPress += new KeyPressEventHandler(ValidarCantidadDisponible);
+            frm_AgregarMedicamento.txtMedida.KeyPress += new KeyPressEventHandler(ValidarMedida);
         }
+
+        public void ValidarCantidadDisponible(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarMedicamento.SoloNumeros(e);
+        }
+
+        public void ValidarMedida(object sender, KeyPressEventArgs e)
+        {
+            frm_AgregarMedicamento.SoloNumeros(e);
+        }
+
         private void VerificarCodigoMedicamento(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(frm_AgregarMedicamento.GetCodigo()))
@@ -42,13 +54,13 @@ namespace HogarAncianos.Controller
                     }
                     else
                     {
-                        frm_AgregarMedicamento.ShowMessage("El codigo de medicamento ingresado se encuentra en los registros.");
+                        frm_AgregarMedicamento.MensajeError("El código de medicamento ingresado no se encuentra en los registros.");
                     }             
 
             }
             else
             {
-                frm_AgregarMedicamento.ShowMessage("El campo \"codigo de medicamento\" se encuentra vacío.");
+                frm_AgregarMedicamento.MensajeError("El campo \"código de medicamento\" se encuentra vacío.");
 
             }
 
@@ -68,13 +80,13 @@ namespace HogarAncianos.Controller
                     }
                     else
                     {
-                        frm_AgregarMedicamento.ShowMessage("El codigo de medicamento ingresado se encuentra en los registros.");
+                        frm_AgregarMedicamento.MensajeError("El código de medicamento ingresado no se encuentra en los registros.");
                     }
 
                 }
                 else
                 {
-                    frm_AgregarMedicamento.ShowMessage("El campo \"codigo de medicamento\" se encuentra vacío.");
+                    frm_AgregarMedicamento.MensajeError("El campo \"código de medicamento\" se encuentra vacío.");
 
                 }
                 e.SuppressKeyPress = true; //remove ding windows sound.
@@ -87,15 +99,15 @@ namespace HogarAncianos.Controller
             frm_AgregarMedicamento.EstadoInicial();
         }
 
-        private void AgregarPaciente(object sender, EventArgs e)
+        private void AgregarMedicamento(object sender, EventArgs e)
         {
             if (!frm_AgregarMedicamento.VerificarCampos())
             {
-                if (frm_AgregarMedicamento.ShowMessage2("¿Esta seguro de añadir el medicamento?"))
+                if (frm_AgregarMedicamento.ShowConfirmation())
                 {
                     if (connectionDB.AgregarMedicamento(frm_AgregarMedicamento.GetMedicamento()))
                     {
-                        frm_AgregarMedicamento.ShowMessage("Se ha agregado el nuevo medicamento con éxito.");
+                        frm_AgregarMedicamento.MensajeInformativo("Se ha agregado el nuevo medicamento con éxito.");
                         frm_AgregarMedicamento.EstadoInicial();
                     }
                     else
@@ -103,6 +115,10 @@ namespace HogarAncianos.Controller
                         frm_AgregarMedicamento.ShowMessage("Se ha producido un error.\nVerifique los datos.");
 
                     }
+                }
+                else
+                {
+                    frm_AgregarMedicamento.MensajeError("No se ha agregado el medicamento.");
                 }
 
             }

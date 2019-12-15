@@ -1087,6 +1087,58 @@ namespace HogarAncianos.Model {
 
         }
 
+        public bool DeletePrescripcionSinMedicamentos(int num)
+        {
+            try
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand("delete from Prescripcion where num=" + num+ "", connection);               
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.ToString() + "Error");
+                connection.Close();
+                return false;
+                
+              
+               
+            }
+           
+
+        }
+
+        public int VerificarExistePrescripcion()
+        {
+            //Verificar si la prescripcion no existe en la tabla prescripcion_medicamentos pero si en prescripcion despues
+            //despues de que un usuario elimino medicamentos
+
+            try
+            {
+
+                connection.Open();
+
+                SQLiteCommand command = new SQLiteCommand("select num from Prescripcion  where  num not in (SELECT num from Prescripcion_Medicamento);", connection);
+                SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
+                DataSet data = new DataSet();
+                sqlDataAdapter.Fill(data);
+                connection.Close();
+              
+                return int.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            }
+            catch (SQLiteException e)
+            {
+
+                connection.Close();
+                Debug.WriteLine(e.ToString() + "Error");
+                return 0;
+            }
+        }
+
         public bool DeletePrescripcion(string codigo, DataSet prescripcion)
         {
             try
@@ -1107,6 +1159,13 @@ namespace HogarAncianos.Model {
                     }
 
                 }
+
+                if (VerificarExistePrescripcion() > 0)
+                {
+                    DeletePrescripcionSinMedicamentos(VerificarExistePrescripcion());
+
+                }
+
                 return true;
 
 

@@ -140,6 +140,7 @@ namespace HogarAncianos.Controller {
 
             frm_MenuPrincipal.mi_MedicamentosEliminar.Click += new EventHandler(OpenEliminarMedicamentos);
             frm_EliminarMedicamento.FormClosed += CerrarEliminarMedicamentos;
+            frm_EliminarMedicamento.btnCancelar.Click += new EventHandler(CancelarEliminarMedicamentos);
 
             //Pacientes
             frm_MenuPrincipal.mi_pacientesAgregar.Click += new EventHandler(OpenAgregarPaciente);
@@ -174,8 +175,8 @@ namespace HogarAncianos.Controller {
             frm_AgregarPrescripcion.btnCancelar.Click += new EventHandler(CancelarAgregarPrescripcion);
 
 
-            frm_MenuPrincipal.mi_PrescripcionEliminar.Click += new EventHandler(OpenEliminarPrescripcion);
-            frm_EliminarPrescripcion.FormClosed += CerrarEliminarPrescripcion;
+           
+           
 
             frm_MenuPrincipal.mi_PrescripcionModificar.Click += new EventHandler(OpenModificarPrescripcion);
             frm_ModificarPrescripcion.FormClosed += CerrarModificarPrescripcion;
@@ -382,13 +383,13 @@ namespace HogarAncianos.Controller {
         private void CerrarModificarMedicamento(object sender, EventArgs e)
         {
             frm_ModificarMedicamento.Close();
-          //  frm_ModificarMedicamento.EstadoInicial();
+          frm_ModificarMedicamento.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
         private void CancelarModificarMedicamento(object sender, EventArgs e)
         {
             frm_ModificarMedicamento.Close();
-           // frm_ModificarMedicamento.EstadoInicial();
+            frm_ModificarMedicamento.EstadoInicial();
             frm_MenuPrincipal.Show();
 
         }
@@ -403,6 +404,14 @@ namespace HogarAncianos.Controller {
         private void CerrarEliminarMedicamentos(object sender, EventArgs e)
         {
             frm_EliminarMedicamento.Close();
+            frm_EliminarMedicamento.EstadoInicial();
+            frm_MenuPrincipal.Show();
+        }
+
+        private void CancelarEliminarMedicamentos(object sender, EventArgs e)
+        {
+            frm_EliminarMedicamento.Close();
+            frm_EliminarMedicamento.EstadoInicial();
             frm_MenuPrincipal.Show();
         }
 

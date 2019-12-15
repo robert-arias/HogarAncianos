@@ -36,23 +36,45 @@ namespace HogarAncianos.Controller
         {
             frm_ModificarMedicamento.btnModificar.Click += new EventHandler(ModificarMedicamento);
             frm_ModificarMedicamento.btnVerificar.Click += new EventHandler(VerificarCodigoMedicamento);
-            frm_ModificarMedicamento.btnVerificar.KeyDown += new KeyEventHandler (VerificarCodigoMedicamentoEnter);
+            frm_ModificarMedicamento.txtCodigo.KeyDown += new KeyEventHandler (VerificarCodigoMedicamentoEnter);
             frm_ModificarMedicamento.btnLimpiar.Click += new EventHandler(Limpiar);
+            frm_ModificarMedicamento.txtCantidadDisponible.KeyPress += new KeyPressEventHandler(ValidarCantidadDisponible);
+            frm_ModificarMedicamento.txtMedida.KeyPress += new KeyPressEventHandler(ValidarMedida);
 
 
+
+        }
+
+        public void ValidarCantidadDisponible(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarMedicamento.SoloNumeros(e);
+        }
+
+        public void ValidarMedida(object sender, KeyPressEventArgs e)
+        {
+            frm_ModificarMedicamento.SoloNumeros(e);
         }
 
         private void ModificarMedicamento(object sender, EventArgs e)
         {
             if (!frm_ModificarMedicamento.VerificarCampos())
             {
-                connectionDB.UpdateMedicamento(frm_ModificarMedicamento.GetMedicamento());
-                frm_ModificarMedicamento.ShowMessage("Medicamento modificado con exito");
-                frm_ModificarMedicamento.EstadoInicial();
+                if (frm_ModificarMedicamento.ShowConfirmation())
+                {
+                    connectionDB.UpdateMedicamento(frm_ModificarMedicamento.GetMedicamento());
+                    frm_ModificarMedicamento.MensajeInformativo("Medicamento modificado con éxito");
+                    frm_ModificarMedicamento.EstadoInicial();
+                }
+                else
+                {
+                    frm_ModificarMedicamento.MensajeError("No se ha modificado el medicamento.");
+                }
+                
             }
             else
             {
-                frm_ModificarMedicamento.ShowMessage("Espacios vacios ");
+                frm_ModificarMedicamento.MensajeError("Algunos campos se encuentran vacíos." +
+                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
             }
 
         }
@@ -72,13 +94,13 @@ namespace HogarAncianos.Controller
                 }
                 else
                 {
-                    frm_ModificarMedicamento.ShowMessage("El codigo de medicamento ingresado no se encuentra en los registros.");
+                    frm_ModificarMedicamento.MensajeError("El código de medicamento ingresado no se encuentra en los registros.");
                 }
 
             }
             else
             {
-                frm_ModificarMedicamento.ShowMessage("El campo \"codigo de medicamento\" se encuentra vacío.");
+                frm_ModificarMedicamento.MensajeError("El campo \"código de medicamento\" se encuentra vacío.");
 
             }
 
@@ -94,17 +116,19 @@ namespace HogarAncianos.Controller
 
                     if (connectionDB.ExisteCodigoMedicamento(frm_ModificarMedicamento.GetCodigo()))
                     {
+
                         llenarCampos();
+
                     }
                     else
                     {
-                        frm_ModificarMedicamento.ShowMessage("El codigo de medicamento ingresado no se encuentra en los registros.");
+                        frm_ModificarMedicamento.MensajeError("El código de medicamento ingresado no se encuentra en los registros.");
                     }
 
                 }
                 else
                 {
-                    frm_ModificarMedicamento.ShowMessage("El campo \"codigo de medicamento\" se encuentra vacío.");
+                    frm_ModificarMedicamento.MensajeError("El campo \"código de medicamento\" se encuentra vacío.");
 
                 }
                 e.SuppressKeyPress = true; //remove ding windows sound.

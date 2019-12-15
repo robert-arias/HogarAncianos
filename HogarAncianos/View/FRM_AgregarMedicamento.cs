@@ -24,8 +24,8 @@ namespace HogarAncianos.View
 
         public Medicamento GetMedicamento()
         {         
-            return new Medicamento(txtCodigo.Text, txtNombre.Text, maskedTextBox1.Text +"  "+cbUnidadMedida.SelectedItem  , cbCategoria.SelectedItem.ToString(),
-            Convert.ToInt32(maskedTextBox1.Text), Convert.ToInt32(txtCantidadPrescrita.Text));
+            return new Medicamento(txtCodigo.Text, txtNombre.Text, txtMedida.Text +"  "+cbUnidadMedida.SelectedItem  , cbCategoria.SelectedItem.ToString(),
+            Convert.ToInt32(txtMedida.Text), Convert.ToInt32(txtCantidadPrescrita.Text));
 
         }
 
@@ -53,11 +53,11 @@ namespace HogarAncianos.View
         {
             txtCodigo.Enabled = false;
             txtNombre.Enabled = true;
-            maskedTextBox1.Enabled = true;
+            txtMedida.Enabled = true;
             cbCategoria.Enabled = true;
-            maskedTextBox1.Enabled = true;
-           
-
+            txtNombre.Enabled = true;
+            txtCantidadDisponible.Enabled = true;
+            cbUnidadMedida.Enabled = true;
             btnAgregar.Enabled = true;
             btnVerificar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -69,16 +69,20 @@ namespace HogarAncianos.View
         {
             txtCodigo.Enabled = true;
             txtNombre.Enabled = false;
-            maskedTextBox1.Enabled = false;
+            txtMedida.Enabled = false;
             cbCategoria.Enabled = false;
-            maskedTextBox1.Enabled = false;
+            txtMedida.Enabled = false;
             txtCantidadPrescrita.Enabled = false;
+            cbUnidadMedida.Enabled = false;
+            cbUnidadMedida.SelectedIndex = 0;
+            txtCantidadDisponible.Enabled = false;
+            txtCantidadDisponible.Text = "";
 
             txtCodigo.Text = "";
             txtNombre.Text = "";
-            maskedTextBox1.Text = "";
+            txtMedida.Text = "";
             cbCategoria.SelectedIndex = 0;
-            maskedTextBox1.Text = "";
+            txtMedida.Text = "";
            
 
             btnAgregar.Enabled = false;
@@ -87,19 +91,14 @@ namespace HogarAncianos.View
             btnLimpiar.Enabled = true;
 
 
-            lbCodigo.ForeColor = Color.Black;
-            lbNombre.ForeColor = Color.Black;
-            maskedTextBox1.ForeColor = Color.Black;
-            cbCategoria.ForeColor = Color.Black;
-            maskedTextBox1.ForeColor = Color.Black;
-            txtCantidadPrescrita.ForeColor = Color.Black;
+            
 
             lbCodigo.Visible = false;
             lbNombre.Visible = false;
             lbUnidadMedida.Visible = false;
             lbCategoria.Visible = false;
             lbCantidadDisponible.Visible = false;
-            lbCantidadPrescrita.Visible = false;
+           
         }
 
         public bool VerificarCampos()
@@ -109,74 +108,113 @@ namespace HogarAncianos.View
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {
                 lbCodigo.Visible = true;
-                lbCodigo.ForeColor = Color.Red;
-
                 vacio = true;
             }
             else
             {
                 lbCodigo.Visible = false;
-                lbCodigo.ForeColor = Color.Black;
+               
             }
 
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 lbNombre.Visible = true;
-                lbNombre.ForeColor = Color.Red;
+               
                 vacio = true;
             }
             else
             {
                 lbNombre.Visible = false;
-                lbNombre.ForeColor = Color.Black;
+               
             }
 
 
             if (cbCategoria.SelectedIndex==0)
             {
                 lbCategoria.Visible = true;
-                lbCategoria.ForeColor = Color.Red;
+             
                 vacio = true;
             }
             else
             {
                 lbCategoria.Visible = false;
-                lbCategoria.ForeColor = Color.Black;
+               
             }
 
-            if (string.IsNullOrEmpty(maskedTextBox1.Text))
+            if (string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex==0 || !string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex == 0 || 
+                string.IsNullOrEmpty(txtMedida.Text) && cbUnidadMedida.SelectedIndex != 0)
             {
                 lbUnidadMedida.Visible = true;
-                lbUnidadMedida.ForeColor = Color.Red;
+               
                 vacio = true;
             }
             else
             {
                 lbUnidadMedida.Visible = false;
-                lbUnidadMedida.ForeColor = Color.Black;
+               
             }
 
-            if (string.IsNullOrEmpty(maskedTextBox1.Text))
+            if (string.IsNullOrEmpty(txtCantidadDisponible.Text))
             {
                 
                 lbCantidadDisponible.Visible = true;
-                lbCantidadDisponible.ForeColor = Color.Red;              
+                         
                 vacio = true;
 
             }
             else
             {
                 lbCantidadDisponible.Visible = false;
-                lbCantidadDisponible.ForeColor = Color.Black;
+               
             }
           
 
             return vacio;
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        public bool ShowConfirmation()
         {
+            string message = "¿Desea agregar el medicamento código: " + txtCodigo.Text + "  " + " nombre:  " + txtNombre.Text + " ?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
 
+            return false;
         }
+        public void MensajeInformativo(string message)
+        {
+            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+                MessageBox.Show("Solo se admiten números.");
+            }
+        }
+
+       
+        
     }
 }
