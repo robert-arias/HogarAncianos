@@ -32,6 +32,8 @@ namespace HogarAncianos.Controller
             FRM_AgregarPrescripcion.btnVerificarPaciente.Click += new EventHandler(VerificarPaciente);
             FRM_AgregarPrescripcion.btnLimpiar.Click += new EventHandler(Limpiar);
             FRM_AgregarPrescripcion.btnAgregar.Click += new EventHandler(AgregarPrescripcion);
+            FRM_AgregarPrescripcion.txtCantidad.KeyPress += new KeyPressEventHandler(ValidarCantidad);
+            FRM_AgregarPrescripcion.txtCedula.KeyPress += new KeyPressEventHandler(ValidarCedula);
         }
 
         public void NumeroPrescripcion()
@@ -71,8 +73,22 @@ namespace HogarAncianos.Controller
         {
             if (connectionDB.ExisteCodigoMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
             {
+                FRM_AgregarPrescripcion.ActivarAgregarMedicamento();
                 FRM_AgregarPrescripcion.txtNombre.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][0].ToString();
-                FRM_AgregarPrescripcion.labelCantidadDisponible.Text= connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
+
+                
+                if (!FRM_AgregarPrescripcion.VerificarMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
+                {
+                    FRM_AgregarPrescripcion.labelCantidadDisponible.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
+                }
+                else
+                {
+                    int cantidad= int.Parse(connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString()) - FRM_AgregarPrescripcion.RetornarCantidadDisponible(FRM_AgregarPrescripcion.GetCodigo());
+                    FRM_AgregarPrescripcion.labelCantidadDisponible.Text = cantidad.ToString();
+                }
+                
+
+                   
 
             }
             else
@@ -81,9 +97,20 @@ namespace HogarAncianos.Controller
             }
         }
 
+        public void ValidarCantidad(object sender, KeyPressEventArgs e)
+        {
+            FRM_AgregarPrescripcion.SoloNumeros(e);
+        }
+
+        public void ValidarCedula(object sender, KeyPressEventArgs e)
+        {
+            FRM_AgregarPrescripcion.SoloNumeros(e);
+        }
+
         public void AgregarMedicamento(object sender, EventArgs e)
         {
             FRM_AgregarPrescripcion.AgregarMedicamento();
+            FRM_AgregarPrescripcion.EstadoInicialMedicamento();
 
         }
 

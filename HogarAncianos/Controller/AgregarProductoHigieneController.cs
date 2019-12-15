@@ -79,9 +79,9 @@ namespace HogarAncianos.Controller
                 }
                     else 
                         frm_AgregarProductosHigiene.ShowMessage("Algunos campos se encuentran vacíos. ");
-                }
+                
              }
 
              
-        }
+    }
 }

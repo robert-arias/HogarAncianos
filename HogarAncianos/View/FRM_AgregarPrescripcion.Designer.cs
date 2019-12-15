@@ -213,24 +213,28 @@
             // 
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             this.Codigo.Width = 120;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             this.Nombre.Width = 120;
             // 
             // CantidadPrescrita
             // 
             this.CantidadPrescrita.HeaderText = "Cantidad Prescrita";
             this.CantidadPrescrita.Name = "CantidadPrescrita";
+            this.CantidadPrescrita.ReadOnly = true;
             this.CantidadPrescrita.Width = 120;
             // 
             // Fecha
             // 
             this.Fecha.HeaderText = "Fecha de caducidad";
             this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             this.Fecha.Width = 120;
             // 
             // button1
@@ -407,6 +411,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(183, 24);
             this.txtCedula.TabIndex = 118;
+       
             // 
             // label5
             // 
