@@ -117,6 +117,7 @@ namespace HogarAncianos.Controller
         public void EliminarMedicamento(object sender, EventArgs e)
         {
             FRM_AgregarPrescripcion.EliminarMedicamento();
+            FRM_AgregarPrescripcion.EstadoInicialMedicamento();
         }
 
         public void AgregarPrescripcion(object sender, EventArgs e)

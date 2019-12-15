@@ -196,7 +196,6 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarProductosHigiene.resources
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_AgregarUsuario.resources
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarEmpleados.resources
-C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProducto.resources
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaMedicamentos.resources
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPacientes.resources
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPrescripcion.resources
@@ -231,3 +230,5 @@ C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteEmpleados.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_BuscarProductos.resources
+C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteEmpleados.resources
