@@ -16,41 +16,80 @@ namespace HogarAncianos.View
 {
     public partial class FRM_ConsultarUsuario : Form
     {
-        BuscarUsuarioController buscarUsuarioController;
-        FRM_ReporteUsuarioPrueba reporteUsuarioPrueba;
+        private BuscarUsuarioController controller;
+        private FRM_ReporteUsuarioPrueba reporteUsuarioPrueba;
+        private ConnectionDB db;
+
         public FRM_ConsultarUsuario()
         {
             InitializeComponent();
-            buscarUsuarioController = new BuscarUsuarioController(this);
+            controller = new BuscarUsuarioController(this);
             reporteUsuarioPrueba = new FRM_ReporteUsuarioPrueba();
+            db = new ConnectionDB();
         }
 
-        private void SetdtUsuarios()
-        {
-            dtUsuarios.ColumnCount = 3;
-            dtUsuarios.Columns[0].DataPropertyName = "usuario";
-            dtUsuarios.Columns[0].Name = "Usuario";
-            dtUsuarios.Columns[1].DataPropertyName = "contrasenia";
-            dtUsuarios.Columns[1].Name = "Contraseña";
-            dtUsuarios.Columns[2].DataPropertyName = "rol";
-            dtUsuarios.Columns[2].Name = "Rol";                   
-            dtUsuarios.AutoGenerateColumns = false;
+        public bool VerificarCampos() {
+            if (rbUsuario.Checked) {
+                txtBuscar.Text = new string(txtBuscar.Text.Where(x => !char.IsWhiteSpace(x)).ToArray());
+                return string.IsNullOrEmpty(txtBuscar.Text);
+            }
+            else {
+                txtBuscar.Text = new string(txtBuscar.Text.Where(x => !char.IsWhiteSpace(x)
+                                                                    && char.IsDigit(x)).ToArray());
+                return string.IsNullOrEmpty(txtBuscar.Text);
+            }
         }
 
-        public void  FilldtgUsuarios(DataSet usuarios)
-        {
-            SetdtUsuarios();
-            dtUsuarios.DataSource = usuarios.Tables[0];             
+        public void ShowMessage(string message) {
+            MessageBox.Show(message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void RealizarReporte() {
+        public string GetBusqueda() {
+            if (rbUsuario.Checked)
+                return $"select usuario, cedula_empleado from usuarios where usuario = '{txtBuscar.Text}'";
+            else
+                return $"select usuario, cedula_empleado from usuarios where cedula_empleado = '{txtBuscar.Text}'";
+        }
+
+        public void LlenarCampos(DataTable resultados) {
+            LimpiarResultados();
+            if (resultados != null) {
+                if (resultados.Rows.Count > 0) {
+                    foreach(DataRow dataRow in resultados.Rows) {
+                        int i = dgvUsuarios.Rows.Add();
+                        DataGridViewRow row = dgvUsuarios.Rows[i];
+                        row.Cells["Usuario"].Value = dataRow[0].ToString();
+                        DataTable empleado = db.GetEmpleadoUsuario(dataRow[1].ToString());
+                        row.Cells["Rol"].Value = empleado.Rows[0][3].ToString();
+                        row.Cells["Empleado"].Value = empleado.Rows[0][1].ToString() + " " + empleado.Rows[0][2].ToString();
+                    }
+                }
+                else
+                    ShowMessage("No se han encontrado resultados.");
+            }
+        }
+
+        public void EstadoInicial() {
+            txtBuscar.Text = "";
+            LimpiarResultados();
+        }
+
+        private void LimpiarResultados() {
+            do {
+                foreach (DataGridViewRow row in dgvUsuarios.Rows) {
+                    dgvUsuarios.Rows.Remove(row);
+                }
+            } while (dgvUsuarios.Rows.Count >= 1);
+        }
+
+            public void RealizarReporte() {
             DataSetUsuario dataSetUsuario = new DataSetUsuario();
-            int fila = dtUsuarios.Rows.Count - 2;   
+            int fila = dgvUsuarios.Rows.Count - 2;   
             for (int i = 0; i <= fila; i++) {
                 dataSetUsuario.Tables[0].Rows.Add
-                    (new object[] {    dtUsuarios[0, i].Value.ToString(),
-                           dtUsuarios[1, i].Value.ToString(),
-                           dtUsuarios[2, i].Value.ToString()}
+                    (new object[] {    dgvUsuarios[0, i].Value.ToString(),
+                           dgvUsuarios[1, i].Value.ToString(),
+                           dgvUsuarios[2, i].Value.ToString()}
                     );
             }
 

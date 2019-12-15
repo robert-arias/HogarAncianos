@@ -59,16 +59,16 @@ namespace HogarAncianos.Controller {
             if (!frm_AgregarEmpleados.VerificarCampos()) {
                 if (frm_AgregarEmpleados.ShowConfirmation()) {
                     if (db.AgregarEmpleado(frm_AgregarEmpleados.GetEmpleado())) {
-                        frm_AgregarEmpleados.ShowMessage("Se ha agregado al nuevo empleado con éxito.");
+                        frm_AgregarEmpleados.ShowMessage("Se ha agregado al nuevo empleado con éxito.", "Mensaje");
                         frm_AgregarEmpleados.EstadoInicial();
                     }
                     else
-                        frm_AgregarEmpleados.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                        frm_AgregarEmpleados.ShowMessage("Se ha producido un error.\nVerifique los datos.", "Advertencia");
                 }
             }
             else {
                 frm_AgregarEmpleados.ShowMessage("Algunos campos se encuentran vacíos." +
-                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
+                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.", "Advertencia");
             }
         }
 
@@ -79,12 +79,11 @@ namespace HogarAncianos.Controller {
                     frm_AgregarEmpleados.ActivarCampos();
                 else
                     frm_AgregarEmpleados.ShowMessage("La cédula de identidad ingresada se encuentra en los " +
-                        "registros.");
+                        "registros.", "Mensaje");
             }
             else
                 frm_AgregarEmpleados.ShowMessage("El campo \"número de cédula\" se encuentra vacío o se ingresaron" +
-                    " menos de 9 dígitos.");
-            
+                    " menos de 9 dígitos.", "Advertencia");
         }
 
     }

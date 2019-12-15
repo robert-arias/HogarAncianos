@@ -1,148 +1,125 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using HogarAncianos.Controller;
+using HogarAncianos.Model;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using HogarAncianos.Model;
-using HogarAncianos.Controller;
 
-namespace HogarAncianos.View
-{
+namespace HogarAncianos.View {
     public partial class FRM_ModificarUsuario : Form
     {
         private ModificarUsuarioController modificarUsuarioController;
+        private ConnectionDB db;
+
         public FRM_ModificarUsuario()
         {
             InitializeComponent();
             EstadoInicial();
             modificarUsuarioController = new  ModificarUsuarioController(this);
+            db = new ConnectionDB();
+        }
+
+        public bool VerificarUsuario() {
+            return string.IsNullOrEmpty(txtUsuario.Text);
         }
 
 
-        public void llenarCampos(DataTable data)
+        public void LlenarRol(DataTable data)
         {
-            txtContrasenia.Text = data.Rows[0][1].ToString();
-            cbRol.SelectedItem = data.Rows[0][2].ToString();
-
-            Console.WriteLine(data.Rows[0][1].ToString() + "LLenar campos metodooo usuarioooooooooooooooooooo");
-        }
-        public void FillUsuarios(DataSet usuario)
-        {
-
-            DataTable table = new DataTable();
-            table = usuario.Tables[0];        
-            DataRow newRow = table.NewRow();
-            newRow["usuario"] = "Seleccionar";
-            table.Rows.InsertAt(newRow,0);
-            Console.WriteLine(newRow + "Holi");
-
-
-
-            cbUsuario.DataSource = table;
-            cbUsuario.DisplayMember = "usuario";
-            cbUsuario.ValueMember = "usuario";
-
-             
-
+            txtRol.Text = db.GetEmpleadoUsuario(data.Rows[0][2].ToString()).Rows[0][3].ToString(); 
         }
 
-        public Usuario GetUsuario()
-        {
-            /* Console.WriteLine(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem) + "INFORMACION DEL USUARIO MODFIICADO");
-             return new Usuario(cbUsuario.GetItemText(cbUsuario.SelectedItem), txtContrasenia.Text, cbRol.GetItemText(cbRol.SelectedItem));*/
-            return null;
-           
+        public bool CheckPassword() {
+            DataTable user = db.GetUsuario(txtUsuario.Text);
+
+            byte[] passwordBytes = Encoding.Unicode.GetBytes(txtContraseniaActual.Text);
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
+
+            return Convert.ToBase64String(hashedBytes).Equals(Convert.ToBase64String((byte[])user.Rows[0][1]));
         }
 
-        public void ActivarCampos()
-        {
-           
-            txtContrasenia.Enabled = true;
-            cbRol.Enabled = true;
-            checkBoxMostrarDatos.Enabled = true;
+        public bool ShowConfirmation() {
+            string message = "¿Desea modificar el usuario: " + txtUsuario.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
+            return boton == DialogResult.OK;
+        }
+
+        public void ShowMessage(string message, string title) {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ActivarContraseniaActual() {
+            txtUsuario.Enabled = false;
+            btnVerificarUsuario.Enabled = false;
+            btnVerificarContrasenia.Enabled = true;
+            txtContraseniaActual.Enabled = true;
+        }
+
+        public void ActivarContraseniaNueva() {
+            btnVerificarContrasenia.Enabled = false;
+            txtContraseniaNueva.Enabled = true;
+            cbMostrarContrasenia.Enabled = true;
             btnModificar.Enabled = true;
-            btnCancelar.Enabled = true;
-           
-            btnLimpiar.Enabled = true;
+            txtContraseniaActual.Enabled = false;
         }
 
-        public void EstadoInicial()
-        {
-            cbUsuario.Enabled = true;
-            txtContrasenia.Enabled = false;
-            cbRol.Enabled = false;
-            checkBoxMostrarDatos.Enabled = false;
+        public void EstadoInicial() {
+            txtUsuario.Enabled = true;
+            btnVerificarUsuario.Enabled = true;
+            btnVerificarContrasenia.Enabled = false;
+            txtContraseniaActual.Enabled = false;
 
+            btnVerificarContrasenia.Enabled = false;
+            txtContraseniaNueva.Enabled = false;
+            cbMostrarContrasenia.Enabled = false;
+            cbMostrarContrasenia.Checked = false;
             btnModificar.Enabled = false;
-            btnCancelar.Enabled = false;
-          
-            btnLimpiar.Enabled = true;
-            
-            cbUsuario.SelectedIndex = 0;
 
-           
+            txtContraseniaActual.Text = "";
+            txtUsuario.Text = "";
+            txtRol.Text = "";
+            lbContraseniaNueva.ForeColor = Color.White;
+            txtContraseniaNueva.Text = "";
+        }
 
-            txtContrasenia.Text = "";
-            cbRol.SelectedIndex = 0;
+        public bool VerificarCampos() {
+            if (string.IsNullOrEmpty(txtContraseniaNueva.Text)) {
+                lbContraseniaNueva.ForeColor = Color.Red;
+                return true;
+            }
+            else {
+                lbContraseniaNueva.ForeColor = Color.White;
+                return false;
+            }
 
         }
 
-        public bool VerificarCampos()
-        {
-            bool verificar = false;
+        public Usuario GetUsuario() {
+            byte[] passwordBytes = Encoding.Unicode.GetBytes(txtContraseniaNueva.Text);
+            var hasher = System.Security.Cryptography.SHA256.Create();
+            byte[] hashedBytes = hasher.ComputeHash(passwordBytes);
 
-            if (string.IsNullOrEmpty(txtContrasenia.Text))
+            return new Usuario(txtUsuario.Text, hashedBytes, txtRol.Text);
+        }
+
+        public void MostrarContrasenia()
+        {
+            string contrasenia = txtContraseniaNueva.Text;
+            if (cbMostrarContrasenia.Checked)
             {
-                lbContrasenia.ForeColor = Color.Red;
-                verificar = true;
+                txtContraseniaNueva.UseSystemPasswordChar = false;
+                txtContraseniaNueva.Text = contrasenia;
             }
             else
             {
-                lbContrasenia.ForeColor = Color.Black;
-
-            }
-
-            if (cbRol.SelectedIndex == 0)
-            {
-                lbRol.ForeColor = Color.Red;
-                verificar = true;
-            }
-            else
-            {
-                lbRol.ForeColor = Color.Black;
-
-            }
-
-            return verificar;
-
-        }
-
-        private void checkBoxMostrarDatos_CheckedChanged(object sender, EventArgs e)
-        {
-            string contrasenia = txtContrasenia.Text;
-            if (checkBoxMostrarDatos.Checked)
-            {
-                txtContrasenia.UseSystemPasswordChar = false;
-                txtContrasenia.Text = contrasenia;
-            }
-            else
-            {
-                txtContrasenia.UseSystemPasswordChar = true;
-                txtContrasenia.Text = contrasenia;
+                txtContraseniaNueva.UseSystemPasswordChar = true;
+                txtContraseniaNueva.Text = contrasenia;
             }
 
         }
 
-        public string GetNombreUsuario()
-        {
-            return cbUsuario.GetItemText(cbUsuario.SelectedItem);
-        }
-
-       
     }
 }

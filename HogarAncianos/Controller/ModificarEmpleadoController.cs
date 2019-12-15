@@ -62,16 +62,16 @@ namespace HogarAncianos.Controller {
             if (!frm_ModificarEmpleado.VerificarCampos()) {
                 if (frm_ModificarEmpleado.ShowConfirmation()) {
                     if (db.ModificarEmpleado(frm_ModificarEmpleado.GetEmpleado())) {
-                        frm_ModificarEmpleado.ShowMessage("Se ha modificado el empleado con éxito.");
+                        frm_ModificarEmpleado.ShowMessage("Se ha modificado el empleado con éxito.", "Mensaje");
                         frm_ModificarEmpleado.EstadoInicial();
                     }
                     else
-                        frm_ModificarEmpleado.ShowMessage("Se ha producido un error.\nVerifique los datos.");
+                        frm_ModificarEmpleado.ShowMessage("Se ha producido un error.\nVerifique los datos.", "Advertencia");
                 }
             }
             else {
                 frm_ModificarEmpleado.ShowMessage("Algunos campos se encuentran vacíos." +
-                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.");
+                    "\nLos campos con el asterisco (*) rojo son aquellos que deben ser modificados.", "Advertencia");
             }
         }
 
@@ -84,10 +84,10 @@ namespace HogarAncianos.Controller {
                 }
                 else
                     frm_ModificarEmpleado.ShowMessage("La cédula de identidad ingresada no se encuentra en los " +
-                        "registros.");
+                        "registros.", "Mensaje");
             }
             else
-                frm_ModificarEmpleado.ShowMessage("El campo \"número de cédula\" se encuentra vacío.");
+                frm_ModificarEmpleado.ShowMessage("El campo \"número de cédula\" se encuentra vacío.", "Advertencia");
         }
 
     }

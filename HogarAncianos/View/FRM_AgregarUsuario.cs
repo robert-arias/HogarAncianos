@@ -38,13 +38,21 @@ namespace HogarAncianos.View
             txtRol.Text = empleado.Rows[0][3].ToString();
         }
 
-        public void ShowMessage(string message)
+        public bool ShowConfirmation() {
+            string message = "¿Desea modificar el usuario: " + txtUsuario.Text + "?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            return boton == DialogResult.OK;
+        }
+
+        public void ShowMessage(string message, string title)
         {
-            MessageBox.Show(message, "Advertencia", MessageBoxButtons.OK);
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public string GetNombreUsuario()
         {
+            txtUsuario.Text = new string(txtUsuario.Text.Where(x => !char.IsWhiteSpace(x)).ToArray());
             return txtUsuario.Text;
         }
         public Usuario GetUsuario()
@@ -92,6 +100,7 @@ namespace HogarAncianos.View
         public bool VerificarCampos()
         {
             bool verificar = false;
+            txtUsuario.Text = new string(txtUsuario.Text.Where(x => !char.IsWhiteSpace(x)).ToArray());
 
             if (string.IsNullOrEmpty(txtContrasenia.Text))
             {
@@ -108,7 +117,7 @@ namespace HogarAncianos.View
 
         }
 
-        private void checkBoxMostrarDatos_CheckedChanged(object sender, EventArgs e)
+        public void MostrarContrasenia()
         {
             string contrasenia = txtContrasenia.Text;
             if (checkBoxMostrarDatos.Checked)

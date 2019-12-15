@@ -208,7 +208,6 @@
             this.checkBoxMostrarDatos.TabIndex = 71;
             this.checkBoxMostrarDatos.Text = "Mostrar contraseña";
             this.checkBoxMostrarDatos.UseVisualStyleBackColor = true;
-            this.checkBoxMostrarDatos.CheckedChanged += new System.EventHandler(this.checkBoxMostrarDatos_CheckedChanged);
             // 
             // btnLimpiar
             // 
@@ -331,7 +330,6 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRM_AgregarUsuario";
-            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_AgregarUsuario";
             this.groupBox1.ResumeLayout(false);
@@ -354,7 +352,6 @@
         private System.Windows.Forms.TextBox txtContrasenia;
         public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBoxMostrarDatos;
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -362,5 +359,6 @@
         public System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtRol;
+        public System.Windows.Forms.CheckBox checkBoxMostrarDatos;
     }
 }

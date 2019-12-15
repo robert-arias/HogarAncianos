@@ -25,8 +25,8 @@ namespace HogarAncianos.View {
             return txtCedula.Text;
         }
 
-        public void ShowMessage(string message) {
-            MessageBox.Show(message, "Advertencia");
+        public void ShowMessage(string message, string title) {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void LlenarCampos(DataSet empleado) {
@@ -127,7 +127,7 @@ namespace HogarAncianos.View {
                 }
             }
             catch (NullReferenceException) {
-                ShowMessage("Debe seleccionar el correo a eliminar.");
+                ShowMessage("Debe seleccionar el correo a eliminar.", "Mensaje");
             }
         }
 
@@ -155,10 +155,10 @@ namespace HogarAncianos.View {
                     txtCorreo.Text = "";
                 }
                 else
-                    ShowMessage("Correo no válido.");
+                    ShowMessage("Correo no válido.", "Advertencia");
             }
             else
-                ShowMessage("El correo ingresado ya existe en la lista.");
+                ShowMessage("El correo ingresado ya existe en la lista.", "Mensaje");
         }
 
         public bool VerificarCampos() {
