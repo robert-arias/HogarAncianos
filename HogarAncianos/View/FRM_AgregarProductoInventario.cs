@@ -47,6 +47,7 @@ namespace HogarAncianos.View
             btAgregar.Enabled = true;
             btVerificar.Enabled = false;
             txbCantidad.Enabled = true;
+            btCancelar.Enabled = true;
 
         }
         public void EstadoInicial()
@@ -60,6 +61,7 @@ namespace HogarAncianos.View
             btLimpiar.Enabled = false;
             rbHigienePersonal.Checked = true;
             txbCantidad.Enabled = false;
+            btCancelar.Enabled = true;
 
             txbIdentificadorProducto.Text = "";
             txbNombreProducto.Text = "";
@@ -83,6 +85,18 @@ namespace HogarAncianos.View
            
             return new Inventario_Productos(txbIdentificadorProducto.Text, Convert.ToInt32(txbCantidad.Text),
                 dtpFecha.Text);
+        }
+
+        public bool ShowConfirmation()
+        {
+            string message = "¿Desea agregar la cantidad " + txbCantidad.Text + ", \n al producto "+ txbNombreProducto.Text +"?";
+            DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (boton == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
         }
 
 

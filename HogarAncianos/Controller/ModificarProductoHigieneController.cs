@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using HogarAncianos.Model;
 using HogarAncianos.View;
+using System.Windows.Forms;
 
 namespace HogarAncianos.Controller
+   
 {
    public class ModificarProductoHigieneController
     {
@@ -26,12 +28,25 @@ namespace HogarAncianos.Controller
             frm_ModificarProductosHigiene.btVerificar.Click += new EventHandler(VerificarIdentificador);
             frm_ModificarProductosHigiene.btLimpiar.Click += new EventHandler(BotonLimpiar);
             frm_ModificarProductosHigiene.btModificar.Click += new EventHandler(ModificarProductoHigiene);
+            frm_ModificarProductosHigiene.txbIdentificadorProducto.KeyDown += new KeyEventHandler(VerificarIdentificadorEnter);
         }
 
-     
-      
 
         private void VerificarIdentificador(object sender, EventArgs e)
+        {
+            Verificar();
+        }
+
+        private void VerificarIdentificadorEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Verificar();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void Verificar()
         {
             if (!String.IsNullOrEmpty(frm_ModificarProductosHigiene.GetIdentificador()))
             {
@@ -51,10 +66,13 @@ namespace HogarAncianos.Controller
         {
             if (!frm_ModificarProductosHigiene.VerificarCampos())
             {
-                if (db.modificarProductoHigiene(frm_ModificarProductosHigiene.GetProductoHigiene()))
+                if (frm_ModificarProductosHigiene.ShowConfirmation())
                 {
-                    frm_ModificarProductosHigiene.ShowMessage("Se ha modificado el producto de higiene con éxito.");
-                    frm_ModificarProductosHigiene.EstadoInicial();
+                    if (db.modificarProductoHigiene(frm_ModificarProductosHigiene.GetProductoHigiene()))
+                    {
+                        frm_ModificarProductosHigiene.ShowMessage("Se ha modificado el producto de higiene con éxito.");
+                        frm_ModificarProductosHigiene.EstadoInicial();
+                    }
                 }
                 else
                     frm_ModificarProductosHigiene.ShowMessage("Se ha producido un error.\nVerifique los datos.");
