@@ -48,8 +48,9 @@ CREATE TABLE 'Prescripcion_Medicamentos'(
 'num' INTEGER,
 'codigo_medicamento' TEXT,
 'fecha_caducidad' TEXT,
-PRIMARY KEY(num,'codigo_medicamento');
-FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento);
+PRIMARY KEY(num,'codigo_medicamento'),
+FOREIGN KEY (codigo_medicamento) REFERENCES Medicamentos(codigo_medicamento),
+FOREIGN KEY (num) REFERENCES Prescripcion(num);
 )
 
 
