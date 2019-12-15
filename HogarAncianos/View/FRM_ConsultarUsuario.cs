@@ -82,7 +82,5 @@ namespace HogarAncianos.View
             } while (dgvUsuarios.Rows.Count >= 1);
         }
 
-          
-
     }
 }

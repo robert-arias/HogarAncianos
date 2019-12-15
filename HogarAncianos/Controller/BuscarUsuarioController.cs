@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HogarAncianos.Model;
+﻿using HogarAncianos.Model;
 using HogarAncianos.View;
+using System;
+using System.Windows.Forms;
 
-namespace HogarAncianos.Controller
-{
-    class BuscarUsuarioController
+namespace HogarAncianos.Controller {
+    public class BuscarUsuarioController
     {
         private FRM_ConsultarUsuario frm_ConsultarUsuario;
         private ConnectionDB db;
