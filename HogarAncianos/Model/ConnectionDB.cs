@@ -59,7 +59,7 @@ namespace HogarAncianos.Model {
         //***********************************************************METODOS PACIENTES ****************************************************************************//
         public DataSet GetBusquedaPaciente(string query)
         {
-            Console.WriteLine("El query que llega"+query );
+            Console.WriteLine("El query que llegaaaaaaaaaaaaaaa"+query );
             try
             {
                 connection.Open();

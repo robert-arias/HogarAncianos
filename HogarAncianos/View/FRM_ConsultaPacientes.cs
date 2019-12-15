@@ -231,43 +231,42 @@ namespace HogarAncianos.View
 
         public string GetBusquedaPacientes()
         {
-            string query = "";
+                                  
+            if (checkBoxCedula.Checked)
+           
 
-            if (checkBoxCedula.Checked){
-                query= $"select * from Pacientes where cedula= '{txtBuscar.Text}'";
-               
-            }
+                     return $"select * from Pacientes where cedula= '{txtBuscar.Text}'";
+              
+                         
             else if (checkBoxEdad.Checked && rbFemenino.Checked)
-            {
-                query = $"select * from Pacientes where edad = {txtBuscar.Text} and sexo= 'Femenino'";
-            }
+            
+                return  $"select * from Pacientes where edad = {txtBuscar.Text} and sexo= 'Femenino'";
+                
+            
             else if (checkBoxEdad.Checked && rbMasculino.Checked)
-            {
-                query = $"select * from Pacientes where edad = {txtBuscar.Text} and sexo='Masculino'";
-            }
-            else if (checkBoxNombre.Checked){
-                query = $"select * from Pacientes where nombre like '%{txtBuscar.Text}%'";
-            }              
-            else if (checkBoxApellidos.Checked){
-                query= $"select * from Pacientes where apellidos like '%{txtBuscar.Text}%'";
-            }             
-            else if (checkBoxEdad.Checked){
-                query = $"select * from Pacientes where edad = {txtBuscar.Text}";
-            }  
+            
+                return  $"select * from Pacientes where edad = {txtBuscar.Text} and sexo='Masculino'";
+              
+            
+            else if (checkBoxNombre.Checked)
+                return $"select * from Pacientes where nombre like '%{txtBuscar.Text}%'";
+              
+                       
+            else if (checkBoxApellidos.Checked)
+                return $"select * from Pacientes where apellidos like '%{txtBuscar.Text}%'";
+               
+            else if (checkBoxEdad.Checked)
+                return  $"select * from Pacientes where edad = {txtBuscar.Text}";
+               
            
             else if (rbFemenino.Checked)
-            {
-                query = $"select * from Pacientes where sexo = 'Femenino'";
-            }
-            else if (rbMasculino.Checked) {
-                query = $"select * from Pacientes where sexo = 'Masculino'";
-            }
-            Console.WriteLine( "Sentencia que envia el buscar"+ query +"/n");
+            
+                return  $"select * from Pacientes where sexo = 'Femenino'";
+            
+            else if (rbMasculino.Checked) 
+                return $"select * from Pacientes where sexo = 'Masculino'";
 
-
-            return query;
-
-          
+            return "";
         }
 
       
@@ -282,7 +281,16 @@ namespace HogarAncianos.View
             bool verificar = false;
             if (!string.IsNullOrEmpty(txtBuscar.Text))
             {
-                verificar = true;
+                if(!checkBoxCedula.Checked && !checkBoxNombre.Checked && !checkBoxApellidos.Checked && !checkBoxEdad.Checked && !checkBoxSexo.Checked)
+                {
+                    verificar = false;
+                    txtBuscar.Text = "";
+                }
+                else
+                {
+                    verificar = true;
+                }
+                
                 
             }
             else if (string.IsNullOrEmpty(txtBuscar.Text) && checkBoxSexo.Checked && checkBoxEdad.Checked)
@@ -296,12 +304,13 @@ namespace HogarAncianos.View
                 {
                     verificar = true;
                 }
-            }else if (!checkBoxCedula.Checked && !checkBoxNombre.Checked && !checkBoxApellidos.Checked && !checkBoxEdad.Checked && !checkBoxSexo.Checked)
-            {
-                verificar = false;
-                txtBuscar.Text = "";
             }
-            Console.WriteLine("Resultado del metodo verificar"+verificar);
+           
+                //{
+                //    verificar = false;
+                //    txtBuscar.Text = "";
+                //}
+                Console.WriteLine("Resultado del metodo verificar"+verificar);
             return verificar;
 
         }
