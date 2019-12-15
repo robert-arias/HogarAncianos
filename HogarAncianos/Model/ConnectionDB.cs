@@ -477,10 +477,12 @@ namespace HogarAncianos.Model {
                 connection.Open();
                 command.ExecuteNonQuery();
 
-                foreach(string correo in empleado.Correos) {
-                    string s = $"insert into Correos_Empleados values('{empleado.Cedula}', '{correo}')";
-                    SQLiteCommand c = new SQLiteCommand(s, connection);
-                    c.ExecuteNonQuery();
+                if (empleado.Correos != null) {
+                    foreach (string correo in empleado.Correos) {
+                        string s = $"insert into Correos_Empleados values('{empleado.Cedula}', '{correo}')";
+                        SQLiteCommand c = new SQLiteCommand(s, connection);
+                        c.ExecuteNonQuery();
+                    }
                 }
 
                 connection.Close();

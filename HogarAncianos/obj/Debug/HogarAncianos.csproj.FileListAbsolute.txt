@@ -88,7 +88,6 @@ D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\Hog
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ConsultaPrescripcion.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_EliminarPrescripcion.resources
 D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ModificarPrescripcion.resources
-D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteUsuarioPrueba.resources
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe.config
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.exe
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\HogarAncianos.pdb
