@@ -34,7 +34,7 @@ namespace HogarAncianos.View
             btVerificar.Enabled = false;
             btEliminar.Enabled = true;
             btCancelar.Enabled = true;
-            txbIdentificadorProducto.Enabled = false;
+            txbIdentificadorProducto.Enabled = true;
         }
 
         public void LlenarCampos(DataSet data)
@@ -58,7 +58,7 @@ namespace HogarAncianos.View
             btVerificar.Enabled = true;
             btEliminar.Enabled = false;
             btCancelar.Enabled = true;
-            txbIdentificadorProducto.Enabled = false;
+            txbIdentificadorProducto.Enabled = true;
 
             txbCantidad.Text = "0";
             txbDescripcion.Text = "";
