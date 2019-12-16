@@ -117,7 +117,6 @@ C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\stdole.dll
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.xml
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.xml
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache

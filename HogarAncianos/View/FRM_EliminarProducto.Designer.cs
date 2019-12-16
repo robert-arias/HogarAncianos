@@ -244,7 +244,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.Button btLimpiar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbCantidad;
@@ -258,5 +257,6 @@
         public System.Windows.Forms.Button btEliminar;
         public System.Windows.Forms.Button btCancelar;
         public System.Windows.Forms.Button btVerificar;
+        public System.Windows.Forms.Button btLimpiar;
     }
 }

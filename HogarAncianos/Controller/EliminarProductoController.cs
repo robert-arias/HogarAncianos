@@ -27,11 +27,17 @@ namespace HogarAncianos.Controller
             frm_EliminarProducto.btVerificar.Click += new EventHandler(VerificarIdentificador);
             frm_EliminarProducto.txbIdentificadorProducto.KeyDown += new KeyEventHandler(VerificarIdentificadorEnter);
             frm_EliminarProducto.btEliminar.Click += new EventHandler(EliminarProducto);
+            frm_EliminarProducto.btLimpiar.Click += new EventHandler(BotonLimpiar);
         }
 
         private void VerificarIdentificador(object sender, EventArgs e)
         {
             Verificar();
+        }
+        private void BotonLimpiar(object sender, EventArgs e)
+        {
+            frm_EliminarProducto.EstadoInicial();
+
         }
 
         private void Verificar()

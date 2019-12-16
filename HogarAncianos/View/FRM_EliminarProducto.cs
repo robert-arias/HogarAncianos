@@ -31,7 +31,7 @@ namespace HogarAncianos.View
 
         public void ActivarCampos()
         {
-            btVerificar.Enabled = false;
+            btVerificar.Enabled = true;
             btEliminar.Enabled = true;
             btCancelar.Enabled = true;
             txbIdentificadorProducto.Enabled = true;
