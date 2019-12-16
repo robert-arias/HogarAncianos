@@ -366,3 +366,4 @@ C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos4\HogarAncianos\obj\Debug\Ho
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos4\HogarAncianos\obj\Debug\HogarAncianos.csproj.CopyComplete
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos4\HogarAncianos\obj\Debug\HogarAncianos.exe
 C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos4\HogarAncianos\obj\Debug\HogarAncianos.pdb
+C:\Users\Barrantes Alfaro\Source\Repos\HogarAncianos4\HogarAncianos\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
