@@ -102,6 +102,9 @@ namespace HogarAncianos.View
             {
                 rbFemenino.Checked = false;
                 rbMasculino.Checked = false;
+                 rbFemenino.Enabled = false;
+                rbMasculino.Enabled = false;
+
                 checkBoxEdad.Enabled = false;
                 checkBoxNombre.Enabled = false;
                 checkBoxSexo.Enabled = false;
@@ -132,6 +135,8 @@ namespace HogarAncianos.View
                 checkBoxCedula.Enabled = false;
                 checkBoxSexo.Enabled = false;
                 checkBoxApellidos.Enabled = false;
+                rbFemenino.Enabled = false;
+                rbMasculino.Enabled = false;
 
                 checkBoxEdad.Checked = false;
                 checkBoxCedula.Checked = false;
@@ -158,6 +163,8 @@ namespace HogarAncianos.View
                 checkBoxNombre.Enabled = false;
                 checkBoxSexo.Enabled = false;
                 checkBoxCedula.Enabled = false;
+                rbFemenino.Enabled = false;
+                rbMasculino.Enabled = false;
 
                 checkBoxEdad.Checked = false;
                 checkBoxNombre.Checked = false;

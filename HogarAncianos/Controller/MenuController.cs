@@ -478,6 +478,7 @@ namespace HogarAncianos.Controller {
         {
             frm_ConsultaPacientes.Close();
             frm_MenuPrincipal.Show();
+            frm_ConsultaPacientes.EstadoInicial();
         }
 
         private void OpenAgregarPaciente(object sender, EventArgs e)
@@ -598,6 +599,7 @@ namespace HogarAncianos.Controller {
         {
             frm_ConsultaPrescripcion.Close(); 
             frm_MenuPrincipal.Show();
+            frm_ConsultaPacientes.EstadoInicial();
         }
 
         private void OpenAgregarPrescripcion(object sender, EventArgs e)

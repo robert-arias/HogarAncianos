@@ -42,9 +42,9 @@
             this.btnTodosLosResultados = new System.Windows.Forms.Button();
             this.Prescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombrePaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -157,22 +157,22 @@
             this.dtgConsultaPrescripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prescripcion,
             this.Codigo,
+            this.Nombre,
             this.Cedula,
             this.NombrePaciente,
-            this.Nombre,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(41, 204);
+            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(41, 214);
             this.dtgConsultaPrescripcion.Name = "dtgConsultaPrescripcion";
             this.dtgConsultaPrescripcion.ReadOnly = true;
-            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(875, 170);
+            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(875, 236);
             this.dtgConsultaPrescripcion.TabIndex = 110;
             // 
             // btnReporteMedicamentos
             // 
             this.btnReporteMedicamentos.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnReporteMedicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteMedicamentos.Location = new System.Drawing.Point(660, 414);
+            this.btnReporteMedicamentos.Location = new System.Drawing.Point(660, 486);
             this.btnReporteMedicamentos.Name = "btnReporteMedicamentos";
             this.btnReporteMedicamentos.Size = new System.Drawing.Size(256, 34);
             this.btnReporteMedicamentos.TabIndex = 111;
@@ -183,7 +183,7 @@
             // 
             this.btnTodosLosResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTodosLosResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTodosLosResultados.Location = new System.Drawing.Point(12, 404);
+            this.btnTodosLosResultados.Location = new System.Drawing.Point(12, 476);
             this.btnTodosLosResultados.Name = "btnTodosLosResultados";
             this.btnTodosLosResultados.Size = new System.Drawing.Size(256, 34);
             this.btnTodosLosResultados.TabIndex = 112;
@@ -206,6 +206,14 @@
             this.Codigo.ReadOnly = true;
             this.Codigo.Width = 150;
             // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre_medicamento";
+            this.Nombre.HeaderText = "Nombre medicamento";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
             // Cedula
             // 
             this.Cedula.DataPropertyName = "cedula_paciente";
@@ -215,17 +223,10 @@
             // 
             // NombrePaciente
             // 
+            this.NombrePaciente.DataPropertyName = "nombre";
             this.NombrePaciente.HeaderText = "Nombre del paciente";
             this.NombrePaciente.Name = "NombrePaciente";
             this.NombrePaciente.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre_medicamento";
-            this.Nombre.HeaderText = "Nombre medicamento";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
             // 
             // CantidadPrescrita
             // 
@@ -247,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(985, 470);
+            this.ClientSize = new System.Drawing.Size(985, 532);
             this.Controls.Add(this.btnTodosLosResultados);
             this.Controls.Add(this.btnReporteMedicamentos);
             this.Controls.Add(this.dtgConsultaPrescripcion);
@@ -283,9 +284,9 @@
         private System.Windows.Forms.DateTimePicker txtFechaCaducidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }

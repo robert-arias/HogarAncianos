@@ -47,7 +47,15 @@ namespace HogarAncianos.Controller
 
         public void TodosLosPacientes(object sender, EventArgs e)
         {
-            frm_ConsultaPacientes.FillBusqueda(connectionDB.GetAllPacientes());
+            if (connectionDB.GetAllPacientes().Tables[0].Rows.Count>0)
+            {
+                frm_ConsultaPacientes.FillBusqueda(connectionDB.GetAllPacientes());
+            }
+            else
+            {
+                frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+            }
+            
            
         }
 
@@ -79,22 +87,32 @@ namespace HogarAncianos.Controller
       
         public void RealizarBusqueda(object sender, EventArgs e)
         {
+            frm_ConsultaPacientes.LimpiarBusqueda();
             Console.WriteLine("Resultado de la busqueda antes de entrar al if"+frm_ConsultaPacientes.GetBusquedaPacientes());
             if (frm_ConsultaPacientes.verificar())
             {
                 if (frm_ConsultaPacientes.GetBusquedaPacientes() != "")
                 {
                     Console.WriteLine("Resultado de la busqueda antes despues de comparar !=" + frm_ConsultaPacientes.GetBusquedaPacientes());
-                    if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1 )
+                    if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes())!=null)
                     {
-                        Console.WriteLine("Resultado de la busqueda antes de entrar al despues de pasar el if >=1" + frm_ConsultaPacientes.GetBusquedaPacientes());
-                        frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
-                        Console.WriteLine("Resultado de la busqueda cuando se va a llenar el grid" + frm_ConsultaPacientes.GetBusquedaPacientes());
+                        if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1)
+                        {
+                            Console.WriteLine("Resultado de la busqueda antes de entrar al despues de pasar el if >=1" + frm_ConsultaPacientes.GetBusquedaPacientes());
+                            frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
+                            Console.WriteLine("Resultado de la busqueda cuando se va a llenar el grid" + frm_ConsultaPacientes.GetBusquedaPacientes());
+                        }
+                        else
+                        {
+                            frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                        }
+
                     }
                     else
                     {
                         frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
                     }
+                        
                 }
                 else
                 {
@@ -116,19 +134,28 @@ namespace HogarAncianos.Controller
         {
             if (e.KeyCode == Keys.Enter)
             {
+                frm_ConsultaPacientes.LimpiarBusqueda();
                 if (frm_ConsultaPacientes.verificar())
                 {
                     if (frm_ConsultaPacientes.GetBusquedaPacientes() != "")
                     {
-                        if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1)
+                        if(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes())!= null)
                         {
-                            frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
+                            if (connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()).Tables[0].Rows.Count >= 1)
+                            {
+                                frm_ConsultaPacientes.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_ConsultaPacientes.GetBusquedaPacientes()));
 
+                            }
+                            else
+                            {
+                                frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                            }
                         }
                         else
                         {
                             frm_ConsultaPacientes.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
                         }
+                        
                     }
                     else
                     {

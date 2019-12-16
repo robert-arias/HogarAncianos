@@ -148,7 +148,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -170,7 +171,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
 
 
@@ -194,7 +196,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
 
 
@@ -216,6 +219,7 @@ namespace HogarAncianos.Model {
             }
             catch (SQLiteException E)
             {
+                connection.Close();
                 Debug.WriteLine(E.ToString());
                 return false;
             }
@@ -339,7 +343,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -360,6 +365,7 @@ namespace HogarAncianos.Model {
 
             } catch (SQLiteException)
             {
+                connection.Close();
                 return false;
             }
         }
@@ -630,6 +636,7 @@ namespace HogarAncianos.Model {
             catch (SQLiteException E)
             {
                 Debug.WriteLine(E.ToString());
+                connection.Close();
                 return false;
             }
         }
@@ -650,6 +657,7 @@ namespace HogarAncianos.Model {
             catch (SQLiteException E)
             {
                 Debug.WriteLine(E.ToString());
+                connection.Close();
                 return false;
             }
         }
@@ -670,6 +678,7 @@ namespace HogarAncianos.Model {
             catch (SQLiteException E)
             {
                 Debug.WriteLine(E.ToString());
+                connection.Close();
                 return false;
             }
         }
@@ -697,7 +706,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -718,7 +728,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -743,8 +754,9 @@ namespace HogarAncianos.Model {
             }
             catch (SQLiteException e)
             {
+                connection.Close();
                 Debug.WriteLine(e.ToString());
-                throw;
+                return null;
             }
         }
 
@@ -766,6 +778,7 @@ namespace HogarAncianos.Model {
             }
             catch (SQLiteException )
             {
+                connection.Close();
                 return false;
             }
 
@@ -808,7 +821,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -1254,8 +1268,9 @@ namespace HogarAncianos.Model {
             }
             catch (SQLiteException e)
             {
+                connection.Close();
                 Debug.WriteLine(e.ToString());
-                throw;
+                return null;
             }
 
 
@@ -1279,7 +1294,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
 
 
@@ -1301,7 +1317,9 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return 0;
+
             }
         }
         public DataSet GetDatosMedicamento_Prescripcion(string codigo, int num)
@@ -1322,7 +1340,9 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+
+                connection.Close();
+                return null;
             }
 
 
@@ -1345,6 +1365,7 @@ namespace HogarAncianos.Model {
             }
             catch (SQLiteException e)
             {
+                connection.Close();
                 Debug.WriteLine(e.ToString());
                 throw;
             }
@@ -1368,17 +1389,18 @@ namespace HogarAncianos.Model {
             catch (SQLiteException E)
             {
                 Debug.WriteLine(E.ToString());
+                connection.Close();
                 return false;
             }
         }
 
         public DataSet GetAllPrescripciones()
         {
-
+                     
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select * from Pescripcion_Medicamentos", connection);
+                SQLiteCommand command = new SQLiteCommand("select pa.nombre,  m.nombre_medicamento, p.num, p.cedula_paciente,  pm.codigo_medicamento,pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p, Pacientes pa where  pm.num = p.num and  pa.cedula = p.cedula_paciente and m.codigo_medicamento=pm.codigo_medicamento" , connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1389,7 +1411,8 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                connection.Close();
+                return null;
             }
         }
 
@@ -1410,6 +1433,7 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
+                connection.Close();
                 return null;
             }
         }

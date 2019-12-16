@@ -243,9 +243,16 @@ namespace HogarAncianos.View
             }
             else
             {
-                txtFechaCaducidad.Enabled = false;
+                if (int.Parse(txtCantidad.Text) <= int.Parse(labelCantidadDisponible.Text))
+                {
+                    txtFechaCaducidad.Enabled = false;
                 ActualizarCantidad(txtCodigo.Text, int.Parse(txtCantidad.Text));
                 Console.WriteLine("Entro al else");
+                }
+                else
+                {
+                    MensajeError("La cantidad prescrita es mayor que la cantidad disponible. ");
+                }
             }
 
 

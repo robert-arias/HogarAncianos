@@ -103,6 +103,43 @@ namespace HogarAncianos.Controller
         {
             if (e.KeyCode == Keys.Enter)
             {
+                if (!string.IsNullOrEmpty(FRM_AgregarPrescripcion.txtCodigo.Text))
+                {
+                    if (connectionDB.ExisteCodigoMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
+                    {
+                        FRM_AgregarPrescripcion.ActivarAgregarMedicamento();
+                        FRM_AgregarPrescripcion.txtNombre.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][0].ToString();
+
+
+                        if (!FRM_AgregarPrescripcion.VerificarMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
+                        {
+                            FRM_AgregarPrescripcion.labelCantidadDisponible.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
+                        }
+                        else
+                        {
+                            int cantidad = int.Parse(connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString()) - FRM_AgregarPrescripcion.RetornarCantidadDisponible(FRM_AgregarPrescripcion.GetCodigo());
+                            FRM_AgregarPrescripcion.labelCantidadDisponible.Text = cantidad.ToString();
+                        }
+
+                    }
+                    else
+                    {
+                        FRM_AgregarPrescripcion.MensajeError("El código digitado no se encuentra ingresado en los registros.");
+                    }
+                }
+                else
+                {
+                    FRM_AgregarPrescripcion.MensajeError("El campo \"código de medicamento\" se encuentra vacío");
+                }
+                e.SuppressKeyPress = true; //remove ding windows sound.
+            }
+        }
+        
+
+        public void Verificar(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(FRM_AgregarPrescripcion.txtCodigo.Text))
+            {
                 if (connectionDB.ExisteCodigoMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
                 {
                     FRM_AgregarPrescripcion.ActivarAgregarMedicamento();
@@ -124,34 +161,12 @@ namespace HogarAncianos.Controller
                 {
                     FRM_AgregarPrescripcion.MensajeError("El código digitado no se encuentra ingresado en los registros.");
                 }
-                e.SuppressKeyPress = true; //remove ding windows sound.
-            }
-        }
-        
-
-        public void Verificar(object sender, EventArgs e)
-        {
-            if (connectionDB.ExisteCodigoMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
-            {
-                FRM_AgregarPrescripcion.ActivarAgregarMedicamento();
-                FRM_AgregarPrescripcion.txtNombre.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][0].ToString();
-
-                
-                if (!FRM_AgregarPrescripcion.VerificarMedicamento(FRM_AgregarPrescripcion.GetCodigo()))
-                {
-                    FRM_AgregarPrescripcion.labelCantidadDisponible.Text = connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString();
-                }
-                else
-                {
-                    int cantidad= int.Parse(connectionDB.GetNombre_CantidadDisponible_Medicamento(FRM_AgregarPrescripcion.GetCodigo()).Tables[0].Rows[0][1].ToString()) - FRM_AgregarPrescripcion.RetornarCantidadDisponible(FRM_AgregarPrescripcion.GetCodigo());
-                    FRM_AgregarPrescripcion.labelCantidadDisponible.Text = cantidad.ToString();
-                }
-                                
             }
             else
             {
-                FRM_AgregarPrescripcion.MensajeError("El código digitado no se encuentra ingresado en los registros.");
+                FRM_AgregarPrescripcion.MensajeError("El campo \"código de medicamento\" se encuentra vacío");
             }
+                
         }
 
         public void ValidarCantidad(object sender, KeyPressEventArgs e)

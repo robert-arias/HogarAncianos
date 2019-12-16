@@ -32,10 +32,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.lbCantidadDisponible = new System.Windows.Forms.Label();
+            this.lbCategoria = new System.Windows.Forms.Label();
+            this.lbUnidadMedida = new System.Windows.Forms.Label();
+            this.lbCodigo = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
@@ -44,17 +49,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbCantidadDisponible = new System.Windows.Forms.Label();
-            this.lbCategoria = new System.Windows.Forms.Label();
-            this.lbUnidadMedida = new System.Windows.Forms.Label();
-            this.lbCodigo = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CadetBlue;
+            this.groupBox1.Controls.Add(this.cbUnidadMedida);
             this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.lbCantidadDisponible);
             this.groupBox1.Controls.Add(this.lbCategoria);
@@ -100,7 +101,6 @@
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnVerificar);
             this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.cbUnidadMedida);
             this.groupBox1.Controls.Add(this.txtMedida);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtCantidadDisponible);
@@ -117,6 +117,87 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion del medicamento";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Tabletas",
+            "Inyectables",
+            "Comprimidos",
+            "Otro"});
+            this.cbCategoria.Location = new System.Drawing.Point(205, 150);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(224, 26);
+            this.cbCategoria.TabIndex = 105;
+            this.cbCategoria.Text = "Seleccionar";
+            // 
+            // lbCantidadDisponible
+            // 
+            this.lbCantidadDisponible.AutoSize = true;
+            this.lbCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCantidadDisponible.ForeColor = System.Drawing.Color.Red;
+            this.lbCantidadDisponible.Location = new System.Drawing.Point(434, 262);
+            this.lbCantidadDisponible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCantidadDisponible.Name = "lbCantidadDisponible";
+            this.lbCantidadDisponible.Size = new System.Drawing.Size(14, 18);
+            this.lbCantidadDisponible.TabIndex = 104;
+            this.lbCantidadDisponible.Text = "*";
+            this.toolTip5.SetToolTip(this.lbCantidadDisponible, "Digite la cantidad disponible del medicamento.");
+            // 
+            // lbCategoria
+            // 
+            this.lbCategoria.AutoSize = true;
+            this.lbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lbCategoria.Location = new System.Drawing.Point(434, 150);
+            this.lbCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCategoria.Name = "lbCategoria";
+            this.lbCategoria.Size = new System.Drawing.Size(14, 18);
+            this.lbCategoria.TabIndex = 103;
+            this.lbCategoria.Text = "*";
+            this.toolTip3.SetToolTip(this.lbCategoria, "Seleccione una categoria.");
+            // 
+            // lbUnidadMedida
+            // 
+            this.lbUnidadMedida.AutoSize = true;
+            this.lbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUnidadMedida.ForeColor = System.Drawing.Color.Red;
+            this.lbUnidadMedida.Location = new System.Drawing.Point(434, 208);
+            this.lbUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUnidadMedida.Name = "lbUnidadMedida";
+            this.lbUnidadMedida.Size = new System.Drawing.Size(14, 18);
+            this.lbUnidadMedida.TabIndex = 102;
+            this.lbUnidadMedida.Text = "*";
+            this.toolTip4.SetToolTip(this.lbUnidadMedida, "Seleccione una unidad de medida.");
+            // 
+            // lbCodigo
+            // 
+            this.lbCodigo.AutoSize = true;
+            this.lbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCodigo.ForeColor = System.Drawing.Color.Red;
+            this.lbCodigo.Location = new System.Drawing.Point(434, 63);
+            this.lbCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCodigo.Name = "lbCodigo";
+            this.lbCodigo.Size = new System.Drawing.Size(14, 18);
+            this.lbCodigo.TabIndex = 101;
+            this.lbCodigo.Text = "*";
+            this.toolTip1.SetToolTip(this.lbCodigo, "Digite un código de medicamento");
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.ForeColor = System.Drawing.Color.Red;
+            this.lbNombre.Location = new System.Drawing.Point(434, 108);
+            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(14, 18);
+            this.lbNombre.TabIndex = 100;
+            this.lbNombre.Text = "*";
+            this.toolTip1.SetToolTip(this.lbNombre, "Digite un nombre de medicamento.");
             // 
             // btnLimpiar
             // 
@@ -161,23 +242,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(223, 24);
             this.txtCodigo.TabIndex = 97;
-            // 
-            // cbUnidadMedida
-            // 
-            this.cbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUnidadMedida.FormattingEnabled = true;
-            this.cbUnidadMedida.Items.AddRange(new object[] {
-            "Seleccionar",
-            "ML",
-            "GR",
-            "LITRO",
-            "ONZAS",
-            "OTRO"});
-            this.cbUnidadMedida.Location = new System.Drawing.Point(313, 207);
-            this.cbUnidadMedida.Name = "cbUnidadMedida";
-            this.cbUnidadMedida.Size = new System.Drawing.Size(117, 26);
-            this.cbUnidadMedida.TabIndex = 96;
-            this.cbUnidadMedida.Text = "Seleccionar";
             // 
             // txtMedida
             // 
@@ -268,86 +332,22 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "Código del medicamento:";
             // 
-            // lbCantidadDisponible
+            // cbUnidadMedida
             // 
-            this.lbCantidadDisponible.AutoSize = true;
-            this.lbCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantidadDisponible.ForeColor = System.Drawing.Color.Red;
-            this.lbCantidadDisponible.Location = new System.Drawing.Point(434, 262);
-            this.lbCantidadDisponible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCantidadDisponible.Name = "lbCantidadDisponible";
-            this.lbCantidadDisponible.Size = new System.Drawing.Size(14, 18);
-            this.lbCantidadDisponible.TabIndex = 104;
-            this.lbCantidadDisponible.Text = "*";
-            this.toolTip5.SetToolTip(this.lbCantidadDisponible, "Digite la cantidad disponible del medicamento.");
-            // 
-            // lbCategoria
-            // 
-            this.lbCategoria.AutoSize = true;
-            this.lbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lbCategoria.Location = new System.Drawing.Point(434, 150);
-            this.lbCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCategoria.Name = "lbCategoria";
-            this.lbCategoria.Size = new System.Drawing.Size(14, 18);
-            this.lbCategoria.TabIndex = 103;
-            this.lbCategoria.Text = "*";
-            this.toolTip3.SetToolTip(this.lbCategoria, "Seleccione una categoria.");
-            // 
-            // lbUnidadMedida
-            // 
-            this.lbUnidadMedida.AutoSize = true;
-            this.lbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUnidadMedida.ForeColor = System.Drawing.Color.Red;
-            this.lbUnidadMedida.Location = new System.Drawing.Point(434, 208);
-            this.lbUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbUnidadMedida.Name = "lbUnidadMedida";
-            this.lbUnidadMedida.Size = new System.Drawing.Size(14, 18);
-            this.lbUnidadMedida.TabIndex = 102;
-            this.lbUnidadMedida.Text = "*";
-            this.toolTip4.SetToolTip(this.lbUnidadMedida, "Seleccione una unidad de medida.");
-            // 
-            // lbCodigo
-            // 
-            this.lbCodigo.AutoSize = true;
-            this.lbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodigo.ForeColor = System.Drawing.Color.Red;
-            this.lbCodigo.Location = new System.Drawing.Point(434, 63);
-            this.lbCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCodigo.Name = "lbCodigo";
-            this.lbCodigo.Size = new System.Drawing.Size(14, 18);
-            this.lbCodigo.TabIndex = 101;
-            this.lbCodigo.Text = "*";
-            this.toolTip1.SetToolTip(this.lbCodigo, "Digite un código de medicamento");
-            // 
-            // lbNombre
-            // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.ForeColor = System.Drawing.Color.Red;
-            this.lbNombre.Location = new System.Drawing.Point(434, 108);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(14, 18);
-            this.lbNombre.TabIndex = 100;
-            this.lbNombre.Text = "*";
-            this.toolTip1.SetToolTip(this.lbNombre, "Digite un nombre de medicamento.");
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Items.AddRange(new object[] {
+            this.cbUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUnidadMedida.FormattingEnabled = true;
+            this.cbUnidadMedida.Items.AddRange(new object[] {
             "Seleccionar",
-            "Tabletas",
-            "Inyectables",
-            "Comprimidos",
-            "Otro"});
-            this.cbCategoria.Location = new System.Drawing.Point(205, 150);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(224, 26);
-            this.cbCategoria.TabIndex = 105;
-            this.cbCategoria.Text = "Seleccionar";
+            "LITRO(S)",
+            "GRAMO(S)",
+            "MILIGRAMO(S)",
+            "ONZA(S)",
+            "MILILITRO(S)"});
+            this.cbUnidadMedida.Location = new System.Drawing.Point(313, 205);
+            this.cbUnidadMedida.Name = "cbUnidadMedida";
+            this.cbUnidadMedida.Size = new System.Drawing.Size(106, 26);
+            this.cbUnidadMedida.TabIndex = 106;
+            this.cbUnidadMedida.Text = "Seleccionar";
             // 
             // FRM_ModificarMedicamento
             // 
@@ -372,7 +372,6 @@
         public System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.ComboBox cbUnidadMedida;
         public System.Windows.Forms.TextBox txtMedida;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtCantidadDisponible;
@@ -395,5 +394,6 @@
         private System.Windows.Forms.ToolTip toolTip4;
         private System.Windows.Forms.ToolTip toolTip5;
         public System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbUnidadMedida;
     }
 }

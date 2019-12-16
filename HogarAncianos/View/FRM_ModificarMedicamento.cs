@@ -223,5 +223,10 @@ namespace HogarAncianos.View
 
             return vacio;
         }
+
+        private void cbUnidadMedida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
