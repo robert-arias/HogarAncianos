@@ -264,7 +264,7 @@ namespace HogarAncianos.View
             txtCantidadPrescritaNueva.Text = "";
 
             btnModificar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnCancelar.Enabled = true;
             txtFechaCaducidad.Enabled = false;
             txtCantidad.Enabled = false;
         }

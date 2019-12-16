@@ -617,11 +617,11 @@ namespace HogarAncianos.Model {
 
         public bool UpdateMedicamento(Medicamento medicamento)
         {
-            string query = "update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible=" + medicamento.catidadDisponible /*+ ""*/;
+            //string query = "update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible=" + medicamento.catidadDisponible " where codigo_medicamento = '"+medicamento.codigoMedicamento+"'";
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand(query, connection);
+                SQLiteCommand command = new SQLiteCommand("update Medicamentos set nombre_Medicamento='" + medicamento.nombreMedicamento + "', categoria ='" + medicamento.categoria + "',unidad_medida='" + medicamento.unidadMedida + "',cantidad_disponible=" + medicamento.catidadDisponible+ " where codigo_medicamento = '" + medicamento.codigoMedicamento + "'", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -1123,7 +1123,7 @@ namespace HogarAncianos.Model {
 
                 connection.Open();
 
-                SQLiteCommand command = new SQLiteCommand("select num from Prescripcion  where  num not in (SELECT num from Prescripcion_Medicamento);", connection);
+                SQLiteCommand command = new SQLiteCommand("select num from Prescripcion  where  num not in (SELECT num from Prescripcion_Medicamentos);", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1151,7 +1151,7 @@ namespace HogarAncianos.Model {
                     {
                         if (row["codigo_medicamento"].ToString() == codigo)
                         {
-                            SQLiteCommand command = new SQLiteCommand("delete from Prescripcion_Medicamento where codigo_medicamento='" + codigo+"'", connection);
+                            SQLiteCommand command = new SQLiteCommand("delete from Prescripcion_Medicamentos where codigo_medicamento='" + codigo+"'", connection);
                             connection.Open();
                             command.ExecuteNonQuery();                         
                             connection.Close();
@@ -1187,7 +1187,7 @@ namespace HogarAncianos.Model {
             {
 
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select Count(*) from Prescripcion_Medicamento where codigo_medicamento='" + codigo + "'", connection);               
+                SQLiteCommand command = new SQLiteCommand("select Count(*) from Prescripcion_Medicamentos where codigo_medicamento='" + codigo + "'", connection);               
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1212,7 +1212,7 @@ namespace HogarAncianos.Model {
             {               
                 foreach (Prescripcion_Medicamentos i in prescripcion)
                 {
-                    string insert = $"insert into Prescripcion_Medicamento values({i.num},'{i.codigo_medicamento}','{i.fecha_caducidad}',{i.cantidad_prescrita})";
+                    string insert = $"insert into Prescripcion_Medicamentos values({i.num},'{i.codigo_medicamento}','{i.fecha_caducidad}',{i.cantidad_prescrita})";
 
                     SQLiteCommand command = new SQLiteCommand(insert, connection);
                     Console.WriteLine(insert);
@@ -1265,7 +1265,7 @@ namespace HogarAncianos.Model {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento where num=" + num + "", connection);
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamentos where num=" + num + "", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1308,7 +1308,7 @@ namespace HogarAncianos.Model {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento where codigo_medicamento=" + codigo + " and num="+num+"", connection);
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamentos where codigo_medicamento=" + codigo + " and num="+num+"", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1332,7 +1332,7 @@ namespace HogarAncianos.Model {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamento", connection);
+                SQLiteCommand command = new SQLiteCommand("select * from Prescripcion_Medicamentos", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);
@@ -1356,8 +1356,8 @@ namespace HogarAncianos.Model {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("Update Prescripcion_Medicamento set  cantidad_prescrita= " + medicamentos.cantidad_prescrita + ",  fecha_caducidad='"+medicamentos.fecha_caducidad+"' where codigo_medicamento='" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "", connection);
-                Console.WriteLine("necesito ver el error Update Prescripcion_Medicamento set  cantidad_prescrita = " + medicamentos.cantidad_prescrita + ", fecha_caducidad = '"+medicamentos.fecha_caducidad+"' where codigo_medicamento = '" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "");
+                SQLiteCommand command = new SQLiteCommand("Update Prescripcion_Medicamentos set  cantidad_prescrita= " + medicamentos.cantidad_prescrita + ",  fecha_caducidad='"+medicamentos.fecha_caducidad+"' where codigo_medicamento='" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "", connection);
+                Console.WriteLine("necesito ver el error Update Prescripcion_Medicamentos set  cantidad_prescrita = " + medicamentos.cantidad_prescrita + ", fecha_caducidad = '"+medicamentos.fecha_caducidad+"' where codigo_medicamento = '" + medicamentos.codigo_medicamento + "' and num=" + medicamentos.num + "");
                 command.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -1376,7 +1376,7 @@ namespace HogarAncianos.Model {
             try
             {
                 connection.Open();
-                SQLiteCommand command = new SQLiteCommand("select * from Pescripcion_Medicamento", connection);
+                SQLiteCommand command = new SQLiteCommand("select * from Pescripcion_Medicamentos", connection);
                 SQLiteDataAdapter sqlDataAdapter = new SQLiteDataAdapter(command);
                 DataSet data = new DataSet();
                 sqlDataAdapter.Fill(data);

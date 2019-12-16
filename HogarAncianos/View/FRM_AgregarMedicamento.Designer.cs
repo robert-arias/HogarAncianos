@@ -109,11 +109,11 @@
             this.cbUnidadMedida.FormattingEnabled = true;
             this.cbUnidadMedida.Items.AddRange(new object[] {
             "Seleccionar",
-            "ML",
-            "GR",
-            "LITRO",
-            "ONZAS",
-            "OTRO"});
+            "LITRO(S)",
+            "GRAMO(S)",
+            "MILIGRAMO(S)",
+            "ONZA(S)",
+            "MILILITRO(S)"});
             this.cbUnidadMedida.Location = new System.Drawing.Point(299, 207);
             this.cbUnidadMedida.Name = "cbUnidadMedida";
             this.cbUnidadMedida.Size = new System.Drawing.Size(106, 26);
@@ -218,6 +218,13 @@
             "Tabletas",
             "Inyectables",
             "Comprimidos",
+            "Jarabes",
+            "Gotas",
+            "Gel",
+            "Crema",
+            "Polvos",
+            "Solucion",
+            "Capsulas",
             "Otro"});
             this.cbCategoria.Location = new System.Drawing.Point(206, 152);
             this.cbCategoria.Name = "cbCategoria";

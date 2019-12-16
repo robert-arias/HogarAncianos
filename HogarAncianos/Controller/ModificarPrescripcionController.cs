@@ -161,6 +161,7 @@ namespace HogarAncianos.Controller
                             if (connection.Update_Cantidad_Feha(fRM_ModificarPrescripcion.GetMedicamentoModificado()))
                             {
                                 fRM_ModificarPrescripcion.MensajeInformativo("Prescripción modificada exitosamente.");
+                                fRM_ModificarPrescripcion.FilldtgMedicamentos(connection.GetPrescripciones_MedicamentosUnPaciente(fRM_ModificarPrescripcion.GetNum()));
                                 fRM_ModificarPrescripcion.EstadoInicialDespuesDeModificar();
                             }
                             else

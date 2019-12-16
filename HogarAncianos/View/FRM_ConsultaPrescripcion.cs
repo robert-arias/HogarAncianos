@@ -37,7 +37,7 @@ namespace HogarAncianos.View
             checkBoxFechaCaducidad.Enabled = true;
             txtCodigoMedicamento.Text = "";
             txtCodigoMedicamento.Enabled = false;// desactivar campo codigo medicamento
-            dateTimeFechaCaducidad.Enabled = false;
+            txtFechaCaducidad.Enabled = false;
             Limpiar();//metodo limpiar
 
         }//fin del metodo estado inicial 
@@ -75,11 +75,11 @@ namespace HogarAncianos.View
         {
             if (checkBoxFechaCaducidad.Checked)
             {
-                dateTimeFechaCaducidad.Enabled = true;
+                txtFechaCaducidad.Enabled = true;
             }
             else
             {
-                dateTimeFechaCaducidad.Enabled = false;
+                txtFechaCaducidad.Enabled = false;
             }
 
         }//fin del metodo activar/ desactivar fecha
@@ -100,17 +100,17 @@ namespace HogarAncianos.View
         {
             string query = "";
 
-            if (string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked)
+            if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked)
             {
-                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{dateTimeFechaCaducidad.Text}' and pm.num=p.num";
+                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{ txtFechaCaducidad.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento";
             }
-            else if (string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxCodigoMedicamento.Checked)
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxCodigoMedicamento.Checked && !string.IsNullOrEmpty(txtCodigoMedicamento.Text))
             {
-                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num";
+                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p  where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento";
             }
-            else if (string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked && checkBoxCodigoMedicamento.Checked)
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && !checkBoxFechaCaducidad.Checked && !checkBoxCodigoMedicamento.Checked)
             {
-                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{dateTimeFechaCaducidad.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num";
+                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{ txtFechaCaducidad.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num";
             }
             else if (string.IsNullOrEmpty(txtCedulaPaciente.Text))
             {

@@ -34,17 +34,18 @@
             this.txtCodigoMedicamento = new System.Windows.Forms.TextBox();
             this.checkBoxCodigoMedicamento = new System.Windows.Forms.CheckBox();
             this.checkBoxFechaCaducidad = new System.Windows.Forms.CheckBox();
-            this.dateTimeFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedulaPaciente = new System.Windows.Forms.TextBox();
             this.dtgConsultaPrescripcion = new System.Windows.Forms.DataGridView();
+            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
+            this.btnTodosLosResultados = new System.Windows.Forms.Button();
+            this.txtFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.Prescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReporteMedicamentos = new System.Windows.Forms.Button();
-            this.btnTodosLosResultados = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaPrescripcion)).BeginInit();
             this.SuspendLayout();
@@ -73,10 +74,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFechaCaducidad);
             this.groupBox1.Controls.Add(this.txtCodigoMedicamento);
             this.groupBox1.Controls.Add(this.checkBoxCodigoMedicamento);
             this.groupBox1.Controls.Add(this.checkBoxFechaCaducidad);
-            this.groupBox1.Controls.Add(this.dateTimeFechaCaducidad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(72)))));
             this.groupBox1.Location = new System.Drawing.Point(57, 99);
@@ -117,14 +118,6 @@
             this.checkBoxFechaCaducidad.Text = "Fecha caducidad:";
             this.checkBoxFechaCaducidad.UseVisualStyleBackColor = true;
             // 
-            // dateTimeFechaCaducidad
-            // 
-            this.dateTimeFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeFechaCaducidad.Location = new System.Drawing.Point(160, 28);
-            this.dateTimeFechaCaducidad.Name = "dateTimeFechaCaducidad";
-            this.dateTimeFechaCaducidad.Size = new System.Drawing.Size(222, 26);
-            this.dateTimeFechaCaducidad.TabIndex = 12;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -145,47 +138,22 @@
             // 
             // dtgConsultaPrescripcion
             // 
+            this.dtgConsultaPrescripcion.AllowUserToAddRows = false;
+            this.dtgConsultaPrescripcion.AllowUserToDeleteRows = false;
+            this.dtgConsultaPrescripcion.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgConsultaPrescripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgConsultaPrescripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prescripcion,
+            this.Cedula,
             this.Codigo,
             this.Nombre,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(57, 212);
+            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(41, 204);
             this.dtgConsultaPrescripcion.Name = "dtgConsultaPrescripcion";
-            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(734, 170);
+            this.dtgConsultaPrescripcion.ReadOnly = true;
+            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(780, 170);
             this.dtgConsultaPrescripcion.TabIndex = 110;
-            // 
-            // Prescripcion
-            // 
-            this.Prescripcion.HeaderText = "Prescripcion";
-            this.Prescripcion.Name = "Prescripcion";
-            this.Prescripcion.Width = 90;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo medicamento";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre medicamento";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 150;
-            // 
-            // CantidadPrescrita
-            // 
-            this.CantidadPrescrita.HeaderText = "Cantidad prescrita";
-            this.CantidadPrescrita.Name = "CantidadPrescrita";
-            this.CantidadPrescrita.Width = 150;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha de caducidad";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 150;
             // 
             // btnReporteMedicamentos
             // 
@@ -208,6 +176,63 @@
             this.btnTodosLosResultados.TabIndex = 112;
             this.btnTodosLosResultados.Text = "Todos los resultados";
             this.btnTodosLosResultados.UseVisualStyleBackColor = false;
+            // 
+            // txtFechaCaducidad
+            // 
+            this.txtFechaCaducidad.Enabled = false;
+            this.txtFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaCaducidad.Location = new System.Drawing.Point(168, 29);
+            this.txtFechaCaducidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
+            this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 23);
+            this.txtFechaCaducidad.TabIndex = 117;
+            // 
+            // Prescripcion
+            // 
+            this.Prescripcion.DataPropertyName = "num";
+            this.Prescripcion.HeaderText = "Prescripcion";
+            this.Prescripcion.Name = "Prescripcion";
+            this.Prescripcion.ReadOnly = true;
+            this.Prescripcion.Width = 80;
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "cedula_paciente";
+            this.Cedula.HeaderText = "Cedula del paciente";
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codigo_medicamento";
+            this.Codigo.HeaderText = "Codigo medicamento";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre_medicamento";
+            this.Nombre.HeaderText = "Nombre medicamento";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // CantidadPrescrita
+            // 
+            this.CantidadPrescrita.DataPropertyName = "cantidad_prescrita";
+            this.CantidadPrescrita.HeaderText = "Cantidad prescrita";
+            this.CantidadPrescrita.Name = "CantidadPrescrita";
+            this.CantidadPrescrita.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "fecha_caducidad";
+            this.Fecha.HeaderText = "Fecha de caducidad";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 150;
             // 
             // FRM_ConsultaPrescripcion
             // 
@@ -240,17 +265,18 @@
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCedulaPaciente;
-        public System.Windows.Forms.DateTimePicker dateTimeFechaCaducidad;
         public System.Windows.Forms.DataGridView dtgConsultaPrescripcion;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        public System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
-        public System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         public System.Windows.Forms.Button btnReporteMedicamentos;
         public System.Windows.Forms.TextBox txtCodigoMedicamento;
         public System.Windows.Forms.CheckBox checkBoxCodigoMedicamento;
         public System.Windows.Forms.CheckBox checkBoxFechaCaducidad;
         public System.Windows.Forms.Button btnTodosLosResultados;
+        private System.Windows.Forms.DateTimePicker txtFechaCaducidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }
