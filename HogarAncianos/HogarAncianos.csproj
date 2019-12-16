@@ -141,6 +141,12 @@
       <DependentUpon>CrystalReportEmpleados.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\CrystalReportEmpleados1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CrystalReportMedicamentos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
