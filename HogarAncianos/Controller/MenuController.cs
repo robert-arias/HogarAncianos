@@ -206,7 +206,8 @@ namespace HogarAncianos.Controller {
             frm_Login.EstadoInicial();
             LOGGED_USER = frm_Login.GetUsuario();
             EnableMenuItems();
-            frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
+            if (LOGGED_USER != null)
+                frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
         }
 
         private void CerrarSesion(object sender, EventArgs e) {
@@ -232,7 +233,8 @@ namespace HogarAncianos.Controller {
                 frm_MenuPrincipal.Show();
                 LOGGED_USER = frm_Login.GetUsuario();
                 EnableMenuItems();
-                frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
+                if (LOGGED_USER != null)
+                    frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
             }
         }
 
@@ -243,7 +245,8 @@ namespace HogarAncianos.Controller {
                     frm_MenuPrincipal.Show();
                     LOGGED_USER = frm_Login.GetUsuario();
                     EnableMenuItems();
-                    frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
+                    if (LOGGED_USER != null)
+                        frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
                 }
                 e.SuppressKeyPress = true; //remove ding windows sound.
             }
