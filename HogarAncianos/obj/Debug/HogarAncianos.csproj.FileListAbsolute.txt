@@ -296,3 +296,4 @@ C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.pdb
 C:\Users\User\Source\Repos\HogarAncianos2\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache
 C:\Users\Yanily\source\repos\robert-arias\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.View.FRM_ReporteEmpleados.resources
+D:\Desktop\VI Semestre\Análisis de sistemas\Proyecto\Programa\HogarAncianos\HogarAncianos\obj\Debug\HogarAncianos.csprojAssemblyReference.cache

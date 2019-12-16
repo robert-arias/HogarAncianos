@@ -39,7 +39,7 @@ namespace HogarAncianos.View
         }
 
         public bool ShowConfirmation() {
-            string message = "¿Desea modificar el usuario: " + txtUsuario.Text + "?";
+            string message = "¿Desea agregar el usuario: " + txtUsuario.Text + "?";
             DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
             return boton == DialogResult.OK;
