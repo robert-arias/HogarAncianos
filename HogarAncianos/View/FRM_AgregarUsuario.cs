@@ -85,7 +85,7 @@ namespace HogarAncianos.View
             checkBoxMostrarDatos.Enabled = false;
 
             btnAgregar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnCancelar.Enabled = true;
             btnVerificar.Enabled = true;
             btnLimpiar.Enabled = true;
 

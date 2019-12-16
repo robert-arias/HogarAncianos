@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace HogarAncianos.View {
     public partial class FRM_Login : Form {
-
-        private LoginController controller;
+        
         private Usuario usuario;
+        private ConnectionDB db;
 
         public FRM_Login() {
             InitializeComponent();
-            controller = new LoginController(this);
             usuario = null;
+            db = new ConnectionDB();
         }
 
         public void ShowMessage(string message) {
@@ -58,6 +58,32 @@ namespace HogarAncianos.View {
         public void EstadoInicial() {
             txtContrasenia.Text = "";
             txtUsuario.Text = "";
+        }
+
+        public bool IniciarSesion() {
+            if (!VerificarCampos()) {
+                DataTable user = db.GetUsuario(GetUsername());
+                if (user.Rows.Count > 0) {
+                    if (CheckPassword(user)) {
+                        ShowMessage("Hola, " + user.Rows[0][0].ToString() + ".\n" +
+                            "Se ha ingresado al sistema correctamente");
+                        EstadoInicial();
+                        return true;
+                    }
+                    else {
+                        ShowMessage("El usuario o la contraseña ingresada son incorrectas.");
+                        return false;
+                    }
+                }
+                else {
+                    ShowMessage("El usuario o la contraseña ingresada son incorrectas.");
+                    return false;
+                }
+            }
+            else {
+                ShowMessage("El usuario o la contraseña ingresada son incorrectas.");
+                return false;
+            }
         }
 
     }

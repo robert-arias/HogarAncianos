@@ -187,6 +187,8 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.mi_Login_IniciarSesion.Click += new EventHandler(OpenIniciarSesion);
             frm_Login.FormClosed += CerrarLogin;
             frm_MenuPrincipal.mi_Login_CerrarSesion.Click += new EventHandler(CerrarSesion);
+            frm_Login.btnIniciarSesion.Click += new EventHandler(Login);
+            frm_Login.txtContrasenia.KeyDown += new KeyEventHandler(LoginEnter);
         }
 
         //Metodos Login
@@ -203,23 +205,48 @@ namespace HogarAncianos.Controller {
             frm_MenuPrincipal.Show();
             frm_Login.EstadoInicial();
             LOGGED_USER = frm_Login.GetUsuario();
-            //EnableMenuItems();
+            EnableMenuItems();
+            frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
         }
 
         private void CerrarSesion(object sender, EventArgs e) {
-            /*if (LOGGED_USER != null) {
+            if (LOGGED_USER != null) {
                 string message = "¿Seguro que desea cerrar sesión?";
                 DialogResult boton = MessageBox.Show(message, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (boton == DialogResult.OK) {
                     LOGGED_USER = null;
                     DisableMenuItems();
                     frm_Login.SetUsuario();
+                    frm_MenuPrincipal.lbUsuario.Text = "";
                 }
                 LOGGED_USER = frm_Login.GetUsuario();
-                //EnableMenuItems();
+                EnableMenuItems();
             }
             else
-                MessageBox.Show("No ha iniciado sesión.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                MessageBox.Show("No ha iniciado sesión.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Login(object sender, EventArgs e) {
+            if (frm_Login.IniciarSesion()) {
+                frm_Login.Close();
+                frm_MenuPrincipal.Show();
+                LOGGED_USER = frm_Login.GetUsuario();
+                EnableMenuItems();
+                frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
+            }
+        }
+
+        private void LoginEnter(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                if (frm_Login.IniciarSesion()) {
+                    frm_Login.Close();
+                    frm_MenuPrincipal.Show();
+                    LOGGED_USER = frm_Login.GetUsuario();
+                    EnableMenuItems();
+                    frm_MenuPrincipal.lbUsuario.Text = "Usuario: " + LOGGED_USER.nombreUsuario;
+                }
+                e.SuppressKeyPress = true; //remove ding windows sound.
+            }
         }
 
         //Metodos limpieza
@@ -632,10 +659,10 @@ namespace HogarAncianos.Controller {
              * CAMBIAR ESTO, VERIFICAR DE MEJOR MANERA, PRINCIPALMENTE CUANDO EL USUARIO NO ES NI ADMIN NI ENFERMERA
              * SOLO PUEDE SACAR PRODUCTOS E INGRESARLOS, DEBO PONER LOS OTROS MI ESCONDIDOS.
              */
-             
-            ConnectionDB db = new ConnectionDB();
-            string rol = db.GetPuestoTrabajo(LOGGED_USER.cedula);
+
             if (LOGGED_USER != null) {
+                ConnectionDB db = new ConnectionDB();
+                string rol = db.GetPuestoTrabajo(LOGGED_USER.cedula);
                 if (LOGGED_USER.cedula.Equals("0") || rol.Equals("Administradora")) {
                     frm_MenuPrincipal.mi_Empleados.Visible = true;
                     frm_MenuPrincipal.mi_ProductosLimpieza.Visible = true;
