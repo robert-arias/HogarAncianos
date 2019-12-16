@@ -32,6 +32,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbSexo = new System.Windows.Forms.Label();
+            this.lbEdad = new System.Windows.Forms.Label();
+            this.lbCedula = new System.Windows.Forms.Label();
+            this.lbFechaNacimiento = new System.Windows.Forms.Label();
+            this.lbApellidos = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.txtCedula = new System.Windows.Forms.TextBox();
@@ -46,12 +52,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbSexo = new System.Windows.Forms.Label();
-            this.lbEdad = new System.Windows.Forms.Label();
-            this.lbCedula = new System.Windows.Forms.Label();
-            this.lbFechaNacimiento = new System.Windows.Forms.Label();
-            this.lbApellidos = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
             this.toolTipCedula = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipNombre = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipApellidos = new System.Windows.Forms.ToolTip(this.components);
@@ -126,6 +126,90 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion personal";
+            // 
+            // lbSexo
+            // 
+            this.lbSexo.AutoSize = true;
+            this.lbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSexo.ForeColor = System.Drawing.Color.Red;
+            this.lbSexo.Location = new System.Drawing.Point(388, 279);
+            this.lbSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSexo.Name = "lbSexo";
+            this.lbSexo.Size = new System.Drawing.Size(14, 18);
+            this.lbSexo.TabIndex = 87;
+            this.lbSexo.Text = "*";
+            this.toolTipSexo.SetToolTip(this.lbSexo, "Debe seleccionar una opcion");
+            this.lbSexo.Visible = false;
+            // 
+            // lbEdad
+            // 
+            this.lbEdad.AutoSize = true;
+            this.lbEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEdad.ForeColor = System.Drawing.Color.Red;
+            this.lbEdad.Location = new System.Drawing.Point(388, 227);
+            this.lbEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEdad.Name = "lbEdad";
+            this.lbEdad.Size = new System.Drawing.Size(14, 18);
+            this.lbEdad.TabIndex = 86;
+            this.lbEdad.Text = "*";
+            this.toolTipEdad.SetToolTip(this.lbEdad, "Edad debe ser superior o igual a 18");
+            this.lbEdad.Visible = false;
+            // 
+            // lbCedula
+            // 
+            this.lbCedula.AutoSize = true;
+            this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCedula.ForeColor = System.Drawing.Color.Red;
+            this.lbCedula.Location = new System.Drawing.Point(387, 54);
+            this.lbCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCedula.Name = "lbCedula";
+            this.lbCedula.Size = new System.Drawing.Size(14, 18);
+            this.lbCedula.TabIndex = 85;
+            this.lbCedula.Text = "*";
+            this.toolTipCedula.SetToolTip(this.lbCedula, "La cédula  debe contener 9 o mas digitos");
+            this.lbCedula.Visible = false;
+            // 
+            // lbFechaNacimiento
+            // 
+            this.lbFechaNacimiento.AutoSize = true;
+            this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.Red;
+            this.lbFechaNacimiento.Location = new System.Drawing.Point(387, 185);
+            this.lbFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbFechaNacimiento.Name = "lbFechaNacimiento";
+            this.lbFechaNacimiento.Size = new System.Drawing.Size(14, 18);
+            this.lbFechaNacimiento.TabIndex = 84;
+            this.lbFechaNacimiento.Text = "*";
+            this.toolTipFecha.SetToolTip(this.lbFechaNacimiento, "Edad debe ser superior o igual a 18");
+            this.lbFechaNacimiento.Visible = false;
+            // 
+            // lbApellidos
+            // 
+            this.lbApellidos.AutoSize = true;
+            this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApellidos.ForeColor = System.Drawing.Color.Red;
+            this.lbApellidos.Location = new System.Drawing.Point(387, 142);
+            this.lbApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbApellidos.Name = "lbApellidos";
+            this.lbApellidos.Size = new System.Drawing.Size(14, 18);
+            this.lbApellidos.TabIndex = 83;
+            this.lbApellidos.Text = "*";
+            this.toolTipApellidos.SetToolTip(this.lbApellidos, "No ha digitado apellidos");
+            this.lbApellidos.Visible = false;
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.ForeColor = System.Drawing.Color.Red;
+            this.lbNombre.Location = new System.Drawing.Point(387, 99);
+            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(14, 18);
+            this.lbNombre.TabIndex = 82;
+            this.lbNombre.Text = "*";
+            this.toolTipCedula.SetToolTip(this.lbNombre, "No ha digitado un nombre");
+            this.lbNombre.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -296,90 +380,6 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Cédula de identidad:";
             // 
-            // lbSexo
-            // 
-            this.lbSexo.AutoSize = true;
-            this.lbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSexo.ForeColor = System.Drawing.Color.Red;
-            this.lbSexo.Location = new System.Drawing.Point(388, 279);
-            this.lbSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbSexo.Name = "lbSexo";
-            this.lbSexo.Size = new System.Drawing.Size(14, 18);
-            this.lbSexo.TabIndex = 87;
-            this.lbSexo.Text = "*";
-            this.toolTipSexo.SetToolTip(this.lbSexo, "Debe seleccionar una opcion");
-            this.lbSexo.Visible = false;
-            // 
-            // lbEdad
-            // 
-            this.lbEdad.AutoSize = true;
-            this.lbEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEdad.ForeColor = System.Drawing.Color.Red;
-            this.lbEdad.Location = new System.Drawing.Point(388, 227);
-            this.lbEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbEdad.Name = "lbEdad";
-            this.lbEdad.Size = new System.Drawing.Size(14, 18);
-            this.lbEdad.TabIndex = 86;
-            this.lbEdad.Text = "*";
-            this.toolTipEdad.SetToolTip(this.lbEdad, "Edad debe ser superior o igual a 18");
-            this.lbEdad.Visible = false;
-            // 
-            // lbCedula
-            // 
-            this.lbCedula.AutoSize = true;
-            this.lbCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedula.ForeColor = System.Drawing.Color.Red;
-            this.lbCedula.Location = new System.Drawing.Point(387, 54);
-            this.lbCedula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCedula.Name = "lbCedula";
-            this.lbCedula.Size = new System.Drawing.Size(14, 18);
-            this.lbCedula.TabIndex = 85;
-            this.lbCedula.Text = "*";
-            this.toolTipCedula.SetToolTip(this.lbCedula, "La cédula  debe contener 9 o mas digitos");
-            this.lbCedula.Visible = false;
-            // 
-            // lbFechaNacimiento
-            // 
-            this.lbFechaNacimiento.AutoSize = true;
-            this.lbFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.ForeColor = System.Drawing.Color.Red;
-            this.lbFechaNacimiento.Location = new System.Drawing.Point(387, 185);
-            this.lbFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbFechaNacimiento.Name = "lbFechaNacimiento";
-            this.lbFechaNacimiento.Size = new System.Drawing.Size(14, 18);
-            this.lbFechaNacimiento.TabIndex = 84;
-            this.lbFechaNacimiento.Text = "*";
-            this.toolTipFecha.SetToolTip(this.lbFechaNacimiento, "Edad debe ser superior o igual a 18");
-            this.lbFechaNacimiento.Visible = false;
-            // 
-            // lbApellidos
-            // 
-            this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApellidos.ForeColor = System.Drawing.Color.Red;
-            this.lbApellidos.Location = new System.Drawing.Point(387, 142);
-            this.lbApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(14, 18);
-            this.lbApellidos.TabIndex = 83;
-            this.lbApellidos.Text = "*";
-            this.toolTipApellidos.SetToolTip(this.lbApellidos, "No ha digitado apellidos");
-            this.lbApellidos.Visible = false;
-            // 
-            // lbNombre
-            // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.ForeColor = System.Drawing.Color.Red;
-            this.lbNombre.Location = new System.Drawing.Point(387, 99);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(14, 18);
-            this.lbNombre.TabIndex = 82;
-            this.lbNombre.Text = "*";
-            this.toolTipCedula.SetToolTip(this.lbNombre, "No ha digitado un nombre");
-            this.lbNombre.Visible = false;
-            // 
             // FRM_ModificarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +390,6 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FRM_ModificarPaciente";
-            this.Opacity = 0.9D;
             this.Text = "FRM_ModificarPaciente";
             this.Load += new System.EventHandler(this.FRM_ModificarPaciente_Load);
             this.groupBox1.ResumeLayout(false);
