@@ -1001,6 +1001,8 @@ namespace HogarAncianos.Model {
             DataTable dataTable = new DataTable();
             dataSQLite.Fill(dataTable);
 
+            connection.Close();
+
             return dataTable.Rows[0][0].ToString() + " " + dataTable.Rows[0][1].ToString();
         }
 
