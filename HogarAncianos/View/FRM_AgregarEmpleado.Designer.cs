@@ -23,9 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvCorreos = new System.Windows.Forms.DataGridView();
             this.btnEliminarCorreo = new System.Windows.Forms.Button();
             this.lbCedula = new System.Windows.Forms.Label();
             this.lbDireccion = new System.Windows.Forms.Label();
@@ -34,8 +33,6 @@
             this.lbApellidos = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.dgvCorreos = new System.Windows.Forms.DataGridView();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnAgregarCorreo = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -71,6 +68,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorreos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,6 +79,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dgvCorreos);
             this.groupBox1.Controls.Add(this.btnEliminarCorreo);
             this.groupBox1.Controls.Add(this.lbCedula);
             this.groupBox1.Controls.Add(this.lbDireccion);
@@ -89,7 +88,6 @@
             this.groupBox1.Controls.Add(this.lbApellidos);
             this.groupBox1.Controls.Add(this.lbNombre);
             this.groupBox1.Controls.Add(this.btnLimpiar);
-            this.groupBox1.Controls.Add(this.dgvCorreos);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.btnAgregarCorreo);
             this.groupBox1.Controls.Add(this.txtTelefono);
@@ -107,8 +105,8 @@
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -117,6 +115,21 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información personal";
+            // 
+            // dgvCorreos
+            // 
+            this.dgvCorreos.AllowUserToAddRows = false;
+            this.dgvCorreos.AllowUserToDeleteRows = false;
+            this.dgvCorreos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvCorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Correo});
+            this.dgvCorreos.Location = new System.Drawing.Point(644, 242);
+            this.dgvCorreos.Name = "dgvCorreos";
+            this.dgvCorreos.ReadOnly = true;
+            this.dgvCorreos.RowTemplate.Height = 24;
+            this.dgvCorreos.Size = new System.Drawing.Size(383, 107);
+            this.dgvCorreos.TabIndex = 32;
             // 
             // btnEliminarCorreo
             // 
@@ -214,48 +227,6 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // dgvCorreos
-            // 
-            this.dgvCorreos.AllowUserToAddRows = false;
-            this.dgvCorreos.AllowUserToDeleteRows = false;
-            this.dgvCorreos.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCorreos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCorreos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCorreos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.correo});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCorreos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCorreos.Enabled = false;
-            this.dgvCorreos.EnableHeadersVisualStyles = false;
-            this.dgvCorreos.Location = new System.Drawing.Point(643, 242);
-            this.dgvCorreos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvCorreos.Name = "dgvCorreos";
-            this.dgvCorreos.ReadOnly = true;
-            this.dgvCorreos.RowTemplate.Height = 20;
-            this.dgvCorreos.Size = new System.Drawing.Size(387, 90);
-            this.dgvCorreos.TabIndex = 22;
-            // 
-            // correo
-            // 
-            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.correo.HeaderText = "Correo";
-            this.correo.MinimumWidth = 4;
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Enabled = false;
@@ -263,7 +234,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(643, 190);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(299, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(276, 27);
             this.txtCorreo.TabIndex = 7;
             // 
             // btnAgregarCorreo
@@ -274,10 +245,10 @@
             this.btnAgregarCorreo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.btnAgregarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCorreo.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarCorreo.Location = new System.Drawing.Point(947, 180);
+            this.btnAgregarCorreo.Location = new System.Drawing.Point(925, 186);
             this.btnAgregarCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarCorreo.Name = "btnAgregarCorreo";
-            this.btnAgregarCorreo.Size = new System.Drawing.Size(104, 43);
+            this.btnAgregarCorreo.Size = new System.Drawing.Size(105, 33);
             this.btnAgregarCorreo.TabIndex = 8;
             this.btnAgregarCorreo.Text = "Agregar";
             this.btnAgregarCorreo.UseVisualStyleBackColor = false;
@@ -454,8 +425,8 @@
             this.groupBox2.Controls.Add(this.txtSalario);
             this.groupBox2.Controls.Add(this.txtHorario);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(12, 386);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -693,6 +664,14 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
+            // Correo
+            // 
+            this.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 340;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
             // FRM_AgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -724,7 +703,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.DateTimePicker txtFechaNacimiento;
-        private System.Windows.Forms.DataGridView dgvCorreos;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtCorreos;
@@ -765,6 +743,7 @@
         private System.Windows.Forms.Label lbFechaNacimiento;
         private System.Windows.Forms.Label lbCedula;
         public System.Windows.Forms.Button btnEliminarCorreo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridView dgvCorreos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }
