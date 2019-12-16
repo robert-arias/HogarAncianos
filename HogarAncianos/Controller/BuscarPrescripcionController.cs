@@ -42,17 +42,41 @@ namespace HogarAncianos.Controller
 
         public void RealizarBusqueda(object sender, EventArgs e)
         {
-
-
-            if (connectionDB.GetBusquedaPrescripcion(frm_consultarPrescripcion.GetBusquedaPrescripcion()).Tables[0].Rows.Count >= 1)
+            if (frm_consultarPrescripcion.verificar())
             {
-                frm_consultarPrescripcion.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_consultarPrescripcion.GetBusquedaPrescripcion()));
+                if (frm_consultarPrescripcion.GetBusquedaPrescripcion() != "")
+                {
+                    if (connectionDB.GetBusquedaPrescripcion(frm_consultarPrescripcion.GetBusquedaPrescripcion())!=null)
+                    {
+                        if (connectionDB.GetBusquedaPrescripcion(frm_consultarPrescripcion.GetBusquedaPrescripcion()).Tables[0].Rows.Count >= 1)
+                        {
+                            frm_consultarPrescripcion.FillBusqueda(connectionDB.GetBusquedaPaciente(frm_consultarPrescripcion.GetBusquedaPrescripcion()));
 
+                        }
+                        else
+                        {
+                            frm_consultarPrescripcion.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                        }
+
+                    }
+                    else
+                    {
+                        frm_consultarPrescripcion.MensajeError("No resultados");
+                    }
+                   
+                }
+                else
+                {
+                    frm_consultarPrescripcion.MensajeError("No resultados");
+                }
             }
             else
             {
-                frm_consultarPrescripcion.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                frm_consultarPrescripcion.MensajeError("Verifique los datos ingresados ");
             }
+               
+
+            
 
         }//metodo de busqueda
 

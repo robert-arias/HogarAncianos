@@ -459,6 +459,7 @@ namespace HogarAncianos.Controller {
         {
             frm_ConsultaMedicamentos.Close();
             frm_MenuPrincipal.Show();
+            frm_ConsultaMedicamentos.EstadoInicial();
         }
 
 

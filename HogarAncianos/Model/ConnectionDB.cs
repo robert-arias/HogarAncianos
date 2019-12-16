@@ -1410,7 +1410,7 @@ namespace HogarAncianos.Model {
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.ToString());
-                throw;
+                return null;
             }
         }
 

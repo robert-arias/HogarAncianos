@@ -85,15 +85,6 @@ namespace HogarAncianos.View
         }//fin del metodo activar/ desactivar fecha
 
 
-        public void MensajeInformativo(string message)
-        {
-            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }//fin de mensaje Informativo
-
-        public void MensajeError(string mensaje)
-        {
-            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }//fin de mensaje error
 
 
         public string GetBusquedaPrescripcion()
@@ -102,15 +93,15 @@ namespace HogarAncianos.View
 
             if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked)
             {
-                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{ txtFechaCaducidad.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento";
+                query = $"select  pa.nombre ,m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p ,  Pacientes pa where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{ txtFechaCaducidad.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento , pa.cedula= p.cedula_paciente";
             }
             else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxCodigoMedicamento.Checked && !string.IsNullOrEmpty(txtCodigoMedicamento.Text))
             {
-                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p  where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento";
+                query = $"select pa.nombre, m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p ,  Pacientes pa where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num and m.codigo_Medicamento= pm.codigo_Medicamento,pa.cedula= p.cedula_paciente";
             }
-            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && !checkBoxFechaCaducidad.Checked && !checkBoxCodigoMedicamento.Checked)
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && !checkBoxFechaCaducidad.Checked && !checkBoxCodigoMedicamento.Checked && string.IsNullOrEmpty(txtCodigoMedicamento.Text))
             {
-                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p  where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.num=p.num";
+                query = $"select pa.nombre, m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p , Pacientes pa  where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.num=p.num, pa.cedula= p.cedula_paciente";
             }
             
 
@@ -127,26 +118,52 @@ namespace HogarAncianos.View
         public bool verificar()
         {
             bool verificar = false;
-            if (!string.IsNullOrEmpty(txtCedulaPaciente.Text))
-            {
-                verificar = true;
-
-            }
-            else if (string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked && checkBoxCodigoMedicamento.Checked)
+            if (string.IsNullOrEmpty(txtCedulaPaciente.Text) && (checkBoxFechaCaducidad.Checked || checkBoxCodigoMedicamento.Checked))
             {
                 verificar = false;
+
             }
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && !checkBoxFechaCaducidad.Checked && !checkBoxCodigoMedicamento.Checked)
+            {
+                verificar = true;
+            }
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxFechaCaducidad.Checked)
+            {
+                verificar = true;
+            }
+
+            else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && checkBoxCodigoMedicamento.Checked)
+            {
+                if (!string.IsNullOrEmpty(txtCodigoMedicamento.Text))
+                {
+                    verificar = true;
+                }
+                else
+                {
+                    verificar = false;
+                }
+                
+            }
+
 
             return verificar;
         }//fin del metodo verificar 
 
 
 
+        public void MensajeInformativo(string message)
+        {
+            MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, " Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
+        private void FRM_ConsultaPrescripcion_Load(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }//fin de la clase 
 }//fin del namespace
