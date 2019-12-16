@@ -110,13 +110,9 @@ namespace HogarAncianos.View
             }
             else if (!string.IsNullOrEmpty(txtCedulaPaciente.Text) && !checkBoxFechaCaducidad.Checked && !checkBoxCodigoMedicamento.Checked)
             {
-                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.fecha_caducidad = '{ txtFechaCaducidad.Text}' and pm.codigo_medicamento = '{txtCodigoMedicamento.Text}' and pm.num=p.num";
+                query = $"select m.nombre_medicamento, p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Medicamentos m, Prescripcion_Medicamentos pm, Prescripcion p  where p.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.num=p.num";
             }
-            else if (string.IsNullOrEmpty(txtCedulaPaciente.Text))
-            {
-                //query = $"select * from Prescripcion_Medicamento";
-                query = $"select p.num, p.cedula_paciente, pm.codigo_medicamento, pm.cantidad_prescrita, pm.fecha_caducidad from Prescripcion_Medicamento pm, Prescripcion p where pm.cedula_paciente = '{txtCedulaPaciente.Text}' and pm.num=p.num";
-            }
+            
 
             Console.WriteLine(query + "Revisar");
             return query;
