@@ -41,7 +41,7 @@ namespace HogarAncianos.View
                 v.Handled = true;
                 MessageBox.Show("Solo se admiten números.");
             }
-        }
+        }//
 
         public  void SoloLetras(KeyPressEventArgs v)
         {
