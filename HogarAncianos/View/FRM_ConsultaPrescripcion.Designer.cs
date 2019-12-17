@@ -31,6 +31,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.txtCodigoMedicamento = new System.Windows.Forms.TextBox();
             this.checkBoxCodigoMedicamento = new System.Windows.Forms.CheckBox();
             this.checkBoxFechaCaducidad = new System.Windows.Forms.CheckBox();
@@ -39,11 +40,11 @@
             this.dtgConsultaPrescripcion = new System.Windows.Forms.DataGridView();
             this.btnReporteMedicamentos = new System.Windows.Forms.Button();
             this.btnTodosLosResultados = new System.Windows.Forms.Button();
-            this.txtFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.Prescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPrescrita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(727, 49);
+            this.btnCancelar.Location = new System.Drawing.Point(815, 40);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 34);
             this.btnCancelar.TabIndex = 7;
@@ -65,7 +66,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(622, 49);
+            this.btnBuscar.Location = new System.Drawing.Point(710, 40);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(85, 34);
             this.btnBuscar.TabIndex = 6;
@@ -82,14 +83,25 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(42)))), ((int)(((byte)(72)))));
             this.groupBox1.Location = new System.Drawing.Point(57, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(734, 80);
+            this.groupBox1.Size = new System.Drawing.Size(859, 99);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por";
             // 
+            // txtFechaCaducidad
+            // 
+            this.txtFechaCaducidad.Enabled = false;
+            this.txtFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaCaducidad.Location = new System.Drawing.Point(168, 29);
+            this.txtFechaCaducidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
+            this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 23);
+            this.txtFechaCaducidad.TabIndex = 117;
+            // 
             // txtCodigoMedicamento
             // 
-            this.txtCodigoMedicamento.Location = new System.Drawing.Point(594, 25);
+            this.txtCodigoMedicamento.Location = new System.Drawing.Point(670, 29);
             this.txtCodigoMedicamento.Name = "txtCodigoMedicamento";
             this.txtCodigoMedicamento.Size = new System.Drawing.Size(134, 26);
             this.txtCodigoMedicamento.TabIndex = 15;
@@ -99,7 +111,7 @@
             this.checkBoxCodigoMedicamento.AutoSize = true;
             this.checkBoxCodigoMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxCodigoMedicamento.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCodigoMedicamento.Location = new System.Drawing.Point(399, 28);
+            this.checkBoxCodigoMedicamento.Location = new System.Drawing.Point(475, 32);
             this.checkBoxCodigoMedicamento.Name = "checkBoxCodigoMedicamento";
             this.checkBoxCodigoMedicamento.Size = new System.Drawing.Size(182, 24);
             this.checkBoxCodigoMedicamento.TabIndex = 14;
@@ -123,7 +135,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 50);
+            this.label2.Location = new System.Drawing.Point(60, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 20);
             this.label2.TabIndex = 9;
@@ -131,7 +143,7 @@
             // 
             // txtCedulaPaciente
             // 
-            this.txtCedulaPaciente.Location = new System.Drawing.Point(164, 50);
+            this.txtCedulaPaciente.Location = new System.Drawing.Point(242, 49);
             this.txtCedulaPaciente.Name = "txtCedulaPaciente";
             this.txtCedulaPaciente.Size = new System.Drawing.Size(440, 20);
             this.txtCedulaPaciente.TabIndex = 10;
@@ -144,22 +156,23 @@
             this.dtgConsultaPrescripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgConsultaPrescripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Prescripcion,
-            this.Cedula,
             this.Codigo,
             this.Nombre,
+            this.Cedula,
+            this.NombrePaciente,
             this.CantidadPrescrita,
             this.Fecha});
-            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(41, 204);
+            this.dtgConsultaPrescripcion.Location = new System.Drawing.Point(41, 214);
             this.dtgConsultaPrescripcion.Name = "dtgConsultaPrescripcion";
             this.dtgConsultaPrescripcion.ReadOnly = true;
-            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(780, 170);
+            this.dtgConsultaPrescripcion.Size = new System.Drawing.Size(875, 236);
             this.dtgConsultaPrescripcion.TabIndex = 110;
             // 
             // btnReporteMedicamentos
             // 
             this.btnReporteMedicamentos.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnReporteMedicamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteMedicamentos.Location = new System.Drawing.Point(535, 404);
+            this.btnReporteMedicamentos.Location = new System.Drawing.Point(660, 486);
             this.btnReporteMedicamentos.Name = "btnReporteMedicamentos";
             this.btnReporteMedicamentos.Size = new System.Drawing.Size(256, 34);
             this.btnReporteMedicamentos.TabIndex = 111;
@@ -170,23 +183,12 @@
             // 
             this.btnTodosLosResultados.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnTodosLosResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTodosLosResultados.Location = new System.Drawing.Point(12, 404);
+            this.btnTodosLosResultados.Location = new System.Drawing.Point(12, 476);
             this.btnTodosLosResultados.Name = "btnTodosLosResultados";
             this.btnTodosLosResultados.Size = new System.Drawing.Size(256, 34);
             this.btnTodosLosResultados.TabIndex = 112;
             this.btnTodosLosResultados.Text = "Todos los resultados";
             this.btnTodosLosResultados.UseVisualStyleBackColor = false;
-            // 
-            // txtFechaCaducidad
-            // 
-            this.txtFechaCaducidad.Enabled = false;
-            this.txtFechaCaducidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCaducidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFechaCaducidad.Location = new System.Drawing.Point(168, 29);
-            this.txtFechaCaducidad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
-            this.txtFechaCaducidad.Size = new System.Drawing.Size(183, 23);
-            this.txtFechaCaducidad.TabIndex = 117;
             // 
             // Prescripcion
             // 
@@ -195,13 +197,6 @@
             this.Prescripcion.Name = "Prescripcion";
             this.Prescripcion.ReadOnly = true;
             this.Prescripcion.Width = 80;
-            // 
-            // Cedula
-            // 
-            this.Cedula.DataPropertyName = "cedula_paciente";
-            this.Cedula.HeaderText = "Cedula del paciente";
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
             // 
             // Codigo
             // 
@@ -218,6 +213,20 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.Width = 150;
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "cedula_paciente";
+            this.Cedula.HeaderText = "Cedula del paciente";
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            // 
+            // NombrePaciente
+            // 
+            this.NombrePaciente.DataPropertyName = "nombre";
+            this.NombrePaciente.HeaderText = "Nombre del paciente";
+            this.NombrePaciente.Name = "NombrePaciente";
+            this.NombrePaciente.ReadOnly = true;
             // 
             // CantidadPrescrita
             // 
@@ -239,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.ClientSize = new System.Drawing.Size(985, 532);
             this.Controls.Add(this.btnTodosLosResultados);
             this.Controls.Add(this.btnReporteMedicamentos);
             this.Controls.Add(this.dtgConsultaPrescripcion);
@@ -250,6 +259,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Name = "FRM_ConsultaPrescripcion";
             this.Text = "FRM_ConsultaPrescripcion";
+            this.Load += new System.EventHandler(this.FRM_ConsultaPrescripcion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaPrescripcion)).EndInit();
@@ -273,9 +283,10 @@
         public System.Windows.Forms.Button btnTodosLosResultados;
         private System.Windows.Forms.DateTimePicker txtFechaCaducidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePaciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPrescrita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }

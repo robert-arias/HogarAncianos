@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HogarAncianos.Model;
 using HogarAncianos.View;
 
@@ -30,6 +31,7 @@ namespace HogarAncianos.Controller
             FRM_ConsultaMedicamentos.btnBuscar.Click += new EventHandler(RealizarBusqueda);                    
             FRM_ConsultaMedicamentos.btnResultados.Click += new EventHandler(TodosLosMedicamentos);
             FRM_ConsultaMedicamentos.btnReporteMedicamentos.Click += new EventHandler(Reporte);
+            FRM_ConsultaMedicamentos.txtBuscar.KeyDown += new KeyEventHandler(RealizarBusquedaEnter);
         }
 
         public void Reporte(object sender, EventArgs e)
@@ -56,24 +58,84 @@ namespace HogarAncianos.Controller
 
         }
 
+        public void RealizarBusquedaEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                FRM_ConsultaMedicamentos.LimpiarBusqueda();
+                if (FRM_ConsultaMedicamentos.verificar())
+                {   if(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()!= "")
+                    {
+                        if (connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()) != null)
+                        {
+                            if (connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()).Tables[0].Rows.Count >= 1)
+                            {
+                                FRM_ConsultaMedicamentos.FillBusqueda(connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()));
+
+
+                            }
+                            else
+                            {
+                                FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                            }
+                        }
+                        else
+                        {
+                            FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                        }
+                    }
+                    else
+                    {
+                        FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                    }
+                   
+
+
+                }
+                else
+                
+                    FRM_ConsultaMedicamentos.MensajeError("Verifique que todos los datos selecccionados e ingresados " +
+                        "sean correctos.");
+                e.SuppressKeyPress = true; //remove ding windows sound.
+
+            }
+        }
         public void RealizarBusqueda(object sender, EventArgs e)
         {
+            FRM_ConsultaMedicamentos.LimpiarBusqueda();
             if (FRM_ConsultaMedicamentos.verificar())
             {
-                if (connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()).Tables[0].Rows.Count >=1)
+                if (FRM_ConsultaMedicamentos.GetBusquedaMedicamentos() != "")
                 {
-                    FRM_ConsultaMedicamentos.FillBusqueda(connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()));
+                    if (connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()) != null)
+                    {
+                        if (connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()).Tables[0].Rows.Count >= 1)
+                        {
+                            FRM_ConsultaMedicamentos.FillBusqueda(connectionDB.GetBusquedaMedicamento(FRM_ConsultaMedicamentos.GetBusquedaMedicamentos()));
 
 
+                        }
+                        else
+                        {
+                            FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                        }
+                    }
+                    else
+                    {
+                        FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
+                    }
                 }
                 else
                 {
                     FRM_ConsultaMedicamentos.MensajeInformativo("No se han encontrado resultados para la búsqueda especificada.");
                 }
 
+
+
             }
             else
-            {
+            { 
+
                 FRM_ConsultaMedicamentos.MensajeError("Verifique que todos los datos selecccionados e ingresados " +
                     "sean correctos.");
             }

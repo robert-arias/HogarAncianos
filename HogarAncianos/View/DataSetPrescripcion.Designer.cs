@@ -289,6 +289,10 @@ namespace HogarAncianos.View {
             
             private global::System.Data.DataColumn columnDataColumn5;
             
+            private global::System.Data.DataColumn columnDataColumn6;
+            
+            private global::System.Data.DataColumn columnDataColumn7;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -364,6 +368,22 @@ namespace HogarAncianos.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DataColumn6Column {
+                get {
+                    return this.columnDataColumn6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DataColumn7Column {
+                get {
+                    return this.columnDataColumn7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +419,16 @@ namespace HogarAncianos.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string DataColumn1, string DataColumn2, string DataColumn3, string DataColumn4, string DataColumn5) {
+            public DataTable1Row AddDataTable1Row(string DataColumn1, string DataColumn2, string DataColumn3, string DataColumn4, string DataColumn5, string DataColumn6, string DataColumn7) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DataColumn1,
                         DataColumn2,
                         DataColumn3,
                         DataColumn4,
-                        DataColumn5};
+                        DataColumn5,
+                        DataColumn6,
+                        DataColumn7};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -434,6 +456,8 @@ namespace HogarAncianos.View {
                 this.columnDataColumn3 = base.Columns["DataColumn3"];
                 this.columnDataColumn4 = base.Columns["DataColumn4"];
                 this.columnDataColumn5 = base.Columns["DataColumn5"];
+                this.columnDataColumn6 = base.Columns["DataColumn6"];
+                this.columnDataColumn7 = base.Columns["DataColumn7"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +473,10 @@ namespace HogarAncianos.View {
                 base.Columns.Add(this.columnDataColumn4);
                 this.columnDataColumn5 = new global::System.Data.DataColumn("DataColumn5", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataColumn5);
+                this.columnDataColumn6 = new global::System.Data.DataColumn("DataColumn6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataColumn6);
+                this.columnDataColumn7 = new global::System.Data.DataColumn("DataColumn7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataColumn7);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -671,6 +699,38 @@ namespace HogarAncianos.View {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DataColumn6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.DataColumn6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn6\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.DataColumn6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string DataColumn7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.DataColumn7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn7\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.DataColumn7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDataColumn1Null() {
                 return this.IsNull(this.tableDataTable1.DataColumn1Column);
             }
@@ -727,6 +787,30 @@ namespace HogarAncianos.View {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDataColumn5Null() {
                 this[this.tableDataTable1.DataColumn5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDataColumn6Null() {
+                return this.IsNull(this.tableDataTable1.DataColumn6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDataColumn6Null() {
+                this[this.tableDataTable1.DataColumn6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDataColumn7Null() {
+                return this.IsNull(this.tableDataTable1.DataColumn7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDataColumn7Null() {
+                this[this.tableDataTable1.DataColumn7Column] = global::System.Convert.DBNull;
             }
         }
         

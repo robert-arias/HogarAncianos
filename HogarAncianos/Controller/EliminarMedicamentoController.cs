@@ -26,9 +26,9 @@ namespace HogarAncianos.Controller
         {
             fRM_EliminarMedicamento.btnEliminar.Click += new EventHandler(ElminarMedicamento);
             fRM_EliminarMedicamento.btnVerificar.Click += new EventHandler(VerificarCodigoMedicamento);
-            fRM_EliminarMedicamento.btnVerificar.KeyDown += new KeyEventHandler(VerificarCodigoMedicamentoEnter);
+            fRM_EliminarMedicamento.txtCodigo.KeyDown += new KeyEventHandler(VerificarCodigoMedicamentoEnter);
             fRM_EliminarMedicamento.btnLimpiar.Click += new EventHandler(Limpiar);
-
+           
 
         }
 

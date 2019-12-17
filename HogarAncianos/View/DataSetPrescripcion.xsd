@@ -20,6 +20,8 @@
               <xs:element name="DataColumn3" msprop:Generator_ColumnVarNameInTable="columnDataColumn3" msprop:Generator_ColumnPropNameInRow="DataColumn3" msprop:Generator_ColumnPropNameInTable="DataColumn3Column" msprop:Generator_UserColumnName="DataColumn3" type="xs:string" minOccurs="0" />
               <xs:element name="DataColumn4" msprop:Generator_ColumnVarNameInTable="columnDataColumn4" msprop:Generator_ColumnPropNameInRow="DataColumn4" msprop:Generator_ColumnPropNameInTable="DataColumn4Column" msprop:Generator_UserColumnName="DataColumn4" type="xs:string" minOccurs="0" />
               <xs:element name="DataColumn5" msprop:Generator_ColumnVarNameInTable="columnDataColumn5" msprop:Generator_ColumnPropNameInRow="DataColumn5" msprop:Generator_ColumnPropNameInTable="DataColumn5Column" msprop:Generator_UserColumnName="DataColumn5" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn6" msprop:Generator_ColumnVarNameInTable="columnDataColumn6" msprop:Generator_ColumnPropNameInRow="DataColumn6" msprop:Generator_ColumnPropNameInTable="DataColumn6Column" msprop:Generator_UserColumnName="DataColumn6" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn7" msprop:Generator_ColumnVarNameInTable="columnDataColumn7" msprop:Generator_ColumnPropNameInRow="DataColumn7" msprop:Generator_ColumnPropNameInTable="DataColumn7Column" msprop:Generator_UserColumnName="DataColumn7" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

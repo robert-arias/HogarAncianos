@@ -85,6 +85,7 @@ namespace HogarAncianos.Controller
             {
                 fRM_ModificarPrescripcion.FilldtgMedicamentos(connection.GetPrescripciones_MedicamentosUnPaciente(fRM_ModificarPrescripcion.GetNum()));
                 fRM_ModificarPrescripcion.ActivarCamposSeleccionPrescripcion();
+                fRM_ModificarPrescripcion.EstadoInicialDespuesDeModificar();
             }
             else
             {

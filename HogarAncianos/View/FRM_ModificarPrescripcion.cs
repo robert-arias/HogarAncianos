@@ -148,7 +148,7 @@ namespace HogarAncianos.View
             txtCodigo.Text = medicamento.Tables[0].Rows[0][1].ToString(); 
             txtFechaCaducidad.Text= medicamento.Tables[0].Rows[0][2].ToString();
             txtCantidad.Text= medicamento.Tables[0].Rows[0][3].ToString();
-           
+            txtCantidadPrescritaNueva.Text = medicamento.Tables[0].Rows[0][3].ToString();
 
         }
 
@@ -271,7 +271,7 @@ namespace HogarAncianos.View
 
         public bool VerificarMedicamentos()
         {
-            if (!string.IsNullOrEmpty(labelPrescripcion.Text) && !string.IsNullOrEmpty(txtCantidad.Text) && !string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtFechaCaducidad.Text))
+            if (!string.IsNullOrEmpty(labelPrescripcion.Text) && !string.IsNullOrEmpty(txtCantidadPrescritaNueva.Text) && !string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtFechaCaducidad.Text))
                 return true;
             else
                 return false;
