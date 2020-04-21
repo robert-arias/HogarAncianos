@@ -1,5 +1,5 @@
 # Sistema Multicare - Proyecto final
-Proyecto final del curso de Análisis y Diseño de Sistemas.
+Proyecto final del curso de Análisis y Diseño de Sistemas 2019.
 
 ## Acerca del proyecto
 El proyecto consiste en la creación de un sistema a través del análisis y diseño de sistemas; es decir, siguiendo pasos rigurosos de ciclo de vida de software para cumplir con los requerimientos del cliente. La parte de análisis de requerimientos se hizo a través de la entrega de ocho entregas.
